@@ -179,7 +179,7 @@ module Base
     spriteModel SG_GuidePost_Static
     {
         modelScript = Base.SG_GuidePost,
-        translate = -0.46 0.0 -0.5,
+        translate = -0.54 0.0 -0.5,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
     }
@@ -187,7 +187,7 @@ module Base
     spriteModel SG_CatcherPost_Static
     {
         modelScript = Base.SG_CatcherPost,
-        translate = -0.54 0.0 -0.5,
+        translate = -0.46 0.0 -0.5,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
     }
@@ -203,15 +203,7 @@ module Base
     spriteModel SG_Drive_Static
     {
         modelScript = Base.SG_Drive,
-        translate = -0.32 0.0 -0.28,
-        rotate = 0.0 0.0 0.0,
-        scale = 1.0,
-    }
-
-    spriteModel SG_Drive_StaticB
-    {
-        modelScript = Base.SG_Drive,
-        translate = -0.32 0.0 -0.72,
+        translate = -0.68 0.0 -0.72,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
     }

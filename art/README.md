@@ -34,9 +34,14 @@ Guide station: world X 2.14 and 2.20; top rail extends from X 0.04 to 2.30 at re
 The drive stays at Blender `(2.18, -0.22, 0)`. Its pinion spans Y
 `0.105..0.145`, meeting the leaf rack centered at Y `0.125`.
 Static exports reset object locations; assembly placement is reconstructed in
-`SG_Proto.lua` and `SG_models.txt`. Blender `(X,Y,Z)` becomes glTF `(X,Z,-Y)`.
-With the drive on assembly cell 2 and the common `(-0.5,0,-0.5)` anchor,
-its spriteModel translation is `(-0.32,0,-0.28)`.
+`SG_Proto.lua` and `SG_models.txt`. IMPORTANT (verified in game): the model is
+rotated 180 degrees about the vertical axis in PZ and the spriteModel
+`translate` is applied afterwards, in world axes. For a part at Blender
+`(b, y_b)` on a carrier cell shifted `k` cells towards -x from the leaf cell:
+`translate_x = -0.5 - b + k`, `translate_z = -0.5 + y_b`. Drive: `b=2.18`,
+`y_b=-0.22`, `k=2` gives `(-0.68, 0, -0.72)`. Do not "fix" it back to
+`(-0.32, 0, -0.28)`, which put the drive in the passage. See
+`research/vanilla-gates.md`.
 Restart the game after changing model scripts and spawn a fresh assembly for
 visual verification. The Blender Studio viewport is a modelling preview;
 final colour, shading and small-detail readability must be assessed in PZ.

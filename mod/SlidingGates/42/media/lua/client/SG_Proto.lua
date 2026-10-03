@@ -183,8 +183,7 @@ local function fillMenu(player, context, worldobjects, test)
         sub:addOption("Spawn SG model " .. m, sq, spawnSG, m, m:find("_N_") ~= nil)
     end
 
-    sub:addOption("Spawn SG ASSEMBLY (N, -x) drive A (z -0.28)", sq, spawnAssembly, "SG_ChainLink_N_Right", "SG_Drive_Static")
-    sub:addOption("Spawn SG ASSEMBLY (N, -x) drive B (z -0.72)", sq, spawnAssembly, "SG_ChainLink_N_Right", "SG_Drive_StaticB")
+    sub:addOption("Spawn SG ASSEMBLY (N, along -x)", sq, spawnAssembly, "SG_ChainLink_N_Right")
 
     local doors = nearbyDoors(sq, 3)
     sub:addOption("Toggle ALL gates within 3 tiles (" .. #doors .. ")", doors, function(list) for _, o in ipairs(list) do toggle(o) end end)

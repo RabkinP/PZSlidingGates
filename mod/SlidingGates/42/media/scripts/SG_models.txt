@@ -1,0 +1,219 @@
+module Base
+{
+    animationsMesh SG_ChainLink_N_Left
+    {
+        meshFile = IsoObject/SG_ChainLink_N_Left,
+        keepMeshAnimations = true,
+    }
+
+    model SG_ChainLink_N_Left
+    {
+        mesh = IsoObject/SG_ChainLink_N_Left,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_N_Left,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    animationsMesh SG_ChainLink_N_Right
+    {
+        meshFile = IsoObject/SG_ChainLink_N_Right,
+        keepMeshAnimations = true,
+    }
+
+    model SG_ChainLink_N_Right
+    {
+        mesh = IsoObject/SG_ChainLink_N_Right,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_N_Right,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    animationsMesh SG_ChainLink_W_Left
+    {
+        meshFile = IsoObject/SG_ChainLink_W_Left,
+        keepMeshAnimations = true,
+    }
+
+    model SG_ChainLink_W_Left
+    {
+        mesh = IsoObject/SG_ChainLink_W_Left,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_W_Left,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    animationsMesh SG_ChainLink_W_Right
+    {
+        meshFile = IsoObject/SG_ChainLink_W_Right,
+        keepMeshAnimations = true,
+    }
+
+    model SG_ChainLink_W_Right
+    {
+        mesh = IsoObject/SG_ChainLink_W_Right,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_W_Right,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    model SG_GuidePost
+    {
+        mesh = IsoObject/SG_GuidePost,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        static = true,
+        undoCoreScale = true,
+    }
+
+    model SG_CatcherPost
+    {
+        mesh = IsoObject/SG_CatcherPost,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        static = true,
+        undoCoreScale = true,
+    }
+
+    model SG_Rail
+    {
+        mesh = IsoObject/SG_Rail,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        static = true,
+        undoCoreScale = true,
+    }
+
+    model SG_Drive
+    {
+        mesh = IsoObject/SG_Drive,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        static = true,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_ChainLink_N_Left_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Left,
+        translate = -0.5 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_N_Left_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Left,
+        translate = -0.5 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 2.0,
+    }
+
+    spriteModel SG_ChainLink_N_Right_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right,
+        translate = -0.5 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_N_Right_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right,
+        translate = -0.5 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 2.0,
+    }
+
+    spriteModel SG_ChainLink_W_Left_Closed
+    {
+        modelScript = Base.SG_ChainLink_W_Left,
+        translate = -0.5 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_W_Left_Open
+    {
+        modelScript = Base.SG_ChainLink_W_Left,
+        translate = -0.5 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 2.0,
+    }
+
+    spriteModel SG_ChainLink_W_Right_Closed
+    {
+        modelScript = Base.SG_ChainLink_W_Right,
+        translate = -0.5 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_W_Right_Open
+    {
+        modelScript = Base.SG_ChainLink_W_Right,
+        translate = -0.5 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 2.0,
+    }
+
+    spriteModel SG_GuidePost_Static
+    {
+        modelScript = Base.SG_GuidePost,
+        translate = -0.46 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_CatcherPost_Static
+    {
+        modelScript = Base.SG_CatcherPost,
+        translate = -0.54 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Rail_Static
+    {
+        modelScript = Base.SG_Rail,
+        translate = -0.5 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Drive_Static
+    {
+        modelScript = Base.SG_Drive,
+        translate = -0.32 0.0 -0.28,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Drive_StaticB
+    {
+        modelScript = Base.SG_Drive,
+        translate = -0.32 0.0 -0.72,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+    }
+
+}

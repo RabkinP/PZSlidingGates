@@ -1,0 +1,53 @@
+# Chain-link gate prototype
+
+Created in Blender 5.2.2 through Blender MCP. Source: `SG_ChainLink.blend`.
+
+## Assets
+
+- `exports/SG_ChainLink_{N,W}_{Left,Right}.glb`: skinned moving leaf, `DoorBone`, independent `Open` and `Close` clips.
+- `exports/SG_GuidePost.glb`: roller guide post; `exports/SG_CatcherPost.glb`: receiving post with upper/lower U catches. The old SG_Post.glb is obsolete.
+- `exports/SG_Rail.glb`: static one-cell rail segment; repeat along the four-cell travel envelope.
+- `exports/SG_Drive.glb`: separate static motor/battery housing.
+- `SG_ChainLink_Atlas.png`: shared opaque 128×128 atlas. Chain-link holes use geometry.
+
+The leaf includes a 0.34-unit tail beyond the two-cell opening. Prototype coordinates use X along the opening, Y outward, Z up. One cell is provisionally one Blender unit. N is the canonical X-aligned asset; W rotates its root by +90 degrees. Left/Right mean negative/positive local travel, pending mapping to the game's camera and tile conventions.
+
+## Animation
+
+24 fps, frames 1–49, duration 2 seconds. Open slides 2 units along X; Close reverses the same path. The leaf geometry has a permanent Y offset of 0.18 units, with no perpendicular animation. Only the leaf moves. Height is provisionally 1.9 units; post height about 2.04.
+
+The saved workbench shows the closed pose. Select `SG_Rig` and scrub frames 1–49 for Open. Both clips are stored in muted NLA tracks; Open is the active preview action. `export_chainlink.py` exports both tracks and restores the preview setup.
+
+## Validation and remaining work
+
+Checked closed and open poses visually through MCP. Parsed all seven GLBs to check object lists, absence of startup-scene objects, and exact `Open`/`Close` clip names with `DoorBone` in all four leaf files.
+
+These are prototype exports, not game-integrated assets. Validate scale/origin against PZ spriteModels, N/W handedness, animation interpolation in PZ, visibility outside the source cell, depth ordering, and texture loading before final art. Lower wheels rest on the straight rail; upper post-mounted rollers guide the leaf. A toothed rack on the leaf meets the drive pinion. This remains simplified game geometry; wheel/pinion rotation is not animated. The workbench shows the right-opening arrangement; mirror drive and rail placement for left-opening gates. No mod scripts or tile registrations have been changed.
+
+`build_chainlink.py` builds the prototype in the active workbench scene and preserves its existing objects in a hidden reference collection. Run on a fresh workbench rather than repeatedly on the finished scene. `export_chainlink.py` runs inside the saved Blender file. Both are intended for Blender MCP execution.
+
+
+Guide station: world X 2.14 and 2.20; top rail extends from X 0.04 to 2.30 at rest. Both stations remain within the top rail for the entire 2-unit stroke (verified at every frame of Open and Close). Left-opening exports mirror the asymmetric leaf geometry as well as reversing its travel. Place/mirror the guide and catcher posts appropriately for that arrangement.
+
+## N-right prototype integration
+
+The drive stays at Blender `(2.18, -0.22, 0)`. Its pinion spans Y
+`0.105..0.145`, meeting the leaf rack centered at Y `0.125`.
+Static exports reset object locations; assembly placement is reconstructed in
+`SG_Proto.lua` and `SG_models.txt`. Blender `(X,Y,Z)` becomes glTF `(X,Z,-Y)`.
+With the drive on assembly cell 2 and the common `(-0.5,0,-0.5)` anchor,
+its spriteModel translation is `(-0.32,0,-0.28)`.
+Restart the game after changing model scripts and spawn a fresh assembly for
+visual verification. The Blender Studio viewport is a modelling preview;
+final colour, shading and small-detail readability must be assessed in PZ.
+
+Visual polish: cylindrical sides use smooth normals while caps, housings and
+brackets remain flat. Wire radius is 0.0055 (previously 0.004), with six sides;
+frame tubes have eight sides. Rack teeth use 52 larger teeth instead of 78.
+The opaque atlas separates pale galvanized wire, painted frame, dark fittings
+and olive drive housing, with restrained variation and wear. The updater
+preserves the catcher geometry and rebuilds the atlas as well as meshes.
+`preview_game_view.py` creates an approximate PZ orthographic camera and sets
+the viewport to the same framing. It does not reproduce the game's lighting.
+The previous art is preserved in `before_visual_polish/`.
+

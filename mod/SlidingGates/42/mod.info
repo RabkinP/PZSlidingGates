@@ -1,0 +1,6 @@
+name=Sliding Gates
+id=SlidingGates
+description=Sliding gates with animated opening, motor drive and RF remote. (prototype)
+author=pavel
+modversion=0.0.1
+versionMin=42.0.0

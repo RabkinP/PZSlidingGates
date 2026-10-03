@@ -1,0 +1,215 @@
+-- SlidingGates: unified gate object (prototype, singleplayer).
+-- A gate is a set of parts sharing modData.sgGate = "<x>,<y>,<z>" (master leaf cell):
+--   leaf    master door at x0 carrying the animated leaf model
+--   slave   door at x0-1 (second cell of the opening), hidden model, toggled with the leaf
+--   block   closed hidden doors at x0-2, x0-3, present only while the gate is open (cells the leaf stands in)
+--   post/rail  static decoration; drive  optional add-on, can be installed on an existing gate
+-- N-edge gates extend towards -x (see research/vanilla-gates.md).
+
+SGGate = SGGate or {}
+
+local TYPES = {
+    chainlink = {
+        leafModel = "SG_ChainLink_N_Right",
+        doorSprites = { "fixtures_doors_fences_01_129", "fixtures_doors_fences_01_131" }, -- closed, open (N edge)
+    },
+}
+
+local function log(msg)
+    print("[SGGate] " .. tostring(msg))
+    local pl = getPlayer()
+    if pl then pl:setHaloNote(tostring(msg), 255, 255, 255, 120) end
+end
+
+local function sqAt(x, y, z) return getCell():getGridSquare(x, y, z) end
+
+local function parseId(id)
+    local x, y, z = id:match("^(-?%d+),(-?%d+),(-?%d+)$")
+    return tonumber(x), tonumber(y), tonumber(z)
+end
+
+local function tag(obj, id, role, extra)
+    local d = obj:getModData()
+    d.sgGate = id
+    d.sgRole = role
+    if extra then for k, v in pairs(extra) do d[k] = v end end
+end
+
+-- resting pose of a door part: hidden parts use SG_Hidden, the leaf uses Closed/Open pose of its model
+function SGGate.applyModel(obj)
+    local base = obj:getModData().sgBase
+    if not base then return end
+    if base == "SG_Hidden" then
+        obj:setSpriteModelName("Base.SG_Hidden")
+    else
+        obj:setSpriteModelName("Base." .. base .. (obj:IsOpen() and "_Open" or "_Closed"))
+    end
+end
+
+-- door-thumpable on the N edge of sq whose model is `modelBase`
+local function makeDoor(sq, typeId, id, role, modelBase)
+    local pair = TYPES[typeId].doorSprites
+    local obj = IsoThumpable.new(getWorld():getCell(), sq, pair[1], pair[2], true, {})
+    obj:setMaxHealth(500)
+    obj:setHealth(500)
+    obj:setIsDoor(true)
+    obj:setCanPassThrough(false)
+    obj:setIsThumpable(true)
+    tag(obj, id, role, { sgBase = modelBase, sgType = typeId })
+    sq:AddSpecialObject(obj)
+    SGGate.applyModel(obj)
+    sq:RecalcAllWithNeighbours(true)
+    return obj
+end
+
+local function makeStatic(sq, id, role, modelName)
+    if not sq then return end
+    local obj = IsoObject.new(getWorld():getCell(), sq, "vegetation_groundcover_01_0")
+    obj:setSpriteModelName("Base." .. modelName)
+    tag(obj, id, role)
+    sq:AddTileObject(obj)
+    return obj
+end
+
+local function removeObj(obj)
+    local sq = obj:getSquare()
+    if not sq then return end
+    sq:transmitRemoveItemFromSquare(obj)
+    sq:RecalcAllWithNeighbours(true)
+end
+
+local function toggleDoor(obj)
+    obj:ToggleDoor(getPlayer())
+    SGGate.applyModel(obj)
+end
+
+-- all parts of the gate id (scans the cells it can occupy)
+function SGGate.parts(id)
+    local x, y, z = parseId(id)
+    local res = {}
+    for dx = -4, 1 do
+        local sq = sqAt(x + dx, y, z)
+        if sq then
+            local objs = sq:getObjects()
+            for i = 0, objs:size() - 1 do
+                local o = objs:get(i)
+                if o:getModData().sgGate == id then res[#res + 1] = o end
+            end
+        end
+    end
+    return res
+end
+
+local function findRole(id, role)
+    for _, o in ipairs(SGGate.parts(id)) do
+        if o:getModData().sgRole == role then return o end
+    end
+end
+
+-- Build a gate WITHOUT drive. sq = master (leaf) cell; returns the gate id.
+function SGGate.build(sq, typeId)
+    typeId = typeId or "chainlink"
+    local t = TYPES[typeId]
+    local x, y, z = sq:getX(), sq:getY(), sq:getZ()
+    local id = x .. "," .. y .. "," .. z
+    makeDoor(sq, typeId, id, "leaf", t.leafModel)
+    makeDoor(sqAt(x - 1, y, z), typeId, id, "slave", "SG_Hidden")
+    makeStatic(sq, id, "post", "SG_CatcherPost_Static")
+    makeStatic(sqAt(x - 2, y, z), id, "post", "SG_GuidePost_Static")
+    for k = 0, 3 do makeStatic(sqAt(x - k, y, z), id, "rail", "SG_Rail_Static") end
+    log("gate built " .. id .. " (no drive)")
+    return id
+end
+
+function SGGate.installDrive(id)
+    if findRole(id, "drive") then log("drive already installed"); return end
+    local x, y, z = parseId(id)
+    makeStatic(sqAt(x - 2, y, z), id, "drive", "SG_Drive_Static")
+    log("drive installed on " .. id)
+end
+
+function SGGate.removeDrive(id)
+    local d = findRole(id, "drive")
+    if d then removeObj(d); log("drive removed from " .. id) end
+end
+
+function SGGate.toggle(id)
+    local leaf = findRole(id, "leaf")
+    local slave = findRole(id, "slave")
+    if not leaf or not slave then log("gate parts missing for " .. id); return end
+    local x, y, z = parseId(id)
+    local opening = not leaf:IsOpen()
+    toggleDoor(leaf)
+    toggleDoor(slave)
+    if leaf:IsOpen() ~= opening then
+        log("gate " .. id .. " toggle refused (blocked?)")
+        return
+    end
+    local typeId = leaf:getModData().sgType
+    if opening then
+        for k = 2, 3 do
+            local sq = sqAt(x - k, y, z)
+            if sq then makeDoor(sq, typeId, id, "block", "SG_Hidden") end
+        end
+    else
+        for _, o in ipairs(SGGate.parts(id)) do
+            if o:getModData().sgRole == "block" then removeObj(o) end
+        end
+    end
+    log("gate " .. id .. (opening and " opened" or " closed"))
+end
+
+function SGGate.remove(id)
+    for _, o in ipairs(SGGate.parts(id)) do removeObj(o) end
+    log("gate removed " .. id)
+end
+
+-- how the cells around the gate block movement across the N edge / towards west (collision experiment)
+function SGGate.dumpCollision(id)
+    local x, y, z = parseId(id)
+    for dx = 1, -4, -1 do
+        local sq, north = sqAt(x + dx, y, z), sqAt(x + dx, y - 1, z)
+        local west = sqAt(x + dx - 1, y, z)
+        if sq and north then
+            log(string.format("x%+d: N-blocked=%s closedN=%s openN=%s openW=%s west-blocked=%s", dx,
+                tostring(sq:isBlockedTo(north)), tostring(sq:hasClosedDoorOnEdge(IsoDirections.N)),
+                tostring(sq:hasOpenDoorOnEdge(IsoDirections.N)), tostring(sq:hasOpenDoorOnEdge(IsoDirections.W)),
+                tostring(west and sq:isBlockedTo(west))))
+        end
+    end
+end
+
+-- gate ids with a part within r tiles of sq
+function SGGate.nearby(sq, r)
+    local res, seen = {}, {}
+    for dx = -r, r do
+        for dy = -r, r do
+            local s = sqAt(sq:getX() + dx, sq:getY() + dy, sq:getZ())
+            if s then
+                local objs = s:getObjects()
+                for i = 0, objs:size() - 1 do
+                    local d = objs:get(i):getModData()
+                    if d.sgGate and not seen[d.sgGate] then seen[d.sgGate] = true; res[#res + 1] = d.sgGate end
+                end
+            end
+        end
+    end
+    return res
+end
+
+Events.OnFillWorldObjectContextMenu.Add(function(player, context, worldobjects, test)
+    if test then return end
+    local sq
+    for _, o in ipairs(worldobjects) do sq = o:getSquare(); if sq then break end end
+    if not sq then return end
+    local sub = ISContextMenu:getNew(context)
+    context:addSubMenu(context:addOption("SG Gate"), sub)
+    sub:addOption("Build GATE (no drive), N edge, extends -x", sq, SGGate.build, "chainlink")
+    for _, id in ipairs(SGGate.nearby(sq, 5)) do
+        sub:addOption("[" .. id .. "] open/close", id, SGGate.toggle)
+        sub:addOption("[" .. id .. "] install drive", id, SGGate.installDrive)
+        sub:addOption("[" .. id .. "] remove drive", id, SGGate.removeDrive)
+        sub:addOption("[" .. id .. "] dump collision", id, SGGate.dumpCollision)
+        sub:addOption("[" .. id .. "] remove gate", id, SGGate.remove)
+    end
+end)

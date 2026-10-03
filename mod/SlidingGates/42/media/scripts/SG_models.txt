@@ -208,4 +208,12 @@ module Base
         scale = 1.0,
     }
 
+    spriteModel SG_Hidden
+    {
+        modelScript = Base.SG_Rail,
+        translate = 0.0 0.0 0.0,
+        rotate = 0.0 0.0 0.0,
+        scale = 0.001,
+    }
+
 }

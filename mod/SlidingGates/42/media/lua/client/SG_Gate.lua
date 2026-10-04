@@ -24,6 +24,11 @@ local TYPES = {
     },
 }
 
+-- Door tiles without doorTrans (metal door, N edge: closed / open). A see-through (doorTrans) door in a fence cell lets the
+-- engine's vision test see past the fence, and FBORenderCutaways then cuts the whole fence run away; an opaque
+-- door keeps the vision block of the fence. Used for pocket blockers on cells that already have a fence.
+local OPAQUE_DOOR_SPRITES = { "fixtures_doors_01_69", "fixtures_doors_01_71" }
+
 -- Older saved registry entries are true and represent the original two-cell gate.
 local function gateWidth(id)
     local entry = (ModData.getOrCreate("SlidingGates").gates or {})[id]
@@ -62,8 +67,8 @@ function SGGate.applyModel(obj)
 end
 
 -- door-thumpable on the N edge of sq whose model is `modelBase`
-local function makeDoor(sq, typeId, id, role, modelBase)
-    local pair = TYPES[typeId].doorSprites
+local function makeDoor(sq, typeId, id, role, modelBase, spritePair)
+    local pair = spritePair or TYPES[typeId].doorSprites
     local obj = IsoThumpable.new(getWorld():getCell(), sq, pair[1], pair[2], true, {})
     obj:setMaxHealth(500)
     obj:setHealth(500)
@@ -134,8 +139,10 @@ local function addPocketBlockers(id, typeId, x, y, z)
     local width = TYPES[typeId].width
     for k = width + 1, 2 * width do
         local sq, north = sqAt(x - k, y, z), sqAt(x - k, y - 1, z)
-        if sq and north and not sq:isBlockedTo(north) then
-            makeDoor(sq, typeId, id, "block", "SG_Hidden")
+        if sq and north then
+            -- fenced cell: opaque blocker (collision/damage proxy, vision stays blocked); free cell: see-through one
+            local pair = sq:isBlockedTo(north) and OPAQUE_DOOR_SPRITES or nil
+            makeDoor(sq, typeId, id, "block", "SG_Hidden", pair)
         end
     end
 end
@@ -246,8 +253,9 @@ local function setBlocker(blockers, id, typeId, x, y, z, k, present)
     local o = blockers[k]
     if present and not o then
         local sq, north = sqAt(x - k, y, z), sqAt(x - k, y - 1, z)
-        if sq and north and not sq:isBlockedTo(north) then
-            blockers[k] = makeDoor(sq, typeId, id, "block", "SG_Hidden")
+        if sq and north then
+            local pair = sq:isBlockedTo(north) and OPAQUE_DOOR_SPRITES or nil
+            blockers[k] = makeDoor(sq, typeId, id, "block", "SG_Hidden", pair)
         end
     elseif not present and o then
         removeObj(o)

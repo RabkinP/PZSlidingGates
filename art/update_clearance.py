@@ -43,13 +43,15 @@ for width,name in [(2,'SG_ChainLink_Workbench'),(4,'SG_ChainLink_4_Workbench')]:
                 assert (new.co-old-Vector((0,0.10-old_clearance,0))).length<2e-6
             # Narrow the rack around its translated centre so its back clears
             # the post. Move only the handle fittings to the outward side.
-            handle_indices=set()
+            handle_indices=set(); tooth_indices=set()
             uv=obj.data.uv_layers.active
             for poly in obj.data.polygons:
                 u,v=uv.data[poly.loop_indices[0]].uv
                 swatch=int(u*4)+4*int(v*2)
                 if swatch in (2,5) and all(.8799<=obj.data.vertices[i].co.z<=1.0201 for i in poly.vertices):
                     handle_indices.update(poly.vertices)
+                if swatch==5 and all(.2299<=obj.data.vertices[i].co.z<=.2601 for i in poly.vertices):
+                    tooth_indices.update(poly.vertices)
             for vertex in obj.data.vertices:
                 if .2299<=vertex.co.z<=.3001:
                     vertex.co.y=.045+(vertex.co.y-.045)*(.010/.055)
@@ -57,7 +59,7 @@ for width,name in [(2,'SG_ChainLink_Workbench'),(4,'SG_ChainLink_4_Workbench')]:
                     vertex.co.y=.20-vertex.co.y
             tooth_count=math.floor((width-.05)/.045)+1
             for vertex in obj.data.vertices:
-                if .2299<=vertex.co.z<=.2601:
+                if vertex.index in tooth_indices:
                     i=round((vertex.co.x-.025)/.045)
                     vertex.co.x+=.01125+i*(width-.0225)/(tooth_count-1)-(.025+i*.045)
             for poly in obj.data.polygons:

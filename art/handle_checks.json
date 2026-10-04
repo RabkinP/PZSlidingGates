@@ -1,0 +1,29 @@
+[
+  {
+    "width": 2,
+    "handles": 1,
+    "frames_checked": 146,
+    "surface_collisions": 0,
+    "grip_diameter": 0.028,
+    "hand_gap": 0.053,
+    "mount": "outer_vertical_frame",
+    "handle_x": [
+      0.025
+    ],
+    "crossmember_faces_removed": 6
+  },
+  {
+    "width": 4,
+    "handles": 2,
+    "frames_checked": 290,
+    "surface_collisions": 0,
+    "grip_diameter": 0.028,
+    "hand_gap": 0.053,
+    "mount": "outer_vertical_frame",
+    "handle_x": [
+      3.975,
+      0.025
+    ],
+    "crossmember_faces_removed": 12
+  }
+]

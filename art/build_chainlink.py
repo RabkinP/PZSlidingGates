@@ -86,6 +86,36 @@ def mesh(name,build):
             uv.data[li].uv=(cx+(-0.07 if j%2==0 else 0.07),cy+(-0.15 if j<2 else 0.15))
     return obj
 
+def handle(x,v,f,s):
+    # Readable pull handle: a narrow backplate, two stand-offs, rounded bends
+    # and an open hand gap. Omit hardware below native pixel coverage.
+    box((x,0.027,0.95),(0.045,0.012,0.28),v,f,s,2)
+    points=[(x,.033,.84),(x,.080,.84)]
+    for i in range(1,5):
+        t=i*math.pi/8
+        points.append((x,.080+.020*math.sin(t),.86-.020*math.cos(t)))
+    points.append((x,.100,1.04))
+    for i in range(1,5):
+        t=i*math.pi/8
+        points.append((x,.080+.020*math.cos(t),1.04+.020*math.sin(t)))
+    points.append((x,.033,1.06))
+    # One continuous sweep avoids capped cylinder seams at the bends.
+    start=len(v); sides=8; u=Vector((1,0,0))
+    for i,p in enumerate(points):
+        a=Vector(points[max(0,i-1)]); b=Vector(points[min(len(points)-1,i+1)])
+        tangent=(b-a).normalized(); radial=tangent.cross(u)
+        for j in range(sides):
+            angle=j*2*math.pi/sides
+            v.append(tuple(Vector(p)+.014*(u*math.cos(angle)+radial*math.sin(angle))))
+    for i in range(len(points)-1):
+        for j in range(sides):
+            k=(j+1)%sides; base=start+i*sides
+            smooth_faces.add(len(f))
+            f.append((base+j,base+k,base+sides+k,base+sides+j));s.append(5)
+    f.append(tuple(start+j for j in range(sides-1,-1,-1)));s.append(5)
+    end=start+(len(points)-1)*sides
+    f.append(tuple(end+j for j in range(sides)));s.append(5)
+
 def leaf(v,f,s):
     # Width changes lengths/counts, never tube thickness, height or wire pitch.
     for a,b in [((0.025,0,0.12),(WIDTH-0.025,0,0.12)),((0.025,0,1.88),(WIDTH-0.025,0,1.88))] + [((x,0,0.12),(x,0,1.88)) for x in [0.025,*range(1,WIDTH),WIDTH-0.025]]:
@@ -107,10 +137,11 @@ def leaf(v,f,s):
     for i in range(tooth_count):
         x=.01125+i*(WIDTH-.0225)/(tooth_count-1)
         box((x,-0.055,0.245),(0.0225,0.010,0.03),v,f,s,5)
-    # Mount the handle on a short crossmember, rather than on loose wire.
-    box((WIDTH-0.51,0,0.95),(0.97,0.045,0.045),v,f,s,0)
-    box((WIDTH-0.2,0.055,0.95),(0.07,0.07,0.13),v,f,s,2)
-    rod((WIDTH-0.21,0.10,0.88),(WIDTH-0.21,0.10,1.02),0.012,v,f,s,5)
+    # Fix the narrow backplate directly to the outer vertical frame tube.
+    handle(0.025 if WIDTH==2 else WIDTH-0.025,v,f,s)
+    if WIDTH==4:
+        # Second grip is on the same outward face, at the catcher end.
+        handle(0.025,v,f,s)
     for x in (0.22,WIDTH-0.22):
         rod((x,-0.025,0.0975),(x,0.025,0.0975),0.055,v,f,s,6,10)
 

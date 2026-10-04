@@ -2,6 +2,19 @@
 
 ## Width variants (current)
 
+The four-cell leaf has two handles on the same outward face, at X 0.025
+and X 3.975, mounted directly to the vertical frame tubes. All handle
+crossmembers have been removed. The two-cell handle is at X 0.025, on the
+catcher-end vertical frame tube and the same outward face.
+Its updated mesh clears both
+posts and the drive in all 290 Open/Close frames. The two-cell leaf keeps one
+handle. All handles now use a rounded U-shaped pull with two stand-offs on
+a narrow backplate: diameter 0.028, hand gap 0.053. A continuous smooth
+eight-sided sweep avoids seams at the bends; tiny screws are omitted.
+`update_handles.py` replaces only fittings and preserves other mesh/UV/rig
+data. All 436 frames clear the static assembly (`handle_checks.json`).
+Native import: `research/render-audit/handle-polish-native-import.txt`.
+
 Current leaf/rail clearance is 0.10 (previously 0.18). Both workbenches were
 updated without moving posts or the drive housing. Roller centres are now
 Y 0.051/0.149, the shorter shelf has a notch around the post, and the catcher

@@ -195,6 +195,12 @@ local moving = {}          -- id -> { opening, t, width, typeId, x, y, z }
 local unresolved = {}      -- ids whose parts were not loaded when the game started
 local tickCount = 0
 
+-- Kahlua has no global next(): emptiness check via pairs
+local function hasEntries(t)
+    for _ in pairs(t) do return true end
+    return false
+end
+
 local function isPaused()
     local sc = UIManager.getSpeedControls()
     return sc and sc:getCurrentGameSpeed() == 0
@@ -320,7 +326,7 @@ local function syncGate(id)
 end
 
 Events.OnTick.Add(function()
-    if next(moving) ~= nil then
+    if hasEntries(moving) then
         local ok, delta = pcall(function() return getGameTime():getTimeDelta() end)
         if not ok or type(delta) ~= "number" then delta = 1 / 48 end -- engine value at normal speed
         local step = isPaused() and 0 or delta * ANIM_SPEED
@@ -338,7 +344,7 @@ Events.OnTick.Add(function()
         end
     end
     tickCount = tickCount + 1
-    if next(unresolved) ~= nil and tickCount % 60 == 0 then
+    if hasEntries(unresolved) and tickCount % 60 == 0 then
         for id, _ in pairs(unresolved) do
             if finalize(id) then unresolved[id] = nil; log("gate " .. id .. " completed after load") end
         end

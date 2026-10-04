@@ -178,11 +178,13 @@ bpy.context.view_layer.objects.active=rig; rig.select_set(True)
 bpy.ops.object.mode_set(mode='EDIT'); bone=arm.edit_bones.new('DoorBone'); bone.head=(0,0,0); bone.tail=(0,1,0); bpy.ops.object.mode_set(mode='OBJECT')
 group=gate.vertex_groups.new(name='DoorBone'); group.add(list(range(len(gate.data.vertices))),1,'REPLACE')
 mod=gate.modifiers.new('DoorBone','ARMATURE'); mod.object=rig; gate.parent=rig
-scene.render.fps=24; scene.frame_start=1; scene.frame_end=49
-rig['cell_width']=1.0; rig['gate_width_cells']=WIDTH; rig['fence_clearance']=0.18; rig['duration_seconds']=2.0
+scene.render.fps=24; scene.frame_start=1; scene.frame_end=1+round(WIDTH*1.5*24)
+rig['cell_width']=1.0; rig['gate_width_cells']=WIDTH; rig['fence_clearance']=0.18; rig['duration_seconds']=WIDTH*1.5
 def animate(direction):
+    scene.frame_end=1+round(WIDTH*1.5*scene.render.fps)
+    rig['duration_seconds']=WIDTH*1.5
     rig.animation_data_clear(); rig.animation_data_create()
-    for label,keys in [('Open',[(1,(0,0,0)),(49,(direction*WIDTH,0,0))]),('Close',[(1,(direction*WIDTH,0,0)),(49,(0,0,0))])]:
+    for label,keys in [('Open',[(1,(0,0,0)),(scene.frame_end,(direction*WIDTH,0,0))]),('Close',[(1,(direction*WIDTH,0,0)),(scene.frame_end,(0,0,0))])]:
         action=bpy.data.actions.new('SG_'+label); rig.animation_data.action=action
         for frame,loc in keys:
             rig.pose.bones['DoorBone'].location=loc
@@ -192,7 +194,7 @@ def animate(direction):
     rig.animation_data.action=rig.animation_data.nla_tracks[0].strips[0].action
     scene.frame_set(1)
 animate(1)
-scene['SG_notes']=f'1 cell = 1 unit; height 1.9; fixed fence clearance 0.18; straight slide {WIDTH} cells in 2 seconds. Validate PZ scale/origin and clipping.'
+scene['SG_notes']=f'1 cell = 1 unit; height 1.9; fixed fence clearance 0.18; straight slide {WIDTH} cells in {WIDTH*1.5:g} seconds. Validate PZ scale/origin and clipping.'
 
 # A clean orthographic modelling view; original startup scene remains untouched.
 for area in bpy.context.screen.areas:

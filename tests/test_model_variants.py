@@ -24,9 +24,9 @@ for path in sorted((ROOT/'art/exports').glob('SG_ChainLink*.glb')):
         sample=clip['samplers'][ch['sampler']]
         times=accessor(doc,buf,sample['input']); poses=accessor(doc,buf,sample['output'])
         assert abs(math.dist(poses[0],poses[-1])-width)<1e-5,(path,clip['name'])
-        assert abs(times[-1][0]-times[0][0]-2)<1e-5,path
-        if width==4: # new exports have an explicit zero-based timeline
-            assert abs(times[0][0])<1e-5 and abs(times[-1][0]-2)<1e-5,path
+        duration=width*1.5
+        assert abs(times[-1][0]-times[0][0]-duration)<1e-5,path
+        assert abs(times[0][0])<1e-5 and abs(times[-1][0]-duration)<1e-5,path
     installed=ROOT/'mod/SlidingGates/42/media/models_X/IsoObject'/path.name
     assert raw==installed.read_bytes(),path
     print(path.name,'PASS clips, stroke, duration, weights, deployment')

@@ -4,7 +4,9 @@
 
 The same `SG_ChainLink.blend` now contains the original two-cell workbench
 and `SG_ChainLink_4_Workbench`. The four-cell leaf opens to one side by four
-units; both current sizes keep a two-second animation. Tubes, height, wire
+units; the two-cell gate takes 3 seconds and the four-cell gate 6 seconds.
+Duration is width × 1.5 seconds, preserving the same travel speed profile.
+Tubes, height, wire
 pitch, fittings, drive and post geometry keep their original dimensions.
 
 `build_chainlink.py` is parameterized by integer `GATE_WIDTH` (default 2).
@@ -14,7 +16,9 @@ It refuses to overwrite an existing variant scene. `export_chainlink.py`
 uses the active scene's gate rig and exports width-named leaves; width 2
 keeps legacy filenames. The two-cell updater remains specifically for the
 original workbench. Keep the saved closed pose and the Open/Close tracks.
-New exports use a zero-based 0–2 second clip timeline. Native import results
+New exports use zero-based timelines at 24 fps: 0–3 seconds / frames 1–73
+for two cells, 0–6 seconds / frames 1–145 for four cells.
+Native import results
 for width 4 are in `research/render-audit/width-4-native-import.txt`.
 
 For a future size, export that width, add it to `tools/gen_models.py` WIDTHS

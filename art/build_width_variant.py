@@ -22,17 +22,17 @@ rig,gate=env['rig'],env['gate']
 for obj in env['col'].objects:
     obj.name='SG_'+str(width)+'_'+obj.name.removeprefix('SG_')
 env['col'].name='SlidingGates_'+str(width)
-scene['SG_notes']=f'{width}-cell leaf and stroke; fixed clearance 0.18; duration 2 seconds; separate variant scene.'
+scene['SG_notes']=f'{width}-cell leaf and stroke; fixed clearance 0.18; duration {width*1.5:g} seconds; separate variant scene.'
 xs=[v.co.x for v in gate.data.vertices]
 assert min(xs)>=-1e-6 and max(xs)<=width+1e-6
 for track in rig.animation_data.nla_tracks:
     rig.animation_data.action=track.strips[0].action
-    for frame in range(1,50):
+    for frame in range(scene.frame_start,scene.frame_end+1):
         scene.frame_set(frame)
         loc=rig.pose.bones['DoorBone'].location
         assert abs(loc.y)<1e-6 and abs(loc.z)<1e-6
         assert any(loc.x+0.047<=x<=loc.x+width-0.047 for x in (width-0.12,width+0.12))
-    print(track.name,'49 frames validated; stroke',width)
+    print(track.name,scene.frame_end-scene.frame_start+1,'frames validated; stroke',width)
 def tree(obj):
     return BVHTree.FromPolygons([obj.matrix_world@v.co for v in obj.data.vertices],[list(p.vertices) for p in obj.data.polygons])
 assert not tree(env['motor_obj']).overlap(tree(env['post_b']))

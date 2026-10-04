@@ -17,6 +17,8 @@ WIDTHS = [int(w) for w in sys.argv[2].split(',')] if len(sys.argv) > 2 else [2, 
 assert len(WIDTHS)==len(set(WIDTHS)) and all(w>=2 for w in WIDTHS)
 LEAVES = [f"SG_ChainLink{'' if width==2 else '_'+str(width)}_{axis}_{side}"
           for width in WIDTHS for axis in ('N','W') for side in ('Left','Right')]
+LEAF_DURATION = {f"SG_ChainLink{'' if width==2 else '_'+str(width)}_{axis}_{side}": width*1.5
+                 for width in WIDTHS for axis in ('N','W') for side in ('Left','Right')}
 STATIC = ["SG_GuidePost", "SG_CatcherPost", "SG_Rail", "SG_Drive"]
 # (name, Blender X b, carrier shift k, Blender Y y_b)
 PLACE = {
@@ -68,10 +70,10 @@ for n in STATIC:
 """
 tz0 = -0.5 + SHIFT_Z
 for n in LEAVES:
-    for st, t in (("Closed", "0.0"), ("Open", "2.0")):
+    for st, t in (("Closed", "0.0"), ("Open", str(LEAF_DURATION[n]))):
         o += sprite_model(f"{n}_{st}", n, -0.5, tz0, anim=t)
 for n in [n for n in LEAVES if '_N_' in n]:   # gate carriers one cell left of the model origin
-    for st, t in (("Closed", "0.0"), ("Open", "2.0")):
+    for st, t in (("Closed", "0.0"), ("Open", str(LEAF_DURATION[n]))):
         o += sprite_model(f"{n}_G_{st}", n, 0.5, tz0, anim=t)
 for n in STATIC:
     b, k, yb = PLACE[n]

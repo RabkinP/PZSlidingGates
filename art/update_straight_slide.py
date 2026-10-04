@@ -28,15 +28,15 @@ bpy.data.objects['SG_Drive'].location=(2.0,-0.22,0)
 rig=bpy.data.objects['SG_Rig']; rig['fence_clearance']=0.18
 if 'outward_offset' in rig: del rig['outward_offset']
 exec(source[source.index('def animate('):source.index("scene['SG_notes']")])
-scene['SG_notes']='Fixed clearance 0.18; straight sliding 2 cells; duration 2 seconds.'
+scene['SG_notes']='Fixed clearance 0.18; straight sliding 2 cells; duration 3 seconds.'
 exec(compile(open(r'E:\git\SlidingGates\art\export_chainlink.py',encoding='utf-8').read(),'export_chainlink.py','exec'))
 for track in rig.animation_data.nla_tracks:
     rig.animation_data.action=track.strips[0].action
-    for frame in range(1,50):
+    for frame in range(scene.frame_start,scene.frame_end+1):
         scene.frame_set(frame); loc=rig.pose.bones['DoorBone'].location
         assert abs(loc.y)<1e-6 and abs(loc.z)<1e-6
         assert any(loc.x+0.047 <= x <= loc.x+1.953 for x in (1.88,2.12))
-    print(track.name,'validated all 49 frames')
+    print(track.name,'validated all',scene.frame_end-scene.frame_start+1,'frames')
 leaf_x=[v.co.x for v in bpy.data.objects['SG_Leaf'].data.vertices]
 assert min(leaf_x)>=-1e-6 and max(leaf_x)<=2.000001
 # One complete roller station must remain within the moving top rail.

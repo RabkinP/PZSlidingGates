@@ -1,5 +1,40 @@
 # Chain-link gate prototype
 
+## Width variants (current)
+
+The same `SG_ChainLink.blend` now contains the original two-cell workbench
+and `SG_ChainLink_4_Workbench`. The four-cell leaf opens to one side by four
+units; both current sizes keep a two-second animation. Tubes, height, wire
+pitch, fittings, drive and post geometry keep their original dimensions.
+
+`build_chainlink.py` is parameterized by integer `GATE_WIDTH` (default 2).
+Run `build_width_variant.py` via Blender MCP with `GATE_WIDTH=4` (or another
+integer >=2) in the source project to create a new, separate variant scene.
+It refuses to overwrite an existing variant scene. `export_chainlink.py`
+uses the active scene's gate rig and exports width-named leaves; width 2
+keeps legacy filenames. The two-cell updater remains specifically for the
+original workbench. Keep the saved closed pose and the Open/Close tracks.
+New exports use a zero-based 0–2 second clip timeline. Native import results
+for width 4 are in `research/render-audit/width-4-native-import.txt`.
+
+For a future size, export that width, add it to `tools/gen_models.py` WIDTHS
+(default 2,4), and register a corresponding type in SG_Gate.lua. The Lua
+assembly uses its type width for opening doors, guide/drive placement,
+rails and pocket blockers. It is not arbitrary runtime mesh scaling.
+Example registration regeneration: `python tools/gen_models.py 0.12 2,3,4,5,6`;
+only register sizes whose GLBs have actually been exported.
+
+N-right debug menu offers both 2 and 4 cells. A four-cell opening needs an
+additional four-cell parking zone on the sliding side (eight-cell total
+travel envelope). Restart PZ after model changes and build a fresh assembly.
+Four-cell Blender geometry/animation and native import are checked; actual
+four-cell PZ appearance, chunk clipping and collision need gameplay testing.
+Lua logic tests: `python tests/test_gate_widths.py` with the optional `lupa`
+dependency. These mocks verify assembly/sync decisions, not PZ physics.
+
+The earlier prototype sections below are historical and superseded where
+they disagree with these width rules or root AGENTS.md.
+
 Engine behaviour and export requirements are documented in
 `../research/render-audit.md`, verified against the installed game JAR and
 native Jassimp importer. Consult that audit before changing normals, UV,

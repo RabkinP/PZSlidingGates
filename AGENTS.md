@@ -9,9 +9,10 @@ The maintained engine evidence is `skills/pz-models/references/engine-render-aud
 ## Current gate invariants
 
 - Source: `art/SG_ChainLink.blend`. Work through the existing Blender MCP instance when available. Inspect its active file/scene first.
-- The entire moving leaf fits local X 0..2: one cell equals one model unit in this asset. No 0.34-unit tail, overhead guide beam or moving upper carriage. Cell collision limits are a gameplay requirement, not an aesthetic allowance.
-- Open/Close travel is 2 units along X, 24 fps, frames 1–49 (2 seconds). Permanent leaf Y offset is 0.18; there is no perpendicular animation. DoorBone weights are 1 for this rigid leaf.
-- The short post bracket has roller pairs at world X 1.88 and 2.12. At least one complete pair must engage the top rail throughout travel. The motor's offset gearbox/shaft passes beside the post; verify clearances after changes.
+- Width variants are generated from `art/build_chainlink.py`: default 2, parameter GATE_WIDTH for other integer widths. `art/build_width_variant.py` creates a separate scene in the same source blend and width-named GLBs. Currently 2 and 4 are registered in the mod. Future sizes need export, model registration and a Lua type entry, not a stretched model.
+- The entire moving leaf fits local X 0..width: one cell equals one model unit in this asset. No 0.34-unit tail, overhead guide beam or moving upper carriage. Cell collision limits are a gameplay requirement, not an aesthetic allowance.
+- Open/Close travel equals width along X, 24 fps, frames 1–49 (2 seconds for both current sizes). Permanent leaf Y offset is 0.18; there is no perpendicular animation. DoorBone weights are 1 for this rigid leaf. Increasing duration requires changing resting animationTime definitions too.
+- The short post bracket has roller pairs at world X width−0.12 and width+0.12. At least one complete pair must engage the top rail throughout travel. The motor's offset gearbox/shaft passes beside the post; verify clearances after changes.
 - Keep the calibrated drive translation `(-0.5, 0, -0.6)` in the current model script unless current coordinate/runtime evidence requires recalibration. Do not reconstruct placement from obsolete README revisions or Blender screenshots alone.
 - N-right is the integrated static assembly. Exported left/W leaves do not prove their static placement and collision assembly are supported; validate/mirror that integration separately when requested.
 - Export only intended mesh/rig objects with exact Open/Close clip names. Use external opaque atlas and explicit door shader for the current static/animated assets. Preserve correct outward winding, smooth cylindrical sides and flat caps/housings.

@@ -6,6 +6,9 @@ ROOT = r'E:\git\SlidingGates\art'
 OUT = os.path.join(ROOT, 'exports')
 os.makedirs(OUT, exist_ok=True)
 scene = bpy.context.scene
+WIDTH = int(globals().get('GATE_WIDTH', 2))
+assert WIDTH >= 2
+SAVE_PATH = globals().get('GATE_SAVE_PATH', os.path.join(ROOT, 'SG_ChainLink.blend'))
 reference = bpy.data.collections.new('VanillaReference')
 scene.collection.children.link(reference)
 for obj in list(scene.objects):
@@ -83,13 +86,13 @@ def mesh(name,build):
     return obj
 
 def leaf(v,f,s):
-    # All moving geometry stays in X [0,2]; there is no guide tail.
-    for a,b in [((0.025,0,0.12),(1.975,0,0.12)),((0.025,0,1.88),(1.975,0,1.88)),((0.025,0,0.12),(0.025,0,1.88)),((1.975,0,0.12),(1.975,0,1.88)),((1.0,0,0.12),(1.0,0,1.88))]:
+    # Width changes lengths/counts, never tube thickness, height or wire pitch.
+    for a,b in [((0.025,0,0.12),(WIDTH-0.025,0,0.12)),((0.025,0,1.88),(WIDTH-0.025,0,1.88))] + [((x,0,0.12),(x,0,1.88)) for x in [0.025,*range(1,WIDTH),WIDTH-0.025]]:
         rod(a,b,0.025,v,f,s)
     # Two diagonal families clipped to the inside of the tubular frame.
-    xmin,xmax,zmin,zmax=0.05,1.95,0.145,1.855
+    xmin,xmax,zmin,zmax=0.05,WIDTH-0.05,0.145,1.855
     for slope in (1,-1):
-        for k in range(-25,50):
+        for k in range(-math.ceil(WIDTH/0.13)-2,math.ceil((WIDTH+1.9)/0.13)+2):
             c=k*0.13; pts=[]
             for x in (xmin,xmax):
                 z=slope*x+c
@@ -98,14 +101,14 @@ def leaf(v,f,s):
                 x=(z-c)/slope
                 if xmin<=x<=xmax: pts.append((x,0.006*slope,z))
             if len(pts)==2: rod(pts[0],pts[1],0.005,v,f,s,1,6)
-    box((1.0,-0.055,0.28),(2.0,0.055,0.04),v,f,s,2)
-    for i in range(44):
+    box((WIDTH/2,-0.055,0.28),(WIDTH,0.055,0.04),v,f,s,2)
+    for i in range(math.floor((WIDTH-0.05)/0.045)+1):
         box((0.025+i*0.045,-0.055,0.245),(0.0225,0.055,0.03),v,f,s,5)
     # Mount the handle on a short crossmember, rather than on loose wire.
-    box((1.49,0,0.95),(0.97,0.045,0.045),v,f,s,0)
-    box((1.8,-0.055,0.95),(0.07,0.07,0.13),v,f,s,2)
-    rod((1.79,-0.10,0.88),(1.79,-0.10,1.02),0.012,v,f,s,5)
-    for x in (0.22,1.78):
+    box((WIDTH-0.51,0,0.95),(0.97,0.045,0.045),v,f,s,0)
+    box((WIDTH-0.2,-0.055,0.95),(0.07,0.07,0.13),v,f,s,2)
+    rod((WIDTH-0.21,-0.10,0.88),(WIDTH-0.21,-0.10,1.02),0.012,v,f,s,5)
+    for x in (0.22,WIDTH-0.22):
         rod((x,-0.025,0.0975),(x,0.025,0.0975),0.055,v,f,s,6,10)
 
 gate=mesh('SG_Leaf',leaf)
@@ -150,11 +153,11 @@ def catcher(v,f,s):
         if z<1: box((0.067,0.18,0.09),(0.11,0.08,0.012),v,f,s,0)
         for dz in (-0.048,0.048): rod((0,0.050,z+dz),(0,0.062,z+dz),0.009,v,f,s,5,6)
 post_a=mesh('SG_Post_Left',catcher); post_a.location.x=-0.04
-post_b=mesh('SG_Post_Right',post); post_b.location.x=2.04
+post_b=mesh('SG_Post_Right',post); post_b.location.x=WIDTH+0.04
 def rail_piece(v,f,s):
     box((0.5,0.18,0.0315),(1,0.025,0.022),v,f,s,4)
 rail=mesh('SG_Rail_OneCell',rail_piece)
-for i in range(1,4):
+for i in range(1,2*WIDTH):
     o=bpy.data.objects.new('SG_Rail_Preview_'+str(i),rail.data); col.objects.link(o); o.location.x=i
 def motor(v,f,s):
     box((0,0,0.055),(0.42,0.29,0.11),v,f,s,2)
@@ -168,7 +171,7 @@ def motor(v,f,s):
     box((-0.03,0.31,0.19),(0.10,0.06,0.07),v,f,s,2)
     rod((0,0.325,0.19),(0,0.365,0.19),0.016,v,f,s,5,8)
     rod((0,0.325,0.19),(0,0.365,0.19),0.055,v,f,s,2,12)
-motor_obj=mesh('SG_Drive',motor); motor_obj.location=(2.0,-0.22,0)
+motor_obj=mesh('SG_Drive',motor); motor_obj.location=(WIDTH,-0.22,0)
 
 arm=bpy.data.armatures.new('SG_Rig'); rig=bpy.data.objects.new('SG_Rig',arm); col.objects.link(rig)
 bpy.context.view_layer.objects.active=rig; rig.select_set(True)
@@ -176,10 +179,10 @@ bpy.ops.object.mode_set(mode='EDIT'); bone=arm.edit_bones.new('DoorBone'); bone.
 group=gate.vertex_groups.new(name='DoorBone'); group.add(list(range(len(gate.data.vertices))),1,'REPLACE')
 mod=gate.modifiers.new('DoorBone','ARMATURE'); mod.object=rig; gate.parent=rig
 scene.render.fps=24; scene.frame_start=1; scene.frame_end=49
-rig['cell_width']=1.0; rig['gate_width_cells']=2; rig['fence_clearance']=0.18; rig['duration_seconds']=2.0
+rig['cell_width']=1.0; rig['gate_width_cells']=WIDTH; rig['fence_clearance']=0.18; rig['duration_seconds']=2.0
 def animate(direction):
     rig.animation_data_clear(); rig.animation_data_create()
-    for label,keys in [('Open',[(1,(0,0,0)),(49,(direction*2,0,0))]),('Close',[(1,(direction*2,0,0)),(49,(0,0,0))])]:
+    for label,keys in [('Open',[(1,(0,0,0)),(49,(direction*WIDTH,0,0))]),('Close',[(1,(direction*WIDTH,0,0)),(49,(0,0,0))])]:
         action=bpy.data.actions.new('SG_'+label); rig.animation_data.action=action
         for frame,loc in keys:
             rig.pose.bones['DoorBone'].location=loc
@@ -189,7 +192,7 @@ def animate(direction):
     rig.animation_data.action=rig.animation_data.nla_tracks[0].strips[0].action
     scene.frame_set(1)
 animate(1)
-scene['SG_notes']='Prototype: 1 cell = 1 unit; height 1.9; fixed fence clearance 0.18; straight slide 2 cells in 2 seconds. Validate PZ scale/origin and clipping.'
+scene['SG_notes']=f'1 cell = 1 unit; height 1.9; fixed fence clearance 0.18; straight slide {WIDTH} cells in 2 seconds. Validate PZ scale/origin and clipping.'
 
 # A clean orthographic modelling view; original startup scene remains untouched.
 for area in bpy.context.screen.areas:
@@ -198,5 +201,5 @@ for area in bpy.context.screen.areas:
         area.spaces.active.region_3d.view_distance=6.5
         area.spaces.active.region_3d.view_location=Vector((1.8,0,0.9))
         area.spaces.active.shading.color_type='TEXTURE'
-bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ROOT,'SG_ChainLink.blend'))
+bpy.ops.wm.save_as_mainfile(filepath=SAVE_PATH)
 print('CREATED',len(col.objects),'objects; leaf triangles',sum(len(p.vertices)-2 for p in gate.data.polygons))

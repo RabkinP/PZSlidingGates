@@ -3,7 +3,9 @@ import bpy, math
 from mathutils import Vector
 source=open(r'E:\git\SlidingGates\art\build_chainlink.py',encoding='utf-8').read()
 scene=bpy.context.scene; col=bpy.data.collections['SlidingGates']; mat=bpy.data.materials['SG_ChainLink_Atlas']
+assert bpy.data.objects['SG_Rig'].name in scene.objects, 'Select the original two-cell workbench before running this updater'
 ROOT=r'E:\git\SlidingGates\art'
+WIDTH=2
 import os, random
 exec(source[source.index('palette ='):source.index("mat=bpy.data.materials.new")])
 exec(source[source.index('def rod('):source.index("gate=mesh('SG_Leaf'")])

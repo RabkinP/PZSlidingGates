@@ -6,14 +6,17 @@ Placement formula (verified in game, see research/vanilla-gates.md):
 SHIFT_Z moves the whole assembly across the fence line towards the inner side (+z = south for N-edge gates)
 so posts/brackets stand beside the fence instead of inside it.
 
-Usage:  python tools/gen_models.py [SHIFT_Z]
+Usage:  python tools/gen_models.py [SHIFT_Z] [WIDTHS_COMMA_SEPARATED]
 """
 import os, sys
 
 SHIFT_Z = float(sys.argv[1]) if len(sys.argv) > 1 else 0.12
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "mod", "SlidingGates", "42", "media", "scripts", "SG_models.txt")
 
-LEAVES = ["SG_ChainLink_N_Left", "SG_ChainLink_N_Right", "SG_ChainLink_W_Left", "SG_ChainLink_W_Right"]
+WIDTHS = [int(w) for w in sys.argv[2].split(',')] if len(sys.argv) > 2 else [2, 4]
+assert len(WIDTHS)==len(set(WIDTHS)) and all(w>=2 for w in WIDTHS)
+LEAVES = [f"SG_ChainLink{'' if width==2 else '_'+str(width)}_{axis}_{side}"
+          for width in WIDTHS for axis in ('N','W') for side in ('Left','Right')]
 STATIC = ["SG_GuidePost", "SG_CatcherPost", "SG_Rail", "SG_Drive"]
 # (name, Blender X b, carrier shift k, Blender Y y_b)
 PLACE = {
@@ -67,7 +70,7 @@ tz0 = -0.5 + SHIFT_Z
 for n in LEAVES:
     for st, t in (("Closed", "0.0"), ("Open", "2.0")):
         o += sprite_model(f"{n}_{st}", n, -0.5, tz0, anim=t)
-for n in ("SG_ChainLink_N_Right", "SG_ChainLink_N_Left"):   # gate carriers one cell left of the model origin
+for n in [n for n in LEAVES if '_N_' in n]:   # gate carriers one cell left of the model origin
     for st, t in (("Closed", "0.0"), ("Open", "2.0")):
         o += sprite_model(f"{n}_G_{st}", n, 0.5, tz0, anim=t)
 for n in STATIC:

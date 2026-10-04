@@ -1,8 +1,9 @@
 -- SlidingGates: unified gate object (prototype, singleplayer).
 -- A gate is a set of parts sharing modData.sgGate = "<x>,<y>,<z>" (master leaf cell):
---   leaf    master door at x0 carrying the animated leaf model
---   slave   door at x0-1 (second cell of the opening), hidden model, toggled with the leaf
---   block   closed hidden doors at x0-2, x0-3, present only while the gate is open (cells the leaf stands in)
+--   (x0 = visual origin cell: catcher post; the opening is x0-1 and x0-2)
+--   leaf    master door at x0-1 carrying the animated leaf model (model translate compensates the shift)
+--   slave   door at x0-2 (second cell of the opening), hidden model, toggled with the leaf
+--   block   closed hidden doors at x0-3, x0-4, present only while the gate is open (cells the leaf stands in)
 --   post/rail  static decoration; drive  optional add-on, can be installed on an existing gate
 -- N-edge gates extend towards -x (see research/vanilla-gates.md).
 
@@ -10,7 +11,7 @@ SGGate = SGGate or {}
 
 local TYPES = {
     chainlink = {
-        leafModel = "SG_ChainLink_N_Right",
+        leafModel = "SG_ChainLink_N_Right_G", -- spriteModels *_G_*: leaf carrier is one cell to the left of the model origin
         doorSprites = { "fixtures_doors_fences_01_129", "fixtures_doors_fences_01_131" }, -- closed, open (N edge)
     },
 }
@@ -87,7 +88,7 @@ end
 function SGGate.parts(id)
     local x, y, z = parseId(id)
     local res = {}
-    for dx = -4, 1 do
+    for dx = -5, 1 do
         local sq = sqAt(x + dx, y, z)
         if sq then
             local objs = sq:getObjects()
@@ -112,8 +113,8 @@ function SGGate.build(sq, typeId)
     local t = TYPES[typeId]
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
     local id = x .. "," .. y .. "," .. z
-    makeDoor(sq, typeId, id, "leaf", t.leafModel)
-    makeDoor(sqAt(x - 1, y, z), typeId, id, "slave", "SG_Hidden")
+    makeDoor(sqAt(x - 1, y, z), typeId, id, "leaf", t.leafModel)
+    makeDoor(sqAt(x - 2, y, z), typeId, id, "slave", "SG_Hidden")
     makeStatic(sq, id, "post", "SG_CatcherPost_Static")
     makeStatic(sqAt(x - 2, y, z), id, "post", "SG_GuidePost_Static")
     for k = 0, 3 do makeStatic(sqAt(x - k, y, z), id, "rail", "SG_Rail_Static") end
@@ -151,7 +152,7 @@ function SGGate.toggle(id)
     end
     local typeId = leaf:getModData().sgType
     if opening then
-        for k = 2, 3 do
+        for k = 3, 4 do
             local sq = sqAt(x - k, y, z)
             if sq then makeDoor(sq, typeId, id, "block", "SG_Hidden") end
         end
@@ -171,7 +172,7 @@ end
 -- how the cells around the gate block movement across the N edge / towards west (collision experiment)
 function SGGate.dumpCollision(id)
     local x, y, z = parseId(id)
-    for dx = 1, -4, -1 do
+    for dx = 1, -5, -1 do
         local sq, north = sqAt(x + dx, y, z), sqAt(x + dx, y - 1, z)
         local west = sqAt(x + dx - 1, y, z)
         if sq and north then

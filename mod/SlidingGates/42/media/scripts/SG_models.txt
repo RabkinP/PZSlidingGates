@@ -216,4 +216,44 @@ module Base
         scale = 0.001,
     }
 
+    spriteModel SG_ChainLink_N_Right_G_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right,
+        translate = 0.5 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_N_Right_G_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right,
+        translate = 0.5 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 2.0,
+    }
+
+    spriteModel SG_ChainLink_N_Left_G_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Left,
+        translate = 0.5 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_N_Left_G_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Left,
+        translate = 0.5 0.0 -0.5,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 2.0,
+    }
+
 }

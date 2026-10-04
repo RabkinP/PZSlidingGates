@@ -190,7 +190,9 @@ local tickCount = 0
 Events.OnTick.Add(function()
     tickCount = tickCount + 1
     if next(busy) and not isPaused() then
-        local step = getGameTime():getTimeDelta() * ANIM_SPEED
+        local ok, delta = pcall(function() return getGameTime():getTimeDelta() end)
+        if not ok or type(delta) ~= "number" then delta = 1 / 48 end -- engine value at normal speed (multiplier 1)
+        local step = delta * ANIM_SPEED
         for id, t in pairs(busy) do
             t = t + step
             if t >= ANIM_SECONDS then endBusy(id) else busy[id] = t end

@@ -153,11 +153,66 @@ function SGGate.removeDrive(id)
     if d then removeObj(d); log("drive removed from " .. id) end
 end
 
+-- While the leaf animates, a second toggle would restart the clip from its first frame and the leaf would
+-- jump to the end pose. So for the duration of the animation the door parts stop being doors (setIsDoor(false)):
+-- mouse click, E key and the context menu ignore them. The window is tracked with the engine's own progress rate.
+local ANIM_SECONDS = 2.0   -- clip length (frames 1..49 at 24 fps)
+local ANIM_SPEED = 1.5     -- IsoObjectAnimations track speed
+local busy = {}            -- id -> elapsed clip seconds
+
+local function setDoorParts(id, isDoor)
+    for _, o in ipairs(SGGate.parts(id)) do
+        local role = o:getModData().sgRole
+        if role == "leaf" or role == "slave" or role == "block" then
+            o:setIsDoor(isDoor)
+            local sq = o:getSquare()
+            if sq then sq:RecalcAllWithNeighbours(true) end
+        end
+    end
+end
+
+local function startBusy(id)
+    busy[id] = 0
+    setDoorParts(id, false)
+end
+
+local function endBusy(id)
+    busy[id] = nil
+    setDoorParts(id, true)
+end
+
+local function isPaused()
+    local sc = UIManager.getSpeedControls()
+    return sc and sc:getCurrentGameSpeed() == 0
+end
+
+local tickCount = 0
+Events.OnTick.Add(function()
+    tickCount = tickCount + 1
+    if next(busy) and not isPaused() then
+        local step = getGameTime():getTimeDelta() * ANIM_SPEED
+        for id, t in pairs(busy) do
+            t = t + step
+            if t >= ANIM_SECONDS then endBusy(id) else busy[id] = t end
+        end
+    end
+    -- safety net (e.g. the game was saved mid-animation): idle gates must have working doors
+    if tickCount % 120 == 0 then
+        for id, _ in pairs(registry()) do
+            if busy[id] == nil then
+                local leaf = findRole(id, "leaf")
+                if leaf and not leaf:isDoor() then setDoorParts(id, true) end
+            end
+        end
+    end
+end)
+
 -- Bring all parts of one gate to the same state. Whatever door was toggled (mouse click, E key, menu, zombie)
 -- is the one whose state differs from the last synced state; the other parts follow it.
 local function syncGate(id)
     local leaf, slave = findRole(id, "leaf"), findRole(id, "slave")
     if not leaf or not slave then return end
+    if busy[id] then return end
     local x, y, z = parseId(id)
     local lo, so = leaf:IsOpen(), slave:IsOpen()
     local last = leaf:getModData().sgOpen
@@ -178,6 +233,7 @@ local function syncGate(id)
     if target then addPocketBlockers(id, leaf:getModData().sgType, x, y, z) end
     SGGate.applyModel(leaf)
     leaf:getModData().sgOpen = target
+    startBusy(id)
     log("gate " .. id .. (target and " opened" or " closed"))
 end
 
@@ -195,11 +251,13 @@ Events.OnContainerUpdate.Add(SGGate.reconcile)
 function SGGate.toggle(id)
     local leaf = findRole(id, "leaf")
     if not leaf then log("gate parts missing for " .. id); return end
+    if busy[id] then log("gate " .. id .. " is moving"); return end
     toggleDoor(leaf)
 end
 
 function SGGate.remove(id)
     registry()[id] = nil
+    busy[id] = nil
     for _, o in ipairs(SGGate.parts(id)) do removeObj(o) end
     log("gate removed " .. id)
 end

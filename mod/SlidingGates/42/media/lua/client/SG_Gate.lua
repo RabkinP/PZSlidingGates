@@ -158,7 +158,7 @@ function SGGate.build(sq, typeId)
     end
     registry()[id] = { width = width }
     makeDoor(sqAt(x - 1, y, z), typeId, id, "leaf", t.leafModel)
-    for k = 2, width do makeDoor(sqAt(x - k, y, z), typeId, id, "slave", "SG_Hidden") end
+    for k = 1, width do makeDoor(sqAt(x - k, y, z), typeId, id, "slave", "SG_Hidden") end -- collision of the opening
     makeStatic(sq, id, "post", "SG_CatcherPost_Static")
     makeStatic(sqAt(x - width, y, z), id, "post", "SG_GuidePost_Static")
     for k = 0, 2 * width - 1 do makeStatic(sqAt(x - k, y, z), id, "rail", "SG_Rail_Static") end
@@ -178,36 +178,95 @@ function SGGate.removeDrive(id)
     if d then removeObj(d); log("drive removed from " .. id) end
 end
 
+-- Collision of the opening is carried by hidden "slave" doors (one per opening cell, also on the leaf cell),
+-- the leaf door only carries the animation. Collision follows the animation pessimistically:
+--   opening: opening cells stay blocked, pocket cells are blocked at once; slaves open when the leaf stopped
+--   closing: opening cells are blocked at once, pocket blockers stay until the leaf stopped
+-- so nobody walks through the opening while the leaf is still in it. The end of the motion is the engine's own
+-- isAnimating() flag of the leaf (polled only for gates that are in transition).
+local pending = {}
+
+local function setSlaves(id, open)
+    for _, o in ipairs(SGGate.parts(id)) do
+        if o:getModData().sgRole == "slave" and o:IsOpen() ~= open then toggleDoor(o) end
+    end
+end
+
+local function setBlockers(id, typeId, x, y, z, present)
+    local existing = {}
+    for _, o in ipairs(SGGate.parts(id)) do
+        if o:getModData().sgRole == "block" then existing[#existing + 1] = o end
+    end
+    if present then
+        if #existing == 0 then addPocketBlockers(id, typeId, x, y, z) end
+    else
+        for _, o in ipairs(existing) do removeObj(o) end
+    end
+end
+
+-- Apply the final collision state of an idle gate (idempotent; also used to normalise after loading a save).
+local function finalize(id)
+    local leaf = findRole(id, "leaf")
+    if not leaf then return end
+    local x, y, z = parseId(id)
+    local open = leaf:getModData().sgOpen or false
+    setSlaves(id, open)
+    setBlockers(id, leaf:getModData().sgType, x, y, z, open)
+    leaf:getModData().sgSlavesOpen = open
+    pending[id] = nil
+end
+
 -- Bring all parts of one gate to the same state. Whatever door was toggled (mouse click, E key, menu, zombie)
--- is the one whose state differs from the last synced state; the other parts follow it.
+-- is the request: the leaf follows slave toggles, slaves/blockers follow the rules above.
 local function syncGate(id)
     local leaf = findRole(id, "leaf")
     if not leaf then return end
     local x, y, z = parseId(id)
+    local md = leaf:getModData()
     local lo = leaf:IsOpen()
-    local last = leaf:getModData().sgOpen
-    if last == nil then last = false end
-    local blockers, slaves, anyOpenBlocker, changedSlave = {}, {}, false, nil
+    local last = md.sgOpen or false
+    local slavesOpen = md.sgSlavesOpen or false
+    local changed, openBlockers = nil, {}
+    if lo ~= last then changed = lo end
     for _, o in ipairs(SGGate.parts(id)) do
-        if o:getModData().sgRole == "slave" then
-            slaves[#slaves + 1] = o
-            if o:IsOpen() ~= last then changedSlave = o:IsOpen() end
-        elseif o:getModData().sgRole == "block" then
-            blockers[#blockers + 1] = o
-            if o:IsOpen() then anyOpenBlocker = true end
+        local role = o:getModData().sgRole
+        if role == "slave" and changed == nil and o:IsOpen() ~= slavesOpen then changed = o:IsOpen() end
+        if role == "block" and o:IsOpen() then openBlockers[#openBlockers + 1] = o end
+    end
+    for _, o in ipairs(openBlockers) do toggleDoor(o) end -- a pocket blocker must stay closed
+    if changed == nil then return end
+    if changed == last and lo == last then
+        setSlaves(id, slavesOpen) -- redundant request (e.g. a slave toggled while opening): restore
+        return
+    end
+    local target = changed
+    if lo ~= target then toggleDoor(leaf) end
+    SGGate.applyModel(leaf)
+    md.sgOpen = target
+    setSlaves(id, false)
+    md.sgSlavesOpen = false
+    if target then setBlockers(id, md.sgType, x, y, z, true) end
+    pending[id] = true
+    log("gate " .. id .. (target and " opening" or " closing"))
+end
+
+Events.OnTick.Add(function()
+    if next(pending) == nil then return end
+    for id, _ in pairs(pending) do
+        local leaf = findRole(id, "leaf")
+        if not leaf then
+            pending[id] = nil
+        elseif not leaf:isAnimating() then
+            finalize(id)
+            log("gate " .. id .. " settled")
         end
     end
-    if lo == last and changedSlave == nil and not anyOpenBlocker then return end
-    local target = last
-    if lo ~= last then target = lo elseif changedSlave ~= nil then target = changedSlave end
-    if lo ~= target then toggleDoor(leaf) end
-    for _, slave in ipairs(slaves) do if slave:IsOpen() ~= target then toggleDoor(slave) end end
-    for _, o in ipairs(blockers) do removeObj(o) end
-    if target then addPocketBlockers(id, leaf:getModData().sgType, x, y, z) end
-    SGGate.applyModel(leaf)
-    leaf:getModData().sgOpen = target
-    log("gate " .. id .. (target and " opened" or " closed"))
-end
+end)
+
+-- a save made mid-motion leaves slaves/blockers in an intermediate state: normalise all loaded gates
+Events.OnGameStart.Add(function()
+    for id, _ in pairs(registry()) do pcall(finalize, id) end
+end)
 
 local reconciling = false
 function SGGate.reconcile()
@@ -247,6 +306,7 @@ function SGGate.toggle(id)
 end
 
 function SGGate.remove(id)
+    pending[id] = nil
     local parts = SGGate.parts(id) -- retain width before deleting its registry entry
     registry()[id] = nil
     for _, o in ipairs(parts) do removeObj(o) end

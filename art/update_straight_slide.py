@@ -6,6 +6,7 @@ scene=bpy.context.scene; col=bpy.data.collections['SlidingGates']; mat=bpy.data.
 assert bpy.data.objects['SG_Rig'].name in scene.objects, 'Select the original two-cell workbench before running this updater'
 ROOT=r'E:\git\SlidingGates\art'
 WIDTH=2
+CLEARANCE=0.10
 import os, random
 exec(source[source.index('palette ='):source.index("mat=bpy.data.materials.new")])
 exec(source[source.index('def rod('):source.index("gate=mesh('SG_Leaf'")])
@@ -16,19 +17,19 @@ for name,fn in [('SG_Leaf',leaf),('SG_Post_Left',catcher),('SG_Post_Right',post)
     obj=bpy.data.objects[name]; fresh=mesh('SG_UpdateTemp',fn); obj.data=fresh.data
     bpy.data.objects.remove(fresh,do_unlink=True)
     if name=='SG_Leaf':
-        for vertex in obj.data.vertices: vertex.co.y+=0.18
+        for vertex in obj.data.vertices: vertex.co.y+=CLEARANCE
         group=obj.vertex_groups.get('DoorBone') or obj.vertex_groups.new(name='DoorBone')
         group.add(list(range(len(obj.data.vertices))),1,'REPLACE')
     if name=='SG_Rail_OneCell':
         for index in range(1,4):
             bpy.data.objects['SG_Rail_Preview_'+str(index)].data=obj.data
 # Match build_chainlink.py and SG_Drive_Static: motor pinion meets the rack
-# at Blender Y=0.125 (leaf clearance 0.18 minus rack offset 0.055).
+# at Blender Y=0.045 (leaf clearance 0.10 minus rack offset 0.055).
 bpy.data.objects['SG_Drive'].location=(2.0,-0.22,0)
-rig=bpy.data.objects['SG_Rig']; rig['fence_clearance']=0.18
+rig=bpy.data.objects['SG_Rig']; rig['fence_clearance']=CLEARANCE
 if 'outward_offset' in rig: del rig['outward_offset']
 exec(source[source.index('def animate('):source.index("scene['SG_notes']")])
-scene['SG_notes']='Fixed clearance 0.18; straight sliding 2 cells; duration 3 seconds.'
+scene['SG_notes']='Fixed clearance 0.10; straight sliding 2 cells; duration 3 seconds.'
 exec(compile(open(r'E:\git\SlidingGates\art\export_chainlink.py',encoding='utf-8').read(),'export_chainlink.py','exec'))
 for track in rig.animation_data.nla_tracks:
     rig.animation_data.action=track.strips[0].action

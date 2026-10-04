@@ -22,7 +22,7 @@ rig,gate=env['rig'],env['gate']
 for obj in env['col'].objects:
     obj.name='SG_'+str(width)+'_'+obj.name.removeprefix('SG_')
 env['col'].name='SlidingGates_'+str(width)
-scene['SG_notes']=f'{width}-cell leaf and stroke; fixed clearance 0.18; duration {width*1.5:g} seconds; separate variant scene.'
+scene['SG_notes']=f'{width}-cell leaf and stroke; fixed clearance 0.10; duration {width*1.5:g} seconds; separate variant scene.'
 xs=[v.co.x for v in gate.data.vertices]
 assert min(xs)>=-1e-6 and max(xs)<=width+1e-6
 for track in rig.animation_data.nla_tracks:

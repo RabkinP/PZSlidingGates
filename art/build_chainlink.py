@@ -7,6 +7,7 @@ OUT = os.path.join(ROOT, 'exports')
 os.makedirs(OUT, exist_ok=True)
 scene = bpy.context.scene
 WIDTH = int(globals().get('GATE_WIDTH', 2))
+CLEARANCE = 0.10
 assert WIDTH >= 2
 SAVE_PATH = globals().get('GATE_SAVE_PATH', os.path.join(ROOT, 'SG_ChainLink.blend'))
 reference = bpy.data.collections.new('VanillaReference')
@@ -112,7 +113,7 @@ def leaf(v,f,s):
         rod((x,-0.025,0.0975),(x,0.025,0.0975),0.055,v,f,s,6,10)
 
 gate=mesh('SG_Leaf',leaf)
-for vertex in gate.data.vertices: vertex.co.y += 0.18
+for vertex in gate.data.vertices: vertex.co.y += CLEARANCE
 def post(v,f,s):
     # Square steel post provides a flat face for the bolted guide bracket.
     box((0,0,1.01),(0.076,0.076,2.02),v,f,s,0)
@@ -122,9 +123,13 @@ def post(v,f,s):
     box((0,0.044,1.89),(0.15,0.012,0.24),v,f,s,2)
     # Two roller stations straddle the post along the direction of travel.
     # World X 1.88 and 2.12: at least one grips the top rail at any pose.
-    box((-0.04,0.155,1.975),(0.42,0.25,0.025),v,f,s,0)
+    # Short shelf with a central notch: the rear rollers move closer to the
+    # fence without pushing the shelf through the unchanged post.
+    box((-0.15,0.1125,1.975),(0.20,0.175,0.025),v,f,s,0)
+    box((0.11,0.1125,1.975),(0.12,0.175,0.025),v,f,s,0)
+    box((0,0.125,1.975),(0.10,0.15,0.025),v,f,s,0)
     for x in (-0.16,0.08):
-        for y in (0.131,0.229):
+        for y in (CLEARANCE-0.049,CLEARANCE+0.049):
             rod((x,y,1.82),(x,y,1.9625),0.006,v,f,s,5)
             rod((x,y,1.83),(x,y,1.93),0.022,v,f,s,6,10)
             rod((x,y,1.9875),(x,y,1.9995),0.010,v,f,s,5,6)
@@ -132,7 +137,7 @@ def post(v,f,s):
     for x in (-0.075,0.075):
         start=len(v)
         for dx in (-0.006,0.006):
-            for y,z in [(0.05,1.9625),(0.05,1.83),(0.15,1.9625)]:
+            for y,z in [(0.05,1.9625),(0.05,1.83),(0.10,1.9625)]:
                 v.append((x+dx,y,z))
         for face in [(0,2,1),(3,4,5),(0,1,4,3),(1,2,5,4),(2,0,3,5)]:
             f.append(tuple(start+i for i in face)); s.append(0)
@@ -147,15 +152,15 @@ def catcher(v,f,s):
     for z in (0.12,1.88):
         # Bolted arm carries an open-ended U receiver, facing the approaching leaf.
         box((0,0.044,z),(0.07,0.012,0.14),v,f,s,2)
-        box((0,0.111,z),(0.045,0.122,0.045),v,f,s,0)
-        box((0.02,0.18,z),(0.016,0.10,0.10),v,f,s,2)
-        for y in (0.134,0.226): box((0.067,y,z),(0.11,0.012,0.10),v,f,s,0)
-        if z<1: box((0.067,0.18,0.09),(0.11,0.08,0.012),v,f,s,0)
+        box((0,0.071,z),(0.045,0.042,0.045),v,f,s,0)
+        box((0.02,CLEARANCE,z),(0.016,0.10,0.10),v,f,s,2)
+        for y in (CLEARANCE-0.046,CLEARANCE+0.046): box((0.067,y,z),(0.11,0.012,0.10),v,f,s,0)
+        if z<1: box((0.067,CLEARANCE,0.088),(0.11,0.08,0.012),v,f,s,0)
         for dz in (-0.048,0.048): rod((0,0.050,z+dz),(0,0.062,z+dz),0.009,v,f,s,5,6)
 post_a=mesh('SG_Post_Left',catcher); post_a.location.x=-0.04
 post_b=mesh('SG_Post_Right',post); post_b.location.x=WIDTH+0.04
 def rail_piece(v,f,s):
-    box((0.5,0.18,0.0315),(1,0.025,0.022),v,f,s,4)
+    box((0.5,CLEARANCE,0.0315),(1,0.025,0.022),v,f,s,4)
 rail=mesh('SG_Rail_OneCell',rail_piece)
 for i in range(1,2*WIDTH):
     o=bpy.data.objects.new('SG_Rail_Preview_'+str(i),rail.data); col.objects.link(o); o.location.x=i
@@ -166,11 +171,14 @@ def motor(v,f,s):
     for z in (0.2,0.23,0.26,0.29): box((0,-0.145,z),(0.14,0.012,0.009),v,f,s,6)
     box((0,-0.15,0.36),(0.085,0.012,0.04),v,f,s,7)
     # Compact offset gearbox routes around the post at world X=2.04.
-    # The connecting neck is at X=1.94; the output shaft starts past Y=0.038.
-    box((-0.06,0.245,0.19),(0.09,0.23,0.07),v,f,s,2)
-    box((-0.03,0.31,0.19),(0.10,0.06,0.07),v,f,s,2)
-    rod((0,0.325,0.19),(0,0.365,0.19),0.016,v,f,s,5,8)
-    rod((0,0.325,0.19),(0,0.365,0.19),0.055,v,f,s,2,12)
+    # Tip ends 0.08 earlier, at world Y=0.065. The lateral connection
+    # stays in front of the post face Y=0.038 (0.002 clearance).
+    box((-0.06,0.205,0.19),(0.09,0.15,0.07),v,f,s,2)
+    box((-0.03,0.27,0.19),(0.10,0.02,0.07),v,f,s,2)
+    rod((0,0.260,0.19),(0,0.285,0.19),0.016,v,f,s,5,8)
+    # Tangent to the rack tooth roots at Z=0.230, rather than a solid
+    # oversized disk penetrating the moving teeth.
+    rod((0,0.260,0.19),(0,0.285,0.19),0.040,v,f,s,2,12)
 motor_obj=mesh('SG_Drive',motor); motor_obj.location=(WIDTH,-0.22,0)
 
 arm=bpy.data.armatures.new('SG_Rig'); rig=bpy.data.objects.new('SG_Rig',arm); col.objects.link(rig)
@@ -179,7 +187,7 @@ bpy.ops.object.mode_set(mode='EDIT'); bone=arm.edit_bones.new('DoorBone'); bone.
 group=gate.vertex_groups.new(name='DoorBone'); group.add(list(range(len(gate.data.vertices))),1,'REPLACE')
 mod=gate.modifiers.new('DoorBone','ARMATURE'); mod.object=rig; gate.parent=rig
 scene.render.fps=24; scene.frame_start=1; scene.frame_end=1+round(WIDTH*1.5*24)
-rig['cell_width']=1.0; rig['gate_width_cells']=WIDTH; rig['fence_clearance']=0.18; rig['duration_seconds']=WIDTH*1.5
+rig['cell_width']=1.0; rig['gate_width_cells']=WIDTH; rig['fence_clearance']=CLEARANCE; rig['duration_seconds']=WIDTH*1.5
 def animate(direction):
     scene.frame_end=1+round(WIDTH*1.5*scene.render.fps)
     rig['duration_seconds']=WIDTH*1.5
@@ -194,7 +202,7 @@ def animate(direction):
     rig.animation_data.action=rig.animation_data.nla_tracks[0].strips[0].action
     scene.frame_set(1)
 animate(1)
-scene['SG_notes']=f'1 cell = 1 unit; height 1.9; fixed fence clearance 0.18; straight slide {WIDTH} cells in {WIDTH*1.5:g} seconds. Validate PZ scale/origin and clipping.'
+scene['SG_notes']=f'1 cell = 1 unit; height 1.9; fixed fence clearance {CLEARANCE:g}; straight slide {WIDTH} cells in {WIDTH*1.5:g} seconds. Validate PZ scale/origin and clipping.'
 
 # A clean orthographic modelling view; original startup scene remains untouched.
 for area in bpy.context.screen.areas:

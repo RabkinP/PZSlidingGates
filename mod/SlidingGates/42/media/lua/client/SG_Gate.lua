@@ -188,7 +188,7 @@ function SGGate.build(sq, typeId, healthBonus)
     local width = t.width
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
     local id = x .. "," .. y .. "," .. z
-    registry()[id] = { width = width, health = t.baseHealth + (healthBonus or 0) }
+    registry()[id] = { width = width, type = typeId, health = t.baseHealth + (healthBonus or 0) }
     makeDoor(sqAt(x - 1, y, z), typeId, id, "leaf", t.leafModel)
     for k = 1, width do makeDoor(sqAt(x - k, y, z), typeId, id, "slave", "SG_Hidden") end -- collision of the opening
     makeStatic(sq, id, "post", "SG_CatcherPost_Static")
@@ -416,7 +416,15 @@ function SGGate.destroyGate(id, destroyer)
     local leaf = findRole(id, "leaf")
     local x, y, z = parseId(id)
     local dropSq = (leaf and leaf:getSquare()) or sqAt(x - 1, y, z)
-    local typeId = leaf and leaf:getModData().sgType
+    local entry = registry()[id]
+    local typeId = (leaf and leaf:getModData().sgType) or (type(entry) == "table" and entry.type) or nil
+    if not typeId then
+        -- gates built before the type was recorded: derive it from any remaining door part, else from the width
+        for _, o in ipairs(SGGate.parts(id)) do
+            if o:getModData().sgType then typeId = o:getModData().sgType; break end
+        end
+        typeId = typeId or (gateWidth(id) == 4 and "chainlink4" or "chainlink")
+    end
     local parts = SGGate.parts(id)
     moving[id] = nil
     unresolved[id] = nil

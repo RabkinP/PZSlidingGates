@@ -79,6 +79,19 @@ local function install()
         end
     end
 
+    -- the sledgehammer "destroy" action removes the picked object directly (no OnDestroyIsoThumpable event):
+    -- a gate part removed that way takes the whole gate with it
+    if ISDestroyStuffAction and ISDestroyStuffAction.complete then
+        local original = ISDestroyStuffAction.complete
+        function ISDestroyStuffAction:complete()
+            local gateId
+            if self.item and self.item.getModData then gateId = self.item:getModData().sgGate end
+            local result = original(self)
+            if gateId and result then SGGate.destroyGate(gateId, self.character) end
+            return result
+        end
+    end
+
     -- "Open door" / "Close door" in the world context menu
     if ISWorldObjectContextMenu and ISWorldObjectContextMenu.onOpenCloseDoor then
         local original = ISWorldObjectContextMenu.onOpenCloseDoor

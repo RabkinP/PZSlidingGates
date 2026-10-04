@@ -33,6 +33,12 @@ local TYPES = {
 -- door keeps the vision block of the fence. Used for pocket blockers on cells that already have a fence.
 local OPAQUE_DOOR_SPRITES = { "fixtures_doors_01_69", "fixtures_doors_01_71" }
 
+-- Vehicles do not use our door logic: the physics (Bullet) shape of a square comes from its sprite properties
+-- (IsoChunk.calcPhysics). A static hidden object whose sprite has PhysicsShape = WallN gives vehicles a wall on the
+-- N edge of the square; it is present exactly where the gate blocks walking (and not on fence cells, which already
+-- have a wall shape). Vanilla double doors do the same with their PhysicsShape tiles.
+local PHYSICS_SPRITE_N = "fixtures_doors_fences_01_36"
+
 -- Older saved registry entries are true and represent the original two-cell gate.
 local function gateWidth(id)
     local entry = (ModData.getOrCreate("SlidingGates").gates or {})[id]
@@ -87,7 +93,7 @@ local function makeDoor(sq, typeId, id, role, modelBase, spritePair)
     obj:setIsDoor(true)
     obj:setCanPassThrough(false)
     obj:setIsThumpable(true)
-    tag(obj, id, role, { sgBase = modelBase, sgType = typeId })
+    tag(obj, id, role, { sgBase = modelBase, sgType = typeId, sgOpaque = spritePair ~= nil })
     sq:AddSpecialObject(obj)
     SGGate.applyModel(obj)
     sq:RecalcAllWithNeighbours(true)
@@ -194,6 +200,7 @@ function SGGate.build(sq, typeId, healthBonus)
     makeStatic(sq, id, "post", "SG_CatcherPost_Static")
     makeStatic(sqAt(x - width, y, z), id, "post", "SG_GuidePost_Static")
     for k = 0, 2 * width - 1 do makeStatic(sqAt(x - k, y, z), id, "rail", "SG_Rail_Static") end
+    SGGate.finalize(id) -- initial closed state: physics colliders on the opening cells
     log("gate built " .. id .. " (no drive)")
     return id
 end
@@ -245,15 +252,35 @@ end
 -- parts of the gate indexed by cell number k (cell x0-k): slaves[k], blockers[k]
 local function indexParts(id)
     local x = parseId(id)
-    local slaves, blockers = {}, {}
+    local slaves, blockers, colliders = {}, {}, {}
     for _, o in ipairs(SGGate.parts(id)) do
         local role, sq = o:getModData().sgRole, o:getSquare()
         if sq then
             local k = x - sq:getX()
-            if role == "slave" then slaves[k] = o elseif role == "block" then blockers[k] = o end
+            if role == "slave" then slaves[k] = o
+            elseif role == "block" then blockers[k] = o
+            elseif role == "collider" then colliders[k] = o end
         end
     end
-    return slaves, blockers
+    return slaves, blockers, colliders
+end
+
+local function setCollider(colliders, id, x, y, z, k, present)
+    local o = colliders[k]
+    if present and not o then
+        local sq = sqAt(x - k, y, z)
+        if sq then
+            local obj = IsoObject.new(getWorld():getCell(), sq, PHYSICS_SPRITE_N)
+            obj:setSpriteModelName("Base.SG_Hidden")
+            tag(obj, id, "collider")
+            sq:AddTileObject(obj)
+            sq:RecalcAllWithNeighbours(true)
+            colliders[k] = obj
+        end
+    elseif not present and o then
+        removeObj(o)
+        colliders[k] = nil
+    end
 end
 
 local function setSlave(slaves, k, open)
@@ -290,29 +317,40 @@ local function finalize(id)
         log("gate " .. id .. ": leaf state corrected")
     end
     SGGate.applyModel(leaf)
-    local slaves, blockers = indexParts(id)
-    for k = 1, width do setSlave(slaves, k, open) end
-    for k = width + 1, 2 * width do setBlocker(blockers, id, md.sgType, x, y, z, k, open) end
+    local slaves, blockers, colliders = indexParts(id)
+    for k = 1, width do
+        setSlave(slaves, k, open)
+        setCollider(colliders, id, x, y, z, k, not open)
+    end
+    for k = width + 1, 2 * width do
+        setBlocker(blockers, id, md.sgType, x, y, z, k, open)
+        local b = blockers[k]
+        setCollider(colliders, id, x, y, z, k, b ~= nil and not b:getModData().sgOpaque)
+    end
     md.sgSlavesOpen = open
     md.sgMoving = nil
     entryOf(id).moving = nil
     moving[id] = nil
     return true
 end
+SGGate.finalize = finalize
 
 -- collision of every cell for leaf progress p (0..1)
 local function applyProgress(id, tr, p)
-    local slaves, blockers = indexParts(id)
+    local slaves, blockers, colliders = indexParts(id)
     local W = tr.width
     for k = 1, W do
         local open
         if tr.opening then open = p >= k / W - EPS else open = p < (W - k) / W - EPS end
         setSlave(slaves, k, open)
+        setCollider(colliders, id, tr.x, tr.y, tr.z, k, not open)
     end
     for j = 1, W do
         local present
         if tr.opening then present = p >= (j - 1) / W - EPS else present = p < 1 - (j - 1) / W - EPS end
         setBlocker(blockers, id, tr.typeId, tr.x, tr.y, tr.z, W + j, present)
+        local b = blockers[W + j]
+        setCollider(colliders, id, tr.x, tr.y, tr.z, W + j, b ~= nil and not b:getModData().sgOpaque)
     end
 end
 

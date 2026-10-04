@@ -167,7 +167,7 @@ module Base
     spriteModel SG_ChainLink_N_Left_Closed
     {
         modelScript = Base.SG_ChainLink_N_Left,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -177,7 +177,7 @@ module Base
     spriteModel SG_ChainLink_N_Left_Open
     {
         modelScript = Base.SG_ChainLink_N_Left,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -187,7 +187,7 @@ module Base
     spriteModel SG_ChainLink_N_Right_Closed
     {
         modelScript = Base.SG_ChainLink_N_Right,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -197,7 +197,7 @@ module Base
     spriteModel SG_ChainLink_N_Right_Open
     {
         modelScript = Base.SG_ChainLink_N_Right,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -207,7 +207,7 @@ module Base
     spriteModel SG_ChainLink_W_Left_Closed
     {
         modelScript = Base.SG_ChainLink_W_Left,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -217,7 +217,7 @@ module Base
     spriteModel SG_ChainLink_W_Left_Open
     {
         modelScript = Base.SG_ChainLink_W_Left,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -227,7 +227,7 @@ module Base
     spriteModel SG_ChainLink_W_Right_Closed
     {
         modelScript = Base.SG_ChainLink_W_Right,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -237,7 +237,7 @@ module Base
     spriteModel SG_ChainLink_W_Right_Open
     {
         modelScript = Base.SG_ChainLink_W_Right,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -247,7 +247,7 @@ module Base
     spriteModel SG_ChainLink_4_N_Left_Closed
     {
         modelScript = Base.SG_ChainLink_4_N_Left,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -257,7 +257,7 @@ module Base
     spriteModel SG_ChainLink_4_N_Left_Open
     {
         modelScript = Base.SG_ChainLink_4_N_Left,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -267,7 +267,7 @@ module Base
     spriteModel SG_ChainLink_4_N_Right_Closed
     {
         modelScript = Base.SG_ChainLink_4_N_Right,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -277,7 +277,7 @@ module Base
     spriteModel SG_ChainLink_4_N_Right_Open
     {
         modelScript = Base.SG_ChainLink_4_N_Right,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -287,7 +287,7 @@ module Base
     spriteModel SG_ChainLink_4_W_Left_Closed
     {
         modelScript = Base.SG_ChainLink_4_W_Left,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -297,7 +297,7 @@ module Base
     spriteModel SG_ChainLink_4_W_Left_Open
     {
         modelScript = Base.SG_ChainLink_4_W_Left,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -307,7 +307,7 @@ module Base
     spriteModel SG_ChainLink_4_W_Right_Closed
     {
         modelScript = Base.SG_ChainLink_4_W_Right,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -317,7 +317,7 @@ module Base
     spriteModel SG_ChainLink_4_W_Right_Open
     {
         modelScript = Base.SG_ChainLink_4_W_Right,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -327,7 +327,7 @@ module Base
     spriteModel SG_ChainLink_N_Left_G_Closed
     {
         modelScript = Base.SG_ChainLink_N_Left,
-        translate = 0.5 0.0 -0.44,
+        translate = 0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -337,7 +337,7 @@ module Base
     spriteModel SG_ChainLink_N_Left_G_Open
     {
         modelScript = Base.SG_ChainLink_N_Left,
-        translate = 0.5 0.0 -0.44,
+        translate = 0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -347,7 +347,7 @@ module Base
     spriteModel SG_ChainLink_N_Right_G_Closed
     {
         modelScript = Base.SG_ChainLink_N_Right,
-        translate = 0.5 0.0 -0.44,
+        translate = 0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -357,7 +357,7 @@ module Base
     spriteModel SG_ChainLink_N_Right_G_Open
     {
         modelScript = Base.SG_ChainLink_N_Right,
-        translate = 0.5 0.0 -0.44,
+        translate = 0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -367,7 +367,7 @@ module Base
     spriteModel SG_ChainLink_4_N_Left_G_Closed
     {
         modelScript = Base.SG_ChainLink_4_N_Left,
-        translate = 0.5 0.0 -0.44,
+        translate = 0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -377,7 +377,7 @@ module Base
     spriteModel SG_ChainLink_4_N_Left_G_Open
     {
         modelScript = Base.SG_ChainLink_4_N_Left,
-        translate = 0.5 0.0 -0.44,
+        translate = 0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -387,7 +387,7 @@ module Base
     spriteModel SG_ChainLink_4_N_Right_G_Closed
     {
         modelScript = Base.SG_ChainLink_4_N_Right,
-        translate = 0.5 0.0 -0.44,
+        translate = 0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -397,7 +397,7 @@ module Base
     spriteModel SG_ChainLink_4_N_Right_G_Open
     {
         modelScript = Base.SG_ChainLink_4_N_Right,
-        translate = 0.5 0.0 -0.44,
+        translate = 0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
         animation = Open,
@@ -407,7 +407,7 @@ module Base
     spriteModel SG_GuidePost_Static
     {
         modelScript = Base.SG_GuidePost,
-        translate = -0.54 0.0 -0.44,
+        translate = -0.54 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
     }
@@ -415,7 +415,7 @@ module Base
     spriteModel SG_CatcherPost_Static
     {
         modelScript = Base.SG_CatcherPost,
-        translate = -0.46 0.0 -0.44,
+        translate = -0.46 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
     }
@@ -423,7 +423,7 @@ module Base
     spriteModel SG_Rail_Static
     {
         modelScript = Base.SG_Rail,
-        translate = -0.5 0.0 -0.44,
+        translate = -0.5 0.0 -0.38,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
     }
@@ -431,7 +431,7 @@ module Base
     spriteModel SG_Drive_Static
     {
         modelScript = Base.SG_Drive,
-        translate = -0.5 0.0 -0.66,
+        translate = -0.5 0.0 -0.6,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
     }

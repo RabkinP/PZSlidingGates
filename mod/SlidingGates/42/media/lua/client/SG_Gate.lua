@@ -12,11 +12,13 @@ SGGate = SGGate or {}
 local TYPES = {
     chainlink = {
         width = 2,
+        clipSeconds = 3.0, -- Open/Close clip length (1.5 s per cell); played at ANIM_SPEED
         leafModel = "SG_ChainLink_N_Right_G", -- spriteModels *_G_*: leaf carrier is one cell to the left of the model origin
         doorSprites = { "fixtures_doors_fences_01_129", "fixtures_doors_fences_01_131" }, -- closed, open (N edge)
     },
     chainlink4 = {
         width = 4,
+        clipSeconds = 6.0,
         leafModel = "SG_ChainLink_4_N_Right_G",
         doorSprites = { "fixtures_doors_fences_01_129", "fixtures_doors_fences_01_131" },
     },
@@ -187,7 +189,6 @@ end
 -- Progress comes from our own clock running at the engine's rate; the end of the motion is the engine's
 -- isAnimating() flag of the leaf. A "moving" mark (registry + leaf modData) is held for the duration of the motion
 -- so a gate left in an intermediate state by a save/crash is completed (opened or closed) at game start.
-local ANIM_SECONDS = 2.0   -- clip length (frames 1..49 at 24 fps)
 local ANIM_SPEED = 1.5     -- IsoObjectAnimations track speed
 local EPS = 1e-6
 local moving = {}          -- id -> { opening, t, width, typeId, x, y, z }
@@ -276,7 +277,7 @@ local function startMotion(id, leaf, target)
     local md = leaf:getModData()
     md.sgMoving = target
     entryOf(id).moving = target
-    local tr = { opening = target, t = 0, width = gateWidth(id), typeId = md.sgType, x = x, y = y, z = z }
+    local tr = { opening = target, t = 0, seconds = TYPES[md.sgType].clipSeconds, width = gateWidth(id), typeId = md.sgType, x = x, y = y, z = z }
     moving[id] = tr
     applyProgress(id, tr, 0)
 end
@@ -325,7 +326,7 @@ Events.OnTick.Add(function()
                 log("gate " .. id .. " settled")
             else
                 tr.t = tr.t + step
-                applyProgress(id, tr, math.min(tr.t / ANIM_SECONDS, 1))
+                applyProgress(id, tr, math.min(tr.t / tr.seconds, 1))
             end
         end
     end

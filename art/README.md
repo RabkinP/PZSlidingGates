@@ -56,3 +56,30 @@ preserves the catcher geometry and rebuilds the atlas as well as meshes.
 the viewport to the same framing. It does not reproduce the game's lighting.
 The previous art is preserved in `before_visual_polish/`.
 
+
+## Two-cell leaf revision (2026-10-04)
+
+Supersedes the tail/guide-station dimensions above. The complete moving leaf,
+including rack and carriage, fits X 0..2 exactly. The carriage has four upper
+rollers at X 1.82/1.94 straddling a fixed overhead guide rib spanning world
+X 1.75..4.01 in the parking zone. Static guidance adds no moving door tail.
+The drive moved to X 2.0, keeping Y -0.22; current game translation is
+(-0.5,0,-0.6), retaining the calibrated perpendicular anchor.
+The N-right debug assembly is supported. Left-opening leaves mirror the
+carriage; their static beam/post arrangement also needs mirroring.
+The preceding art is preserved in before_two_cell_leaf/.
+
+## Short post-guide revision (2026-10-04)
+
+Supersedes the overhead beam revision above. Removed the beam and leaf-mounted
+carriage. A short post bracket carries two pairs of rollers at world X 1.88
+and 2.12; at least one full pair engages the top rail at every animation frame.
+The moving mesh still stays within X 0..2. The motor has a compact offset
+gearbox passing beside the post, and a short output shaft beyond its front
+face. Drive/post mesh intersection checks report zero surface intersections.
+The rail is now 0.025 wide and 0.022 high, with a muted brown steel swatch.
+Wire pitch is 0.13 and radius 0.005; galvanized wire and caps are less bright,
+while dark fittings are lighter. A welded crossmember supports the handle.
+Copies of the previous scene, scripts, texture and GLBs are in
+before_post_roller_revision/. These are game-scale art adjustments, awaiting
+in-game visual verification under the actual lighting and zoom.

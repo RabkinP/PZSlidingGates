@@ -17,8 +17,8 @@ col = bpy.data.collections.new('SlidingGates')
 scene.collection.children.link(col)
 
 # Shared opaque atlas: the mesh holes are geometry, so no alpha sorting is needed.
-palette = [(0.32,0.38,0.35,1), (0.55,0.59,0.57,1), (0.13,0.16,0.15,1),
-           (0.27,0.33,0.23,1), (0.39,0.24,0.14,1), (0.64,0.67,0.63,1),
+palette = [(0.28,0.33,0.30,1), (0.39,0.43,0.40,1), (0.20,0.23,0.21,1),
+           (0.27,0.33,0.23,1), (0.24,0.22,0.18,1), (0.48,0.51,0.47,1),
            (0.09,0.11,0.10,1), (0.57,0.46,0.24,1)]
 img = bpy.data.images.get('SG_ChainLink_Atlas') or bpy.data.images.new('SG_ChainLink_Atlas', width=128, height=128, alpha=True)
 random.seed(42)
@@ -84,23 +84,19 @@ def leaf(v,f,s):
     xmin,xmax,zmin,zmax=0.05,1.95,0.145,1.855
     for slope in (1,-1):
         for k in range(-25,50):
-            c=k*0.105; pts=[]
+            c=k*0.13; pts=[]
             for x in (xmin,xmax):
                 z=slope*x+c
                 if zmin<=z<=zmax: pts.append((x,0.006*slope,z))
             for z in (zmin,zmax):
                 x=(z-c)/slope
                 if xmin<=x<=xmax: pts.append((x,0.006*slope,z))
-            if len(pts)==2: rod(pts[0],pts[1],0.0055,v,f,s,1,6)
+            if len(pts)==2: rod(pts[0],pts[1],0.005,v,f,s,1,6)
     box((1.0,-0.055,0.28),(2.0,0.055,0.04),v,f,s,2)
     for i in range(44):
         box((0.025+i*0.045,-0.055,0.245),(0.0225,0.055,0.03),v,f,s,5)
-    # Leaf-mounted paired rollers straddle the fixed overhead guide rib.
-    box((1.88,0,1.915),(0.20,0.14,0.02),v,f,s,0)
-    for x in (1.82,1.94):
-        for y in (-0.044,0.044):
-            rod((x,y,1.925),(x,y,2.025),0.006,v,f,s,5)
-            rod((x,y,1.94),(x,y,2.015),0.022,v,f,s,6,10)
+    # Mount the handle on a short crossmember, rather than on loose wire.
+    box((1.49,0,0.95),(0.97,0.045,0.045),v,f,s,0)
     box((1.8,-0.055,0.95),(0.07,0.07,0.13),v,f,s,2)
     rod((1.79,-0.10,0.88),(1.79,-0.10,1.02),0.012,v,f,s,5)
     for x in (0.22,1.78):
@@ -115,15 +111,19 @@ def post(v,f,s):
     box((0,0,2.02),(0.09,0.09,0.035),v,f,s,5)
     # Vertical mounting plate touches the front face; the shelf starts outside it.
     box((0,0.044,1.89),(0.15,0.012,0.24),v,f,s,2)
-    box((0.0,0.155,2.065),(0.20,0.25,0.025),v,f,s,0)
-    # Fixed guide spans world X 1.75..4.01. The moving carriage stays
-    # captured for the whole stroke, without extending the moving leaf.
-    box((0.84,0.18,2.03),(2.26,0.04,0.12),v,f,s,0)
+    # Two roller stations straddle the post along the direction of travel.
+    # World X 1.88 and 2.12: at least one grips the top rail at any pose.
+    box((-0.04,0.155,1.975),(0.42,0.25,0.025),v,f,s,0)
+    for x in (-0.16,0.08):
+        for y in (0.131,0.229):
+            rod((x,y,1.82),(x,y,1.9625),0.006,v,f,s,5)
+            rod((x,y,1.83),(x,y,1.93),0.022,v,f,s,6,10)
+            rod((x,y,1.9875),(x,y,1.9995),0.010,v,f,s,5,6)
     # Two triangular gussets brace the shelf from below.
     for x in (-0.075,0.075):
         start=len(v)
         for dx in (-0.006,0.006):
-            for y,z in [(0.05,2.0525),(0.05,1.92),(0.15,2.0525)]:
+            for y,z in [(0.05,1.9625),(0.05,1.83),(0.15,1.9625)]:
                 v.append((x+dx,y,z))
         for face in [(0,2,1),(3,4,5),(0,1,4,3),(1,2,5,4),(2,0,3,5)]:
             f.append(tuple(start+i for i in face)); s.append(0)
@@ -145,16 +145,22 @@ def catcher(v,f,s):
         for dz in (-0.048,0.048): rod((0,0.050,z+dz),(0,0.062,z+dz),0.009,v,f,s,5,6)
 post_a=mesh('SG_Post_Left',catcher); post_a.location.x=-0.04
 post_b=mesh('SG_Post_Right',post); post_b.location.x=2.04
-rail=mesh('SG_Rail_OneCell',lambda v,f,s: box((0.5,0.18,0.025),(1,0.04,0.035),v,f,s,2))
+def rail_piece(v,f,s):
+    box((0.5,0.18,0.0315),(1,0.025,0.022),v,f,s,4)
+rail=mesh('SG_Rail_OneCell',rail_piece)
 for i in range(1,4):
     o=bpy.data.objects.new('SG_Rail_Preview_'+str(i),rail.data); col.objects.link(o); o.location.x=i
 def motor(v,f,s):
-    box((0,0,0.055),(0.42,0.35,0.11),v,f,s,2)
+    box((0,0,0.055),(0.42,0.29,0.11),v,f,s,2)
     box((0,0,0.27),(0.32,0.28,0.36),v,f,s,3)
     box((0,0,0.465),(0.35,0.31,0.03),v,f,s,3)
     for z in (0.2,0.23,0.26,0.29): box((0,-0.145,z),(0.14,0.012,0.009),v,f,s,6)
     box((0,-0.15,0.36),(0.085,0.012,0.04),v,f,s,7)
-    rod((0,0.15,0.19),(0,0.365,0.19),0.016,v,f,s,5,8)
+    # Compact offset gearbox routes around the post at world X=2.04.
+    # The connecting neck is at X=1.94; the output shaft starts past Y=0.038.
+    box((-0.06,0.245,0.19),(0.09,0.23,0.07),v,f,s,2)
+    box((-0.03,0.31,0.19),(0.10,0.06,0.07),v,f,s,2)
+    rod((0,0.325,0.19),(0,0.365,0.19),0.016,v,f,s,5,8)
     rod((0,0.325,0.19),(0,0.365,0.19),0.055,v,f,s,2,12)
 motor_obj=mesh('SG_Drive',motor); motor_obj.location=(2.0,-0.22,0)
 

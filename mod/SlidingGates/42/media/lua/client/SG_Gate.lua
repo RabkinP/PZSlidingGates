@@ -107,6 +107,17 @@ local function findRole(id, role)
     end
 end
 
+-- Pocket cells get a blocker only when the N edge is not already blocked (e.g. by a fence): a door-thumpable
+-- placed on a fence cell makes the neighbouring fence sections fade (cutaway), and the fence blocks anyway.
+local function addPocketBlockers(id, typeId, x, y, z)
+    for k = 3, 4 do
+        local sq, north = sqAt(x - k, y, z), sqAt(x - k, y - 1, z)
+        if sq and north and not sq:isBlockedTo(north) then
+            makeDoor(sq, typeId, id, "block", "SG_Hidden")
+        end
+    end
+end
+
 -- Build a gate WITHOUT drive. sq = master (leaf) cell; returns the gate id.
 function SGGate.build(sq, typeId)
     typeId = typeId or "chainlink"
@@ -152,10 +163,7 @@ function SGGate.toggle(id)
     end
     local typeId = leaf:getModData().sgType
     if opening then
-        for k = 3, 4 do
-            local sq = sqAt(x - k, y, z)
-            if sq then makeDoor(sq, typeId, id, "block", "SG_Hidden") end
-        end
+        addPocketBlockers(id, typeId, x, y, z)
     else
         for _, o in ipairs(SGGate.parts(id)) do
             if o:getModData().sgRole == "block" then removeObj(o) end
@@ -169,10 +177,7 @@ function SGGate.debugBlockers(id, on)
     local x, y, z = parseId(id)
     local leaf = findRole(id, "leaf")
     if on then
-        for k = 3, 4 do
-            local sq = sqAt(x - k, y, z)
-            if sq then makeDoor(sq, leaf:getModData().sgType, id, "block", "SG_Hidden") end
-        end
+        addPocketBlockers(id, leaf:getModData().sgType, x, y, z)
     else
         for _, o in ipairs(SGGate.parts(id)) do
             if o:getModData().sgRole == "block" then removeObj(o) end

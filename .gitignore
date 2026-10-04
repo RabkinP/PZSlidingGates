@@ -1,2 +1,4 @@
 *.blend1
 research/decompiled/
+research/render-audit/source/
+research/render-audit/classes/

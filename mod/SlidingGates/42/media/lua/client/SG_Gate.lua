@@ -246,6 +246,13 @@ local function finalize(id)
     local md = leaf:getModData()
     local open = md.sgOpen or false
     local width = gateWidth(id)
+    -- the leaf door and its model pose must match the target too (silent fix: no animation, no sound)
+    if leaf:IsOpen() ~= open then
+        leaf:ToggleDoorSilent()
+        leaf:getSquare():RecalcAllWithNeighbours(true)
+        log("gate " .. id .. ": leaf state corrected")
+    end
+    SGGate.applyModel(leaf)
     local slaves, blockers = indexParts(id)
     for k = 1, width do setSlave(slaves, k, open) end
     for k = width + 1, 2 * width do setBlocker(blockers, id, md.sgType, x, y, z, k, open) end

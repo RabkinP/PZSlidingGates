@@ -179,93 +179,173 @@ function SGGate.removeDrive(id)
 end
 
 -- Collision of the opening is carried by hidden "slave" doors (one per opening cell, also on the leaf cell),
--- the leaf door only carries the animation. Collision follows the animation pessimistically:
---   opening: opening cells stay blocked, pocket cells are blocked at once; slaves open when the leaf stopped
---   closing: opening cells are blocked at once, pocket blockers stay until the leaf stopped
--- so nobody walks through the opening while the leaf is still in it. The end of the motion is the engine's own
--- isAnimating() flag of the leaf (polled only for gates that are in transition).
-local pending = {}
+-- the leaf door only carries the animation. While the leaf moves, collision follows it cell by cell
+-- (pessimistically, a cell is released only after the leaf cleared it and blocked before it arrives):
+--   opening: opening cell k is released when the leaf moved k cells; pocket cell j is blocked when the leaf
+--            is about to enter it
+--   closing: the mirror image
+-- Progress comes from our own clock running at the engine's rate; the end of the motion is the engine's
+-- isAnimating() flag of the leaf. A "moving" mark (registry + leaf modData) is held for the duration of the motion
+-- so a gate left in an intermediate state by a save/crash is completed (opened or closed) at game start.
+local ANIM_SECONDS = 2.0   -- clip length (frames 1..49 at 24 fps)
+local ANIM_SPEED = 1.5     -- IsoObjectAnimations track speed
+local EPS = 1e-6
+local moving = {}          -- id -> { opening, t, width, typeId, x, y, z }
+local unresolved = {}      -- ids whose parts were not loaded when the game started
+local tickCount = 0
 
-local function setSlaves(id, open)
+local function isPaused()
+    local sc = UIManager.getSpeedControls()
+    return sc and sc:getCurrentGameSpeed() == 0
+end
+
+local function entryOf(id)
+    local e = registry()[id]
+    if type(e) ~= "table" then e = { width = 2 }; registry()[id] = e end
+    return e
+end
+
+-- parts of the gate indexed by cell number k (cell x0-k): slaves[k], blockers[k]
+local function indexParts(id)
+    local x = parseId(id)
+    local slaves, blockers = {}, {}
     for _, o in ipairs(SGGate.parts(id)) do
-        if o:getModData().sgRole == "slave" and o:IsOpen() ~= open then toggleDoor(o) end
+        local role, sq = o:getModData().sgRole, o:getSquare()
+        if sq then
+            local k = x - sq:getX()
+            if role == "slave" then slaves[k] = o elseif role == "block" then blockers[k] = o end
+        end
+    end
+    return slaves, blockers
+end
+
+local function setSlave(slaves, k, open)
+    local o = slaves[k]
+    if o and o:IsOpen() ~= open then toggleDoor(o) end
+end
+
+local function setBlocker(blockers, id, typeId, x, y, z, k, present)
+    local o = blockers[k]
+    if present and not o then
+        local sq, north = sqAt(x - k, y, z), sqAt(x - k, y - 1, z)
+        if sq and north and not sq:isBlockedTo(north) then
+            blockers[k] = makeDoor(sq, typeId, id, "block", "SG_Hidden")
+        end
+    elseif not present and o then
+        removeObj(o)
+        blockers[k] = nil
     end
 end
 
-local function setBlockers(id, typeId, x, y, z, present)
-    local existing = {}
-    for _, o in ipairs(SGGate.parts(id)) do
-        if o:getModData().sgRole == "block" then existing[#existing + 1] = o end
-    end
-    if present then
-        if #existing == 0 then addPocketBlockers(id, typeId, x, y, z) end
-    else
-        for _, o in ipairs(existing) do removeObj(o) end
-    end
-end
-
--- Apply the final collision state of an idle gate (idempotent; also used to normalise after loading a save).
+-- Apply the final collision state of an idle gate (idempotent).
 local function finalize(id)
     local leaf = findRole(id, "leaf")
-    if not leaf then return end
+    if not leaf then return false end
     local x, y, z = parseId(id)
-    local open = leaf:getModData().sgOpen or false
-    setSlaves(id, open)
-    setBlockers(id, leaf:getModData().sgType, x, y, z, open)
-    leaf:getModData().sgSlavesOpen = open
-    pending[id] = nil
+    local md = leaf:getModData()
+    local open = md.sgOpen or false
+    local width = gateWidth(id)
+    local slaves, blockers = indexParts(id)
+    for k = 1, width do setSlave(slaves, k, open) end
+    for k = width + 1, 2 * width do setBlocker(blockers, id, md.sgType, x, y, z, k, open) end
+    md.sgSlavesOpen = open
+    md.sgMoving = nil
+    entryOf(id).moving = nil
+    moving[id] = nil
+    return true
+end
+
+-- collision of every cell for leaf progress p (0..1)
+local function applyProgress(id, tr, p)
+    local slaves, blockers = indexParts(id)
+    local W = tr.width
+    for k = 1, W do
+        local open
+        if tr.opening then open = p >= k / W - EPS else open = p < (W - k) / W - EPS end
+        setSlave(slaves, k, open)
+    end
+    for j = 1, W do
+        local present
+        if tr.opening then present = p >= (j - 1) / W - EPS else present = p < 1 - (j - 1) / W - EPS end
+        setBlocker(blockers, id, tr.typeId, tr.x, tr.y, tr.z, W + j, present)
+    end
+end
+
+local function startMotion(id, leaf, target)
+    local x, y, z = parseId(id)
+    local md = leaf:getModData()
+    md.sgMoving = target
+    entryOf(id).moving = target
+    local tr = { opening = target, t = 0, width = gateWidth(id), typeId = md.sgType, x = x, y = y, z = z }
+    moving[id] = tr
+    applyProgress(id, tr, 0)
 end
 
 -- Bring all parts of one gate to the same state. Whatever door was toggled (mouse click, E key, menu, zombie)
--- is the request: the leaf follows slave toggles, slaves/blockers follow the rules above.
+-- is the request: the leaf follows slave toggles, slaves/blockers follow the motion rules above.
 local function syncGate(id)
     local leaf = findRole(id, "leaf")
     if not leaf then return end
-    local x, y, z = parseId(id)
     local md = leaf:getModData()
     local lo = leaf:IsOpen()
     local last = md.sgOpen or false
     local slavesOpen = md.sgSlavesOpen or false
     local changed, openBlockers = nil, {}
     if lo ~= last then changed = lo end
-    for _, o in ipairs(SGGate.parts(id)) do
-        local role = o:getModData().sgRole
-        if role == "slave" and changed == nil and o:IsOpen() ~= slavesOpen then changed = o:IsOpen() end
-        if role == "block" and o:IsOpen() then openBlockers[#openBlockers + 1] = o end
+    local slaves, blockers = indexParts(id)
+    -- a slave that differs from what we expect is a player toggle only when the gate is idle (not moving)
+    if changed == nil and not moving[id] then
+        for _, o in pairs(slaves) do
+            if o:IsOpen() ~= slavesOpen then changed = o:IsOpen(); break end
+        end
     end
+    for _, o in pairs(blockers) do if o:IsOpen() then openBlockers[#openBlockers + 1] = o end end
     for _, o in ipairs(openBlockers) do toggleDoor(o) end -- a pocket blocker must stay closed
     if changed == nil then return end
-    if changed == last and lo == last then
-        setSlaves(id, slavesOpen) -- redundant request (e.g. a slave toggled while opening): restore
-        return
-    end
+    if changed == last and lo == last then return end
     local target = changed
     if lo ~= target then toggleDoor(leaf) end
     SGGate.applyModel(leaf)
     md.sgOpen = target
-    setSlaves(id, false)
-    md.sgSlavesOpen = false
-    if target then setBlockers(id, md.sgType, x, y, z, true) end
-    pending[id] = true
+    startMotion(id, leaf, target)
     log("gate " .. id .. (target and " opening" or " closing"))
 end
 
 Events.OnTick.Add(function()
-    if next(pending) == nil then return end
-    for id, _ in pairs(pending) do
-        local leaf = findRole(id, "leaf")
-        if not leaf then
-            pending[id] = nil
-        elseif not leaf:isAnimating() then
-            finalize(id)
-            log("gate " .. id .. " settled")
+    if next(moving) ~= nil then
+        local ok, delta = pcall(function() return getGameTime():getTimeDelta() end)
+        if not ok or type(delta) ~= "number" then delta = 1 / 48 end -- engine value at normal speed
+        local step = isPaused() and 0 or delta * ANIM_SPEED
+        for id, tr in pairs(moving) do
+            local leaf = findRole(id, "leaf")
+            if not leaf then
+                moving[id] = nil
+            elseif not leaf:isAnimating() and tr.t > 0 then
+                finalize(id)
+                log("gate " .. id .. " settled")
+            else
+                tr.t = tr.t + step
+                applyProgress(id, tr, math.min(tr.t / ANIM_SECONDS, 1))
+            end
+        end
+    end
+    tickCount = tickCount + 1
+    if next(unresolved) ~= nil and tickCount % 60 == 0 then
+        for id, _ in pairs(unresolved) do
+            if finalize(id) then unresolved[id] = nil; log("gate " .. id .. " completed after load") end
         end
     end
 end)
 
--- a save made mid-motion leaves slaves/blockers in an intermediate state: normalise all loaded gates
+-- a save/crash mid-motion leaves slaves/blockers in an intermediate state: complete such gates at start
+-- (gates whose parts are not loaded yet are retried until they are)
 Events.OnGameStart.Add(function()
-    for id, _ in pairs(registry()) do pcall(finalize, id) end
+    for id, e in pairs(registry()) do
+        if type(e) == "table" and e.moving ~= nil then
+            local ok, done = pcall(finalize, id)
+            if not (ok and done) then unresolved[id] = true end
+        end
+    end
 end)
 
 local reconciling = false
@@ -306,7 +386,8 @@ function SGGate.toggle(id)
 end
 
 function SGGate.remove(id)
-    pending[id] = nil
+    moving[id] = nil
+    unresolved[id] = nil
     local parts = SGGate.parts(id) -- retain width before deleting its registry entry
     registry()[id] = nil
     for _, o in ipairs(parts) do removeObj(o) end

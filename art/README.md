@@ -2,6 +2,20 @@
 
 ## Width variants (current)
 
+Current leaf/rail clearance is 0.10 (previously 0.18). Both workbenches were
+updated without moving posts or the drive housing. Roller centres are now
+Y 0.051/0.149, the shorter shelf has a notch around the post, and the catcher
+arms match the new plane. Rack depth is 0.010 with teeth reaching both ends;
+handle fittings face outward to avoid the post during travel. The pinion tip
+ends 0.08 closer at world Y 0.065; radius 0.040 keeps its upper facets below
+the rack tooth roots. This remains a simplified non-rotating pinion.
+
+`update_clearance.py` preserves existing clips and migrates both scenes from
+0.18 to 0.10 once. It checks all Open/Close frames (146 + 290), evaluated-mesh
+surface intersections, roller capture and wheel/rail/nearest-tooth gaps.
+Results: `clearance_checks.json`; native import:
+`research/render-audit/clearance-010-native-import.txt`.
+
 The same `SG_ChainLink.blend` now contains the original two-cell workbench
 and `SG_ChainLink_4_Workbench`. The four-cell leaf opens to one side by four
 units; the two-cell gate takes 3 seconds and the four-cell gate 6 seconds.

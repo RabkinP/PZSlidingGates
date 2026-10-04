@@ -102,13 +102,15 @@ def leaf(v,f,s):
                 x=(z-c)/slope
                 if xmin<=x<=xmax: pts.append((x,0.006*slope,z))
             if len(pts)==2: rod(pts[0],pts[1],0.005,v,f,s,1,6)
-    box((WIDTH/2,-0.055,0.28),(WIDTH,0.055,0.04),v,f,s,2)
-    for i in range(math.floor((WIDTH-0.05)/0.045)+1):
-        box((0.025+i*0.045,-0.055,0.245),(0.0225,0.055,0.03),v,f,s,5)
+    box((WIDTH/2,-0.055,0.28),(WIDTH,0.010,0.04),v,f,s,2)
+    tooth_count=math.floor((WIDTH-0.05)/0.045)+1
+    for i in range(tooth_count):
+        x=.01125+i*(WIDTH-.0225)/(tooth_count-1)
+        box((x,-0.055,0.245),(0.0225,0.010,0.03),v,f,s,5)
     # Mount the handle on a short crossmember, rather than on loose wire.
     box((WIDTH-0.51,0,0.95),(0.97,0.045,0.045),v,f,s,0)
-    box((WIDTH-0.2,-0.055,0.95),(0.07,0.07,0.13),v,f,s,2)
-    rod((WIDTH-0.21,-0.10,0.88),(WIDTH-0.21,-0.10,1.02),0.012,v,f,s,5)
+    box((WIDTH-0.2,0.055,0.95),(0.07,0.07,0.13),v,f,s,2)
+    rod((WIDTH-0.21,0.10,0.88),(WIDTH-0.21,0.10,1.02),0.012,v,f,s,5)
     for x in (0.22,WIDTH-0.22):
         rod((x,-0.025,0.0975),(x,0.025,0.0975),0.055,v,f,s,6,10)
 

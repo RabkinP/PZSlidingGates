@@ -1,0 +1,24 @@
+[
+  {
+    "width": 2,
+    "frames_checked": 146,
+    "clearance": 0.1,
+    "wheel_rail_gap": 0.002691887319087982,
+    "roller_gap": 0.0020000000000000018,
+    "pinion_rack_vertical_gap": 1.0728836041806744e-08,
+    "tangent_contacts": 0,
+    "max_pinion_to_nearest_tooth_gap": 0.0031468451669236725,
+    "post_and_drive_locations_unchanged": true
+  },
+  {
+    "width": 4,
+    "frames_checked": 290,
+    "clearance": 0.1,
+    "wheel_rail_gap": 0.002691887319087982,
+    "roller_gap": 0.0020000000000000018,
+    "pinion_rack_vertical_gap": 1.0728836041806744e-08,
+    "tangent_contacts": 0,
+    "max_pinion_to_nearest_tooth_gap": 0.003110674532821171,
+    "post_and_drive_locations_unchanged": true
+  }
+]

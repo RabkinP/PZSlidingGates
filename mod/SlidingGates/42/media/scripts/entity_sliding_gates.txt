@@ -19,6 +19,8 @@ module Base
     /*
      * The placed tiles are placeholders (they only define the footprint and the cursor): ISBuildIsoEntity:create is
      * wrapped in client/SG_GateBuild.lua and builds the real gate (SGGate.build) instead of the placeholder tiles.
+     * Placeholder sprites must be unused by every other entity (the sprite registry is global): vanilla gates
+     * own 16-19 and 128-131, 0-3/8-15/20-23 are free.
      * Footprint: the opening cells; the catcher post is on the cell right after the row, the pocket extends
      * the other way (checked by the wrapper).
      */
@@ -39,14 +41,14 @@ module Base
             {
                 layer
                 {
-                    row = fixtures_doors_fences_01_128 fixtures_doors_fences_01_130,
+                    row = fixtures_doors_fences_01_8 fixtures_doors_fences_01_10,
                 }
             }
             face N
             {
                 layer
                 {
-                    row = fixtures_doors_fences_01_129 fixtures_doors_fences_01_131,
+                    row = fixtures_doors_fences_01_9 fixtures_doors_fences_01_11,
                 }
             }
         }
@@ -87,14 +89,14 @@ module Base
             {
                 layer
                 {
-                    row = fixtures_doors_fences_01_128 fixtures_doors_fences_01_130 fixtures_doors_fences_01_0 fixtures_doors_fences_01_2,
+                    row = fixtures_doors_fences_01_12 fixtures_doors_fences_01_14 fixtures_doors_fences_01_20 fixtures_doors_fences_01_22,
                 }
             }
             face N
             {
                 layer
                 {
-                    row = fixtures_doors_fences_01_129 fixtures_doors_fences_01_131 fixtures_doors_fences_01_1 fixtures_doors_fences_01_3,
+                    row = fixtures_doors_fences_01_13 fixtures_doors_fences_01_15 fixtures_doors_fences_01_21 fixtures_doors_fences_01_23,
                 }
             }
         }

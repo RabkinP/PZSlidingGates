@@ -285,6 +285,48 @@ local function applyProgress(id, tr, p)
     end
 end
 
+-- The tick handler exists only while some gate is moving (or waits for its parts to load): it subscribes
+-- when work appears and unsubscribes itself when the work is done, so idle gates cost nothing per frame.
+local tickActive = false
+local onTick
+
+local function ensureTick()
+    if not tickActive then
+        tickActive = true
+        Events.OnTick.Add(onTick)
+    end
+end
+
+onTick = function()
+    if hasEntries(moving) then
+        local ok, delta = pcall(function() return getGameTime():getTimeDelta() end)
+        if not ok or type(delta) ~= "number" then delta = 1 / 48 end -- engine value at normal speed
+        local step = isPaused() and 0 or delta * ANIM_SPEED
+        for id, tr in pairs(moving) do
+            local leaf = findRole(id, "leaf")
+            if not leaf then
+                moving[id] = nil
+            elseif not leaf:isAnimating() and tr.t > 0 then
+                finalize(id)
+                log("gate " .. id .. " settled")
+            else
+                tr.t = tr.t + step
+                applyProgress(id, tr, math.min(tr.t / tr.seconds, 1))
+            end
+        end
+    end
+    tickCount = tickCount + 1
+    if hasEntries(unresolved) and tickCount % 60 == 0 then
+        for id, _ in pairs(unresolved) do
+            if finalize(id) then unresolved[id] = nil; log("gate " .. id .. " completed after load") end
+        end
+    end
+    if not hasEntries(moving) and not hasEntries(unresolved) then
+        tickActive = false
+        Events.OnTick.Remove(onTick)
+    end
+end
+
 local function startMotion(id, leaf, target)
     local x, y, z = parseId(id)
     local md = leaf:getModData()
@@ -293,6 +335,7 @@ local function startMotion(id, leaf, target)
     local tr = { opening = target, t = 0, seconds = TYPES[md.sgType].clipSeconds, width = gateWidth(id), typeId = md.sgType, x = x, y = y, z = z }
     moving[id] = tr
     applyProgress(id, tr, 0)
+    ensureTick()
 end
 
 -- Bring all parts of one gate to the same state. Whatever door was toggled (mouse click, E key, menu, zombie)
@@ -325,39 +368,13 @@ local function syncGate(id)
     log("gate " .. id .. (target and " opening" or " closing"))
 end
 
-Events.OnTick.Add(function()
-    if hasEntries(moving) then
-        local ok, delta = pcall(function() return getGameTime():getTimeDelta() end)
-        if not ok or type(delta) ~= "number" then delta = 1 / 48 end -- engine value at normal speed
-        local step = isPaused() and 0 or delta * ANIM_SPEED
-        for id, tr in pairs(moving) do
-            local leaf = findRole(id, "leaf")
-            if not leaf then
-                moving[id] = nil
-            elseif not leaf:isAnimating() and tr.t > 0 then
-                finalize(id)
-                log("gate " .. id .. " settled")
-            else
-                tr.t = tr.t + step
-                applyProgress(id, tr, math.min(tr.t / tr.seconds, 1))
-            end
-        end
-    end
-    tickCount = tickCount + 1
-    if hasEntries(unresolved) and tickCount % 60 == 0 then
-        for id, _ in pairs(unresolved) do
-            if finalize(id) then unresolved[id] = nil; log("gate " .. id .. " completed after load") end
-        end
-    end
-end)
-
 -- a save/crash mid-motion leaves slaves/blockers in an intermediate state: complete such gates at start
 -- (gates whose parts are not loaded yet are retried until they are)
 Events.OnGameStart.Add(function()
     for id, e in pairs(registry()) do
         if type(e) == "table" and e.moving ~= nil then
             local ok, done = pcall(finalize, id)
-            if not (ok and done) then unresolved[id] = true end
+            if not (ok and done) then unresolved[id] = true; ensureTick() end
         end
     end
 end)

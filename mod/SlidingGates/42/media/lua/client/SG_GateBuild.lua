@@ -25,6 +25,18 @@ local function install()
     if not ISBuildIsoEntity or ISBuildIsoEntity.sgHooked then return end
     ISBuildIsoEntity.sgHooked = true
 
+    -- the cursor must start in the N orientation (the only one supported); other rotations stay invalid
+    local originalNew = ISBuildIsoEntity.new
+    function ISBuildIsoEntity:new(character, objectInfo, nSprite, containers, logic)
+        local o = originalNew(self, character, objectInfo, nSprite, containers, logic)
+        if o and gateTypeOf(o) then
+            o.nSprite = 2   -- 1=W 2=N 3=E 4=S
+            o.nSpriteCache = -1
+            o.north = true
+        end
+        return o
+    end
+
     local originalIsValid = ISBuildIsoEntity.isValid
     function ISBuildIsoEntity:isValid(square)
         local typeId = gateTypeOf(self)

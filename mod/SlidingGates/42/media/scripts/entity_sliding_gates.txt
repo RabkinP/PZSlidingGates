@@ -21,6 +21,7 @@ module Base
      * wrapped in client/SG_GateBuild.lua and builds the real gate (SGGate.build) instead of the placeholder tiles.
      * Placeholder sprites must be unused by every other entity (the sprite registry is global) and should look
      * like a plain marker in the placement cursor: flat street_trafficlines floor overlays.
+     * Only the N face exists (gates along -x for now), so rotating the cursor never changes anything.
      * Footprint: the opening cells; the catcher post is on the cell right after the row, the pocket extends
      * the other way (checked by the wrapper).
      */
@@ -37,13 +38,6 @@ module Base
             skillBaseHealth = 300,
             dontNeedFrame = true,
             BreakSound = BreakDoor,
-            face W
-            {
-                layer
-                {
-                    row = street_trafficlines_01_0 street_trafficlines_01_1,
-                }
-            }
             face N
             {
                 layer
@@ -86,13 +80,6 @@ module Base
             skillBaseHealth = 500,
             dontNeedFrame = true,
             BreakSound = BreakDoor,
-            face W
-            {
-                layer
-                {
-                    row = street_trafficlines_01_4 street_trafficlines_01_5 street_trafficlines_01_6 street_trafficlines_01_7,
-                }
-            }
             face N
             {
                 layer

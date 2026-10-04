@@ -50,13 +50,17 @@ local function install()
     function ISBuildIsoEntity:create(x, y, z, north, sprite)
         local typeId = gateTypeOf(self)
         if not typeId then return originalCreate(self, x, y, z, north, sprite) end
+        print(string.format("[SGBuild] create %s at %d,%d,%d north=%s", typeId, x, y, z, tostring(north)))
         self.sgPlaceholdersReached = false
         originalCreate(self, x, y, z, north, sprite)
-        if not self.sgPlaceholdersReached then return end -- materials were not consumed / placement failed
+        if not self.sgPlaceholdersReached then print("[SGBuild] base create did not reach tile placement"); return end
         local square = getCell():getGridSquare(x, y, z)
         local catcher = square and catcherSquare(square, typeId)
-        if catcher then SGGate.build(catcher, typeId) end
+        if not catcher then print("[SGBuild] no catcher square"); return end
+        local id = SGGate.build(catcher, typeId)
+        print("[SGBuild] SGGate.build -> " .. tostring(id))
     end
+    print("[SGBuild] ISBuildIsoEntity hooks installed")
 end
 
 Events.OnGameBoot.Add(install)

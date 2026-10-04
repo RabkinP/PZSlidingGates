@@ -19,8 +19,8 @@ module Base
     /*
      * The placed tiles are placeholders (they only define the footprint and the cursor): ISBuildIsoEntity:create is
      * wrapped in client/SG_GateBuild.lua and builds the real gate (SGGate.build) instead of the placeholder tiles.
-     * Placeholder sprites must be unused by every other entity (the sprite registry is global): vanilla gates
-     * own 16-19 and 128-131, 0-3/8-15/20-23 are free.
+     * Placeholder sprites must be unused by every other entity (the sprite registry is global) and should look
+     * like a plain marker in the placement cursor: flat street_trafficlines floor overlays.
      * Footprint: the opening cells; the catcher post is on the cell right after the row, the pocket extends
      * the other way (checked by the wrapper).
      */
@@ -41,14 +41,14 @@ module Base
             {
                 layer
                 {
-                    row = fixtures_doors_fences_01_8 fixtures_doors_fences_01_10,
+                    row = street_trafficlines_01_0 street_trafficlines_01_1,
                 }
             }
             face N
             {
                 layer
                 {
-                    row = fixtures_doors_fences_01_9 fixtures_doors_fences_01_11,
+                    row = street_trafficlines_01_2 street_trafficlines_01_3,
                 }
             }
         }
@@ -63,10 +63,11 @@ module Base
             inputs
             {
                 item 4 [Base.BlowTorch] flags[DontRecordInput],
-                item 8 [Base.MetalPipe],
+                item 8 [Base.MetalPipe;Base.MetalBar;Base.SteelBar],
                 item 6 [Base.Wire],
                 item 3 [Base.ScrapMetal],
-                item 4 [Base.Screws],
+                item 3 [Base.SmallSheetMetal],
+                item 4 [Base.Screws;Base.NutsBolts],
                 item 4 [Base.WeldingRods] flags[DontRecordInput],
             }
         }
@@ -89,14 +90,14 @@ module Base
             {
                 layer
                 {
-                    row = fixtures_doors_fences_01_12 fixtures_doors_fences_01_14 fixtures_doors_fences_01_20 fixtures_doors_fences_01_22,
+                    row = street_trafficlines_01_4 street_trafficlines_01_5 street_trafficlines_01_6 street_trafficlines_01_7,
                 }
             }
             face N
             {
                 layer
                 {
-                    row = fixtures_doors_fences_01_13 fixtures_doors_fences_01_15 fixtures_doors_fences_01_21 fixtures_doors_fences_01_23,
+                    row = street_trafficlines_01_8 street_trafficlines_01_9 street_trafficlines_01_10 street_trafficlines_01_11,
                 }
             }
         }
@@ -111,10 +112,11 @@ module Base
             inputs
             {
                 item 6 [Base.BlowTorch] flags[DontRecordInput],
-                item 14 [Base.MetalPipe],
+                item 14 [Base.MetalPipe;Base.MetalBar;Base.SteelBar],
                 item 12 [Base.Wire],
                 item 3 [Base.ScrapMetal],
-                item 4 [Base.Screws],
+                item 3 [Base.SmallSheetMetal],
+                item 4 [Base.Screws;Base.NutsBolts],
                 item 6 [Base.WeldingRods] flags[DontRecordInput],
             }
         }

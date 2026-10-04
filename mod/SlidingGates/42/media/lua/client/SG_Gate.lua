@@ -139,8 +139,12 @@ function SGGate.toggle(id)
     if not leaf or not slave then log("gate parts missing for " .. id); return end
     local x, y, z = parseId(id)
     local opening = not leaf:IsOpen()
+    log(string.format("toggle: before leaf open=%s obstructed=%s | slave open=%s obstructed=%s", tostring(leaf:IsOpen()),
+        tostring(leaf:isObstructed()), tostring(slave:IsOpen()), tostring(slave:isObstructed())))
     toggleDoor(leaf)
     toggleDoor(slave)
+    log(string.format("toggle: after leaf open=%s | slave open=%s obstructed=%s", tostring(leaf:IsOpen()),
+        tostring(slave:IsOpen()), tostring(slave:isObstructed())))
     if leaf:IsOpen() ~= opening then
         log("gate " .. id .. " toggle refused (blocked?)")
         return

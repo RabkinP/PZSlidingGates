@@ -12,12 +12,16 @@ SGGate = SGGate or {}
 local TYPES = {
     chainlink = {
         width = 2,
+        baseHealth = 300, -- plus 50 per MetalWelding level of the builder (see SG_GateBuild)
+        materials = { ["Base.MetalPipe"] = 8, ["Base.Wire"] = 6, ["Base.ScrapMetal"] = 3, ["Base.SmallSheetMetal"] = 3, ["Base.Screws"] = 4 },
         clipSeconds = 3.0, -- Open/Close clip length (1.5 s per cell); played at ANIM_SPEED
         leafModel = "SG_ChainLink_N_Right_G", -- spriteModels *_G_*: leaf carrier is one cell to the left of the model origin
         doorSprites = { "fixtures_doors_fences_01_129", "fixtures_doors_fences_01_131" }, -- closed, open (N edge)
     },
     chainlink4 = {
         width = 4,
+        baseHealth = 450,
+        materials = { ["Base.MetalPipe"] = 14, ["Base.Wire"] = 12, ["Base.ScrapMetal"] = 3, ["Base.SmallSheetMetal"] = 3, ["Base.Screws"] = 4 },
         clipSeconds = 6.0,
         leafModel = "SG_ChainLink_4_N_Right_G",
         doorSprites = { "fixtures_doors_fences_01_129", "fixtures_doors_fences_01_131" },
@@ -33,6 +37,13 @@ local OPAQUE_DOOR_SPRITES = { "fixtures_doors_01_69", "fixtures_doors_01_71" }
 local function gateWidth(id)
     local entry = (ModData.getOrCreate("SlidingGates").gates or {})[id]
     return type(entry) == "table" and entry.width or 2
+end
+
+-- all door parts of a gate carry the gate's full health: the gate falls when any part is destroyed
+local function gateHealth(id, typeId)
+    local entry = (ModData.getOrCreate("SlidingGates").gates or {})[id]
+    if type(entry) == "table" and entry.health then return entry.health end
+    return TYPES[typeId] and TYPES[typeId].baseHealth or 300
 end
 
 local function log(msg)
@@ -70,8 +81,9 @@ end
 local function makeDoor(sq, typeId, id, role, modelBase, spritePair)
     local pair = spritePair or TYPES[typeId].doorSprites
     local obj = IsoThumpable.new(getWorld():getCell(), sq, pair[1], pair[2], true, {})
-    obj:setMaxHealth(500)
-    obj:setHealth(500)
+    local hp = gateHealth(id, typeId)
+    obj:setMaxHealth(hp)
+    obj:setHealth(hp)
     obj:setIsDoor(true)
     obj:setCanPassThrough(false)
     obj:setIsThumpable(true)
@@ -168,7 +180,7 @@ function SGGate.width(typeId)
 end
 
 -- Build a gate WITHOUT drive. sq = catcher post cell (the leaf starts one cell to the -x side); returns the gate id.
-function SGGate.build(sq, typeId)
+function SGGate.build(sq, typeId, healthBonus)
     typeId = typeId or "chainlink"
     local ok, reason = SGGate.canBuild(sq, typeId)
     if not ok then log(reason); return end
@@ -176,7 +188,7 @@ function SGGate.build(sq, typeId)
     local width = t.width
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
     local id = x .. "," .. y .. "," .. z
-    registry()[id] = { width = width }
+    registry()[id] = { width = width, health = t.baseHealth + (healthBonus or 0) }
     makeDoor(sqAt(x - 1, y, z), typeId, id, "leaf", t.leafModel)
     for k = 1, width do makeDoor(sqAt(x - k, y, z), typeId, id, "slave", "SG_Hidden") end -- collision of the opening
     makeStatic(sq, id, "post", "SG_CatcherPost_Static")
@@ -396,6 +408,33 @@ Events.OnGameStart.Add(function()
             if not (ok and done) then unresolved[id] = true; ensureTick() end
         end
     end
+end)
+
+-- Destruction: when any door part of a gate is destroyed (zombies, weapons, vehicles) the whole gate falls apart and
+-- drops part of its materials (50% per unit, like vanilla thumpables). Every part has the full gate health.
+function SGGate.destroyGate(id, destroyer)
+    local leaf = findRole(id, "leaf")
+    local x, y, z = parseId(id)
+    local dropSq = (leaf and leaf:getSquare()) or sqAt(x - 1, y, z)
+    local typeId = leaf and leaf:getModData().sgType
+    local parts = SGGate.parts(id)
+    moving[id] = nil
+    unresolved[id] = nil
+    registry()[id] = nil
+    for _, o in ipairs(parts) do removeObj(o) end
+    if dropSq and typeId and TYPES[typeId] then
+        for itemType, count in pairs(TYPES[typeId].materials) do
+            for _ = 1, count do
+                if ZombRand(2) ~= 0 then dropSq:AddWorldInventoryItem(itemType, 0.0, 0.0, 0.0) end
+            end
+        end
+    end
+    log("gate " .. id .. " destroyed")
+end
+
+Events.OnDestroyIsoThumpable.Add(function(thump, player)
+    local d = thump:getModData()
+    if d and d.sgGate and registry()[d.sgGate] ~= nil then SGGate.destroyGate(d.sgGate, player) end
 end)
 
 local reconciling = false

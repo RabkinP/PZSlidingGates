@@ -69,7 +69,10 @@ local function install()
         local square = getCell():getGridSquare(x, y, z)
         local catcher = square and catcherSquare(square, typeId)
         if not catcher then print("[SGBuild] no catcher square"); return end
-        local id = SGGate.build(catcher, typeId)
+        local bonus = 0
+        local ok, level = pcall(function() return self.character:getPerkLevel(Perks.MetalWelding) end)
+        if ok and type(level) == "number" then bonus = level * 50 end -- health: base + 50 per welding level
+        local id = SGGate.build(catcher, typeId, bonus)
         print("[SGBuild] SGGate.build -> " .. tostring(id))
     end
     print("[SGBuild] ISBuildIsoEntity hooks installed")

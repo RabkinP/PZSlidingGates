@@ -107,6 +107,13 @@ local function findRole(id, role)
     end
 end
 
+-- registry of gate ids (persisted in global ModData) so the sync handler knows which gates exist
+local function registry()
+    local md = ModData.getOrCreate("SlidingGates")
+    md.gates = md.gates or {}
+    return md.gates
+end
+
 -- Pocket cells get a blocker only when the N edge is not already blocked (e.g. by a fence): a door-thumpable
 -- placed on a fence cell makes the neighbouring fence sections fade (cutaway), and the fence blocks anyway.
 local function addPocketBlockers(id, typeId, x, y, z)
@@ -124,6 +131,7 @@ function SGGate.build(sq, typeId)
     local t = TYPES[typeId]
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
     local id = x .. "," .. y .. "," .. z
+    registry()[id] = true
     makeDoor(sqAt(x - 1, y, z), typeId, id, "leaf", t.leafModel)
     makeDoor(sqAt(x - 2, y, z), typeId, id, "slave", "SG_Hidden")
     makeStatic(sq, id, "post", "SG_CatcherPost_Static")
@@ -145,53 +153,53 @@ function SGGate.removeDrive(id)
     if d then removeObj(d); log("drive removed from " .. id) end
 end
 
+-- Bring all parts of one gate to the same state. Whatever door was toggled (mouse click, E key, menu, zombie)
+-- is the one whose state differs from the last synced state; the other parts follow it.
+local function syncGate(id)
+    local leaf, slave = findRole(id, "leaf"), findRole(id, "slave")
+    if not leaf or not slave then return end
+    local x, y, z = parseId(id)
+    local lo, so = leaf:IsOpen(), slave:IsOpen()
+    local last = leaf:getModData().sgOpen
+    if last == nil then last = false end
+    local blockers, anyOpenBlocker = {}, false
+    for _, o in ipairs(SGGate.parts(id)) do
+        if o:getModData().sgRole == "block" then
+            blockers[#blockers + 1] = o
+            if o:IsOpen() then anyOpenBlocker = true end
+        end
+    end
+    if lo == last and so == last and not anyOpenBlocker then return end
+    local target = last
+    if lo ~= last then target = lo elseif so ~= last then target = so end
+    if lo ~= target then toggleDoor(leaf) end
+    if so ~= target then toggleDoor(slave) end
+    for _, o in ipairs(blockers) do removeObj(o) end
+    if target then addPocketBlockers(id, leaf:getModData().sgType, x, y, z) end
+    SGGate.applyModel(leaf)
+    leaf:getModData().sgOpen = target
+    log("gate " .. id .. (target and " opened" or " closed"))
+end
+
+local reconciling = false
+function SGGate.reconcile()
+    if reconciling then return end
+    reconciling = true
+    local ok, err = pcall(function() for id, _ in pairs(registry()) do syncGate(id) end end)
+    reconciling = false
+    if not ok then print("[SGGate] reconcile error: " .. tostring(err)) end
+end
+Events.OnContainerUpdate.Add(SGGate.reconcile)
+
+-- open/close from code (menu, remote): toggling the leaf triggers the sync above
 function SGGate.toggle(id)
     local leaf = findRole(id, "leaf")
-    local slave = findRole(id, "slave")
-    if not leaf or not slave then log("gate parts missing for " .. id); return end
-    local x, y, z = parseId(id)
-    local opening = not leaf:IsOpen()
-    log(string.format("toggle: before leaf open=%s obstructed=%s | slave open=%s obstructed=%s", tostring(leaf:IsOpen()),
-        tostring(leaf:isObstructed()), tostring(slave:IsOpen()), tostring(slave:isObstructed())))
+    if not leaf then log("gate parts missing for " .. id); return end
     toggleDoor(leaf)
-    toggleDoor(slave)
-    log(string.format("toggle: after leaf open=%s | slave open=%s obstructed=%s", tostring(leaf:IsOpen()),
-        tostring(slave:IsOpen()), tostring(slave:isObstructed())))
-    if leaf:IsOpen() ~= opening then
-        log("gate " .. id .. " toggle refused (blocked?)")
-        return
-    end
-    local typeId = leaf:getModData().sgType
-    if opening then
-        addPocketBlockers(id, typeId, x, y, z)
-    else
-        for _, o in ipairs(SGGate.parts(id)) do
-            if o:getModData().sgRole == "block" then removeObj(o) end
-        end
-    end
-    log("gate " .. id .. (opening and " opened" or " closed"))
-end
-
--- debug helpers to isolate what makes neighbouring fences fade (cutaway) when the gate is open
-function SGGate.debugBlockers(id, on)
-    local x, y, z = parseId(id)
-    local leaf = findRole(id, "leaf")
-    if on then
-        addPocketBlockers(id, leaf:getModData().sgType, x, y, z)
-    else
-        for _, o in ipairs(SGGate.parts(id)) do
-            if o:getModData().sgRole == "block" then removeObj(o) end
-        end
-    end
-    log("debug blockers " .. (on and "added" or "removed"))
-end
-
-function SGGate.debugToggleNoBlockers(id)
-    local leaf, slave = findRole(id, "leaf"), findRole(id, "slave")
-    if leaf and slave then toggleDoor(leaf); toggleDoor(slave); log("debug toggle (no blockers) open=" .. tostring(leaf:IsOpen())) end
 end
 
 function SGGate.remove(id)
+    registry()[id] = nil
     for _, o in ipairs(SGGate.parts(id)) do removeObj(o) end
     log("gate removed " .. id)
 end
@@ -242,9 +250,6 @@ Events.OnFillWorldObjectContextMenu.Add(function(player, context, worldobjects, 
         sub:addOption("[" .. id .. "] install drive", id, SGGate.installDrive)
         sub:addOption("[" .. id .. "] remove drive", id, SGGate.removeDrive)
         sub:addOption("[" .. id .. "] dump collision", id, SGGate.dumpCollision)
-        sub:addOption("[" .. id .. "] DEBUG toggle leaf+slave only", id, SGGate.debugToggleNoBlockers)
-        sub:addOption("[" .. id .. "] DEBUG add blockers", id, SGGate.debugBlockers, true)
-        sub:addOption("[" .. id .. "] DEBUG remove blockers", id, SGGate.debugBlockers, false)
         sub:addOption("[" .. id .. "] remove gate", id, SGGate.remove)
     end
 end)

@@ -39,14 +39,14 @@ module Base
             {
                 layer
                 {
-                    row = fixtures_doors_fences_01_129 fixtures_doors_fences_01_129,
+                    row = fixtures_doors_fences_01_128 fixtures_doors_fences_01_130,
                 }
             }
             face N
             {
                 layer
                 {
-                    row = fixtures_doors_fences_01_129 fixtures_doors_fences_01_129,
+                    row = fixtures_doors_fences_01_129 fixtures_doors_fences_01_131,
                 }
             }
         }
@@ -87,14 +87,14 @@ module Base
             {
                 layer
                 {
-                    row = fixtures_doors_fences_01_129 fixtures_doors_fences_01_129 fixtures_doors_fences_01_129 fixtures_doors_fences_01_129,
+                    row = fixtures_doors_fences_01_128 fixtures_doors_fences_01_130 fixtures_doors_fences_01_0 fixtures_doors_fences_01_2,
                 }
             }
             face N
             {
                 layer
                 {
-                    row = fixtures_doors_fences_01_129 fixtures_doors_fences_01_129 fixtures_doors_fences_01_129 fixtures_doors_fences_01_129,
+                    row = fixtures_doors_fences_01_129 fixtures_doors_fences_01_131 fixtures_doors_fences_01_1 fixtures_doors_fences_01_3,
                 }
             }
         }

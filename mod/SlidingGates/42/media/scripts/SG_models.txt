@@ -243,7 +243,7 @@ module Base
     spriteModel SG_Drive_Static
     {
         modelScript = Base.SG_Drive,
-        translate = -0.68 0.0 -0.6,
+        translate = -0.5 0.0 -0.6,
         rotate = 0.0 0.0 0.0,
         scale = 1.0,
     }

@@ -18,7 +18,7 @@ for name,fn in [('SG_Leaf',leaf),('SG_Post_Left',catcher),('SG_Post_Right',post)
         group.add(list(range(len(obj.data.vertices))),1,'REPLACE')
 # Match build_chainlink.py and SG_Drive_Static: motor pinion meets the rack
 # at Blender Y=0.125 (leaf clearance 0.18 minus rack offset 0.055).
-bpy.data.objects['SG_Drive'].location=(2.18,-0.22,0)
+bpy.data.objects['SG_Drive'].location=(2.0,-0.22,0)
 rig=bpy.data.objects['SG_Rig']; rig['fence_clearance']=0.18
 if 'outward_offset' in rig: del rig['outward_offset']
 exec(source[source.index('def animate('):source.index("scene['SG_notes']")])
@@ -30,6 +30,13 @@ for track in rig.animation_data.nla_tracks:
         scene.frame_set(frame); loc=rig.pose.bones['DoorBone'].location
         assert abs(loc.y)<1e-6 and abs(loc.z)<1e-6
     print(track.name,'validated all 49 frames')
+leaf_x=[v.co.x for v in bpy.data.objects['SG_Leaf'].data.vertices]
+assert min(leaf_x)>=-1e-6 and max(leaf_x)<=2.000001
+# Roller radii must remain within the fixed beam for either mirrored leaf.
+for shift in [i/100 for i in range(201)]:
+    assert 1.75 <= 1.82+shift-0.022
+    assert 1.94+shift+0.022 <= 4.01
+print('TWO_CELL_BOUNDS',min(leaf_x),max(leaf_x),'GUIDE_CAPTURE full stroke')
 rig.animation_data.action=rig.animation_data.nla_tracks[0].strips[0].action
 scene.frame_set(1)
 bpy.ops.wm.save_as_mainfile(filepath=r'E:\git\SlidingGates\art\SG_ChainLink.blend')

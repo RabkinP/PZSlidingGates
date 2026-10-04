@@ -164,6 +164,28 @@ function SGGate.toggle(id)
     log("gate " .. id .. (opening and " opened" or " closed"))
 end
 
+-- debug helpers to isolate what makes neighbouring fences fade (cutaway) when the gate is open
+function SGGate.debugBlockers(id, on)
+    local x, y, z = parseId(id)
+    local leaf = findRole(id, "leaf")
+    if on then
+        for k = 3, 4 do
+            local sq = sqAt(x - k, y, z)
+            if sq then makeDoor(sq, leaf:getModData().sgType, id, "block", "SG_Hidden") end
+        end
+    else
+        for _, o in ipairs(SGGate.parts(id)) do
+            if o:getModData().sgRole == "block" then removeObj(o) end
+        end
+    end
+    log("debug blockers " .. (on and "added" or "removed"))
+end
+
+function SGGate.debugToggleNoBlockers(id)
+    local leaf, slave = findRole(id, "leaf"), findRole(id, "slave")
+    if leaf and slave then toggleDoor(leaf); toggleDoor(slave); log("debug toggle (no blockers) open=" .. tostring(leaf:IsOpen())) end
+end
+
 function SGGate.remove(id)
     for _, o in ipairs(SGGate.parts(id)) do removeObj(o) end
     log("gate removed " .. id)
@@ -215,6 +237,9 @@ Events.OnFillWorldObjectContextMenu.Add(function(player, context, worldobjects, 
         sub:addOption("[" .. id .. "] install drive", id, SGGate.installDrive)
         sub:addOption("[" .. id .. "] remove drive", id, SGGate.removeDrive)
         sub:addOption("[" .. id .. "] dump collision", id, SGGate.dumpCollision)
+        sub:addOption("[" .. id .. "] DEBUG toggle leaf+slave only", id, SGGate.debugToggleNoBlockers)
+        sub:addOption("[" .. id .. "] DEBUG add blockers", id, SGGate.debugBlockers, true)
+        sub:addOption("[" .. id .. "] DEBUG remove blockers", id, SGGate.debugBlockers, false)
         sub:addOption("[" .. id .. "] remove gate", id, SGGate.remove)
     end
 end)

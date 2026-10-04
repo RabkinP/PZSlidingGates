@@ -140,24 +140,35 @@ local function addPocketBlockers(id, typeId, x, y, z)
     end
 end
 
--- Build a gate WITHOUT drive. sq = master (leaf) cell; returns the gate id.
+-- Can a gate of this type be built with its catcher post on sq? Returns true or false, reason.
+function SGGate.canBuild(sq, typeId)
+    local t = TYPES[typeId]
+    if not t then return false, "unknown gate type " .. tostring(typeId) end
+    local width = t.width
+    local x, y, z = sq:getX(), sq:getY(), sq:getZ()
+    if registry()[x .. "," .. y .. "," .. z] then return false, "gate already exists" end
+    for k = 0, 2 * width do
+        if not sqAt(x - k, y, z) or not sqAt(x - k, y - 1, z) then return false, "gate area is not loaded" end
+        if k >= 1 and k <= width and sqAt(x - k, y, z):isBlockedTo(sqAt(x - k, y - 1, z)) then
+            return false, "opening is blocked at cell " .. k
+        end
+    end
+    return true
+end
+
+function SGGate.width(typeId)
+    return TYPES[typeId] and TYPES[typeId].width
+end
+
+-- Build a gate WITHOUT drive. sq = catcher post cell (the leaf starts one cell to the -x side); returns the gate id.
 function SGGate.build(sq, typeId)
     typeId = typeId or "chainlink"
+    local ok, reason = SGGate.canBuild(sq, typeId)
+    if not ok then log(reason); return end
     local t = TYPES[typeId]
-    if not t then log("unknown gate type " .. tostring(typeId)); return end
     local width = t.width
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
     local id = x .. "," .. y .. "," .. z
-    if registry()[id] then log("gate already exists " .. id); return end
-    -- Check all required squares before creating any part.
-    for k = 0, 2 * width do
-        if not sqAt(x - k, y, z) or not sqAt(x - k, y - 1, z) then
-            log("gate area is not loaded"); return
-        end
-        if k >= 1 and k <= width and sqAt(x - k, y, z):isBlockedTo(sqAt(x - k, y - 1, z)) then
-            log("opening is blocked at cell " .. k); return
-        end
-    end
     registry()[id] = { width = width }
     makeDoor(sqAt(x - 1, y, z), typeId, id, "leaf", t.leafModel)
     for k = 1, width do makeDoor(sqAt(x - k, y, z), typeId, id, "slave", "SG_Hidden") end -- collision of the opening

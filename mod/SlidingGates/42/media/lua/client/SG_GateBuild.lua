@@ -1,0 +1,56 @@
+-- SlidingGates: hook into the B42 entity build system (ISBuildIsoEntity).
+-- The entities SlidingGateChainLink2/4 (scripts/entity_sliding_gates.txt) provide the recipe, material check,
+-- skill requirement and the placement cursor with placeholder tiles for the opening. The placeholder tiles are never
+-- created: after the base class consumed the materials, the real gate is built with SGGate.build.
+-- Geometry: the cursor row covers the opening cells x..x+W-1 (N edge); the catcher post sits on x+W and the leaf
+-- slides towards -x into the pocket (x-1..x-W, checked in isValid).
+
+require "BuildingObjects/ISBuildIsoEntity"
+
+local GATE_TYPES = {
+    SlidingGateChainLink2 = "chainlink",
+    SlidingGateChainLink4 = "chainlink4",
+}
+
+local function gateTypeOf(builder)
+    local ok, name = pcall(function() return builder.objectInfo:getScript():getName() end)
+    return ok and GATE_TYPES[name] or nil
+end
+
+-- the catcher cell for a placement origin x (opening starts at x)
+local function catcherSquare(square, typeId)
+    return getCell():getGridSquare(square:getX() + SGGate.width(typeId), square:getY(), square:getZ())
+end
+
+local originalIsValid = ISBuildIsoEntity.isValid
+function ISBuildIsoEntity:isValid(square)
+    local typeId = gateTypeOf(self)
+    if not typeId then return originalIsValid(self, square) end
+    if not self.north then return false end -- only the N edge (gates extending towards -x) is supported so far
+    if not originalIsValid(self, square) then return false end
+    local catcher = catcherSquare(square, typeId)
+    if not catcher then return false end
+    return (SGGate.canBuild(catcher, typeId))
+end
+
+-- never place the placeholder tiles of our entities; remember that the base class got as far as placing them
+local originalSetInfo = ISBuildIsoEntity.setInfo
+function ISBuildIsoEntity:setInfo(square, north, sprite, openSprite)
+    if gateTypeOf(self) then
+        self.sgPlaceholdersReached = true
+        return
+    end
+    return originalSetInfo(self, square, north, sprite, openSprite)
+end
+
+local originalCreate = ISBuildIsoEntity.create
+function ISBuildIsoEntity:create(x, y, z, north, sprite)
+    local typeId = gateTypeOf(self)
+    if not typeId then return originalCreate(self, x, y, z, north, sprite) end
+    self.sgPlaceholdersReached = false
+    originalCreate(self, x, y, z, north, sprite)
+    if not self.sgPlaceholdersReached then return end -- materials were not consumed / placement failed
+    local square = getCell():getGridSquare(x, y, z)
+    local catcher = square and catcherSquare(square, typeId)
+    if catcher then SGGate.build(catcher, typeId) end
+end

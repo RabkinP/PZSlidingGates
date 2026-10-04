@@ -1,0 +1,6 @@
+interface:
+  display_name: "Project Zomboid Models"
+  short_description: "Blender models verified against PZ rendering"
+  default_prompt: "Use $pz-models to edit and verify a Project Zomboid model against the installed game."
+policy:
+  allow_implicit_invocation: true

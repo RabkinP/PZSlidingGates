@@ -60,7 +60,13 @@ def box(center,size,verts,faces,swatches,swatch):
     for x,y,z in [(-1,-1,-1),(-1,-1,1),(-1,1,-1),(-1,1,1),(1,-1,-1),(1,-1,1),(1,1,-1),(1,1,1)]:
         verts.append(tuple(center[i]+q*size[i]/2 for i,q in enumerate((x,y,z))))
     for f in [(0,4,6,2),(1,3,7,5),(0,1,5,4),(2,6,7,3),(0,2,3,1),(4,5,7,6)]:
-        faces.append(tuple(start+i for i in f)); swatches.append(swatch)
+        # PZ preserves supplied normals: these corners require reversed winding
+        # for outward-facing normals on every box face.
+        face=tuple(start+i for i in reversed(f))
+        a,b,c=(Vector(verts[index]) for index in face[:3])
+        centre=sum((Vector(verts[index]) for index in face),Vector())/4
+        assert (b-a).cross(c-a).dot(centre-Vector(center))>0
+        faces.append(face); swatches.append(swatch)
 
 def mesh(name,build):
     global smooth_faces

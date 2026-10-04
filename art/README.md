@@ -1,5 +1,11 @@
 # Chain-link gate prototype
 
+Engine behaviour and export requirements are documented in
+`../research/render-audit.md`, verified against the installed game JAR and
+native Jassimp importer. Consult that audit before changing normals, UV,
+scale, materials or preview lighting; older prototype notes below describe
+the chronological design revisions.
+
 Created in Blender 5.2.2 through Blender MCP. Source: `SG_ChainLink.blend`.
 
 ## Assets

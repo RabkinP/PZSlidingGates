@@ -2,3 +2,5 @@
 research/decompiled/
 research/render-audit/source/
 research/render-audit/classes/
+# Local discovery junction; canonical skill is versioned under skills/.
+.agents/skills/pz-models

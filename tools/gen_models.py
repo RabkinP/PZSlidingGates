@@ -20,7 +20,7 @@ PLACE = {
     "SG_CatcherPost": (-0.04, 0, 0.0),
     "SG_GuidePost": (2.04, 2, 0.0),
     "SG_Rail": (0.0, 0, 0.0),       # per-cell piece: b == k for every carrier, so -0.5
-    "SG_Drive": (2.18, 2, -0.22),
+    "SG_Drive": (2.0, 2, -0.22),
 }
 
 def f(v):
@@ -57,6 +57,7 @@ for n in STATIC:
     {{
         mesh = IsoObject/{n},
         texture = IsoObject/SG_ChainLink_Atlas,
+        shader = door,
         static = true,
         undoCoreScale = true,
     }}

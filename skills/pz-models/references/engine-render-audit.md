@@ -20,6 +20,23 @@ ModelManager, отличаются. Сравнение — в `render-audit/mani
 
 ## Что подтверждено кодом
 
+### MP: нативная анимация и серверный таймер (2026-10-06)
+
+Fingerprint совпадает с указанным выше. Проверены текущие `IsoObjectAnimations`,
+заново извлечённые `IsoThumpable` и `IsoObject`:
+`IsoObjectAnimations.addObject/update` сразу возвращаются на `GameServer.server`.
+Клиентский `AnimatedObject` выставляет track speed 1.5 и обновляется через
+`GameTime.getTimeDelta`. Поэтому серверный контроллер завершает движение по
+времени клипа при той же скорости, а не по `IsoObject.isAnimating`.
+`IsoThumpable.syncIsoObjectReceive` при смене `open` вызывает private
+`PlayAnimation`, затем `OnContainerUpdate`. Предварительная смена `open` клиентом
+перед пакетом может подавить этот запуск; moving-state уведомление мода не
+подменяет нативную смену флага. Late-join snapshot выставляет конечную позу.
+`IsoObject.renderModel` берёт animationPlayer из менеджера независимо от
+boolean `animating`: один `setAnimating(false)` не отменяет клиентский track.
+MP-контроллер проверен Lua mock-тестами; реальный порядок пакетов/вид в игре
+ещё не проверены. Дополнительные контракты: `research/multiplayer-integration.md`.
+
 ### Отказ ToggleDoor и ложное завершение анимации (2026-10-06)
 
 Fingerprint JAR совпадает с указанным выше. `IsoThumpable.class` заново

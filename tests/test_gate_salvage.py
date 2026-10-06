@@ -1,6 +1,7 @@
 """Recipe/salvage conservation and dismantling success/re-entry regression (requires lupa)."""
 import ast
 import re
+from itertools import product
 from pathlib import Path
 from lupa import LuaRuntime
 
@@ -8,10 +9,11 @@ ROOT = Path(__file__).resolve().parents[1]
 tree = ast.parse((ROOT/'tests/test_gate_widths.py').read_text())
 mock = next(ast.literal_eval(n.value) for n in tree.body if isinstance(n,ast.Assign)
             and any(isinstance(t,ast.Name) and t.id=='MOCK' for t in n.targets))
-for width in (2,4):
+for width, server_mode in product((2,4), (False, True)):
     lua=LuaRuntime()
     lua.globals().package.path = str(ROOT/'mod/SlidingGates/42/media/lua/shared/?.lua').replace('\\', '/') + ';' + lua.globals().package.path
     lua.execute(mock)
+    lua.globals().serverMode = server_mode
     lua.execute(r'''
     setmetatable(Events,{__index=function(t,key)
       local event={Add=function() end,Remove=function() end}; t[key]=event; return event
@@ -98,7 +100,7 @@ for width in (2,4):
     local other=setmetatable({}, {__index=ISMoveableSpriteProps})
     other:getScrapItemsList(); assert(foreign==1)
     ''')
-    print(f'PASS {width}: limited wire uses, recipe amounts, no duplicate drops, zero yield, successful/failed dismantle')
+    print(f'PASS {width} server={server_mode}: limited wire uses, recipe amounts, no duplicate drops, zero yield, successful/failed dismantle')
 
 # Preserve correspondence between consumed recipe resources and the maximum salvage budget.
 recipe=(ROOT/'mod/SlidingGates/42/media/scripts/entity_sliding_gates.txt').read_text()

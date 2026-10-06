@@ -5,15 +5,20 @@ from lupa import LuaRuntime
 ROOT = Path(__file__).resolve().parents[1]
 lua = LuaRuntime()
 lua.globals().package.path = str(ROOT/'mod/SlidingGates/42/media/lua/shared/?.lua').replace('\\', '/') + ';' + lua.globals().package.path
+lua.execute('require "SG_GateCommon"')
 lua.execute(r'''
-Events={OnGameBoot={Add=function(fn) install=fn end},OnGameStart={Add=function() end}}
+Events={OnGameBoot={Add=function(fn) install=fn end},OnGameStart={Add=function() end},OnServerStarted={Add=function() end}}
+clientMode=false; serverMode=false
+function isClient() return clientMode end
+function isServer() return serverMode end
 calls={}; foreign=0; worldWrites=0; valid=true
 function square(x,y,z)
  return {getX=function() return x end,getY=function() return y end,getZ=function() return z end}
 end
 function getCell() return {getGridSquare=function(_,x,y,z) return square(x,y,z) end} end
 SGGate={width=function(kind) return kind=='chainlink4' and 4 or 2 end,
- canBuild=function() return valid end,build=function() worldWrites=worldWrites+1 end}
+ canBuild=function() return valid end,build=function(sq,kind,bonus)
+ worldWrites=worldWrites+1; built={sq:getX(),sq:getY(),sq:getZ(),kind,bonus}; return 'gate' end}
 sprites={}
 function getSprite(name)
  if not sprites[name] then
@@ -41,7 +46,7 @@ ISBuildIsoEntity={new=function(self,character,info)
    if not self:isValid(sq) then r,g,b=.65,.2,.2 end
    sprite:RenderGhostTileColor(x+xx,y,z,r,g,b,.6)
   end
- end,create=function(self) self:setInfo() end}
+ end,create=function(self) baseCreates=(baseCreates or 0)+1; self:setInfo() end}
 function builder(width)
  local name=width==2 and 'SlidingGateChainLink2' or 'SlidingGateChainLink4'
  local info={getScript=function() return {getName=function() return name end} end}
@@ -79,6 +84,22 @@ for _,width in ipairs({2,4}) do
  assert(#calls==width) -- only base cursor; no additional assembly without a square
  b:setInfo(); assert(b.sgPlaceholdersReached and worldWrites==0)
 end
+-- Native server transaction consumes materials in base create exactly once;
+-- the replacement assembly is created only after reaching placeholder placement.
+valid=true; serverMode=true; Perks={MetalWelding='welding'}
+for _,width in ipairs({2,4}) do
+ local b=builder(width)
+ b.character={getPerkLevel=function() return 3 end}
+ b:create(100,200,0,true)
+ assert(built[1]==100+width and built[4]==(width==2 and 'chainlink' or 'chainlink4') and built[5]==150)
+end
+assert(worldWrites==2 and baseCreates==2)
+clientMode=true; builder(2):create(100,200,0,true)
+assert(worldWrites==2 and baseCreates==2)
+clientMode=false; valid=false; builder(2):create(100,200,0,true)
+valid=true; builder(2):create(100,200,0,false)
+assert(worldWrites==2 and baseCreates==2)
+serverMode=false; worldWrites=0
 local other=setmetatable({objectInfo={getScript=function() return {getName=function() return 'Other' end} end}},
  {__index=ISBuildIsoEntity})
 other:render(); other:cacheSprites(nil); other:setInfo()

@@ -10,9 +10,14 @@ MOCK=r'''
 Events={OnContainerUpdate={Add=function(fn) sync=fn end},
  OnFillWorldObjectContextMenu={Add=function(fn) gateMenu=fn end},
  OnGameStart={Add=function(fn) gameStart=fn end},
+ OnServerStarted={Add=function(fn) serverStart=fn end},
+ LoadGridsquare={Add=function(fn) gridLoaded=fn end},
  OnDestroyIsoThumpable={Add=function(fn) destroyed=fn end},
  OnTick={Add=function(fn) tick=fn end,Remove=function() tick=nil end}}
 debug=false
+clientMode=false; serverMode=false
+function isClient() return clientMode end
+function isServer() return serverMode end
 function isDebugEnabled() return debug end
 gameSpeed=1; delta=1/48
 UIManager={getSpeedControls=function() return {getCurrentGameSpeed=function() return gameSpeed end} end}
@@ -60,6 +65,10 @@ local function object(_,sq)
  function o:setIsThumpable() end
  function o:IsOpen() return self.open end
  function o:isAnimating() return self.animating or false end
+ function o:setAnimating(value) self.animating=value end
+ function o:transmitCompleteItemToClients() self.sent=(self.sent or 0)+1 end
+ function o:transmitModData() self.mdSent=(self.mdSent or 0)+1 end
+ function o:sync() self.synced=(self.synced or 0)+1 end
  function o:isObstructed() return self.obstructed or false end
  function o:ToggleDoorSilent() self.open=not self.open end
  function o:ToggleDoor()

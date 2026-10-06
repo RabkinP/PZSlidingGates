@@ -1,62 +1,6 @@
--- SlidingGates: manual open/close through the vanilla timed-action queue.
--- Mouse click on a gate door and the door context menu queue ISSlidingGateToggle instead of ISOpenCloseDoor.
--- The action waits (waitToStart) until the leaf finished its animation, so any number of clicks run one
--- after another, each as a full animation. When the action finally starts it checks that the character is
--- still close to the gate; if they walked away, nothing happens.
--- (The E key toggles the door from Java and does not go through this queue.)
+require "SG_GateToggleAction"
 
-require "TimedActions/ISBaseTimedAction"
-
-ISSlidingGateToggle = ISBaseTimedAction:derive("ISSlidingGateToggle")
-
-local MAX_DISTANCE = 3.0 -- tiles from the character to the nearest gate door cell
-
-function ISSlidingGateToggle:isValid()
-    local d = SGGate.distanceTo(self.character, self.gateId)
-    return d ~= nil and d <= MAX_DISTANCE
-end
-
-function ISSlidingGateToggle:isValidStart()
-    return self:isValid()
-end
-
--- hold the action in the queue while the previous open/close is still animating
-function ISSlidingGateToggle:waitToStart()
-    return SGGate.isMoving(self.gateId)
-end
-
-function ISSlidingGateToggle:update() end
-
-function ISSlidingGateToggle:start() end
-
-function ISSlidingGateToggle:stop()
-    ISBaseTimedAction.stop(self)
-end
-
-function ISSlidingGateToggle:perform()
-    ISBaseTimedAction.perform(self)
-end
-
-function ISSlidingGateToggle:complete()
-    print("[SGGate] queued action runs for gate " .. tostring(self.gateId))
-    SGGate.toggle(self.gateId)
-    return true
-end
-
-function ISSlidingGateToggle:getDuration()
-    return 0
-end
-
-function ISSlidingGateToggle:new(character, gateId)
-    local o = ISBaseTimedAction.new(self, character)
-    o.gateId = gateId
-    o.stopOnWalk = false
-    o.stopOnRun = false
-    o.stopOnAim = false
-    o.ignoreHandsWounds = true
-    o.maxTime = o:getDuration()
-    return o
-end
+local MAX_DISTANCE = 3.0
 
 local function queue(playerObj, gateId)
     ISTimedActionQueue.addGetUpAndThen(playerObj, ISSlidingGateToggle:new(playerObj, gateId))
@@ -77,19 +21,6 @@ local function install()
             CancelAction(playerNum, true)
             queue(playerObj, gateId)
             return true
-        end
-    end
-
-    -- the sledgehammer "destroy" action removes the picked object directly (no OnDestroyIsoThumpable event):
-    -- a gate part removed that way takes the whole gate with it
-    if ISDestroyStuffAction and ISDestroyStuffAction.complete then
-        local original = ISDestroyStuffAction.complete
-        function ISDestroyStuffAction:complete()
-            local gateId
-            if self.item and self.item.getModData then gateId = self.item:getModData().sgGate end
-            local result = original(self)
-            if gateId and result then SGGate.destroyGate(gateId, self.character) end
-            return result
         end
     end
 

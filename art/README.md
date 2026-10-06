@@ -49,7 +49,7 @@ Native import results
 for width 4 are in `research/render-audit/width-4-native-import.txt`.
 
 For a future size, export that width, add it to `tools/gen_models.py` WIDTHS
-(default 2,4), and register a corresponding type in SG_Gate.lua. The Lua
+(default 2,4), and register a corresponding type in SG_GateTypes.lua. The Lua
 assembly uses its type width for opening doors, guide/drive placement,
 rails and pocket blockers. It is not arbitrary runtime mesh scaling.
 Example registration regeneration: `python tools/gen_models.py 0.12 2,3,4,5,6`;

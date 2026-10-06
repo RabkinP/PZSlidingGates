@@ -462,6 +462,14 @@ local function syncGate(id)
             leaf:ToggleDoorSilent()
             leaf:getSquare():RecalcAllWithNeighbours(true)
         end
+        -- a refused request may also come from a slave toggled by the engine (E key on the nearest door): put every
+        -- slave back to its expected state, silently (a normal toggle would be refused by the vehicle again)
+        for _, o in pairs(slaves) do
+            if o:IsOpen() ~= slavesOpen then
+                o:ToggleDoorSilent()
+                o:getSquare():RecalcAllWithNeighbours(true)
+            end
+        end
         SGGate.applyModel(leaf)
         notifyBlocked()
         return

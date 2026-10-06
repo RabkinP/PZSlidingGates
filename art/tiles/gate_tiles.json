@@ -49,10 +49,12 @@
       "animationTime": "0"
     },
     "6": {
-      "modelScript": "Base.SG_Rail",
-      "translate": "0 0 0",
-      "rotate": "0 0 0",
-      "scale": "0.001"
+      "modelScript": "Base.SG_ChainLink_N_Right",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 90 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
     },
     "7": {
       "modelScript": "Base.SG_Rail",
@@ -85,10 +87,12 @@
       "scale": "1"
     },
     "12": {
-      "modelScript": "Base.SG_Rail",
-      "translate": "0 0 0",
-      "rotate": "0 0 0",
-      "scale": "0.001"
+      "modelScript": "Base.SG_ChainLink_4_N_Right",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 90 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
     },
     "13": {
       "modelScript": "Base.SG_Rail",
@@ -103,6 +107,54 @@
       "scale": "0.001"
     },
     "15": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "16": {
+      "modelScript": "Base.SG_CatcherPost",
+      "translate": "-0.38 0 0.46",
+      "rotate": "0 90 0",
+      "scale": "1"
+    },
+    "17": {
+      "modelScript": "Base.SG_GuidePost",
+      "translate": "-0.38 0 0.54",
+      "rotate": "0 90 0",
+      "scale": "1"
+    },
+    "18": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 90 0",
+      "scale": "1"
+    },
+    "19": {
+      "modelScript": "Base.SG_Drive",
+      "translate": "-0.6 0 0.5",
+      "rotate": "0 90 0",
+      "scale": "1"
+    },
+    "20": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "21": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "22": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "23": {
       "modelScript": "Base.SG_Rail",
       "translate": "0 0 0",
       "rotate": "0 0 0",

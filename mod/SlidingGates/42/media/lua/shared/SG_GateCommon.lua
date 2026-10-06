@@ -14,19 +14,46 @@ function SGGate.parseId(id)
     return tonumber(x), tonumber(y), tonumber(z)
 end
 
+-- Legacy gates have no orientation and keep the original N edge / -X travel.
+local function nearbyMetadata(id)
+    local x, y, z = SGGate.parseId(id)
+    if not x then return end
+    for _, offset in ipairs({ {-1, 0}, {0, 1}, {0, 0} }) do
+        local sq = getCell():getGridSquare(x + offset[1], y + offset[2], z)
+        if sq then
+            local objects = sq:getObjects()
+            for i = 0, objects:size() - 1 do
+                local md = objects:get(i):getModData()
+                if md.sgGate == id then return md end
+            end
+        end
+    end
+end
+
+function SGGate.orientation(id)
+    local entry = SGGate.registry()[id]
+    if type(entry) == "table" and entry.orientation then return entry.orientation end
+    local md = nearbyMetadata(id)
+    return md and md.sgOrientation or "N"
+end
+
+function SGGate.cellAt(x, y, z, k, orientation)
+    if orientation == "W" then return getCell():getGridSquare(x, y + k, z) end
+    return getCell():getGridSquare(x - k, y, z)
+end
+
+function SGGate.edgeNeighbour(sq, orientation)
+    if not sq then return end
+    return getCell():getGridSquare(sq:getX() - (orientation == "W" and 1 or 0),
+        sq:getY() - (orientation == "W" and 0 or 1), sq:getZ())
+end
+
 function SGGate.gateWidth(id)
     local entry = SGGate.registry()[id]
     if type(entry) == "table" and entry.width then return entry.width end
     -- Object metadata is available before a network snapshot/global registry.
-    local x, y, z = SGGate.parseId(id)
-    local sq = x and getCell():getGridSquare(x - 1, y, z)
-    if sq then
-        local objects = sq:getObjects()
-        for i = 0, objects:size() - 1 do
-            local md = objects:get(i):getModData()
-            if md.sgGate == id and md.sgWidth then return md.sgWidth end
-        end
-    end
+    local md = nearbyMetadata(id)
+    if md and md.sgWidth then return md.sgWidth end
     return 2
 end
 
@@ -34,8 +61,8 @@ function SGGate.parts(id)
     local x, y, z = SGGate.parseId(id)
     local result = {}
     if not x then return result end
-    for dx = -(2 * SGGate.gateWidth(id) + 1), 1 do
-        local sq = getCell():getGridSquare(x + dx, y, z)
+    for k = -1, 2 * SGGate.gateWidth(id) + 1 do
+        local sq = SGGate.cellAt(x, y, z, k, SGGate.orientation(id))
         if sq then
             local objects = sq:getObjects()
             for i = 0, objects:size() - 1 do
@@ -70,14 +97,16 @@ function SGGate.typeOf(id)
     return type(entry) == "table" and entry.type or (SGGate.gateWidth(id) == 4 and "chainlink4" or "chainlink")
 end
 
-function SGGate.canBuild(sq, typeId)
+function SGGate.canBuild(sq, typeId, orientation)
     local definition = SGGateTypes[typeId]
     if not sq or not definition then return false, "unknown gate type" end
+    orientation = orientation or "N"
+    if orientation ~= "N" and orientation ~= "W" then return false, "unsupported orientation" end
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
     if SGGate.registry()[x .. "," .. y .. "," .. z] then return false, "gate already exists" end
     for k = 0, 2 * definition.width do
-        local cell = getCell():getGridSquare(x - k, y, z)
-        local north = getCell():getGridSquare(x - k, y - 1, z)
+        local cell = SGGate.cellAt(x, y, z, k, orientation)
+        local north = SGGate.edgeNeighbour(cell, orientation)
         if not cell or not north then return false, "gate area is not loaded" end
         if k >= 1 and k <= definition.width and cell:isBlockedTo(north) then
             return false, "opening is blocked at cell " .. k
@@ -91,7 +120,7 @@ function SGGate.distanceTo(chr, id)
     if not chr or not chr:getCurrentSquare() then return end
     for _, obj in ipairs(SGGate.parts(id)) do
         local role, sq = obj:getModData().sgRole, obj:getSquare()
-        if (role == "leaf" or role == "slave") and sq and sq:getZ() == chr:getCurrentSquare():getZ() then
+        if (role == "leaf" or role == "slave" or role == "block") and sq and sq:getZ() == chr:getCurrentSquare():getZ() then
             local distance = math.sqrt((chr:getX() - sq:getX() - 0.5)^2 + (chr:getY() - sq:getY() - 0.5)^2)
             if not best or distance < best then best = distance end
         end

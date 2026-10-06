@@ -16,19 +16,22 @@ and saved gates are not migrated by this change. Do not add door/collision/Physi
 properties to preview sprites or reuse these entity sprites for other buildable entities:
 SpriteConfig's entity-to-sprite registry is global.
 
-The namespace is `sg_gates_preview_01`, tileset number **1**, eight columns.
+The namespace is `sg_gates_preview_01`, tileset number **1**, eight columns,
+24 tiles / three rows (PNG 1024×768). R alternates N and W construction faces.
 Keep file number, tileset number and existing indices stable:
 
 | Index | Purpose |
 | --- | --- |
 | 0, 1 | Two-cell opening row; index 1 carries the entire closed leaf |
 | 2, 3, 4, 5 | Four-cell opening row; index 5 carries the entire closed leaf |
-| 6, 7 | Reserved |
+| 6, 7 | W two-cell column; index 6 carries the closed leaf |
 | 8 | Catcher post |
 | 9 | Guide post |
 | 10 | One-cell rail, repeated along opening and pocket |
 | 11 | Drive (reserved for future drive construction preview; bare gate has no drive) |
-| 12..15 | Reserved |
+| 12..15 | W four-cell column; index 12 carries the closed leaf |
+| 16..19 | W catcher, guide, rail and drive |
+| 20..23 | Reserved |
 
 Blank indices use the existing tiny hidden rail model. Atlas entries have explicit
 untrimmed 128×256 bounds, even though every pixel is transparent. Do not run an atlas
@@ -45,6 +48,6 @@ alpha=1, so it is not a translucent model preview.
 Tests: `tests/test_gate_tiles.py`, `tests/test_gate_preview.py` (lupa),
 `research/probe-gate-tiles.py` (installed-game parsers). Native probe report:
 `research/render-audit/gate-tiles-native.txt`. Restart PZ after changing packs or tile
-definitions; test fresh construction cursors for both widths, valid/invalid placement,
+definitions; test fresh construction cursors for both widths and both orientations, R, valid/invalid placement,
 moving/cancelling the cursor and completing a build. No visual gameplay test was
 performed by the headless checks.

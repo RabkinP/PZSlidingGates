@@ -4,6 +4,7 @@
 -- created: after the base class consumed the materials, the real gate is built with SGGate.build.
 -- Geometry: the cursor row covers the opening cells x..x+W-1 (N edge); the catcher post sits on x+W and the leaf
 -- slides towards -x into the pocket (x-1..x-W, checked in isValid).
+-- W uses a column y..y+W-1, catcher y-1 and pocket y+W..y+2W-1.
 
 require "SG_GateCommon"
 
@@ -16,7 +17,8 @@ local function gateTypeOf(builder)
 end
 
 -- the catcher cell for a placement origin x (opening starts at x)
-local function catcherSquare(square, typeId)
+local function catcherSquare(square, typeId, north)
+    if not north then return getCell():getGridSquare(square:getX(), square:getY() - 1, square:getZ()) end
     return getCell():getGridSquare(square:getX() + SGGate.width(typeId), square:getY(), square:getZ())
 end
 
@@ -25,27 +27,38 @@ local function install()
     if not ISBuildIsoEntity or ISBuildIsoEntity.sgHooked then return end
     ISBuildIsoEntity.sgHooked = true
 
-    -- the cursor must start in the N orientation (the only one supported); other rotations stay invalid
+    -- Preserve the serialized B42 nSprite on the server; new cursors default to N.
     local originalNew = ISBuildIsoEntity.new
     function ISBuildIsoEntity:new(character, objectInfo, nSprite, containers, logic)
         local o = originalNew(self, character, objectInfo, nSprite, containers, logic)
         if o and gateTypeOf(o) then
-            o.nSprite = 2   -- 1=W 2=N 3=E 4=S
+            o.nSprite = nSprite == 1 and 1 or 2   -- 1=W 2=N
             o.nSpriteCache = -1
-            o.north = true
+            o.north = o.nSprite == 2
         end
         return o
+    end
+
+    local originalRotateKey = ISBuildIsoEntity.rotateKey
+    function ISBuildIsoEntity:rotateKey(key)
+        if not gateTypeOf(self) then return originalRotateKey(self, key) end
+        if getCore():isKey(KeybindId.ROTATE_BUILDING, key) then
+            self.nSprite = self.nSprite == 2 and 1 or 2
+            self.nSpriteCache = -1
+            self.north = self.nSprite == 2
+        end
     end
 
     local originalIsValid = ISBuildIsoEntity.isValid
     function ISBuildIsoEntity:isValid(square)
         local typeId = gateTypeOf(self)
         if not typeId then return originalIsValid(self, square) end
-        if not self.north then return false end -- only the N edge (gates extending towards -x) is supported so far
+        if self.getFace then self:getFace() end
+        self.north = self.nSprite == 2
         if not originalIsValid(self, square) then return false end
-        local catcher = catcherSquare(square, typeId)
+        local catcher = catcherSquare(square, typeId, self.north)
         if not catcher then return false end
-        return (SGGate.canBuild(catcher, typeId))
+        return (SGGate.canBuild(catcher, typeId, self.north and "N" or "W"))
     end
 
     -- never place the placeholder tiles of our entities; remember that the base class got as far as placing them
@@ -87,14 +100,16 @@ local function install()
         local r, g, b = 1, 1, 1
         if not valid then r, g, b = 0.65, 0.2, 0.2 end
         local width = SGGate.width(typeId)
-        local catcherX = x + width
-        local function draw(index, cellX)
+        local west = self.nSprite == 1
+        local catcherX, catcherY = west and x or x + width, west and y - 1 or y
+        local function draw(index, k)
             local sprite = getSprite("sg_gates_preview_01_" .. index)
-            if sprite then sprite:RenderGhostTileColor(cellX, y, z, r, g, b, 0.6) end
+            if sprite then sprite:RenderGhostTileColor(catcherX - (west and 0 or k),
+                catcherY + (west and k or 0), z, r, g, b, 0.6) end
         end
-        draw(8, catcherX)
-        draw(9, x)
-        for k = 0, 2 * width - 1 do draw(10, catcherX - k) end
+        draw(west and 16 or 8, 0)
+        draw(west and 17 or 9, width)
+        for k = 0, 2 * width - 1 do draw(west and 18 or 10, k) end
     end
 
     local originalCreate = ISBuildIsoEntity.create
@@ -103,18 +118,18 @@ local function install()
         if not typeId then return originalCreate(self, x, y, z, north, sprite) end
         if isClient() then return end -- native B42 build transaction invokes create on the authority
         local placement = getCell():getGridSquare(x, y, z)
-        if not north or not placement or not self:isValid(placement) then return false end
+        if north ~= (self.nSprite == 2) or not placement or not self:isValid(placement) then return false end
         print(string.format("[SGBuild] create %s at %d,%d,%d north=%s", typeId, x, y, z, tostring(north)))
         self.sgPlaceholdersReached = false
         originalCreate(self, x, y, z, north, sprite)
         if not self.sgPlaceholdersReached then print("[SGBuild] base create did not reach tile placement"); return end
         local square = getCell():getGridSquare(x, y, z)
-        local catcher = square and catcherSquare(square, typeId)
+        local catcher = square and catcherSquare(square, typeId, self.north)
         if not catcher then print("[SGBuild] no catcher square"); return end
         local bonus = 0
         local ok, level = pcall(function() return self.character:getPerkLevel(Perks.MetalWelding) end)
         if ok and type(level) == "number" then bonus = level * 50 end -- health: base + 50 per welding level
-        local id = SGGate.build(catcher, typeId, bonus)
+        local id = SGGate.build(catcher, typeId, bonus, north and "N" or "W")
         print("[SGBuild] SGGate.build -> " .. tostring(id))
     end
     print("[SGBuild] ISBuildIsoEntity hooks installed")

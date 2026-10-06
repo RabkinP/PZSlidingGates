@@ -53,8 +53,8 @@ end
 local cell={getGridSquare=function(_,x,y,z) return square(x,y,z) end}
 function getCell() return cell end
 function getWorld() return {getCell=function() return cell end} end
-local function object(_,sq)
- local o={sq=sq,md={},open=false,door=false}
+local function object(_,sq,sprite,openSprite,north)
+ local o={sq=sq,md={},open=false,door=false,sprite=sprite,north=north}
  function o:getModData() return self.md end
  function o:getSquare() return self.sq end
  function o:setSpriteModelName(name) self.model=name end
@@ -151,6 +151,23 @@ leaf.animating=false; tick()
 assert(not SGGate.isMoving(id) and tick==nil)
 for k=1,width do assert(not blocked(30-k)) end
 for k=width+1,2*width do assert(blocked(30-k)) end
+-- E on the retracted leaf operates its pocket proxy, including a refused close.
+local pocket=partsWithRole(id,'block')[width]
+square(29,20,0).vehicle=true
+pocket:ToggleDoor()
+assert(leaf:IsOpen() and not pocket:IsOpen() and not SGGate.isMoving(id))
+square(29,20,0).vehicle=false
+pocket:ToggleDoor()
+assert(not leaf:IsOpen() and not pocket:IsOpen() and SGGate.isMoving(id))
+-- A second pocket input during motion cannot reverse or restart the gate.
+pocket:ToggleDoor()
+assert(not leaf:IsOpen() and data.SlidingGates.gates[id].moving==false)
+for p=1,width do tick() end
+leaf.animating=false; tick()
+for k=1,width do assert(blocked(30-k)) end
+assert(SGGate.toggle(id))
+for p=1,width do tick() end
+leaf.animating=false; tick()
 -- Clicking the farthest slave must close every opening cell.
 partsWithRole(id,'slave')[1]:ToggleDoor()
 for p=1,width do tick() end

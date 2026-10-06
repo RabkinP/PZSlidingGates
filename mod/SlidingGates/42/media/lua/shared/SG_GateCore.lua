@@ -5,7 +5,7 @@
 --   slave   hidden doors on the remaining opening cells, toggled with the leaf
 --   block   closed hidden doors in x0-width-1 .. x0-2*width while the gate is open
 --   post/rail  static decoration; drive  optional add-on, can be installed on an existing gate
--- N-edge gates extend towards -x (see research/vanilla-gates.md).
+-- N edges extend along -X; W edges along +Y. Registry/part metadata stores the orientation.
 
 require "SG_GateCommon"
 if isClient() then return end
@@ -19,6 +19,7 @@ local authorizedGate
 local recoveryReady = false
 local deferredSquares = {}
 local cleanupSquare
+local removingParts = 0
 
 function SGGate.ensureIdentity(id)
     local gates = SGGate.registry()
@@ -32,6 +33,7 @@ function SGGate.ensureIdentity(id)
     end
     entry.revision = entry.revision or 0
     entry.width = entry.width or 2
+    entry.orientation = entry.orientation or SGGate.orientation(id)
     return entry
 end
 
@@ -41,7 +43,7 @@ function SGGate.snapshot(id)
     if not entry or not leaf then return end
     local md = leaf:getModData()
     return { id = id, instance = entry.instance, revision = entry.revision,
-        type = md.sgType, width = entry.width, open = md.sgOpen or false,
+        type = md.sgType, width = entry.width, orientation = entry.orientation, open = md.sgOpen or false,
         moving = entry.moving ~= nil, slavesOpen = md.sgSlavesOpen or false }
 end
 
@@ -89,6 +91,14 @@ local function log(msg)
 end
 
 local function sqAt(x, y, z) return getCell():getGridSquare(x, y, z) end
+local function gateCell(id, x, y, z, k) return SGGate.cellAt(x, y, z, k, SGGate.orientation(id)) end
+local function gateNeighbour(id, sq) return SGGate.edgeNeighbour(sq, SGGate.orientation(id)) end
+local function opaquePair(id)
+    return SGGate.orientation(id) == "W" and { "fixtures_doors_01_68", "fixtures_doors_01_70" } or OPAQUE_DOOR_SPRITES
+end
+local function staticModel(id, name)
+    return name .. (SGGate.orientation(id) == "W" and "_W_Static" or "_Static")
+end
 
 local parseId = SGGate.parseId
 
@@ -97,14 +107,15 @@ local function tag(obj, id, role, extra)
     d.sgGate = id
     d.sgRole = role
     local entry = SGGate.ensureIdentity(id)
-    if entry then d.sgInstance, d.sgWidth = entry.instance, entry.width end
+    if entry then d.sgInstance, d.sgWidth, d.sgOrientation = entry.instance, entry.width, entry.orientation end
     if extra then for k, v in pairs(extra) do d[k] = v end end
 end
 
--- door-thumpable on the N edge of sq whose model is `modelBase`
+-- Door-thumpable on the assembly edge whose model is `modelBase`.
 local function makeDoor(sq, typeId, id, role, modelBase, spritePair)
-    local pair = spritePair or TYPES[typeId].doorSprites
-    local obj = IsoThumpable.new(getWorld():getCell(), sq, pair[1], pair[2], true, {})
+    local west = SGGate.orientation(id) == "W"
+    local pair = spritePair or (west and TYPES[typeId].westDoorSprites or TYPES[typeId].doorSprites)
+    local obj = IsoThumpable.new(getWorld():getCell(), sq, pair[1], pair[2], not west, {})
     local hp = gateHealth(id, typeId)
     obj:setMaxHealth(hp)
     obj:setHealth(hp)
@@ -132,8 +143,15 @@ end
 local function removeObj(obj)
     local sq = obj:getSquare()
     if not sq then return end
-    sq:transmitRemoveItemFromSquare(obj)
-    sq:RecalcAllWithNeighbours(true)
+    -- Removing our collision carrier may synchronously emit OnContainerUpdate.
+    -- Do not reconcile the intermediate assembly and mistake that carrier for a fence.
+    removingParts = removingParts + 1
+    local ok, err = pcall(function()
+        sq:transmitRemoveItemFromSquare(obj)
+        sq:RecalcAllWithNeighbours(true)
+    end)
+    removingParts = removingParts - 1
+    if not ok then error(err) end
 end
 
 local function toggleDoor(obj)
@@ -154,30 +172,32 @@ local registry = SGGate.registry
 local function addPocketBlockers(id, typeId, x, y, z)
     local width = TYPES[typeId].width
     for k = width + 1, 2 * width do
-        local sq, north = sqAt(x - k, y, z), sqAt(x - k, y - 1, z)
+        local sq = gateCell(id, x, y, z, k)
+        local north = gateNeighbour(id, sq)
         if sq and north then
             -- fenced cell: opaque blocker (collision/damage proxy, vision stays blocked); free cell: see-through one
-            local pair = sq:isBlockedTo(north) and OPAQUE_DOOR_SPRITES or nil
+            local pair = sq:isBlockedTo(north) and opaquePair(id) or nil
             makeDoor(sq, typeId, id, "block", "SG_Hidden", pair)
         end
     end
 end
 
--- Build a gate WITHOUT drive. sq = catcher post cell (the leaf starts one cell to the -x side); returns the gate id.
-function SGGate.build(sq, typeId, healthBonus)
+-- Build a gate without drive. sq is the catcher cell; the master is one travel cell away.
+function SGGate.build(sq, typeId, healthBonus, orientation)
     typeId = typeId or "chainlink"
-    local ok, reason = SGGate.canBuild(sq, typeId)
+    orientation = orientation or "N"
+    local ok, reason = SGGate.canBuild(sq, typeId, orientation)
     if not ok then log(reason); return end
     local t = TYPES[typeId]
     local width = t.width
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
     local id = x .. "," .. y .. "," .. z
-    registry()[id] = { width = width, type = typeId, health = t.baseHealth + (healthBonus or 0) }
-    makeDoor(sqAt(x - 1, y, z), typeId, id, "leaf", t.leafModel)
-    for k = 1, width do makeDoor(sqAt(x - k, y, z), typeId, id, "slave", "SG_Hidden") end -- collision of the opening
-    makeStatic(sq, id, "post", "SG_CatcherPost_Static")
-    makeStatic(sqAt(x - width, y, z), id, "post", "SG_GuidePost_Static")
-    for k = 0, 2 * width - 1 do makeStatic(sqAt(x - k, y, z), id, "rail", "SG_Rail_Static") end
+    registry()[id] = { width = width, type = typeId, orientation = orientation, health = t.baseHealth + (healthBonus or 0) }
+    makeDoor(gateCell(id, x, y, z, 1), typeId, id, "leaf", orientation == "W" and t.westLeafModel or t.leafModel)
+    for k = 1, width do makeDoor(gateCell(id, x, y, z, k), typeId, id, "slave", "SG_Hidden") end -- collision of the opening
+    makeStatic(sq, id, "post", staticModel(id, "SG_CatcherPost"))
+    makeStatic(gateCell(id, x, y, z, width), id, "post", staticModel(id, "SG_GuidePost"))
+    for k = 0, 2 * width - 1 do makeStatic(gateCell(id, x, y, z, k), id, "rail", staticModel(id, "SG_Rail")) end
     SGGate.finalize(id) -- initial closed state: physics colliders on the opening cells
     log("gate built " .. id .. " (no drive)")
     return id
@@ -186,7 +206,7 @@ end
 function SGGate.installDrive(id)
     if findRole(id, "drive") then log("drive already installed"); return end
     local x, y, z = parseId(id)
-    makeStatic(sqAt(x - gateWidth(id), y, z), id, "drive", "SG_Drive_Static")
+    makeStatic(gateCell(id, x, y, z, gateWidth(id)), id, "drive", staticModel(id, "SG_Drive"))
     log("drive installed on " .. id)
 end
 
@@ -230,12 +250,12 @@ end
 
 -- parts of the gate indexed by cell number k (cell x0-k): slaves[k], blockers[k]
 local function indexParts(id)
-    local x = parseId(id)
+    local x, y = parseId(id)
     local slaves, blockers, colliders = {}, {}, {}
     for _, o in ipairs(SGGate.parts(id)) do
         local role, sq = o:getModData().sgRole, o:getSquare()
         if sq then
-            local k = x - sq:getX()
+            local k = SGGate.orientation(id) == "W" and sq:getY() - y or x - sq:getX()
             if role == "slave" then slaves[k] = o
             elseif role == "block" then blockers[k] = o
             elseif role == "collider" then colliders[k] = o end
@@ -247,9 +267,9 @@ end
 local function setCollider(colliders, id, x, y, z, k, present)
     local o = colliders[k]
     if present and not o then
-        local sq = sqAt(x - k, y, z)
+        local sq = gateCell(id, x, y, z, k)
         if sq then
-            local obj = IsoObject.new(getWorld():getCell(), sq, PHYSICS_SPRITE_N)
+            local obj = IsoObject.new(getWorld():getCell(), sq, SGGate.orientation(id) == "W" and "fixtures_doors_fences_01_38" or PHYSICS_SPRITE_N)
             obj:setSpriteModelName("Base.SG_Hidden")
             tag(obj, id, "collider", { sgStatic = "SG_Hidden" })
             sq:AddTileObject(obj)
@@ -278,9 +298,10 @@ end
 local function setBlocker(blockers, id, typeId, x, y, z, k, present)
     local o = blockers[k]
     if present and not o then
-        local sq, north = sqAt(x - k, y, z), sqAt(x - k, y - 1, z)
+        local sq = gateCell(id, x, y, z, k)
+        local north = gateNeighbour(id, sq)
         if sq and north then
-            local pair = sq:isBlockedTo(north) and OPAQUE_DOOR_SPRITES or nil
+            local pair = sq:isBlockedTo(north) and opaquePair(id) or nil
             blockers[k] = makeDoor(sq, typeId, id, "block", "SG_Hidden", pair)
         end
     elseif not present and o then
@@ -300,7 +321,7 @@ local function finalize(id)
     -- A leaf can load before the rest of its assembly across a chunk boundary.
     -- Keep the recovery marker until every required square and opening door exists.
     for k = 0, 2 * width do
-        if not sqAt(x - k, y, z) or not sqAt(x - k, y - 1, z) then return false end
+        if not gateCell(id, x, y, z, k) or not gateNeighbour(id, gateCell(id, x, y, z, k)) then return false end
     end
     local slaves, blockers, colliders = indexParts(id)
     for k = 1, width do if not slaves[k] then return false end end
@@ -419,8 +440,8 @@ function SGGate.isBlocked(id, opening)
     local from, to = 1, W
     if opening then from, to = W + 1, 2 * W end
     for k = from, to do
-        local sq = sqAt(x - k, y, z)
-        if not sq or not sqAt(x - k, y - 1, z) or sq:isVehicleIntersecting() then return true end
+        local sq = gateCell(id, x, y, z, k)
+        if not sq or not gateNeighbour(id, gateCell(id, x, y, z, k)) or sq:isVehicleIntersecting() then return true end
     end
     -- The native leaf door checks its own obstruction in BOTH directions. A car
     -- pressed against a closed leaf may obstruct it even with an empty pocket.
@@ -483,7 +504,14 @@ local function syncGate(id)
         end
     end
     for _, o in pairs(blockers) do if o:IsOpen() then openBlockers[#openBlockers + 1] = o end end
-    for _, o in ipairs(openBlockers) do toggleDoor(o) end -- a pocket blocker must stay closed
+    -- E at the retracted leaf toggles a pocket proxy. It requests closing the
+    -- assembly, while the proxy itself remains closed until the leaf clears it.
+    if changed == nil and last and #openBlockers > 0 and not SGGate.isMoving(id) then changed = false end
+    for _, o in ipairs(openBlockers) do
+        o:ToggleDoorSilent()
+        o:getSquare():RecalcAllWithNeighbours(true)
+        SGGate.applyModel(o)
+    end
     if changed == nil then return end
     if changed == last and lo == last then return end
     local target = changed
@@ -534,7 +562,7 @@ local function recover()
         SGGate.ensureIdentity(id)
         for _, part in ipairs(SGGate.parts(id)) do
             local md, entry = part:getModData(), SGGate.ensureIdentity(id)
-            if not md.sgInstance then md.sgInstance, md.sgWidth = entry.instance, entry.width end
+            if not md.sgInstance then md.sgInstance, md.sgWidth, md.sgOrientation = entry.instance, entry.width, entry.orientation end
         end
         if type(e) == "table" and e.moving ~= nil then
             local ok, done = pcall(finalize, id)
@@ -552,7 +580,7 @@ function SGGate.destroyGate(id, destroyer, dropPercent)
     if registry()[id] == nil then return false end
     local leaf = findRole(id, "leaf")
     local x, y, z = parseId(id)
-    local dropSq = (leaf and leaf:getSquare()) or sqAt(x - 1, y, z)
+    local dropSq = (leaf and leaf:getSquare()) or gateCell(id, x, y, z, 1)
     local entry = registry()[id]
     local identity = SGGate.ensureIdentity(id)
     local instance, revision = identity.instance, identity.revision
@@ -601,7 +629,7 @@ end)
 
 local reconciling = false
 function SGGate.reconcile()
-    if reconciling then return end
+    if reconciling or removingParts > 0 then return end
     reconciling = true
     local ok, err = pcall(function() for id, _ in pairs(registry()) do syncGate(id) end end)
     reconciling = false
@@ -651,7 +679,7 @@ cleanupSquare = function(square)
                 stale[#stale + 1] = obj
             else
                 -- Upgrade legacy saves and restore each model after native deserialization.
-                md.sgInstance, md.sgWidth = entry.instance, entry.width
+                md.sgInstance, md.sgWidth, md.sgOrientation = entry.instance, entry.width, entry.orientation
                 if md.sgRole == "leaf" then md.sgRevision = entry.revision end
                 SGGate.applyModel(obj)
             end
@@ -662,17 +690,18 @@ cleanupSquare = function(square)
 end
 Events.LoadGridsquare.Add(cleanupSquare)
 
--- how the cells around the gate block movement across the N edge / towards west (collision experiment)
+-- Debug collision along the assembly edge, including the pocket.
 function SGGate.dumpCollision(id)
     local x, y, z = parseId(id)
-    for dx = 1, -(2 * gateWidth(id) + 1), -1 do
-        local sq, north = sqAt(x + dx, y, z), sqAt(x + dx, y - 1, z)
-        local west = sqAt(x + dx - 1, y, z)
-        if sq and north then
-            log(string.format("x%+d: N-blocked=%s closedN=%s openN=%s openW=%s west-blocked=%s", dx,
-                tostring(sq:isBlockedTo(north)), tostring(sq:hasClosedDoorOnEdge(IsoDirections.N)),
-                tostring(sq:hasOpenDoorOnEdge(IsoDirections.N)), tostring(sq:hasOpenDoorOnEdge(IsoDirections.W)),
-                tostring(west and sq:isBlockedTo(west))))
+    local orientation = SGGate.orientation(id)
+    local edge = orientation == "W" and IsoDirections.W or IsoDirections.N
+    for k = -1, 2 * gateWidth(id) + 1 do
+        local sq = gateCell(id, x, y, z, k)
+        local neighbour = gateNeighbour(id, sq)
+        if sq and neighbour then
+            log(string.format("cell %d (%s): blocked=%s closedDoor=%s openDoor=%s", k, orientation,
+                tostring(sq:isBlockedTo(neighbour)), tostring(sq:hasClosedDoorOnEdge(edge)),
+                tostring(sq:hasOpenDoorOnEdge(edge))))
         end
     end
 end

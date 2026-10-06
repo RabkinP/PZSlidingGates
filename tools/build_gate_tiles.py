@@ -15,7 +15,7 @@ MOD = ROOT / 'mod/SlidingGates'
 MEDIA = MOD / '42/media'
 TILESET = 'sg_gates_preview_01'
 FILE_NUMBER = 6842
-COUNT = 16  # full two rows; 6/7 and 12..15 are reserved
+COUNT = 24  # append W statics; preserve all existing indices
 
 
 def integer(n):
@@ -41,11 +41,21 @@ def bindings():
                                  (11, 'Drive', '-0.5 0 -0.6')):
         result[index] = dict(modelScript=f'Base.SG_{name}', translate=offset,
                              rotate='0 0 0', scale='1')
+    for index, prefix in ((6, 'SG_ChainLink'), (12, 'SG_ChainLink_4')):
+        result[index] = dict(modelScript=f'Base.{prefix}_N_Right',
+                             translate='-0.38 0 -0.5', rotate='0 90 0', scale='1',
+                             animation='Open', animationTime='0')
+    for index, name, offset in ((16, 'CatcherPost', '-0.38 0 0.46'),
+                                 (17, 'GuidePost', '-0.38 0 0.54'),
+                                 (18, 'Rail', '-0.38 0 0.5'),
+                                 (19, 'Drive', '-0.6 0 0.5')):
+        result[index] = dict(modelScript=f'Base.SG_{name}', translate=offset,
+                             rotate='0 90 0', scale='1')
     return result
 
 
 def build():
-    atlas = Image.new('RGBA', (1024, 512), (0, 0, 0, 0))
+    atlas = Image.new('RGBA', (1024, 768), (0, 0, 0, 0))
     # Explicit untrimmed subtextures keep completely transparent carriers valid.
     png = BytesIO()
     atlas.save(png, format='PNG')
@@ -65,7 +75,7 @@ def build():
     # tdef v1: little-endian integers, LF-terminated ASCII strings (NOT CRLF).
     tiles = b'tdef' + integer(1) + integer(1)
     tiles += (TILESET + '\n' + TILESET + '.png\n').encode('ascii')
-    tiles += b''.join(integer(n) for n in (8, 2, 1, COUNT))
+    tiles += b''.join(integer(n) for n in (8, 3, 1, COUNT))
     # Construction carriers have no collision, door, floor or physics properties.
     tiles += integer(0) * COUNT
     (MEDIA / 'SG_GatesPreview.tiles').write_bytes(tiles)

@@ -59,10 +59,12 @@ spriteModel
         tile
         {
             xy = 6 0,
-            modelScript = Base.SG_Rail,
-            translate = 0 0 0,
-            rotate = 0 0 0,
-            scale = 0.001,
+            modelScript = Base.SG_ChainLink_N_Right,
+            translate = -0.38 0 -0.5,
+            rotate = 0 90 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
         }
         tile
         {
@@ -107,10 +109,12 @@ spriteModel
         tile
         {
             xy = 4 1,
-            modelScript = Base.SG_Rail,
-            translate = 0 0 0,
-            rotate = 0 0 0,
-            scale = 0.001,
+            modelScript = Base.SG_ChainLink_4_N_Right,
+            translate = -0.38 0 -0.5,
+            rotate = 0 90 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
         }
         tile
         {
@@ -131,6 +135,70 @@ spriteModel
         tile
         {
             xy = 7 1,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 0 2,
+            modelScript = Base.SG_CatcherPost,
+            translate = -0.38 0 0.46,
+            rotate = 0 90 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 1 2,
+            modelScript = Base.SG_GuidePost,
+            translate = -0.38 0 0.54,
+            rotate = 0 90 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 2 2,
+            modelScript = Base.SG_Rail,
+            translate = -0.38 0 0.5,
+            rotate = 0 90 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 3 2,
+            modelScript = Base.SG_Drive,
+            translate = -0.6 0 0.5,
+            rotate = 0 90 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 4 2,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 5 2,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 6 2,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 7 2,
             modelScript = Base.SG_Rail,
             translate = 0 0 0,
             rotate = 0 0 0,

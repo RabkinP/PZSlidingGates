@@ -20,12 +20,12 @@ def string(stream):
 pack = BytesIO((MEDIA/'texturepacks/SG_GatesPreview.pack').read_bytes())
 assert pack.read(4) == b'PZPK' and integer(pack) == 1 and integer(pack) == 1
 assert string(pack) == 'SG_GatesPreview_0'
-assert integer(pack) == 16 and integer(pack) == 1
-for index in range(16):
+assert integer(pack) == 24 and integer(pack) == 1
+for index in range(24):
     assert string(pack) == f'sg_gates_preview_01_{index}'
     assert [integer(pack) for _ in range(8)] == [index%8*128,index//8*256,128,256,0,0,128,256]
 image = Image.open(BytesIO(pack.read(integer(pack))))
-assert image.size == (1024,512) and image.mode == 'RGBA'
+assert image.size == (1024,768) and image.mode == 'RGBA'
 assert image.getchannel('A').getextrema() == (0,0)
 assert not pack.read()
 
@@ -33,12 +33,12 @@ tiles = BytesIO((MEDIA/'SG_GatesPreview.tiles').read_bytes())
 assert tiles.read(4) == b'tdef' and integer(tiles) == 1 and integer(tiles) == 1
 assert tiles.readline() == b'sg_gates_preview_01\n'
 assert tiles.readline() == b'sg_gates_preview_01.png\n'
-assert [integer(tiles) for _ in range(4)] == [8,2,1,16]
-assert all(integer(tiles)==0 for _ in range(16))  # no inadvertent collision flags
+assert [integer(tiles) for _ in range(4)] == [8,3,1,24]
+assert all(integer(tiles)==0 for _ in range(24))  # no inadvertent collision flags
 assert not tiles.read()
 
 bindings=(ROOT/'mod/SlidingGates/common/media/spriteModels.txt').read_text()
-assert len(re.findall(r'\bxy\s*=',bindings)) == 16
+assert len(re.findall(r'\bxy\s*=',bindings)) == 24
 assert 'xy = 1 0,' in bindings and 'xy = 5 0,' in bindings
 assert 'Base.SG_ChainLink_N_Right,' in bindings and 'Base.SG_ChainLink_4_N_Right,' in bindings
 model_scripts = (MEDIA/'scripts/SG_models.txt').read_text()
@@ -56,7 +56,10 @@ for block in re.findall(r'\btile\s*\{([^}]+)\}', bindings):
 for index, name in ((1,'SG_ChainLink_N_Right_G_Closed'),
                     (5,'SG_ChainLink_4_N_Right_G_Closed'),
                     (8,'SG_CatcherPost_Static'), (9,'SG_GuidePost_Static'),
-                    (10,'SG_Rail_Static'), (11,'SG_Drive_Static')):
+                    (10,'SG_Rail_Static'), (11,'SG_Drive_Static'),
+                    (6,'SG_ChainLink_W_G_Closed'), (12,'SG_ChainLink_4_W_G_Closed'),
+                    (16,'SG_CatcherPost_W_Static'), (17,'SG_GuidePost_W_Static'),
+                    (18,'SG_Rail_W_Static'), (19,'SG_Drive_W_Static')):
     block = re.search(r'\bspriteModel\s+'+name+r'\s*\{([^}]+)\}',model_scripts).group(1)
     expected = properties(block)
     actual = tiles_by_index[index]
@@ -66,10 +69,23 @@ for index, name in ((1,'SG_ChainLink_N_Right_G_Closed'),
             assert list(map(float,actual[key].split())) == list(map(float,expected[key].split())), (index,key)
     if 'animation' in expected:
         assert actual['animation'].strip() == expected['animation'].strip()
+# Independent anchor check: W is the same assembly rotated around the catcher.
+# Native rotate.y=90 gives world (x,y)->(y,-x); cell convention adds +1 to Y.
+for width in (2,4):
+    for n_index,w_index,k,n_leaf in ((1 if width==2 else 5,6 if width==2 else 12,1,True),
+                                    (8,16,0,False),(9,17,width,False),
+                                    (10,18,width,False),(11,19,width,False)):
+        n_pose=tiles_by_index[n_index]; w_pose=tiles_by_index[w_index]
+        ntx,_,nty=map(float,n_pose['translate'].split())
+        wtx,_,wty=map(float,w_pose['translate'].split())
+        nx,ny=-k+.5+ntx,.5+nty
+        wx,wy=.5+wtx,k+.5+wty
+        assert abs(wx-ny)<1e-6 and abs(wy-(1-nx))<1e-6,(n_index,w_index)
+        assert list(map(float,w_pose['rotate'].split()))==[0,90,0]
 info=(MEDIA.parent/'mod.info').read_text()
 assert 'pack=SG_GatesPreview' in info and 'tiledef=SG_GatesPreview 6842' in info
 entities=(MEDIA/'scripts/entity_sliding_gates.txt').read_text()
 assert 'street_trafficlines' not in entities
-for index in range(6):
+for index in (0,1,2,3,4,5,6,7,12,13,14,15):
     assert f'sg_gates_preview_01_{index}' in entities
 print('PASS pack v1, tdef v1, alpha, properties, entity carriers, registration and calibrated model poses')

@@ -11,7 +11,7 @@ local function stateOf(id)
     local md = leaf:getModData()
     if states[id] and states[id].removed then return end
     return states[id] or { id = id, instance = md.sgInstance, revision = md.sgRevision,
-        width = md.sgWidth or 2, type = md.sgType, open = md.sgOpen or false,
+        width = md.sgWidth or 2, orientation = md.sgOrientation or "N", type = md.sgType, open = md.sgOpen or false,
         moving = md.sgMoving ~= nil, slavesOpen = md.sgSlavesOpen or false }
 end
 
@@ -65,7 +65,7 @@ local function receiveState(state, snapshot)
     if instance and (state.instance < instance or (state.instance == instance and state.revision < revision)) then return end
     if known and known.removed and state.instance == known.instance and state.revision <= known.revision then return end
     states[state.id] = state
-    SGGate.registry()[state.id] = { width = state.width, type = state.type,
+    SGGate.registry()[state.id] = { width = state.width, type = state.type, orientation = state.orientation or "N",
         instance = state.instance, revision = state.revision }
     if not leaf or (md.sgInstance and md.sgInstance ~= state.instance) then return end
     applying = true
@@ -73,6 +73,7 @@ local function receiveState(state, snapshot)
     -- false is a meaningful closing marker, not absence of motion.
     if state.moving then md.sgMoving = state.open else md.sgMoving = nil end
     md.sgInstance, md.sgRevision, md.sgWidth = state.instance, state.revision, state.width
+    md.sgOrientation = state.orientation or "N"
     local restingSnapshot = snapshot and not (known and known.instance == state.instance and known.moving)
     if restingSnapshot and leaf:IsOpen() ~= state.open then
         leaf:ToggleDoorSilent()
@@ -118,8 +119,11 @@ Events.OnContainerUpdate.Add(function()
                 requestDesired(id, leaf:IsOpen())
             elseif not state.moving then
                 for _, part in ipairs(SGGate.parts(id)) do
-                    if part:getModData().sgRole == "slave" and part:IsOpen() ~= state.slavesOpen then
+                    local role = part:getModData().sgRole
+                    if role == "slave" and part:IsOpen() ~= state.slavesOpen then
                         requestDesired(id, part:IsOpen()); break
+                    elseif role == "block" and state.open and part:IsOpen() then
+                        requestDesired(id, false); break
                     end
                 end
             end
@@ -134,12 +138,16 @@ Events.LoadGridsquare.Add(function(square)
         local obj = objects:get(i)
         local md = obj:getModData()
         if md.sgGate then
+            local entry = SGGate.registry()[md.sgGate]
+            if type(entry) ~= "table" then
+                SGGate.registry()[md.sgGate] = { width = md.sgWidth or 2, orientation = md.sgOrientation or "N", instance = md.sgInstance }
+            elseif not entry.orientation then entry.orientation = md.sgOrientation or "N" end
             -- Restore model names even before the requested resting snapshot arrives.
             if md.sgBase or md.sgStatic then SGGate.applyModel(obj) end
             if not seen[md.sgGate] then
                 seen[md.sgGate] = true
                 local state = stateOf(md.sgGate)
-                if state then SGGate.registry()[md.sgGate] = { width = state.width, instance = state.instance } end
+                if state then SGGate.registry()[md.sgGate] = { width = state.width, orientation = state.orientation or "N", instance = state.instance } end
                 requestSnapshot(md.sgGate)
             end
         end

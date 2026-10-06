@@ -237,3 +237,38 @@ Workbench, исходный материал и игровой экспорт о
 не воспроизводятся framebuffer filtering, chunk depth/cutaways, тон клеток,
 камера/зум конкретного кадра и финальные postprocessing/UI passes.
 Его назначение — ранняя проверка формы, формулы света и размеров деталей.
+
+## N/W assembly integration (2026-10-07)
+
+Installed JAR SHA256 remains
+`E1A69EB743EDE60B213A0FE7F8B83D4FCAB773036D256CC4543A336F3B058A33`.
+No Blender geometry or exported GLBs were changed.
+
+- Current `IsoObjectModelDrawer.renderMain` builds the sprite transform with
+  translate `(-tx,ty,tz)/1.5` followed by `rotateXYZ(rx,-ry,rz)` in radians.
+  `SpriteModel.Load` parses the rotate vector; vanilla W doors also use Y=90.
+  W placement derives from the calibrated N assembly: rotate `(0,90,0)` and
+  translate `(tz,ty,-tx)`. With the W catcher/leaf cell convention the whole
+  assembly maps world `(x,y)` to `(y,1-x)` relative to the catcher. Width and
+  clip time/travel are unchanged. `tests/test_gate_tiles.py` independently
+  compares the leaf/post/rail/drive anchors and gameplay/ghost bindings.
+- Parsed the installed `media/newtiledefinitions.tiles` (tdef v1). W gate door
+  carriers are `fixtures_doors_fences_01_128/130` (closed 128 has `doorW`,
+  `doorTrans`); opaque W doors are `fixtures_doors_01_68/70` (68 has `doorW`
+  without `doorTrans`). Physics carrier `fixtures_doors_fences_01_38` has
+  `PhysicsShape=WallW` (the original 36 is WallN). Physics carriers remain
+  hidden static objects, not native double-door assemblies.
+- Current `ISBuildIsoEntity.rotateKey/getFace`: nSprite 1=W, 2=N; getFace
+  skips unavailable faces. A single N face explains why R appeared inert.
+  `ISBuildIsoEntity:new` accepts serialized nSprite; preserve it on authority
+  reconstruction instead of forcing N. Original constructor parameter names
+  and material consumption stay intact.
+- Preview indices 0..15 stay numerically stable; reserved 6/7 and 12..15 now
+  contain W footprints, appended 16..19 W statics, 20..23 reserved. Pack/tdef
+  grows to 24 entries and 1024x768 PNG. Native parser probe passed all 24
+  spriteModels and tile definitions; report `research/render-audit/gate-tiles-native.txt`.
+
+Scope: engine transform and carrier properties are installed-game evidence;
+anchor mathematics and gameplay/layout are automated tests. Actual W appearance,
+Bullet collision, animations, and multiplayer packet delivery still require gameplay
+acceptance. This does not establish support for left-opening assemblies.

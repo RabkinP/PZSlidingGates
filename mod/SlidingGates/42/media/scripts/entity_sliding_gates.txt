@@ -21,7 +21,7 @@ module Base
      * wrapped in client/SG_GateBuild.lua and builds the real gate (SGGate.build) instead of the placeholder tiles.
      * Own construction-only carriers have no collision properties. Their spriteModels draw the leaf natively;
      * the hook draws the static parts with RenderGhostTileColor without creating world objects.
-     * Only the N face exists (gates along -x for now), so rotating the cursor never changes anything.
+     * R alternates N (-X travel) and W (+Y travel); both use their own preview footprint.
      * Footprint: the opening cells; the catcher post is on the cell right after the row, the pocket extends
      * the other way (checked by the wrapper).
      */
@@ -45,6 +45,14 @@ module Base
                     row = sg_gates_preview_01_0 sg_gates_preview_01_1,
                 }
             }
+            face W
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_6,
+                    row = sg_gates_preview_01_7,
+                }
+            }
         }
         component CraftRecipe
         {
@@ -63,6 +71,7 @@ module Base
                 item 2 [Base.ScrapMetal],
                 item 1 [Base.SmallSheetMetal],
                 item 4 [Base.Screws;Base.NutsBolts],
+                item 1 [Base.RubberHose;Base.TightsBlack;Base.TightsBlackTrans;Base.TightsBlackSemiTrans;Base.TightsFishnets],
                 item 4 [Base.WeldingRods] flags[DontRecordInput],
             }
         }
@@ -88,6 +97,16 @@ module Base
                     row = sg_gates_preview_01_2 sg_gates_preview_01_3 sg_gates_preview_01_4 sg_gates_preview_01_5,
                 }
             }
+            face W
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_12,
+                    row = sg_gates_preview_01_13,
+                    row = sg_gates_preview_01_14,
+                    row = sg_gates_preview_01_15,
+                }
+            }
         }
         component CraftRecipe
         {
@@ -106,6 +125,7 @@ module Base
                 item 3 [Base.ScrapMetal],
                 item 2 [Base.SmallSheetMetal],
                 item 4 [Base.Screws;Base.NutsBolts],
+                item 1 [Base.RubberHose;Base.TightsBlack;Base.TightsBlackTrans;Base.TightsBlackSemiTrans;Base.TightsFishnets],
                 item 6 [Base.WeldingRods] flags[DontRecordInput],
             }
         }

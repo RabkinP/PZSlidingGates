@@ -255,3 +255,94 @@ for peer in peers:
     assert not peer.globals().SGGate.isMoving('30,20,0')
     assert len(peer.globals().commands) == 1
 print('PASS two-client protocol simulation: concurrent open, convergence and no echo/reversal')
+
+# A W slave can arrive before the master and before global registry metadata.
+west = runtime()
+west.execute(r'''
+clientMode=true; now=0; commands={}
+function getTimestampMs() return now end
+Events.OnServerCommand={Add=function(fn) receive=fn end}
+Events.LoadGridsquare={Add=function(fn) loaded=fn end}
+function sendClientCommand(...) table.insert(commands,{...}) end
+player=character(30.5,24.5,0)
+function getPlayer() return player end
+require 'SG_Gate'
+local id='30,20,0'
+local slave=IsoThumpable.new(nil,square(30,24,0))
+slave.md={sgGate=id,sgRole='slave',sgWidth=4,sgOrientation='W',sgInstance=7,sgBase='SG_Hidden'}
+square(30,24,0):AddSpecialObject(slave)
+loaded(square(30,24,0))
+assert(SGGate.orientation(id)=='W' and SGGate.gateWidth(id)==4)
+assert(commands[1][3]=='snapshot')
+leaf=IsoThumpable.new(nil,square(30,21,0))
+leaf.md={sgGate=id,sgRole='leaf',sgWidth=4,sgOrientation='W',sgInstance=7,sgRevision=1,
+ sgBase='SG_ChainLink_4_W_G',sgType='chainlink4'}
+square(30,21,0):AddSpecialObject(leaf)
+receive('SlidingGates','snapshot',{id=id,instance=7,revision=2,width=4,orientation='W',type='chainlink4',
+ open=true,moving=false,slavesOpen=true})
+assert(leaf:IsOpen() and leaf.model=='Base.SG_ChainLink_4_W_G_Open')
+assert(SGGate.findRole(id,'leaf')==leaf and SGGate.registry()[id].orientation=='W')
+assert(SGGate.toggle(id,player)) -- nearest slave is in reach even when master is farther away
+assert(commands[#commands][4].open==false and commands[#commands][4].revision==2)
+assert(SGGate.build==nil)
+''')
+print('PASS W client: slave-first load, orientation snapshot, correct resting pose and remote leaf request')
+
+# Pocket E input sends a validated close request even at the far end of a wide leaf.
+for orientation in ('N','W'):
+    pocket_client = runtime()
+    pocket_client.globals().orientation = orientation
+    pocket_client.execute(r'''
+    clientMode=true; now=0; commands={}
+    function getTimestampMs() return now end
+    Events.OnServerCommand={Add=function(fn) receive=fn end}
+    function sendClientCommand(...) table.insert(commands,{...}) end
+    require 'SG_Gate'
+    local id='30,20,0'
+    local west=orientation=='W'
+    local leafSq=west and square(30,21,0) or square(29,20,0)
+    local pocketSq=west and square(30,28,0) or square(22,20,0)
+    leaf=IsoThumpable.new(nil,leafSq)
+    leaf.open=true
+    leaf.md={sgGate=id,sgRole='leaf',sgWidth=4,sgOrientation=orientation,sgInstance=1,sgRevision=1,
+      sgBase=west and 'SG_ChainLink_4_W_G' or 'SG_ChainLink_4_N_Right_G',sgType='chainlink4'}
+    leafSq:AddSpecialObject(leaf)
+    pocket=IsoThumpable.new(nil,pocketSq)
+    pocket.md={sgGate=id,sgRole='block',sgWidth=4,sgOrientation=orientation,sgInstance=1,sgBase='SG_Hidden'}
+    pocketSq:AddSpecialObject(pocket)
+    player=character(pocketSq.x+.5,pocketSq.y+.5,0)
+    function getPlayer() return player end
+    receive('SlidingGates','snapshot',{id=id,instance=1,revision=1,width=4,orientation=orientation,
+      type='chainlink4',open=true,moving=false,slavesOpen=true})
+    assert(SGGate.distanceTo(player,id)==0)
+    pocket:ToggleDoor()
+    assert(#commands==1 and commands[1][4].open==false)
+    sync(); assert(#commands==1) -- no duplicate while waiting for acceptance
+    receive('SlidingGates','result',{id=id,request=commands[1][4].request,accepted=true})
+    receive('SlidingGates','state',{id=id,instance=1,revision=2,width=4,orientation=orientation,
+      type='chainlink4',open=false,moving=true,slavesOpen=true})
+    pocket.open=false; pocket:ToggleDoor(); assert(#commands==1) -- ignore input during closing
+    ''')
+    print(f'PASS {orientation} pocket client: close request, proximity and no duplicate/reversal')
+
+for orientation in ('N','W'):
+    pocket_server = runtime()
+    pocket_server.globals().orientation = orientation
+    pocket_server.execute(r'''
+    serverMode=true; Events.OnClientCommand={Add=function() end}
+    function sendServerCommand() end
+    require 'SG_GateServer'
+    local id=SGGate.build(square(30,20,0),'chainlink4',0,orientation)
+    assert(SGGate.toggle(id))
+    delta=1; for _=1,5 do tick() end
+    assert(not SGGate.isMoving(id))
+    local pocket=partsWithRole(id,'block')[4]
+    local sq=pocket:getSquare()
+    player=character(sq:getX()+.5,sq:getY()+.5,0)
+    pocket:ToggleDoor()
+    assert(not pocket:IsOpen() and SGGate.snapshot(id).open) -- native prediction is restored
+    local state=SGGate.snapshot(id)
+    assert(SGGate.handleRequest(player,{id=id,instance=state.instance,revision=state.revision,open=false}))
+    assert(SGGate.isMoving(id) and not SGGate.snapshot(id).open)
+    ''')
+    print(f'PASS {orientation} pocket server: native correction and authoritative close from retracted leaf')

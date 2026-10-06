@@ -8,6 +8,8 @@ SGGateTypes = {
         materials = { ["Base.MetalPipe"] = 6, ["Base.Wire"] = 4, ["Base.ScrapMetal"] = 2, ["Base.SmallSheetMetal"] = 1, ["Base.Screws"] = 4 },
         clipSeconds = 3.0,
         leafModel = "SG_ChainLink_N_Right_G",
+        westLeafModel = "SG_ChainLink_W_G",
+        westDoorSprites = { "fixtures_doors_fences_01_128", "fixtures_doors_fences_01_130" },
         doorSprites = { "fixtures_doors_fences_01_129", "fixtures_doors_fences_01_131" },
     },
     chainlink4 = {
@@ -17,6 +19,8 @@ SGGateTypes = {
         materials = { ["Base.MetalPipe"] = 10, ["Base.Wire"] = 8, ["Base.ScrapMetal"] = 3, ["Base.SmallSheetMetal"] = 2, ["Base.Screws"] = 4 },
         clipSeconds = 6.0,
         leafModel = "SG_ChainLink_4_N_Right_G",
+        westLeafModel = "SG_ChainLink_4_W_G",
+        westDoorSprites = { "fixtures_doors_fences_01_128", "fixtures_doors_fences_01_130" },
         doorSprites = { "fixtures_doors_fences_01_129", "fixtures_doors_fences_01_131" },
     },
 }

@@ -1,17 +1,22 @@
 # SlidingGates: implementation status
 
-Updated 2026-10-06. The user confirmed the singleplayer car-obstruction fix in
+Updated 2026-10-07. The user confirmed the singleplayer car-obstruction fix in
 game. The subsequent multiplayer implementation has only mock-based verification;
 dedicated-server/two-client gameplay and singleplayer regression still need a run.
 
 ## Implemented
 
 - Manual chain-link gates in two- and four-cell widths; integrated assembly is
-  N-right, extending along world -X.
+  N-right along world -X and W along +Y, selected with R during construction.
+  W uses the same calibrated geometry rotated in spriteModel. The user confirmed
+  R rotation works in game; comprehensive vehicle/MP acceptance remains pending.
 - Animated leaves, static posts/rails and optional decorative drive model.
 - Opening collision transfers cell by cell; hidden physics carriers block vehicles.
 - Construction recipes, welding skill/health bonus and native model build cursor.
 - Queued mouse/menu toggles, vehicle obstruction checks and interrupted-motion recovery.
+- E at an open retracted leaf now requests closing through the pocket proxy; moving
+  gates ignore repeated proxy input. Mock checks cover N/W, blocked closing, and MP
+  proximity to pocket cells. This E fix still needs gameplay confirmation.
 - Whole-assembly destruction/dismantling with bounded material recovery.
 - RU/EN recipe and tooltip translations.
 - Debug spawn/remove tools are available only with the game's debug mode enabled.
@@ -29,11 +34,12 @@ assemblies retain their recorded health; the entity description now agrees with 
 
 ## Verification
 
-All six test scripts pass with Python and lupa (including Lua 5.1 execution):
+All seven test scripts pass with Python and lupa (including Lua 5.1 execution):
 
 ```powershell
 $env:PYTHONPATH = 'C:/Users/pavel/AppData/Local/Temp/pz-skill-validation-deps'
 python tests/test_gate_widths.py
+python tests/test_gate_orientation.py
 python tests/test_gate_salvage.py
 python tests/test_gate_preview.py
 python tests/test_gate_tiles.py
@@ -60,7 +66,12 @@ packet ordering, late-join resting snapshots, timeout and removed-state ordering
 Salvage is exercised in both singleplayer and server modes; construction verifies
 one base create and no client-side create. Native UDP delivery is not simulated.
 
-The installed-game tile probe passes; all eight exported leaves pass clip/travel,
+W tests cover both widths on SP/server, rotated carriers, vehicle/fence rejection,
+cell-by-cell motion, partial-load recovery and metadata before a registry snapshot.
+Preview tests check R and serialized W construction; MP checks slave-first W loading.
+The recipe includes one rubber hose or any tights for roller tyres.
+
+The installed-game tile probe passes for all 24 carriers; all eight exported leaves pass clip/travel,
 weight and deployment checks. Existing geometry evidence lives in
 `art/clearance_checks.json` and `art/handle_checks.json`; geometry was not rebuilt
 by the stabilization changes.
@@ -72,7 +83,8 @@ by the stabilization changes.
    ordering. Recheck singleplayer after the shared-module split.
 2. Functional add-on drive: installation/removal recipes, electricity, car battery,
    charging, cycle consumption, linked RF remotes, sound and sandbox options.
-3. W and left-opening assemblies: static placement, collision, building and tests.
+3. Validate W assembly appearance/collision in game; add the opposite opening
+   direction when requested (left-opening assemblies remain unimplemented).
 4. Complete obstacle policy, keys/locks and release polish. Wood/steel styles follow v1.
 
 Dedicated server plus two clients, coop and restart testing remain required.

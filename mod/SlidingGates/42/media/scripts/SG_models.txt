@@ -444,4 +444,77 @@ module Base
         scale = 0.001,
     }
 
+
+    /* W assembly rotates the calibrated N models; geometry and clips are unchanged. */
+    spriteModel SG_ChainLink_W_G_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_W_G_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+    }
+
+    spriteModel SG_ChainLink_4_W_G_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_4_W_G_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+    }
+
+    spriteModel SG_CatcherPost_W_Static
+    {
+        modelScript = Base.SG_CatcherPost,
+        translate = -0.38 0.0 0.46,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_GuidePost_W_Static
+    {
+        modelScript = Base.SG_GuidePost,
+        translate = -0.38 0.0 0.54,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Rail_W_Static
+    {
+        modelScript = Base.SG_Rail,
+        translate = -0.38 0.0 0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Drive_W_Static
+    {
+        modelScript = Base.SG_Drive,
+        translate = -0.6 0.0 0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+    }
 }

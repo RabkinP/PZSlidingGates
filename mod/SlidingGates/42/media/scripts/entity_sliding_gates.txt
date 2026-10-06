@@ -57,10 +57,11 @@ module Base
             inputs
             {
                 item 4 [Base.BlowTorch] flags[DontRecordInput],
-                item 8 [Base.MetalPipe;Base.MetalBar;Base.SteelBar],
-                item 6 [Base.Wire],
-                item 3 [Base.ScrapMetal],
-                item 3 [Base.SmallSheetMetal],
+                item 1 [Base.WeldingMask] mode:keep flags[DontRecordInput],
+                item 6 [Base.MetalPipe;Base.MetalBar;Base.SteelBar],
+                item 4 [Base.Wire],
+                item 2 [Base.ScrapMetal],
+                item 1 [Base.SmallSheetMetal],
                 item 4 [Base.Screws;Base.NutsBolts],
                 item 4 [Base.WeldingRods] flags[DontRecordInput],
             }
@@ -99,10 +100,11 @@ module Base
             inputs
             {
                 item 6 [Base.BlowTorch] flags[DontRecordInput],
-                item 14 [Base.MetalPipe;Base.MetalBar;Base.SteelBar],
-                item 12 [Base.Wire],
+                item 1 [Base.WeldingMask] mode:keep flags[DontRecordInput],
+                item 10 [Base.MetalPipe;Base.MetalBar;Base.SteelBar],
+                item 8 [Base.Wire],
                 item 3 [Base.ScrapMetal],
-                item 3 [Base.SmallSheetMetal],
+                item 2 [Base.SmallSheetMetal],
                 item 4 [Base.Screws;Base.NutsBolts],
                 item 6 [Base.WeldingRods] flags[DontRecordInput],
             }

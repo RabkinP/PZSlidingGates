@@ -13,7 +13,7 @@ local TYPES = {
     chainlink = {
         width = 2,
         baseHealth = 300, -- plus 50 per MetalWelding level of the builder (see SG_GateBuild)
-        materials = { ["Base.MetalPipe"] = 8, ["Base.Wire"] = 6, ["Base.ScrapMetal"] = 3, ["Base.SmallSheetMetal"] = 3, ["Base.Screws"] = 4 },
+        materials = { ["Base.MetalPipe"] = 6, ["Base.Wire"] = 4, ["Base.ScrapMetal"] = 2, ["Base.SmallSheetMetal"] = 1, ["Base.Screws"] = 4 },
         clipSeconds = 3.0, -- Open/Close clip length (1.5 s per cell); played at ANIM_SPEED
         leafModel = "SG_ChainLink_N_Right_G", -- spriteModels *_G_*: leaf carrier is one cell to the left of the model origin
         doorSprites = { "fixtures_doors_fences_01_129", "fixtures_doors_fences_01_131" }, -- closed, open (N edge)
@@ -21,7 +21,7 @@ local TYPES = {
     chainlink4 = {
         width = 4,
         baseHealth = 450,
-        materials = { ["Base.MetalPipe"] = 14, ["Base.Wire"] = 12, ["Base.ScrapMetal"] = 3, ["Base.SmallSheetMetal"] = 3, ["Base.Screws"] = 4 },
+        materials = { ["Base.MetalPipe"] = 10, ["Base.Wire"] = 8, ["Base.ScrapMetal"] = 3, ["Base.SmallSheetMetal"] = 2, ["Base.Screws"] = 4 },
         clipSeconds = 6.0,
         leafModel = "SG_ChainLink_4_N_Right_G",
         doorSprites = { "fixtures_doors_fences_01_129", "fixtures_doors_fences_01_131" },
@@ -503,6 +503,8 @@ end)
 -- Destruction: when any door part of a gate is destroyed (zombies, weapons, vehicles) the whole gate falls apart and
 -- drops part of its materials (50% per unit, like vanilla thumpables). Every part has the full gate health.
 function SGGate.destroyGate(id, destroyer, dropPercent)
+    -- Multiple parts/events can report the same destruction. Claim the registry entry only once.
+    if registry()[id] == nil then return false end
     local leaf = findRole(id, "leaf")
     local x, y, z = parseId(id)
     local dropSq = (leaf and leaf:getSquare()) or sqAt(x - 1, y, z)
@@ -522,12 +524,26 @@ function SGGate.destroyGate(id, destroyer, dropPercent)
     for _, o in ipairs(parts) do removeObj(o) end
     if dropSq and typeId and TYPES[typeId] then
         for itemType, count in pairs(TYPES[typeId].materials) do
+            local recovered = 0
             for _ = 1, count do
-                if ZombRand(100) < (dropPercent or 50) then dropSq:AddWorldInventoryItem(itemType, 0.0, 0.0, 0.0) end
+                if ZombRand(100) < (dropPercent or 50) then recovered = recovered + 1 end
+            end
+            if itemType == "Base.Wire" then
+                -- Recipe quantities are uses, not coils. Set charge BEFORE placing the item in the world.
+                if recovered > 0 then
+                    local wire = instanceItem(itemType)
+                    if wire then
+                        wire:setUsedDelta(math.min(1, recovered * wire:getUseDelta()))
+                        dropSq:AddWorldInventoryItem(wire, 0.0, 0.0, 0.0)
+                    end
+                end
+            else
+                for _ = 1, recovered do dropSq:AddWorldInventoryItem(itemType, 0.0, 0.0, 0.0) end
             end
         end
     end
     log("gate " .. id .. (dropPercent and " dismantled" or " destroyed"))
+    return true
 end
 
 Events.OnDestroyIsoThumpable.Add(function(thump, player)

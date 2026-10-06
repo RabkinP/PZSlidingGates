@@ -1,24 +1,61 @@
--- SlidingGates: dismantling uses the vanilla "Disassemble" menu (tools, skill, XP, sounds and the scrap yield of the
--- clicked part all come from vanilla ISMoveableSpriteProps:scrapObject). We only make the result consistent with the
--- gate being one object: after the vanilla scrapping of any gate part the rest of the gate goes away too, returning
--- part of the recipe materials (SGGate.destroyGate with a drop chance per unit).
+-- SlidingGates: dismantling uses the vanilla "Disassemble" menu (tools, skill, XP and sounds come from
+-- ISMoveableSpriteProps:scrapObject). Gate material yield is handled once for the
+-- entire assembly; vanilla carrier-tile scrap must not be added on top of it.
 
-local EXTRA_DROP_PERCENT = 70 -- on top of the vanilla scrap yield of the scrapped part
+local DROP_PERCENT = 70
+
+require "ISUI/ISDisassembleMenu"
 
 local function install()
     if not ISMoveableSpriteProps or ISMoveableSpriteProps.sgScrapHooked then return end
     ISMoveableSpriteProps.sgScrapHooked = true
-    -- The vanilla menu lists an object only if its tile has the main "Material" property (it selects the scrap
-    -- definition: tools, skill, yield). Our door carrier tiles only have Material2/3, so give gate parts the MetalPipe
-    -- definition (blowtorch + welding mask, MetalWelding) before the vanilla check.
-    local originalCanScrap = ISMoveableSpriteProps.canScrapObject
-    function ISMoveableSpriteProps:canScrapObject(character)
-        local obj = self.object
-        if obj and obj.getModData then
-            local md = obj:getModData()
-            if md and md.sgGate and not self.material then self.material = "MetalPipe" end
+    -- A gate has several selectable carriers, but only its leaf is an action target.
+    local originalMenu = ISDisassembleMenu.createMenu
+    function ISDisassembleMenu.createMenu(worldObjects, context, playerObj)
+        local objects, seen = {}, {}
+        for _, obj in ipairs(worldObjects) do
+            local md = obj and obj.getModData and obj:getModData()
+            local id = md and md.sgGate
+            if not id then
+                objects[#objects + 1] = obj
+            elseif not seen[id] then
+                seen[id] = true
+                for _, part in ipairs(SGGate.parts(id)) do
+                    if part:getModData().sgRole == "leaf" then
+                        objects[#objects + 1] = part
+                        break
+                    end
+                end
+            end
         end
-        return originalCanScrap(self, character)
+        return originalMenu(objects, context, playerObj)
+    end
+    -- Configure each gate before menu eligibility and timed-action creation.
+    -- Shared vanilla tiles and the carpentry thumpable fallback must stay untouched.
+    local originalFromObject = ISMoveableSpriteProps.fromObject
+    function ISMoveableSpriteProps.fromObject(obj)
+        local md = obj and obj.getModData and obj:getModData()
+        if not (md and md.sgGate) then return originalFromObject(obj) end
+        local props = ISMoveableSpriteProps.new(obj:getSprite())
+        props.object = obj
+        props.isFromObject = true
+        props.material = "MetalPipe"
+        props.material2 = nil
+        props.material3 = nil
+        props.canScrap = true
+        props.scrapUseTool = true
+        props.scrapUseSkill = true
+        props.scrapSize = "Medium"
+        props.scrapToolUses = 5
+        props.isMultiSprite = false
+        props.name = obj:getName() or "Sliding gate"
+        return props
+    end
+
+    local originalItems = ISMoveableSpriteProps.getScrapItemsList
+    function ISMoveableSpriteProps:getScrapItemsList(character)
+        if self.sgGateScrap then return { usable = {}, unusable = {} } end
+        return originalItems(self, character)
     end
 
     local original = ISMoveableSpriteProps.scrapObject
@@ -29,9 +66,15 @@ local function install()
             local md = obj:getModData()
             gateId = md and md.sgGate
         end
-        local result = original(self, character)
-        if gateId and SGGate.typeOf(gateId) then
-            SGGate.destroyGate(gateId, character, EXTRA_DROP_PERCENT)
+        if not gateId then return original(self, character) end
+        local previous = self.sgGateScrap
+        self.sgGateScrap = true
+        local ok, result = pcall(original, self, character)
+        self.sgGateScrap = previous
+        if not ok then error(result) end
+        -- Vanilla returns nil even on success. Check actual removal, not its return value or skill roll.
+        if obj:getObjectIndex() == -1 then
+            SGGate.destroyGate(gateId, character, DROP_PERCENT)
         end
         return result
     end

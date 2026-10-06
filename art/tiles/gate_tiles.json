@@ -1,0 +1,112 @@
+{
+  "tileset": "sg_gates_preview_01",
+  "file_number": 6842,
+  "tileset_number": 1,
+  "tile_size": [
+    128,
+    256
+  ],
+  "construction_only": true,
+  "indices": {
+    "0": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "1": {
+      "modelScript": "Base.SG_ChainLink_N_Right",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "2": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "3": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "4": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "5": {
+      "modelScript": "Base.SG_ChainLink_4_N_Right",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "6": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "7": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "8": {
+      "modelScript": "Base.SG_CatcherPost",
+      "translate": "-0.46 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1"
+    },
+    "9": {
+      "modelScript": "Base.SG_GuidePost",
+      "translate": "-0.54 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1"
+    },
+    "10": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1"
+    },
+    "11": {
+      "modelScript": "Base.SG_Drive",
+      "translate": "-0.5 0 -0.6",
+      "rotate": "0 0 0",
+      "scale": "1"
+    },
+    "12": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "13": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "14": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "15": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    }
+  }
+}

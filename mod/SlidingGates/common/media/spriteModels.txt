@@ -1,0 +1,140 @@
+spriteModel
+{
+    VERSION = 1,
+    tileset
+    {
+        name = sg_gates_preview_01,
+        tile
+        {
+            xy = 0 0,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 1 0,
+            modelScript = Base.SG_ChainLink_N_Right,
+            translate = 0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 2 0,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 3 0,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 4 0,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 5 0,
+            modelScript = Base.SG_ChainLink_4_N_Right,
+            translate = 0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 6 0,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 7 0,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 0 1,
+            modelScript = Base.SG_CatcherPost,
+            translate = -0.46 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 1 1,
+            modelScript = Base.SG_GuidePost,
+            translate = -0.54 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 2 1,
+            modelScript = Base.SG_Rail,
+            translate = -0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 3 1,
+            modelScript = Base.SG_Drive,
+            translate = -0.5 0 -0.6,
+            rotate = 0 0 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 4 1,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 5 1,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 6 1,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 7 1,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+    }
+}

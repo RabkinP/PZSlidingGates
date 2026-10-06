@@ -19,8 +19,8 @@ module Base
     /*
      * The placed tiles are placeholders (they only define the footprint and the cursor): ISBuildIsoEntity:create is
      * wrapped in client/SG_GateBuild.lua and builds the real gate (SGGate.build) instead of the placeholder tiles.
-     * Placeholder sprites must be unused by every other entity (the sprite registry is global) and should look
-     * like a plain marker in the placement cursor: flat street_trafficlines floor overlays.
+     * Own construction-only carriers have no collision properties. Their spriteModels draw the leaf natively;
+     * the hook draws the static parts with RenderGhostTileColor without creating world objects.
      * Only the N face exists (gates along -x for now), so rotating the cursor never changes anything.
      * Footprint: the opening cells; the catcher post is on the cell right after the row, the pocket extends
      * the other way (checked by the wrapper).
@@ -42,7 +42,7 @@ module Base
             {
                 layer
                 {
-                    row = street_trafficlines_01_2 street_trafficlines_01_3,
+                    row = sg_gates_preview_01_0 sg_gates_preview_01_1,
                 }
             }
         }
@@ -84,7 +84,7 @@ module Base
             {
                 layer
                 {
-                    row = street_trafficlines_01_8 street_trafficlines_01_9 street_trafficlines_01_10 street_trafficlines_01_11,
+                    row = sg_gates_preview_01_2 sg_gates_preview_01_3 sg_gates_preview_01_4 sg_gates_preview_01_5,
                 }
             }
         }

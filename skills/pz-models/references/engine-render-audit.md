@@ -20,6 +20,72 @@ ModelManager, отличаются. Сравнение — в `render-audit/mani
 
 ## Что подтверждено кодом
 
+### Render3DItem и строительный призрак (2026-10-06)
+
+Fingerprint совпадает с указанным выше; проверены текущие извлечённые классы
+`LuaManager$GlobalObject`, `WorldItemModelDrawer`, `ItemModelRenderer`.
+`LuaManager.GlobalObject.Render3DItem(InventoryItem, IsoGridSquare, float x,
+float y, float z, float rotation)` вызывает `WorldItemModelDrawer.renderMain`,
+который использует `ItemModelRenderer`. Это путь предмета инвентаря: для обычного
+WorldStaticModel `ItemModelRenderer.renderMain` получает modelScript через
+`item.getWorldStaticItem()`, учитывает `modelScript.scale`, `item.worldScale`,
+повороты и цвет предмета. Он не принимает SpriteModel или аргументы Open/Close,
+animationTime и translate из наших spriteModel definitions.
+Ванильный `ISPlace3DItemCursor.lua` использует его при размещении предметов
+через `ISDropWorldItemAction`; `ISBuildIsoEntity.lua` рисует строительные тайлы
+через `RenderGhostTileColor`. Не подменять один контракт другим только по имени
+«3D»: предпросмотр ворот через InventoryItem-прокси возможен как отдельный
+непроверенный вариант, которому нужны собственные размещение/поза/цвет.
+Собственные тайлы не являются общим обязательным условием любого 3D-превью;
+в текущем моде они обслуживают entity footprint и нативный spriteModel cursor.
+
+### Собственные тайлы и строительный призрак (2026-10-06)
+
+Fingerprint JAR совпадает с указанным выше. Текущие классы извлечены из установленной
+игры; проверки форматов выполнены её настоящими Java-парсерами без игрового мира/GL.
+
+- `IsoSprite.RenderGhostTileColor`: при наличии `spriteModel` вызывает
+  `IsoObjectModelDrawer.renderMain` в `(x+0.5,y+0.5,z)`, RGB берёт из аргументов,
+  alpha устанавливает в **1.0**, `bOutline=false`, `bApplySurfaceAlpha=false`.
+  При статусе Ready/Loading возвращается до растрового fallback. Наличие модели
+  не гарантирует полупрозрачность или цветной контур.
+- `media/lua/server/BuildingObjects/ISBuildIsoEntity.lua`, `cacheSprites`:
+  `IsoSprite.new()` + `LoadSingleTexture(name)` создают копию только с текстурой.
+  Текущий `IsoSprite.LoadSingleTexture` не переносит `spriteModel`. Для модовых
+  ворот кеш курсора заменён на зарегистрированные `getSprite(name)`; одного
+  `spriteModels.txt` без этой поправки недостаточно для этого entity-курсора.
+- `SpriteModelManager.init`: ищет модовый файл исключительно в
+  `mod.mediaFile.common.absoluteFile/spriteModels.txt`, т.е. `common/media/`.
+  Это отличается от обычного поиска version/common ресурсов через файловую систему.
+- `ZomboidFileSystem.loadModPackFiles/loadModTileDefs`: загрузка через `pack=` и
+  `tiledef=NAME NUMBER` в `mod.info`; pack в `media/texturepacks/`, `.tiles` в `media/`.
+  Текущий `ChooseGameInfo.readModInfoAux` допускает tiledef numbers **100..8189**.
+  CFR обычным режимом не разобрал метод; повтор с forcetopsort/ignoreexceptions
+  показывает формат аргументов, но имеет предупреждение о восстановлении exceptions.
+  Не переносить его восстановленное управление ошибками как доказанный исходник.
+- `IsoWorld.LoadTileDefinitions`: `tdef` magic, little-endian version=1/count,
+  строки с LF (CRLF отвергается), размеры сетки, tileset number, tile count,
+  число и пары свойств для каждого тайла. Модовый tileset number 1..512 и
+  максимум 512 тайлов. Текстовый `.tiles.txt` в этом пути не загружается.
+- `TexturePackDevice.initMetaData/readPage`: `PZPK` magic, LE version=1/page count,
+  строки с LE длиной, page name/count/alpha, subtexture name и восемь LE int:
+  x,y,w,h,offsetX,offsetY,originalWidth,originalHeight; затем LE длина PNG и PNG.
+  Явные untrimmed записи позволяют сохранить полностью прозрачные носители.
+  Это доказательство для нашего генератора v1, не универсальная реализация TileZed.
+- `IsoWorld.getSpriteID`: для модов `0x100000+(fileNumber-2)*262144+
+  (tilesetNumber-1)*512+tileIndex`. Стабильность имён не заменяет стабильность
+  числовых идентификаторов; их нужно сохранять для совместимости сохранений.
+
+Реализация: `tools/build_gate_tiles.py`, `art/tiles/README.md`. Номер 6842 не обнаружен
+у других локальных модов и в установленном Steam Workshop на дату проверки; это
+не глобальная регистрация номера и не гарантия для любой будущей комбинации модов.
+`research/probe-gate-tiles.py` проверил все 16 subtexture entries, PNG 1024×512,
+загрузку всех 16 tile definitions и привязку всех 16 spriteModels настоящими
+`TexturePackDevice`, ImageIO, `IsoWorld.LoadTileDefinitions`,
+`SpriteModelsFile.parseFile`/`Tileset.initSprites`. Результат:
+`research/render-audit/gate-tiles-native.txt`. Это не проверка OpenGL, меню или
+визуального размещения в запущенной игре.
+
 | Этап | Реальное поведение | Требование к нашим моделям |
 | --- | --- | --- |
 | GLB | Jassimp: MAKE_LEFT_HANDED, LIMIT_BONE_WEIGHTS, TRIANGULATE, OPTIMIZE_MESHES, REMOVE_REDUNDANT_MATERIALS, JOIN_IDENTICAL_VERTICES | Не зеркалить оси и UV вручную поверх преобразований игры |

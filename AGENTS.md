@@ -23,3 +23,11 @@ The maintained engine evidence is `skills/pz-models/references/engine-render-aud
 Use `art/update_straight_slide.py` and `art/export_chainlink.py` after inspecting them; `build_chainlink.py` is a builder that can alter the active scene and should not be blindly rerun on a finished workbench. Relevant checks include two-cell bounds, both clips, continuous roller capture, motor/post intersections and native import. The PZ preview is approximate; only gameplay tests establish final appearance.
 
 `art/README.md` records historical designs. Its tail, long-beam and earlier placement sections are superseded by the current invariants above. Update these rules when an authorized design change alters them.
+
+## Construction preview resources
+
+- Own construction carriers: `sg_gates_preview_01`; tiledef file number **6842**, tileset number **1**. Preserve identifiers and existing tile indices. Generator: `tools/build_gate_tiles.py`; mapping and limits: `art/tiles/README.md`.
+- Pack and `.tiles` live in `mod/SlidingGates/42/media`; `spriteModels.txt` must live in `mod/SlidingGates/common/media` for the audited B42 `SpriteModelManager` loader.
+- `ISBuildIsoEntity.cacheSprites` creates texture-only copies. Our hook must keep registered sprites to retain their `spriteModel`. Render all preview parts through native ghost calls; do not insert preview objects into world squares.
+- Preview tiles have no physics/door/collision properties. Their entity registry is global: use unique sprites per entity footprint. Existing gameplay collision carriers are a separate concern; do not infer their properties from preview tiles.
+- Verify binary resources with `tests/test_gate_tiles.py`, Lua preview behavior with `tests/test_gate_preview.py`, and actual installed parsers with `research/probe-gate-tiles.py`. Headless parsing does not establish final in-game appearance.

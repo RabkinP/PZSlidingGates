@@ -4,3 +4,5 @@ description=Sliding gates with animated opening, motor drive and RF remote. (pro
 author=pavel
 modversion=0.0.1
 versionMin=42.0.0
+pack=SG_GatesPreview
+tiledef=SG_GatesPreview 6842

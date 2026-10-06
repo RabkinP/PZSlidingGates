@@ -205,36 +205,6 @@ function SGGate.build(sq, typeId, healthBonus)
     return id
 end
 
--- Build cursor preview: client-side translucent objects with the real models (no collision, nothing transmitted),
--- positioned exactly like the built gate. Returns the list of created objects (pass it to clearPreview).
-function SGGate.createPreview(sq, typeId, alpha)
-    local t = TYPES[typeId]
-    if not t or not sq then return {} end
-    local width = t.width
-    local x, y, z = sq:getX(), sq:getY(), sq:getZ()
-    local objs = {}
-    local function add(csq, model)
-        if not csq then return end
-        local o = IsoObject.new(getWorld():getCell(), csq, "vegetation_groundcover_01_0")
-        o:setSpriteModelName("Base." .. model)
-        csq:AddTileObject(o)
-        o:setAlphaAndTarget(alpha or 0.6)
-        objs[#objs + 1] = o
-    end
-    add(sqAt(x - 1, y, z), t.leafModel .. "_Closed")
-    add(sq, "SG_CatcherPost_Static")
-    add(sqAt(x - width, y, z), "SG_GuidePost_Static")
-    for k = 0, 2 * width - 1 do add(sqAt(x - k, y, z), "SG_Rail_Static") end
-    return objs
-end
-
-function SGGate.clearPreview(objs)
-    for _, o in ipairs(objs or {}) do
-        local sq = o:getSquare()
-        if sq then sq:RemoveTileObject(o) end
-    end
-end
-
 function SGGate.installDrive(id)
     if findRole(id, "drive") then log("drive already installed"); return end
     local x, y, z = parseId(id)

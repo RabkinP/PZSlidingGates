@@ -58,39 +58,49 @@ local function install()
         return originalSetInfo(self, square, north, sprite, openSprite)
     end
 
-    -- preview of the real gate models under the cursor (the entity tiles are only flat markers)
-    local function clearPreview(builder)
-        if builder.sgPreview then SGGate.clearPreview(builder.sgPreview) end
-        builder.sgPreview, builder.sgPreviewKey = nil, nil
+    -- B42's cacheSprites makes texture-only copies via LoadSingleTexture, losing spriteModel.
+    -- Our cursor uses the registered sprites; the ghost renderer does not mutate their properties.
+    local originalCacheSprites = ISBuildIsoEntity.cacheSprites
+    function ISBuildIsoEntity:cacheSprites(face)
+        if not gateTypeOf(self) then return originalCacheSprites(self, face) end
+        if not face then return end
+        for z = 0, face:getzLayers() - 1 do
+            for x = 0, face:getWidth() - 1 do
+                for y = 0, face:getHeight() - 1 do
+                    local info = face:getTileInfo(x, y, z)
+                    local name = info and info:getSpriteName()
+                    if name then self.spriteCache[name] = getSprite(name) end
+                end
+            end
+        end
     end
 
+    -- The base cursor draws the leaf from our entity carrier on the catcher-adjacent opening cell.
+    -- Static parts use the same native ghost renderer; no objects are inserted into the world.
     local originalRender = ISBuildIsoEntity.render
     function ISBuildIsoEntity:render(x, y, z, square)
         originalRender(self, x, y, z, square)
         local typeId = gateTypeOf(self)
         if not typeId then return end
-        local key = square and (x .. "," .. y .. "," .. z) or "none"
-        if key == self.sgPreviewKey then return end
-        clearPreview(self)
-        self.sgPreviewKey = key
-        local catcher = square and catcherSquare(square, typeId)
-        if catcher then
-            local valid = self:isValid(square)
-            self.sgPreview = SGGate.createPreview(catcher, typeId, valid and 0.65 or 0.3)
+        if not square then return end
+        local valid = self:isValid(square)
+        local r, g, b = 1, 1, 1
+        if not valid then r, g, b = 0.65, 0.2, 0.2 end
+        local width = SGGate.width(typeId)
+        local catcherX = x + width
+        local function draw(index, cellX)
+            local sprite = getSprite("sg_gates_preview_01_" .. index)
+            if sprite then sprite:RenderGhostTileColor(cellX, y, z, r, g, b, 0.6) end
         end
-    end
-
-    local originalDeactivate = ISBuildIsoEntity.deactivate
-    function ISBuildIsoEntity:deactivate()
-        if gateTypeOf(self) then clearPreview(self) end
-        return originalDeactivate(self)
+        draw(8, catcherX)
+        draw(9, x)
+        for k = 0, 2 * width - 1 do draw(10, catcherX - k) end
     end
 
     local originalCreate = ISBuildIsoEntity.create
     function ISBuildIsoEntity:create(x, y, z, north, sprite)
         local typeId = gateTypeOf(self)
         if not typeId then return originalCreate(self, x, y, z, north, sprite) end
-        clearPreview(self) -- the real gate replaces the preview
         print(string.format("[SGBuild] create %s at %d,%d,%d north=%s", typeId, x, y, z, tostring(north)))
         self.sgPlaceholdersReached = false
         originalCreate(self, x, y, z, north, sprite)

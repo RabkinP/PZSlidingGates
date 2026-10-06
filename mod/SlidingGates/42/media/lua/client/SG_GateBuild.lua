@@ -5,10 +5,10 @@
 -- Geometry: the cursor row covers the opening cells x..x+W-1 (N edge); the catcher post sits on x+W and the leaf
 -- slides towards -x into the pocket (x-1..x-W, checked in isValid).
 
-local GATE_TYPES = {
-    SlidingGateChainLink2 = "chainlink",
-    SlidingGateChainLink4 = "chainlink4",
-}
+require "SG_GateTypes"
+
+local GATE_TYPES = {}
+for id, definition in pairs(SGGateTypes) do GATE_TYPES[definition.entity] = id end
 
 local function gateTypeOf(builder)
     local ok, name = pcall(function() return builder.objectInfo:getScript():getName() end)

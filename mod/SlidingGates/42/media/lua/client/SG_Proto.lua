@@ -164,6 +164,7 @@ local function removeObj(obj)
 end
 
 local function fillMenu(player, context, worldobjects, test)
+    if not isDebugEnabled() then return end
     if test then return true end
     local sq
     for _, o in ipairs(worldobjects) do sq = o:getSquare(); if sq then break end end

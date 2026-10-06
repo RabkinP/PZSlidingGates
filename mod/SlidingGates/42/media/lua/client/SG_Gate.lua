@@ -7,26 +7,10 @@
 --   post/rail  static decoration; drive  optional add-on, can be installed on an existing gate
 -- N-edge gates extend towards -x (see research/vanilla-gates.md).
 
-SGGate = SGGate or {}
+require "SG_GateTypes"
 
-local TYPES = {
-    chainlink = {
-        width = 2,
-        baseHealth = 300, -- plus 50 per MetalWelding level of the builder (see SG_GateBuild)
-        materials = { ["Base.MetalPipe"] = 6, ["Base.Wire"] = 4, ["Base.ScrapMetal"] = 2, ["Base.SmallSheetMetal"] = 1, ["Base.Screws"] = 4 },
-        clipSeconds = 3.0, -- Open/Close clip length (1.5 s per cell); played at ANIM_SPEED
-        leafModel = "SG_ChainLink_N_Right_G", -- spriteModels *_G_*: leaf carrier is one cell to the left of the model origin
-        doorSprites = { "fixtures_doors_fences_01_129", "fixtures_doors_fences_01_131" }, -- closed, open (N edge)
-    },
-    chainlink4 = {
-        width = 4,
-        baseHealth = 450,
-        materials = { ["Base.MetalPipe"] = 10, ["Base.Wire"] = 8, ["Base.ScrapMetal"] = 3, ["Base.SmallSheetMetal"] = 2, ["Base.Screws"] = 4 },
-        clipSeconds = 6.0,
-        leafModel = "SG_ChainLink_4_N_Right_G",
-        doorSprites = { "fixtures_doors_fences_01_129", "fixtures_doors_fences_01_131" },
-    },
-}
+SGGate = SGGate or {}
+local TYPES = SGGateTypes
 
 -- Door tiles without doorTrans (metal door, N edge: closed / open). A see-through (doorTrans) door in a fence cell lets the
 -- engine's vision test see past the fence, and FBORenderCutaways then cuts the whole fence run away; an opaque
@@ -117,8 +101,11 @@ local function removeObj(obj)
 end
 
 local function toggleDoor(obj)
+    local wasOpen = obj:IsOpen()
     obj:ToggleDoor(getPlayer())
     SGGate.applyModel(obj)
+    -- ToggleDoor returns no success value: obstruction/locks can refuse the request.
+    return obj:IsOpen() ~= wasOpen
 end
 
 -- all parts of the gate id (scans the cells it can occupy)
@@ -318,6 +305,13 @@ local function finalize(id)
     local md = leaf:getModData()
     local open = md.sgOpen or false
     local width = gateWidth(id)
+    -- A leaf can load before the rest of its assembly across a chunk boundary.
+    -- Keep the recovery marker until every required square and opening door exists.
+    for k = 0, 2 * width do
+        if not sqAt(x - k, y, z) or not sqAt(x - k, y - 1, z) then return false end
+    end
+    local slaves, blockers, colliders = indexParts(id)
+    for k = 1, width do if not slaves[k] then return false end end
     -- the leaf door and its model pose must match the target too (silent fix: no animation, no sound)
     if leaf:IsOpen() ~= open then
         leaf:ToggleDoorSilent()
@@ -325,7 +319,6 @@ local function finalize(id)
         log("gate " .. id .. ": leaf state corrected")
     end
     SGGate.applyModel(leaf)
-    local slaves, blockers, colliders = indexParts(id)
     for k = 1, width do
         setSlave(slaves, k, open)
         setCollider(colliders, id, x, y, z, k, not open)
@@ -383,9 +376,14 @@ onTick = function()
             local leaf = findRole(id, "leaf")
             if not leaf then
                 moving[id] = nil
+                unresolved[id] = true
             elseif not leaf:isAnimating() and tr.t > 0 then
-                finalize(id)
-                log("gate " .. id .. " settled")
+                if finalize(id) then
+                    log("gate " .. id .. " settled")
+                else
+                    moving[id] = nil
+                    unresolved[id] = true
+                end
             else
                 tr.t = tr.t + step
                 applyProgress(id, tr, math.min(tr.t / tr.seconds, 1))
@@ -425,12 +423,12 @@ function SGGate.isBlocked(id, opening)
     if opening then from, to = W + 1, 2 * W end
     for k = from, to do
         local sq = sqAt(x - k, y, z)
-        if sq and sq:isVehicleIntersecting() then return true end
+        if not sq or not sqAt(x - k, y - 1, z) or sq:isVehicleIntersecting() then return true end
     end
-    if not opening then
-        local leaf = findRole(id, "leaf")
-        if leaf and leaf:isObstructed() then return true end -- also covers the vehicle shadow at the leaf cell
-    end
+    -- The native leaf door checks its own obstruction in BOTH directions. A car
+    -- pressed against a closed leaf may obstruct it even with an empty pocket.
+    local leaf = findRole(id, "leaf")
+    if leaf and leaf:isObstructed() then return true end
     return false
 end
 
@@ -464,9 +462,9 @@ local function syncGate(id)
     local target = changed
     print(string.format("[SGGate] toggle request for %s: target open=%s, leaf toggled by engine=%s, vehicle=%s",
         id, tostring(target), tostring(lo ~= last), tostring(getPlayer() and getPlayer():getVehicle() ~= nil)))
-    if SGGate.isBlocked(id, target) then
+    local function rejectRequest()
         -- refused: undo the toggle the engine already did on the leaf door (no animation) and tell the player
-        if lo ~= last then
+        if leaf:IsOpen() ~= last then
             leaf:ToggleDoorSilent()
             leaf:getSquare():RecalcAllWithNeighbours(true)
         end
@@ -480,9 +478,17 @@ local function syncGate(id)
         end
         SGGate.applyModel(leaf)
         notifyBlocked()
+    end
+    if SGGate.isBlocked(id, target) then
+        rejectRequest()
         return
     end
-    if lo ~= target then toggleDoor(leaf) end
+    if lo ~= target and not toggleDoor(leaf) then
+        -- A slave may have opened while the engine refused the master door.
+        -- Never persist a target or start recovery for a move that did not happen.
+        rejectRequest()
+        return
+    end
     SGGate.applyModel(leaf)
     md.sgOpen = target
     startMotion(id, leaf, target)
@@ -563,7 +569,7 @@ Events.OnContainerUpdate.Add(SGGate.reconcile)
 
 function SGGate.isMoving(id)
     local leaf = findRole(id, "leaf")
-    return leaf ~= nil and leaf:isAnimating()
+    return moving[id] ~= nil or unresolved[id] ~= nil or (leaf ~= nil and leaf:isAnimating())
 end
 
 -- distance from a character to the nearest door part of the gate (nil if the gate is gone)
@@ -584,10 +590,9 @@ end
 function SGGate.toggle(id)
     local leaf = findRole(id, "leaf")
     if not leaf then log("gate parts missing for " .. id); return end
-    if leaf:isAnimating() then log("gate " .. id .. " is moving"); return end
+    if SGGate.isMoving(id) then log("gate " .. id .. " is moving"); return end
     if SGGate.isBlocked(id, not leaf:IsOpen()) then notifyBlocked(); return false end
-    toggleDoor(leaf)
-    return true
+    return toggleDoor(leaf)
 end
 
 function SGGate.remove(id)
@@ -633,7 +638,7 @@ function SGGate.nearby(sq, r)
 end
 
 Events.OnFillWorldObjectContextMenu.Add(function(player, context, worldobjects, test)
-    if test then return end
+    if test or not isDebugEnabled() then return end
     local sq
     for _, o in ipairs(worldobjects) do sq = o:getSquare(); if sq then break end end
     if not sq then return end

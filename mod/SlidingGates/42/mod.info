@@ -1,6 +1,6 @@
 name=Sliding Gates
 id=SlidingGates
-description=Sliding gates with animated opening, motor drive and RF remote. (prototype)
+description=Animated manual chain-link gates in 2- and 4-cell widths, with construction and dismantling. Singleplayer prototype; motor control and multiplayer are in development.
 author=pavel
 modversion=0.0.1
 versionMin=42.0.0

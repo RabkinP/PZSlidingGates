@@ -4,6 +4,7 @@ from lupa import LuaRuntime
 
 ROOT = Path(__file__).resolve().parents[1]
 lua = LuaRuntime()
+lua.globals().package.path = str(ROOT/'mod/SlidingGates/42/media/lua/shared/?.lua').replace('\\', '/') + ';' + lua.globals().package.path
 lua.execute(r'''
 Events={OnGameBoot={Add=function(fn) install=fn end},OnGameStart={Add=function() end}}
 calls={}; foreign=0; worldWrites=0; valid=true

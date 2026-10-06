@@ -78,7 +78,7 @@ module Base
         }
         component SpriteConfig
         {
-            skillBaseHealth = 500,
+            skillBaseHealth = 450,
             dontNeedFrame = true,
             BreakSound = BreakDoor,
             face N

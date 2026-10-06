@@ -10,6 +10,7 @@ mock = next(ast.literal_eval(n.value) for n in tree.body if isinstance(n,ast.Ass
             and any(isinstance(t,ast.Name) and t.id=='MOCK' for t in n.targets))
 for width in (2,4):
     lua=LuaRuntime()
+    lua.globals().package.path = str(ROOT/'mod/SlidingGates/42/media/lua/shared/?.lua').replace('\\', '/') + ';' + lua.globals().package.path
     lua.execute(mock)
     lua.execute(r'''
     setmetatable(Events,{__index=function(t,key)
@@ -105,3 +106,10 @@ for entity,pipes,wire,scrap,sheets in [('SlidingGateChainLink2',6,4,2,1),('Slidi
     block=recipe.split('entity '+entity+'\n',1)[1].split('inputs',1)[1].split('}',1)[0]
     for name,count in [('MetalPipe',pipes),('Wire',wire),('ScrapMetal',scrap),('SmallSheetMetal',sheets)]:
         assert re.search(r'item '+str(count)+r' \[Base\.'+name+r'[;\]]',block),(entity,name)
+
+# The native entity preview and the actual gate must agree about base health.
+for kind, definition in lua.globals().SGGateTypes.items():
+    block = recipe.split('entity ' + definition.entity + '\n', 1)[1].split('component CraftRecipe', 1)[0]
+    health = int(re.search(r'skillBaseHealth\s*=\s*(\d+)', block).group(1))
+    assert health == definition.baseHealth, (kind, health, definition.baseHealth)
+print('PASS shared gate definitions agree with entity base health')

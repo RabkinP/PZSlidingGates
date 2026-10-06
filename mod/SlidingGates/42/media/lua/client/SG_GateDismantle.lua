@@ -22,13 +22,7 @@ function ISSlidingGateDismantle:isValid()
     return d ~= nil and d <= MAX_DISTANCE
 end
 
-function ISSlidingGateDismantle:waitToStart()
-    local d = SGGate.distanceTo(self.character, self.gateId)
-    return false
-end
-
 function ISSlidingGateDismantle:update()
-    local leaf = nil
     self.character:setMetabolicTarget(Metabolics.UsingTools)
 end
 

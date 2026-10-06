@@ -181,13 +181,6 @@ function SGGate.canBuild(sq, typeId)
     return true
 end
 
--- what dismantling a gate of this type needs: welding level (same as building it) and torch fuel
-function SGGate.dismantleRequirements(typeId)
-    local t = TYPES[typeId]
-    if not t then return nil end
-    return { welding = t.width >= 4 and 3 or 2, torchUses = t.width >= 4 and 6 or 4 }
-end
-
 function SGGate.typeOf(id)
     local leaf = findRole(id, "leaf")
     if leaf and leaf:getModData().sgType then return leaf:getModData().sgType end

@@ -110,3 +110,22 @@ Events.OnFillWorldObjectContextMenu.Add(function(player, context, worldobjects, 
         option.toolTip = tip
     end
 end)
+
+-- The vanilla "Disassemble" menu (ISDisassembleMenu) would offer to scrap a single gate part (the door carrier tiles
+-- have CanScrap) and leave the rest of the gate behind. Gates are dismantled as a whole by the entry above only.
+local function hideGatePartsFromVanillaScrap()
+    if not ISMoveableSpriteProps or ISMoveableSpriteProps.sgScrapHooked then return end
+    ISMoveableSpriteProps.sgScrapHooked = true
+    local original = ISMoveableSpriteProps.canScrapObject
+    function ISMoveableSpriteProps:canScrapObject(character)
+        local obj = self.object
+        if obj and obj.getModData then
+            local md = obj:getModData()
+            if md and md.sgGate then return { canScrap = false, craftValid = false }, 0, nil end
+        end
+        return original(self, character)
+    end
+end
+
+Events.OnGameBoot.Add(hideGatePartsFromVanillaScrap)
+Events.OnGameStart.Add(hideGatePartsFromVanillaScrap)

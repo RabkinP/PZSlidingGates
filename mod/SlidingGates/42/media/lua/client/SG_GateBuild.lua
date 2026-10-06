@@ -58,10 +58,39 @@ local function install()
         return originalSetInfo(self, square, north, sprite, openSprite)
     end
 
+    -- preview of the real gate models under the cursor (the entity tiles are only flat markers)
+    local function clearPreview(builder)
+        if builder.sgPreview then SGGate.clearPreview(builder.sgPreview) end
+        builder.sgPreview, builder.sgPreviewKey = nil, nil
+    end
+
+    local originalRender = ISBuildIsoEntity.render
+    function ISBuildIsoEntity:render(x, y, z, square)
+        originalRender(self, x, y, z, square)
+        local typeId = gateTypeOf(self)
+        if not typeId then return end
+        local key = square and (x .. "," .. y .. "," .. z) or "none"
+        if key == self.sgPreviewKey then return end
+        clearPreview(self)
+        self.sgPreviewKey = key
+        local catcher = square and catcherSquare(square, typeId)
+        if catcher then
+            local valid = self:isValid(square)
+            self.sgPreview = SGGate.createPreview(catcher, typeId, valid and 0.65 or 0.3)
+        end
+    end
+
+    local originalDeactivate = ISBuildIsoEntity.deactivate
+    function ISBuildIsoEntity:deactivate()
+        if gateTypeOf(self) then clearPreview(self) end
+        return originalDeactivate(self)
+    end
+
     local originalCreate = ISBuildIsoEntity.create
     function ISBuildIsoEntity:create(x, y, z, north, sprite)
         local typeId = gateTypeOf(self)
         if not typeId then return originalCreate(self, x, y, z, north, sprite) end
+        clearPreview(self) -- the real gate replaces the preview
         print(string.format("[SGBuild] create %s at %d,%d,%d north=%s", typeId, x, y, z, tostring(north)))
         self.sgPlaceholdersReached = false
         originalCreate(self, x, y, z, north, sprite)

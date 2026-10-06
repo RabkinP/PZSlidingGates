@@ -181,6 +181,21 @@ function SGGate.canBuild(sq, typeId)
     return true
 end
 
+-- what dismantling a gate of this type needs: welding level (same as building it) and torch fuel
+function SGGate.dismantleRequirements(typeId)
+    local t = TYPES[typeId]
+    if not t then return nil end
+    return { welding = t.width >= 4 and 3 or 2, torchUses = t.width >= 4 and 6 or 4 }
+end
+
+function SGGate.typeOf(id)
+    local leaf = findRole(id, "leaf")
+    if leaf and leaf:getModData().sgType then return leaf:getModData().sgType end
+    local entry = registry()[id]
+    if type(entry) == "table" and entry.type then return entry.type end
+    return gateWidth(id) == 4 and "chainlink4" or "chainlink"
+end
+
 function SGGate.width(typeId)
     return TYPES[typeId] and TYPES[typeId].width
 end
@@ -494,7 +509,7 @@ end)
 
 -- Destruction: when any door part of a gate is destroyed (zombies, weapons, vehicles) the whole gate falls apart and
 -- drops part of its materials (50% per unit, like vanilla thumpables). Every part has the full gate health.
-function SGGate.destroyGate(id, destroyer)
+function SGGate.destroyGate(id, destroyer, dropPercent)
     local leaf = findRole(id, "leaf")
     local x, y, z = parseId(id)
     local dropSq = (leaf and leaf:getSquare()) or sqAt(x - 1, y, z)
@@ -515,11 +530,11 @@ function SGGate.destroyGate(id, destroyer)
     if dropSq and typeId and TYPES[typeId] then
         for itemType, count in pairs(TYPES[typeId].materials) do
             for _ = 1, count do
-                if ZombRand(2) ~= 0 then dropSq:AddWorldInventoryItem(itemType, 0.0, 0.0, 0.0) end
+                if ZombRand(100) < (dropPercent or 50) then dropSq:AddWorldInventoryItem(itemType, 0.0, 0.0, 0.0) end
             end
         end
     end
-    log("gate " .. id .. " destroyed")
+    log("gate " .. id .. (dropPercent and " dismantled" or " destroyed"))
 end
 
 Events.OnDestroyIsoThumpable.Add(function(thump, player)

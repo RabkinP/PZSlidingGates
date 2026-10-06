@@ -1,3 +1,5 @@
 {
-    "Tooltip_craft_slidingGateDesc": "A chain-link gate that slides along the fence on a rail.<br>Built from pipes and wire; wheels and rollers are improvised from scrap metal and screws."
+    "Tooltip_craft_slidingGateDesc": "A chain-link gate that slides along the fence on a rail.<br>Built from pipes and wire; wheels and rollers are improvised from scrap metal and screws.",
+    "Tooltip_SG_NeedWelding": "Requires Metalwelding level %1.",
+    "Tooltip_SG_NeedTorch": "Requires a blowtorch with at least %1 units of fuel."
 }

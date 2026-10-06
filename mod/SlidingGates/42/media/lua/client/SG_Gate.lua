@@ -407,6 +407,30 @@ local function startMotion(id, leaf, target)
     ensureTick()
 end
 
+-- Vanilla refuses to move a door while a vehicle stands in its way and shows "The door is blocked" over the
+-- character. A gate needs the cells its leaf will move through to be free of vehicles: the opening cells when
+-- closing, the pocket cells when opening (characters do not obstruct doors in vanilla either).
+function SGGate.isBlocked(id, opening)
+    local x, y, z = parseId(id)
+    local W = gateWidth(id)
+    local from, to = 1, W
+    if opening then from, to = W + 1, 2 * W end
+    for k = from, to do
+        local sq = sqAt(x - k, y, z)
+        if sq and sq:isVehicleIntersecting() then return true end
+    end
+    if not opening then
+        local leaf = findRole(id, "leaf")
+        if leaf and leaf:isObstructed() then return true end -- also covers the vehicle shadow at the leaf cell
+    end
+    return false
+end
+
+local function notifyBlocked(chr)
+    chr = chr or getPlayer()
+    if chr then chr:setHaloNote(getText("IGUI_PlayerText_DoorBlocked"), 255, 255, 255, 256) end
+end
+
 -- Bring all parts of one gate to the same state. Whatever door was toggled (mouse click, E key, menu, zombie)
 -- is the request: the leaf follows slave toggles, slaves/blockers follow the motion rules above.
 local function syncGate(id)
@@ -430,6 +454,16 @@ local function syncGate(id)
     if changed == nil then return end
     if changed == last and lo == last then return end
     local target = changed
+    if SGGate.isBlocked(id, target) then
+        -- refused: undo the toggle the engine already did on the leaf door (no animation) and tell the player
+        if lo ~= last then
+            leaf:ToggleDoorSilent()
+            leaf:getSquare():RecalcAllWithNeighbours(true)
+        end
+        SGGate.applyModel(leaf)
+        notifyBlocked()
+        return
+    end
     if lo ~= target then toggleDoor(leaf) end
     SGGate.applyModel(leaf)
     md.sgOpen = target
@@ -517,7 +551,9 @@ function SGGate.toggle(id)
     local leaf = findRole(id, "leaf")
     if not leaf then log("gate parts missing for " .. id); return end
     if leaf:isAnimating() then log("gate " .. id .. " is moving"); return end
+    if SGGate.isBlocked(id, not leaf:IsOpen()) then notifyBlocked(); return false end
     toggleDoor(leaf)
+    return true
 end
 
 function SGGate.remove(id)

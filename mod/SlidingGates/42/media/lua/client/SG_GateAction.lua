@@ -38,6 +38,7 @@ function ISSlidingGateToggle:perform()
 end
 
 function ISSlidingGateToggle:complete()
+    print("[SGGate] queued action runs for gate " .. tostring(self.gateId))
     SGGate.toggle(self.gateId)
     return true
 end

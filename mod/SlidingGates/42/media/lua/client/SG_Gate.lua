@@ -454,6 +454,8 @@ local function syncGate(id)
     if changed == nil then return end
     if changed == last and lo == last then return end
     local target = changed
+    print(string.format("[SGGate] toggle request for %s: target open=%s, leaf toggled by engine=%s, vehicle=%s",
+        id, tostring(target), tostring(lo ~= last), tostring(getPlayer() and getPlayer():getVehicle() ~= nil)))
     if SGGate.isBlocked(id, target) then
         -- refused: undo the toggle the engine already did on the leaf door (no animation) and tell the player
         if lo ~= last then

@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "เปิดด้วยมอเตอร์",
     "ContextMenu_SG_PowerClose": "ปิดด้วยมอเตอร์",
     "ContextMenu_SG_LinkRemote": "จับคู่รีโมตประตู",
-    "ContextMenu_SG_UseRemote": "ใช้รีโมตประตู"
+    "ContextMenu_SG_UseRemote": "ใช้รีโมตประตู",
+    "ContextMenu_SG_PutBattery": "ใส่แบตเตอรี่ในมอเตอร์",
+    "ContextMenu_SG_TakeBattery": "นำแบตเตอรี่ออกจากมอเตอร์"
 }

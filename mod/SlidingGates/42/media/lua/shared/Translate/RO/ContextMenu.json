@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Deschide cu motorul",
     "ContextMenu_SG_PowerClose": "Închide cu motorul",
     "ContextMenu_SG_LinkRemote": "Asociază telecomanda porții",
-    "ContextMenu_SG_UseRemote": "Folosește telecomanda porții"
+    "ContextMenu_SG_UseRemote": "Folosește telecomanda porții",
+    "ContextMenu_SG_PutBattery": "Pune bateria în motor",
+    "ContextMenu_SG_TakeBattery": "Scoate bateria din motor"
 }

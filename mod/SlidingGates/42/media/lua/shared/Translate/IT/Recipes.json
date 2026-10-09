@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Cancello scorrevole (2 caselle)",
-    "SlidingGateChainLink4": "Cancello scorrevole (4 caselle)",
+    "SlidingGateChainLink2": "Cancello scorrevole (2 caselle) (Qualità alta)",
+    "SlidingGateChainLink4": "Cancello scorrevole (4 caselle) (Qualità alta)",
     "AssembleSlidingGateDrive": "Assemblare un motore per cancello scorrevole",
-    "AssembleSlidingGateRemote": "Assembla telecomando del cancello"
+    "AssembleSlidingGateRemote": "Assembla telecomando del cancello",
+    "SlidingGateChainLink2Low": "Cancello scorrevole (2 caselle) (Qualità bassa)",
+    "SlidingGateChainLink2Medium": "Cancello scorrevole (2 caselle) (Qualità media)",
+    "SlidingGateChainLink4Low": "Cancello scorrevole (4 caselle) (Qualità bassa)",
+    "SlidingGateChainLink4Medium": "Cancello scorrevole (4 caselle) (Qualità media)"
 }

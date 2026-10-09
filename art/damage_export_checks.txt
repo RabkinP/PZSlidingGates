@@ -1,0 +1,60 @@
+SG_ChainLink_4_Low_N_Reverse_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Reverse_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Reverse_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Right_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Right_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Right_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Reverse_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Reverse_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Reverse_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Right_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Right_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Right_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Reverse_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Reverse_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Reverse_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Right_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Right_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Right_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Reverse_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Reverse_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Reverse_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Right_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Right_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Right_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Reverse_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Reverse_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Reverse_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Right_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Right_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Right_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Reverse_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Reverse_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Reverse_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Right_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Right_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Right_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Reverse.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Reverse.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Reverse.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Reverse.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Left.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Reverse.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_W_Left.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_W_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Left.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Reverse.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_W_Left.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_W_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Reverse.glb PASS exact X reflection, source winding/normals preserved, positive scales, reverse stroke and deployment
+SG_ChainLink_4_N_Reverse.glb PASS exact X reflection, source winding/normals preserved, positive scales, reverse stroke and deployment
+SG_CatcherPost_Reverse.glb PASS exact X reflection, source winding/normals preserved, positive scales, reverse stroke and deployment
+SG_GuidePost_Reverse.glb PASS exact X reflection, source winding/normals preserved, positive scales, reverse stroke and deployment
+SG_Rail_Reverse.glb PASS exact X reflection, source winding/normals preserved, positive scales, reverse stroke and deployment
+SG_Drive_Reverse.glb PASS exact X reflection, source winding/normals preserved, positive scales, reverse stroke and deployment

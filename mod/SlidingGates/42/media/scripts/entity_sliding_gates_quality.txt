@@ -1,0 +1,311 @@
+module Base
+{
+    xuiSkin default
+    {
+        entity ES_SlidingGateChainLink2Low
+        {
+            LuaWindowClass = ISEntityWindow,
+            DisplayName = SlidingGateChainLink2Low,
+            Icon = SG_BuildGate2,
+        }
+        entity ES_SlidingGateChainLink2Medium
+        {
+            LuaWindowClass = ISEntityWindow,
+            DisplayName = SlidingGateChainLink2Medium,
+            Icon = SG_BuildGate2,
+        }
+        entity ES_SlidingGateChainLink4Low
+        {
+            LuaWindowClass = ISEntityWindow,
+            DisplayName = SlidingGateChainLink4Low,
+            Icon = SG_BuildGate4,
+        }
+        entity ES_SlidingGateChainLink4Medium
+        {
+            LuaWindowClass = ISEntityWindow,
+            DisplayName = SlidingGateChainLink4Medium,
+            Icon = SG_BuildGate4,
+        }
+    }
+
+    entity SlidingGateChainLink2Low
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_SlidingGateChainLink2Low,
+            uiEnabled = false,
+        }
+        component SpriteConfig
+        {
+            skillBaseHealth = 300,
+            dontNeedFrame = true,
+            BreakSound = BreakDoor,
+            face N
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_48 sg_gates_preview_01_49,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_50,
+                    row = sg_gates_preview_01_51,
+                }
+            }
+            face S
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_52 sg_gates_preview_01_53,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_54,
+                    row = sg_gates_preview_01_55,
+                }
+            }
+        }
+        component CraftRecipe
+        {
+            OnAddToMenu = SGGateLowRecipeTest,
+            timedAction = BuildWireFence,
+            time = 300,
+            category = Welding,
+            SkillRequired = MetalWelding:4,
+            xpAward = MetalWelding:50,
+            Tooltip = Tooltip_craft_slidingGateDesc,
+            inputs
+            {
+                item 4 [Base.BlowTorch] flags[DontRecordInput],
+                item 1 [Base.WeldingMask] mode:keep flags[DontRecordInput],
+                item 6 [Base.MetalPipe;Base.MetalBar;Base.SteelBar],
+                item 4 [Base.Wire],
+                item 2 [Base.ScrapMetal],
+                item 1 [Base.SmallSheetMetal],
+                item 4 [Base.Screws;Base.NutsBolts],
+                item 1 [Base.RubberHose;Base.TightsBlack;Base.TightsBlackTrans;Base.TightsBlackSemiTrans;Base.TightsFishnets],
+                item 4 [Base.WeldingRods] flags[DontRecordInput],
+            }
+        }
+    }
+
+    entity SlidingGateChainLink4Low
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_SlidingGateChainLink4Low,
+            uiEnabled = false,
+        }
+        component SpriteConfig
+        {
+            skillBaseHealth = 450,
+            dontNeedFrame = true,
+            BreakSound = BreakDoor,
+            face N
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_56 sg_gates_preview_01_57 sg_gates_preview_01_58 sg_gates_preview_01_59,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_60,
+                    row = sg_gates_preview_01_61,
+                    row = sg_gates_preview_01_62,
+                    row = sg_gates_preview_01_63,
+                }
+            }
+            face S
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_64 sg_gates_preview_01_65 sg_gates_preview_01_66 sg_gates_preview_01_67,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_68,
+                    row = sg_gates_preview_01_69,
+                    row = sg_gates_preview_01_70,
+                    row = sg_gates_preview_01_71,
+                }
+            }
+        }
+        component CraftRecipe
+        {
+            OnAddToMenu = SGGateLowRecipeTest,
+            timedAction = BuildWireFence,
+            time = 500,
+            category = Welding,
+            SkillRequired = MetalWelding:4,
+            xpAward = MetalWelding:50,
+            Tooltip = Tooltip_craft_slidingGateDesc,
+            inputs
+            {
+                item 6 [Base.BlowTorch] flags[DontRecordInput],
+                item 1 [Base.WeldingMask] mode:keep flags[DontRecordInput],
+                item 10 [Base.MetalPipe;Base.MetalBar;Base.SteelBar],
+                item 8 [Base.Wire],
+                item 3 [Base.ScrapMetal],
+                item 2 [Base.SmallSheetMetal],
+                item 4 [Base.Screws;Base.NutsBolts],
+                item 1 [Base.RubberHose;Base.TightsBlack;Base.TightsBlackTrans;Base.TightsBlackSemiTrans;Base.TightsFishnets],
+                item 6 [Base.WeldingRods] flags[DontRecordInput],
+            }
+        }
+    }
+
+    entity SlidingGateChainLink2Medium
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_SlidingGateChainLink2Medium,
+            uiEnabled = false,
+        }
+        component SpriteConfig
+        {
+            skillBaseHealth = 300,
+            dontNeedFrame = true,
+            BreakSound = BreakDoor,
+            face N
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_72 sg_gates_preview_01_73,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_74,
+                    row = sg_gates_preview_01_75,
+                }
+            }
+            face S
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_76 sg_gates_preview_01_77,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_78,
+                    row = sg_gates_preview_01_79,
+                }
+            }
+        }
+        component CraftRecipe
+        {
+            OnAddToMenu = SGGateMediumRecipeTest,
+            timedAction = BuildWireFence,
+            time = 300,
+            category = Welding,
+            SkillRequired = MetalWelding:6,
+            xpAward = MetalWelding:50,
+            Tooltip = Tooltip_craft_slidingGateDesc,
+            inputs
+            {
+                item 4 [Base.BlowTorch] flags[DontRecordInput],
+                item 1 [Base.WeldingMask] mode:keep flags[DontRecordInput],
+                item 6 [Base.MetalPipe;Base.MetalBar;Base.SteelBar],
+                item 4 [Base.Wire],
+                item 2 [Base.ScrapMetal],
+                item 1 [Base.SmallSheetMetal],
+                item 4 [Base.Screws;Base.NutsBolts],
+                item 1 [Base.RubberHose;Base.TightsBlack;Base.TightsBlackTrans;Base.TightsBlackSemiTrans;Base.TightsFishnets],
+                item 4 [Base.WeldingRods] flags[DontRecordInput],
+            }
+        }
+    }
+
+    entity SlidingGateChainLink4Medium
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_SlidingGateChainLink4Medium,
+            uiEnabled = false,
+        }
+        component SpriteConfig
+        {
+            skillBaseHealth = 450,
+            dontNeedFrame = true,
+            BreakSound = BreakDoor,
+            face N
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_80 sg_gates_preview_01_81 sg_gates_preview_01_82 sg_gates_preview_01_83,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_84,
+                    row = sg_gates_preview_01_85,
+                    row = sg_gates_preview_01_86,
+                    row = sg_gates_preview_01_87,
+                }
+            }
+            face S
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_88 sg_gates_preview_01_89 sg_gates_preview_01_90 sg_gates_preview_01_91,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_92,
+                    row = sg_gates_preview_01_93,
+                    row = sg_gates_preview_01_94,
+                    row = sg_gates_preview_01_95,
+                }
+            }
+        }
+        component CraftRecipe
+        {
+            OnAddToMenu = SGGateMediumRecipeTest,
+            timedAction = BuildWireFence,
+            time = 500,
+            category = Welding,
+            SkillRequired = MetalWelding:6,
+            xpAward = MetalWelding:50,
+            Tooltip = Tooltip_craft_slidingGateDesc,
+            inputs
+            {
+                item 6 [Base.BlowTorch] flags[DontRecordInput],
+                item 1 [Base.WeldingMask] mode:keep flags[DontRecordInput],
+                item 10 [Base.MetalPipe;Base.MetalBar;Base.SteelBar],
+                item 8 [Base.Wire],
+                item 3 [Base.ScrapMetal],
+                item 2 [Base.SmallSheetMetal],
+                item 4 [Base.Screws;Base.NutsBolts],
+                item 1 [Base.RubberHose;Base.TightsBlack;Base.TightsBlackTrans;Base.TightsBlackSemiTrans;Base.TightsFishnets],
+                item 6 [Base.WeldingRods] flags[DontRecordInput],
+            }
+        }
+    }
+
+}

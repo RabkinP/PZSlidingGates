@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Mit Antrieb öffnen",
     "ContextMenu_SG_PowerClose": "Mit Antrieb schließen",
     "ContextMenu_SG_LinkRemote": "Torfernbedienung koppeln",
-    "ContextMenu_SG_UseRemote": "Torfernbedienung benutzen"
+    "ContextMenu_SG_UseRemote": "Torfernbedienung benutzen",
+    "ContextMenu_SG_PutBattery": "Batterie in den Antrieb legen",
+    "ContextMenu_SG_TakeBattery": "Batterie aus dem Antrieb nehmen"
 }

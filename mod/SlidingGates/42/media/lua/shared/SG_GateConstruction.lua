@@ -10,7 +10,31 @@
 require "SG_GateCommon"
 
 local GATE_TYPES = {}
-for id, definition in pairs(SGGateTypes) do GATE_TYPES[definition.entity] = id end
+local RECIPE_QUALITY = {}
+for id, definition in pairs(SGGateTypes) do
+    GATE_TYPES[definition.entity] = id
+    RECIPE_QUALITY[definition.entity] = "high"
+    for _, quality in ipairs({"Low", "Medium"}) do
+        GATE_TYPES[definition.entity .. quality] = id
+        RECIPE_QUALITY[definition.entity .. quality] = quality:lower()
+    end
+end
+
+local function recipeQuality(builder)
+    local ok, name = pcall(function() return builder.objectInfo:getScript():getName() end)
+    return ok and RECIPE_QUALITY[name] or nil
+end
+
+-- Match the native wooden-wall recipe filter; Show All still lists every tier.
+function SGGateLowRecipeTest(param)
+    return param.shouldShowAll or SGGate.qualityForLevel(SGGate.weldingLevel(param.player)) == "low"
+end
+function SGGateMediumRecipeTest(param)
+    return param.shouldShowAll or SGGate.qualityForLevel(SGGate.weldingLevel(param.player)) == "medium"
+end
+function SGGateHighRecipeTest(param)
+    return param.shouldShowAll or SGGate.qualityForLevel(SGGate.weldingLevel(param.player)) == "high"
+end
 
 local function gateTypeOf(builder)
     local ok, name = pcall(function() return builder.objectInfo:getScript():getName() end)
@@ -62,6 +86,8 @@ local function install()
     function ISBuildIsoEntity:isValid(square)
         local typeId = gateTypeOf(self)
         if not typeId then return originalIsValid(self, square) end
+        local level = SGGate.weldingLevel(self.character)
+        if level and (level < 4 or SGGate.qualityForLevel(level) ~= recipeQuality(self)) then return false end
         if self.getFace then self:getFace() end
         self.north = isNorth(self.nSprite)
         if not originalIsValid(self, square) then return false end
@@ -140,10 +166,10 @@ local function install()
         local square = getCell():getGridSquare(x, y, z)
         local catcher = square and catcherSquare(square, typeId, self.north, direction(self.nSprite) == "reverse")
         if not catcher then print("[SGBuild] no catcher square"); return end
-        local bonus = 0
-        local ok, level = pcall(function() return self.character:getPerkLevel(Perks.MetalWelding) end)
-        if ok and type(level) == "number" then bonus = level * 50 end -- health: base + 50 per welding level
-        local id = SGGate.build(catcher, typeId, bonus, north and "N" or "W", direction(self.nSprite))
+        local level = SGGate.weldingLevel(self.character)
+        local bonus = level and level * 50 or 0 -- health: base + 50 per welding level
+        local quality = level and SGGate.qualityForLevel(level) or recipeQuality(self)
+        local id = SGGate.build(catcher, typeId, bonus, north and "N" or "W", direction(self.nSprite), quality)
         print("[SGBuild] SGGate.build -> " .. tostring(id))
     end
     print("[SGBuild] ISBuildIsoEntity hooks installed")

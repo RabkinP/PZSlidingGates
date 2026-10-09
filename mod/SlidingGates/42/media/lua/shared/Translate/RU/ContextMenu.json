@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Открыть приводом",
     "ContextMenu_SG_PowerClose": "Закрыть приводом",
     "ContextMenu_SG_LinkRemote": "Привязать пульт ворот",
-    "ContextMenu_SG_UseRemote": "Использовать пульт ворот"
+    "ContextMenu_SG_UseRemote": "Использовать пульт ворот",
+    "ContextMenu_SG_PutBattery": "Положить аккумулятор в привод",
+    "ContextMenu_SG_TakeBattery": "Забрать аккумулятор из привода"
 }

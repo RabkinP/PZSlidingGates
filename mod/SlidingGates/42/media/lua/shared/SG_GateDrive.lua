@@ -15,6 +15,7 @@ local function inventoryItems(container, result)
     end
     return result
 end
+SGGateDrive.inventoryItems = inventoryItems
 
 function SGGateDrive.square(id)
     local x, y, z = SGGate.parseId(id)

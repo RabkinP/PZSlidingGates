@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Buka dengan motor",
     "ContextMenu_SG_PowerClose": "Tutup dengan motor",
     "ContextMenu_SG_LinkRemote": "Hubungkan remote gerbang",
-    "ContextMenu_SG_UseRemote": "Gunakan remote gerbang"
+    "ContextMenu_SG_UseRemote": "Gunakan remote gerbang",
+    "ContextMenu_SG_PutBattery": "Masukkan aki ke penggerak",
+    "ContextMenu_SG_TakeBattery": "Ambil aki dari penggerak"
 }

@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Tolókapu (2 mező)",
-    "SlidingGateChainLink4": "Tolókapu (4 mező)",
+    "SlidingGateChainLink2": "Tolókapu (2 mező) (Magas minőség)",
+    "SlidingGateChainLink4": "Tolókapu (4 mező) (Magas minőség)",
     "AssembleSlidingGateDrive": "Tolókapumotor összeszerelése",
-    "AssembleSlidingGateRemote": "Kaputávirányító összeszerelése"
+    "AssembleSlidingGateRemote": "Kaputávirányító összeszerelése",
+    "SlidingGateChainLink2Low": "Tolókapu (2 mező) (Alacsony minőség)",
+    "SlidingGateChainLink2Medium": "Tolókapu (2 mező) (Közepes minőség)",
+    "SlidingGateChainLink4Low": "Tolókapu (4 mező) (Alacsony minőség)",
+    "SlidingGateChainLink4Medium": "Tolókapu (4 mező) (Közepes minőség)"
 }

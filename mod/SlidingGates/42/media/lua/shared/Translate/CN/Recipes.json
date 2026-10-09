@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "滑动门（2格）",
-    "SlidingGateChainLink4": "滑动门（4格）",
+    "SlidingGateChainLink2": "滑动门（2格） (高品质)",
+    "SlidingGateChainLink4": "滑动门（4格） (高品质)",
     "AssembleSlidingGateDrive": "组装滑动门驱动装置",
-    "AssembleSlidingGateRemote": "组装大门遥控器"
+    "AssembleSlidingGateRemote": "组装大门遥控器",
+    "SlidingGateChainLink2Low": "滑动门（2格） (低品质)",
+    "SlidingGateChainLink2Medium": "滑动门（2格） (中等品质)",
+    "SlidingGateChainLink4Low": "滑动门（4格） (低品质)",
+    "SlidingGateChainLink4Medium": "滑动门（4格） (中等品质)"
 }

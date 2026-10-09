@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Sliding Gate (2 cells)",
-    "SlidingGateChainLink4": "Sliding Gate (4 cells)",
+    "SlidingGateChainLink2": "Sliding Gate (2 cells) (High quality)",
+    "SlidingGateChainLink4": "Sliding Gate (4 cells) (High quality)",
     "AssembleSlidingGateDrive": "Assemble Sliding Gate Drive",
-    "AssembleSlidingGateRemote": "Assemble Gate Remote"
+    "AssembleSlidingGateRemote": "Assemble Gate Remote",
+    "SlidingGateChainLink2Low": "Sliding Gate (2 cells) (Low quality)",
+    "SlidingGateChainLink2Medium": "Sliding Gate (2 cells) (Medium quality)",
+    "SlidingGateChainLink4Low": "Sliding Gate (4 cells) (Low quality)",
+    "SlidingGateChainLink4Medium": "Sliding Gate (4 cells) (Medium quality)"
 }

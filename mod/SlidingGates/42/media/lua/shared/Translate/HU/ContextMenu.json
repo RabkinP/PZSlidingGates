@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Nyitás meghajtással",
     "ContextMenu_SG_PowerClose": "Zárás meghajtással",
     "ContextMenu_SG_LinkRemote": "Kaputávirányító párosítása",
-    "ContextMenu_SG_UseRemote": "Kaputávirányító használata"
+    "ContextMenu_SG_UseRemote": "Kaputávirányító használata",
+    "ContextMenu_SG_PutBattery": "Akkumulátor behelyezése a hajtásba",
+    "ContextMenu_SG_TakeBattery": "Akkumulátor kivétele a hajtásból"
 }

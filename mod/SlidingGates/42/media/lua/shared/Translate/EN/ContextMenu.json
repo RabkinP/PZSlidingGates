@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Open using drive",
     "ContextMenu_SG_PowerClose": "Close using drive",
     "ContextMenu_SG_LinkRemote": "Link gate remote",
-    "ContextMenu_SG_UseRemote": "Use gate remote"
+    "ContextMenu_SG_UseRemote": "Use gate remote",
+    "ContextMenu_SG_PutBattery": "Put battery into drive",
+    "ContextMenu_SG_TakeBattery": "Take battery from drive"
 }

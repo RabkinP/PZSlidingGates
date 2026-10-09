@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "구동기로 열기",
     "ContextMenu_SG_PowerClose": "구동기로 닫기",
     "ContextMenu_SG_LinkRemote": "문 리모컨 연결",
-    "ContextMenu_SG_UseRemote": "문 리모컨 사용"
+    "ContextMenu_SG_UseRemote": "문 리모컨 사용",
+    "ContextMenu_SG_PutBattery": "구동 장치에 배터리 넣기",
+    "ContextMenu_SG_TakeBattery": "구동 장치에서 배터리 꺼내기"
 }

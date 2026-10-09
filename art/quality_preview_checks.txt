@@ -1,0 +1,130 @@
+[SGBuild] ISBuildIsoEntity hooks installed
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+PASS four R faces, native reconstruction/cache, reflected 2/4 anchors/rails, validity tint, no preview writes, foreign builders

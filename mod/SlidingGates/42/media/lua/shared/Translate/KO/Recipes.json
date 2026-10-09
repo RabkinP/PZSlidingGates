@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "슬라이딩 게이트 (2칸)",
-    "SlidingGateChainLink4": "슬라이딩 게이트 (4칸)",
+    "SlidingGateChainLink2": "슬라이딩 게이트 (2칸) (높은 품질)",
+    "SlidingGateChainLink4": "슬라이딩 게이트 (4칸) (높은 품질)",
     "AssembleSlidingGateDrive": "슬라이딩 게이트 구동 장치 조립",
-    "AssembleSlidingGateRemote": "문 리모컨 조립"
+    "AssembleSlidingGateRemote": "문 리모컨 조립",
+    "SlidingGateChainLink2Low": "슬라이딩 게이트 (2칸) (낮은 품질)",
+    "SlidingGateChainLink2Medium": "슬라이딩 게이트 (2칸) (중간 품질)",
+    "SlidingGateChainLink4Low": "슬라이딩 게이트 (4칸) (낮은 품질)",
+    "SlidingGateChainLink4Medium": "슬라이딩 게이트 (4칸) (중간 품질)"
 }

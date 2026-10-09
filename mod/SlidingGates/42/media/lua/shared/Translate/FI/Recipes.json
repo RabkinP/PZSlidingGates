@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Liukuportti (2 ruutua)",
-    "SlidingGateChainLink4": "Liukuportti (4 ruutua)",
+    "SlidingGateChainLink2": "Liukuportti (2 ruutua) (Korkea laatu)",
+    "SlidingGateChainLink4": "Liukuportti (4 ruutua) (Korkea laatu)",
     "AssembleSlidingGateDrive": "Kokoa liukuportin moottori",
-    "AssembleSlidingGateRemote": "Kokoa portin kaukosäädin"
+    "AssembleSlidingGateRemote": "Kokoa portin kaukosäädin",
+    "SlidingGateChainLink2Low": "Liukuportti (2 ruutua) (Heikko laatu)",
+    "SlidingGateChainLink2Medium": "Liukuportti (2 ruutua) (Keskitasoinen laatu)",
+    "SlidingGateChainLink4Low": "Liukuportti (4 ruutua) (Heikko laatu)",
+    "SlidingGateChainLink4Medium": "Liukuportti (4 ruutua) (Keskitasoinen laatu)"
 }

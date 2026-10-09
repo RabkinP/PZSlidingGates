@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Abrir com o motor",
     "ContextMenu_SG_PowerClose": "Fechar com o motor",
     "ContextMenu_SG_LinkRemote": "Associar comando do portão",
-    "ContextMenu_SG_UseRemote": "Usar comando do portão"
+    "ContextMenu_SG_UseRemote": "Usar comando do portão",
+    "ContextMenu_SG_PutBattery": "Colocar bateria no motor",
+    "ContextMenu_SG_TakeBattery": "Retirar bateria do motor"
 }

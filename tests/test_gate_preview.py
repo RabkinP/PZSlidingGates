@@ -18,10 +18,11 @@ function square(x,y,z)
  return {getX=function() return x end,getY=function() return y end,getZ=function() return z end}
 end
 function getCell() return {getGridSquare=function(_,x,y,z) return square(x,y,z) end} end
-SGGate={width=function(kind) return kind=='chainlink4' and 4 or 2 end,
+gateMock={width=function(kind) return kind=='chainlink4' and 4 or 2 end,
  canBuild=function(sq,kind,orientation,direction) checked={sq:getX(),sq:getY(),orientation,direction};return valid end,
- build=function(sq,kind,bonus,orientation,direction)
- worldWrites=worldWrites+1; built={sq:getX(),sq:getY(),sq:getZ(),kind,bonus,orientation,direction}; return 'gate' end}
+ build=function(sq,kind,bonus,orientation,direction,quality)
+ worldWrites=worldWrites+1; built={sq:getX(),sq:getY(),sq:getZ(),kind,bonus,orientation,direction,quality}; return 'gate' end}
+for k,v in pairs(gateMock) do SGGate[k]=v end
 sprites={}
 function getSprite(name)
  if not sprites[name] then
@@ -29,12 +30,17 @@ function getSprite(name)
  end
  return sprites[name]
 end
-function startIndex(width,west,reversed)
+function startIndex(width,west,reversed,quality)
+ if quality=='Low' or quality=='Medium' then
+  local start=(quality=='Low' and 48 or 72)+(width==2 and 0 or 8)
+  local face=reversed and (west and 3 or 2) or (west and 1 or 0)
+  return start+face*width
+ end
  if reversed then return west and (width==2 and 30 or 32) or (width==2 and 24 or 26) end
  return west and (width==2 and 6 or 12) or (width==2 and 0 or 2)
 end
-function face(width,west,reversed)
- local start=startIndex(width,west,reversed)
+function face(width,west,reversed,quality)
+ local start=startIndex(width,west,reversed,quality)
  return {getzLayers=function() return 1 end,getWidth=function() return west and 1 or width end,getHeight=function() return west and width or 1 end,
  getTileInfo=function(_,x,y) local k=west and y or x; return {getSpriteName=function() return 'sg_gates_preview_01_'..(start+k) end} end}
 end
@@ -47,9 +53,9 @@ ISBuildIsoEntity={new=function(self,character,info)
   if not self.width then foreign=foreign+1; return end
   local west=self.nSprite==1 or self.nSprite==3
   local reversed=self.nSprite>=3
-  self:cacheSprites(face(self.width,west,reversed))
+  self:cacheSprites(face(self.width,west,reversed,self.qualityTest))
   for xx=0,self.width-1 do
-   local start=startIndex(self.width,west,reversed)
+   local start=startIndex(self.width,west,reversed,self.qualityTest)
    local sprite=self.spriteCache['sg_gates_preview_01_'..(start+xx)]
    assert(sprite.model, 'texture-only cache lost spriteModel')
    local r,g,b=1,1,1
@@ -57,11 +63,12 @@ ISBuildIsoEntity={new=function(self,character,info)
    sprite:RenderGhostTileColor(x+(west and 0 or xx),y+(west and xx or 0),z,r,g,b,.6)
   end
  end,create=function(self) baseCreates=(baseCreates or 0)+1; self:setInfo() end}
-function builder(width,nSprite)
+function builder(width,nSprite,quality)
  local name=width==2 and 'SlidingGateChainLink2' or 'SlidingGateChainLink4'
+ if quality then name=name..quality end
  local info={getScript=function() return {getName=function() return name end} end}
  local o=ISBuildIsoEntity:new(nil,info,nSprite)
- o.width=width; return o
+ o.width=width; o.qualityTest=quality; return o
 end
 ''')
 lua.execute((ROOT/'mod/SlidingGates/42/media/lua/client/SG_GateBuild.lua').read_text(encoding='utf-8'))
@@ -149,17 +156,47 @@ end
 valid=true; serverMode=true; worldWrites=0; baseCreates=0; Perks={MetalWelding='welding'}
 for _,width in ipairs({2,4}) do
  local b=builder(width)
- b.character={getPerkLevel=function() return 3 end}
+ b.character={getPerkLevel=function() return 8 end}
  b:create(100,200,0,true)
- assert(built[1]==100+width and built[4]==(width==2 and 'chainlink' or 'chainlink4') and built[5]==150)
+ assert(built[1]==100+width and built[4]==(width==2 and 'chainlink' or 'chainlink4') and built[5]==400 and built[8]=='high')
 end
 assert(worldWrites==2 and baseCreates==2)
 for _,width in ipairs({2,4}) do
- local b=builder(width,1); b.character={getPerkLevel=function() return 3 end}
+ local b=builder(width,1); b.character={getPerkLevel=function() return 8 end}
  valid=true; b:create(100,200,0,false)
- assert(built[1]==100 and built[2]==199 and built[6]=='W' and built[5]==150)
+ assert(built[1]==100 and built[2]==199 and built[6]=='W' and built[5]==400 and built[8]=='high')
 end
 assert(worldWrites==4 and baseCreates==4)
+-- Boundary levels select the native recipe tier and its unique preview carrier.
+for _,width in ipairs({2,4}) do
+ for level=4,10 do
+  local quality=level<6 and 'Low' or (level<8 and 'Medium' or nil)
+  local character={getPerkLevel=function() return level end}
+  local param={player=character}
+  assert(SGGateLowRecipeTest(param)==(level<6))
+  assert(SGGateMediumRecipeTest(param)==(level>=6 and level<8))
+  assert(SGGateHighRecipeTest(param)==(level>=8))
+  param.shouldShowAll=true
+  assert(SGGateLowRecipeTest(param) and SGGateMediumRecipeTest(param) and SGGateHighRecipeTest(param))
+  for _,nSprite in ipairs({2,1,4,3}) do
+   local b=builder(width,nSprite,quality);b.character=character
+   local west=nSprite==1 or nSprite==3;local reversed=nSprite>=3
+   assert(b:isValid(square(100,200,0)))
+   calls={};b:render(100,200,0,square(100,200,0))
+   local leafIndex=startIndex(width,west,reversed,quality)+(reversed and (west and width-1 or 0) or (west and 0 or width-1))
+   local found=false
+   for _,c in ipairs(calls) do if c[1]=='sg_gates_preview_01_'..leafIndex then found=true end end
+   assert(found)
+   b:create(100,200,0,not west)
+   assert(built[5]==level*50 and built[8]==SGGate.qualityForLevel(level))
+  end
+  local wrong=level<8 and builder(width,2) or builder(width,2,'Low');wrong.character=character
+  assert(not wrong:isValid(square(100,200,0)))
+ end
+end
+local tooLow=builder(2,2,'Low');tooLow.character={getPerkLevel=function() return 3 end}
+local writes=worldWrites;tooLow:create(100,200,0,true);assert(worldWrites==writes)
+worldWrites=4;baseCreates=4 -- following cancellation regressions use their original baseline
 clientMode=true; builder(2):create(100,200,0,true)
 assert(worldWrites==4 and baseCreates==4)
 clientMode=false; valid=false; builder(2):create(100,200,0,true)

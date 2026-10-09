@@ -41,6 +41,39 @@ local function queuePower(character, id, instance, opening)
     end
 end
 
+-- Vanilla walk-to-container + inventory transfer: works from bags and in multiplayer.
+local function queueBattery(character, item, container)
+    if luautils.walkToContainer(container, character:getPlayerNum()) then
+        ISTimedActionQueue.add(ISInventoryTransferAction:new(character, item, item:getContainer(), container))
+    end
+end
+
+local function carriedBattery(character)
+    local best
+    for _, item in ipairs(SGGateDrive.inventoryItems(character:getInventory())) do
+        if SGGatePower.isBattery(item) and (not best or item:getCurrentUsesFloat() > best:getCurrentUsesFloat()) then
+            best = item
+        end
+    end
+    return best
+end
+
+local function addBatteryOptions(context, character, id)
+    local drive = SGGate.findRole(id, "drive")
+    local container = drive and drive:getContainer()
+    if not container then return end
+    local inside = SGGatePower.battery(drive)
+    if inside then
+        context:addOption(getText("ContextMenu_SG_TakeBattery"), character, queueBattery, inside,
+            character:getInventory())
+    elseif container:getItems():size() == 0 then
+        local carried = carriedBattery(character)
+        if carried then
+            context:addOption(getText("ContextMenu_SG_PutBattery"), character, queueBattery, carried, container)
+        end
+    end
+end
+
 Events.OnFillWorldObjectContextMenu.Add(function(player, context, worldObjects, test)
     if test then return end
     local character = getSpecificPlayer(player)
@@ -76,6 +109,7 @@ Events.OnFillWorldObjectContextMenu.Add(function(player, context, worldObjects, 
                         powerTip.description = powerTip.description .. " <LINE> " .. getText("Tooltip_SG_Drive_" .. powerReason)
                     end
                     powerOption.toolTip = powerTip
+                    addBatteryOptions(context, character, id)
                 end
             end
         end

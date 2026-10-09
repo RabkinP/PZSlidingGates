@@ -20,6 +20,57 @@ ModelManager, отличаются. Сравнение — в `render-audit/mani
 
 ## Что подтверждено кодом
 
+### Стадии повреждения ворот (2026-10-10)
+
+Fingerprint установленного JAR совпадает с указанным выше. В текущем
+`IsoThumpable` доступны `getHealth()` и `getMaxHealth()`; прочность принадлежит
+отдельному объекту двери. Использование минимального отношения у частей ворот
+и сохранение самой тяжёлой наблюдавшейся стадии — решение мода.
+
+`IsoObject.setSpriteModelName` сбрасывает кеш SpriteModel, но не вызывает
+`invalidateRenderChunkLevel`. При смене стадии мод явно помечает чанк флагом
+256 (тот же флаг использует IsoObjectAnimations при завершении анимации).
+`IsoObjectAnimations.update` удаляет завершённый AnimatedObject после вызова
+`onAnimationFinished`; это обосновывает отложенную смену модели до окончания
+нативного трека, а не один принудительный `setAnimating(false)`.
+
+`research/probe-gate-damage.py` проверяет регистрацию 36 model scripts и
+144 spriteModels через текущие ScriptManager/ScriptBucketCollection и настоящие
+ParseScript/LoadScripts. Коллекции установленного ScriptManager называются
+`models`, `animationMeshes`, `spriteModels`. Отчёт:
+`research/render-audit/gate-damage-native.txt`. Все 36 GLB также проверены
+установленным JNI-импортёром; `art/damage_native_import.txt`.
+
+Эти проверки подтверждают парсинг и импорт, но не внешний вид в игре и не
+бесшовность смены модели после сетевой анимации. Мод откладывает смену
+повреждённой модели до окончания движения; реальный MP требует игровой проверки.
+
+### Качество строительства и предпросмотр (2026-10-10)
+
+Fingerprint установленного JAR совпадает с указанным выше. В текущих игровых
+`media/lua/server/CraftRecipeCode/CraftRecipe_BuildMenu.lua` функции
+`woodenWallLvl1Test/2Test/3Test` фильтруют отдельные рецепты по навыку и принимают
+`{ player, recipe, shouldShowAll }`; Show All обходит фильтр видимости.
+`media/lua/client/Entity/ISUI/CraftRecipe/ISRecipeScrollingListBox.lua`,
+`addGroup`, вызывает `getOnAddToMenu()` через `callLuaBool` с этими параметрами.
+Это фильтр списка, а не серверная проверка навыка/качества: дополнительная
+проверка ворот выполняется модом до расхода материалов.
+
+`research/probe-gate-quality.py` использует текущие ScriptManager/ScriptBucketCollection
+для обоих entity-файлов, с отдельным ParseScript на файл и штатным
+`ScriptParser.stripComments`, как в игровом загрузчике. Проверены все шесть
+CraftRecipe, уровни MetalWelding 4/6/8, строки OnAddToMenu и наличие всех шести
+entity UI styles в объединённом Base.default. Отчёт:
+`research/render-audit/gate-quality-native.txt`. Это проверка парсинга и
+регистрации, не визуальное подтверждение меню в игре.
+
+`research/probe-gate-tiles.py` теперь проверяет 96 carriers, включая новые
+уникальные footprints качества 48..95: metadata/PNG, tdef и наличие spriteModel
+у всех 96 sprites через текущие игровые парсеры. Номера файла/tileset 6842/1
+и старые индексы сохранены. Размер пустого атласа — 1024×3072. Проверка не
+устанавливает внешний вид игрового курсора; отчёт обновлён в
+`research/render-audit/gate-tiles-native.txt`.
+
 ### MP: нативная анимация и серверный таймер (2026-10-06)
 
 Fingerprint совпадает с указанным выше. Проверены текущие `IsoObjectAnimations`,

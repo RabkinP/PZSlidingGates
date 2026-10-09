@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Schiebetor (2 Felder)",
-    "SlidingGateChainLink4": "Schiebetor (4 Felder)",
+    "SlidingGateChainLink2": "Schiebetor (2 Felder) (Hohe Qualität)",
+    "SlidingGateChainLink4": "Schiebetor (4 Felder) (Hohe Qualität)",
     "AssembleSlidingGateDrive": "Schiebetorantrieb zusammenbauen",
-    "AssembleSlidingGateRemote": "Torfernbedienung bauen"
+    "AssembleSlidingGateRemote": "Torfernbedienung bauen",
+    "SlidingGateChainLink2Low": "Schiebetor (2 Felder) (Niedrige Qualität)",
+    "SlidingGateChainLink2Medium": "Schiebetor (2 Felder) (Mittlere Qualität)",
+    "SlidingGateChainLink4Low": "Schiebetor (4 Felder) (Niedrige Qualität)",
+    "SlidingGateChainLink4Medium": "Schiebetor (4 Felder) (Mittlere Qualität)"
 }

@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Portão deslizante (2 células)",
-    "SlidingGateChainLink4": "Portão deslizante (4 células)",
+    "SlidingGateChainLink2": "Portão deslizante (2 células) (Qualidade alta)",
+    "SlidingGateChainLink4": "Portão deslizante (4 células) (Qualidade alta)",
     "AssembleSlidingGateDrive": "Montar motor de portão deslizante",
-    "AssembleSlidingGateRemote": "Montar controle do portão"
+    "AssembleSlidingGateRemote": "Montar controle do portão",
+    "SlidingGateChainLink2Low": "Portão deslizante (2 células) (Qualidade baixa)",
+    "SlidingGateChainLink2Medium": "Portão deslizante (2 células) (Qualidade média)",
+    "SlidingGateChainLink4Low": "Portão deslizante (4 células) (Qualidade baixa)",
+    "SlidingGateChainLink4Medium": "Portão deslizante (4 células) (Qualidade média)"
 }

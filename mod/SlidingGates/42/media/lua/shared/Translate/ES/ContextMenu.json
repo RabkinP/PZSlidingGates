@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Abrir con el motor",
     "ContextMenu_SG_PowerClose": "Cerrar con el motor",
     "ContextMenu_SG_LinkRemote": "Vincular mando de la puerta",
-    "ContextMenu_SG_UseRemote": "Usar mando de la puerta"
+    "ContextMenu_SG_UseRemote": "Usar mando de la puerta",
+    "ContextMenu_SG_PutBattery": "Poner batería en el motor",
+    "ContextMenu_SG_TakeBattery": "Sacar batería del motor"
 }

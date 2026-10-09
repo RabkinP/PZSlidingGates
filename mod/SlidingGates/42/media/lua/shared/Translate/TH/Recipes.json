@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "ประตูเลื่อน (2 ช่อง)",
-    "SlidingGateChainLink4": "ประตูเลื่อน (4 ช่อง)",
+    "SlidingGateChainLink2": "ประตูเลื่อน (2 ช่อง) (คุณภาพสูง)",
+    "SlidingGateChainLink4": "ประตูเลื่อน (4 ช่อง) (คุณภาพสูง)",
     "AssembleSlidingGateDrive": "ประกอบชุดขับเคลื่อนประตูเลื่อน",
-    "AssembleSlidingGateRemote": "ประกอบรีโมตประตู"
+    "AssembleSlidingGateRemote": "ประกอบรีโมตประตู",
+    "SlidingGateChainLink2Low": "ประตูเลื่อน (2 ช่อง) (คุณภาพต่ำ)",
+    "SlidingGateChainLink2Medium": "ประตูเลื่อน (2 ช่อง) (คุณภาพปานกลาง)",
+    "SlidingGateChainLink4Low": "ประตูเลื่อน (4 ช่อง) (คุณภาพต่ำ)",
+    "SlidingGateChainLink4Medium": "ประตูเลื่อน (4 ช่อง) (คุณภาพปานกลาง)"
 }

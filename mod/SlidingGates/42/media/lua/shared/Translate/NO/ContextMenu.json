@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Åpne med motor",
     "ContextMenu_SG_PowerClose": "Lukk med motor",
     "ContextMenu_SG_LinkRemote": "Koble portfjernkontroll",
-    "ContextMenu_SG_UseRemote": "Bruk portfjernkontroll"
+    "ContextMenu_SG_UseRemote": "Bruk portfjernkontroll",
+    "ContextMenu_SG_PutBattery": "Legg batteri i drivverket",
+    "ContextMenu_SG_TakeBattery": "Ta batteri fra drivverket"
 }

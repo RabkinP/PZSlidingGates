@@ -28,10 +28,10 @@ for locale in locales:
             assert sorted(re.findall(r'<[^>]+>', entries[category][key])) == sorted(re.findall(r'<[^>]+>', value)), (locale.name, key)
 
 keys = {key for values in english.values() for key in values}
-entity = (MEDIA / 'scripts/entity_sliding_gates.txt').read_text()
+entity = '\n'.join(p.read_text() for p in (MEDIA/'scripts').glob('entity_sliding_gates*.txt'))
 # XuiSkinScript removes spaces and calls Translator.getRecipeName.
 names = re.findall(r'DisplayName\s*=\s*([^,\r\n]+)', entity)
-assert len(names) == 2
+assert len(names) == 6
 for name in names:
     assert name.replace(' ', '') in english['Recipes'], name
 for recipe in re.findall(r'\b(?:craftRecipe|buildRecipe)\s+(\w+)', '\n'.join(p.read_text() for p in (MEDIA / 'scripts').glob('*.txt'))):

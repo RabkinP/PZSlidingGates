@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Sürgülü kapı (2 kare)",
-    "SlidingGateChainLink4": "Sürgülü kapı (4 kare)",
+    "SlidingGateChainLink2": "Sürgülü kapı (2 kare) (Yüksek kalite)",
+    "SlidingGateChainLink4": "Sürgülü kapı (4 kare) (Yüksek kalite)",
     "AssembleSlidingGateDrive": "Sürgülü kapı motoru monte et",
-    "AssembleSlidingGateRemote": "Kapı kumandası yap"
+    "AssembleSlidingGateRemote": "Kapı kumandası yap",
+    "SlidingGateChainLink2Low": "Sürgülü kapı (2 kare) (Düşük kalite)",
+    "SlidingGateChainLink2Medium": "Sürgülü kapı (2 kare) (Orta kalite)",
+    "SlidingGateChainLink4Low": "Sürgülü kapı (4 kare) (Düşük kalite)",
+    "SlidingGateChainLink4Medium": "Sürgülü kapı (4 kare) (Orta kalite)"
 }

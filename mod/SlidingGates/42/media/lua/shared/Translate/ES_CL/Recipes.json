@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Puerta corrediza (2 casillas)",
-    "SlidingGateChainLink4": "Puerta corrediza (4 casillas)",
+    "SlidingGateChainLink2": "Puerta corrediza (2 casillas) (Calidad alta)",
+    "SlidingGateChainLink4": "Puerta corrediza (4 casillas) (Calidad alta)",
     "AssembleSlidingGateDrive": "Montar motor de puerta corrediza",
-    "AssembleSlidingGateRemote": "Fabricar control del portón"
+    "AssembleSlidingGateRemote": "Fabricar control del portón",
+    "SlidingGateChainLink2Low": "Puerta corrediza (2 casillas) (Calidad baja)",
+    "SlidingGateChainLink2Medium": "Puerta corrediza (2 casillas) (Calidad media)",
+    "SlidingGateChainLink4Low": "Puerta corrediza (4 casillas) (Calidad baja)",
+    "SlidingGateChainLink4Medium": "Puerta corrediza (4 casillas) (Calidad media)"
 }

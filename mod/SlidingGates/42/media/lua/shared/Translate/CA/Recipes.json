@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Porta corredissa (2 caselles)",
-    "SlidingGateChainLink4": "Porta corredissa (4 caselles)",
+    "SlidingGateChainLink2": "Porta corredissa (2 caselles) (Qualitat alta)",
+    "SlidingGateChainLink4": "Porta corredissa (4 caselles) (Qualitat alta)",
     "AssembleSlidingGateDrive": "Muntar un motor de porta corredissa",
-    "AssembleSlidingGateRemote": "Munta un comandament de la porta"
+    "AssembleSlidingGateRemote": "Munta un comandament de la porta",
+    "SlidingGateChainLink2Low": "Porta corredissa (2 caselles) (Qualitat baixa)",
+    "SlidingGateChainLink2Medium": "Porta corredissa (2 caselles) (Qualitat mitjana)",
+    "SlidingGateChainLink4Low": "Porta corredissa (4 caselles) (Qualitat baixa)",
+    "SlidingGateChainLink4Medium": "Porta corredissa (4 caselles) (Qualitat mitjana)"
 }

@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Otwórz napędem",
     "ContextMenu_SG_PowerClose": "Zamknij napędem",
     "ContextMenu_SG_LinkRemote": "Sparuj pilot bramy",
-    "ContextMenu_SG_UseRemote": "Użyj pilota bramy"
+    "ContextMenu_SG_UseRemote": "Użyj pilota bramy",
+    "ContextMenu_SG_PutBattery": "Włóż akumulator do napędu",
+    "ContextMenu_SG_TakeBattery": "Wyjmij akumulator z napędu"
 }

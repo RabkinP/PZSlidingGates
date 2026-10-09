@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Apri con il motore",
     "ContextMenu_SG_PowerClose": "Chiudi con il motore",
     "ContextMenu_SG_LinkRemote": "Associa telecomando del cancello",
-    "ContextMenu_SG_UseRemote": "Usa telecomando del cancello"
+    "ContextMenu_SG_UseRemote": "Usa telecomando del cancello",
+    "ContextMenu_SG_PutBattery": "Inserisci batteria nel motore",
+    "ContextMenu_SG_TakeBattery": "Prendi batteria dal motore"
 }

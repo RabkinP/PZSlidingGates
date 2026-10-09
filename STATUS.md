@@ -6,6 +6,12 @@ features; multiplayer has not been run yet and has only mock-based verification.
 
 ## Implemented
 
+- Gate quality (2026-10-10): welding 4–5 Low, 6–7 Medium, 8+ High for both
+  widths and all four directions. Native filtered recipes show translated quality
+  in parentheses and matching model previews. Quality persists in saves/MP
+  snapshots; legacy gates remain High. Art, assets, mock regressions and installed
+  parser probes pass; this new feature has not yet been visually checked in game.
+
 - Manual chain-link gates in two- and four-cell widths; integrated assembly is
   N-right along world -X and W along +Y, plus reversed N (+X) and reversed W (-Y).
   R cycles N -> W -> reverse N -> reverse W during construction. W uses the
@@ -16,7 +22,7 @@ features; multiplayer has not been run yet and has only mock-based verification.
 - Electric motor item: an independent 30% roll after vanilla dismantling removes a
   washer, dryer or combination washer/dryer. The normal scrap output is preserved;
   only the authority rolls, once per appliance. Other appliances are excluded.
-- A portable gate drive and B42 craftRecipe: Electrical 3, Mechanics 2, Welding 2,
+- A portable gate drive and B42 craftRecipe: Electrical 3, Welding 2,
   vanilla light and work-surface requirements, screws/nuts-and-bolts alternatives.
 - Normal context-menu installation/removal on existing N/W gates in both widths.
   Shared B42 timed-action completion validates the gate instance, motion, proximity,

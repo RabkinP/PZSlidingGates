@@ -11,7 +11,7 @@ def accessor(doc,buf,index):
     offset=v.get('byteOffset',0)+a.get('byteOffset',0)
     return [struct.unpack_from(fmt,buf,offset+j*step) for j in range(a['count'])]
 
-for path in sorted((ROOT/'art/exports').glob('SG_ChainLink*.glb')):
+for path in sorted((ROOT/'art/exports').rglob('SG_ChainLink*.glb')):
     raw=path.read_bytes(); length=struct.unpack_from('<I',raw,12)[0]
     doc=json.loads(raw[20:20+length]); buf=raw[28+length:]
     width=4 if '_4_' in path.name else 2

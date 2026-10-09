@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "使用驱动器打开",
     "ContextMenu_SG_PowerClose": "使用驱动器关闭",
     "ContextMenu_SG_LinkRemote": "绑定大门遥控器",
-    "ContextMenu_SG_UseRemote": "使用大门遥控器"
+    "ContextMenu_SG_UseRemote": "使用大门遥控器",
+    "ContextMenu_SG_PutBattery": "将电池放入驱动器",
+    "ContextMenu_SG_TakeBattery": "从驱动器取出电池"
 }

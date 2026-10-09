@@ -72,11 +72,12 @@ module Base
         }
         component CraftRecipe
         {
+            OnAddToMenu = SGGateHighRecipeTest,
             timedAction = BuildWireFence,
             time = 300,
             category = Welding,
-            SkillRequired = MetalWelding:2,
-            xpAward = MetalWelding:40,
+            SkillRequired = MetalWelding:8,
+            xpAward = MetalWelding:50,
             Tooltip = Tooltip_craft_slidingGateDesc,
             inputs
             {
@@ -143,11 +144,12 @@ module Base
         }
         component CraftRecipe
         {
+            OnAddToMenu = SGGateHighRecipeTest,
             timedAction = BuildWireFence,
             time = 500,
             category = Welding,
-            SkillRequired = MetalWelding:3,
-            xpAward = MetalWelding:70,
+            SkillRequired = MetalWelding:8,
+            xpAward = MetalWelding:50,
             Tooltip = Tooltip_craft_slidingGateDesc,
             inputs
             {

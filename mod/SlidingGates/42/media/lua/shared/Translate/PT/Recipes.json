@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Portão de correr (2 quadrículas)",
-    "SlidingGateChainLink4": "Portão de correr (4 quadrículas)",
+    "SlidingGateChainLink2": "Portão de correr (2 quadrículas) (Qualidade alta)",
+    "SlidingGateChainLink4": "Portão de correr (4 quadrículas) (Qualidade alta)",
     "AssembleSlidingGateDrive": "Montar motor de portão de correr",
-    "AssembleSlidingGateRemote": "Montar comando do portão"
+    "AssembleSlidingGateRemote": "Montar comando do portão",
+    "SlidingGateChainLink2Low": "Portão de correr (2 quadrículas) (Qualidade baixa)",
+    "SlidingGateChainLink2Medium": "Portão de correr (2 quadrículas) (Qualidade média)",
+    "SlidingGateChainLink4Low": "Portão de correr (4 quadrículas) (Qualidade baixa)",
+    "SlidingGateChainLink4Medium": "Portão de correr (4 quadrículas) (Qualidade média)"
 }

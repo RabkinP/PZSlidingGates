@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Posuvná brána (2 políčka)",
-    "SlidingGateChainLink4": "Posuvná brána (4 políčka)",
+    "SlidingGateChainLink2": "Posuvná brána (2 políčka) (Vysoká kvalita)",
+    "SlidingGateChainLink4": "Posuvná brána (4 políčka) (Vysoká kvalita)",
     "AssembleSlidingGateDrive": "Sestavit pohon posuvné brány",
-    "AssembleSlidingGateRemote": "Sestavit ovladač brány"
+    "AssembleSlidingGateRemote": "Sestavit ovladač brány",
+    "SlidingGateChainLink2Low": "Posuvná brána (2 políčka) (Nízká kvalita)",
+    "SlidingGateChainLink2Medium": "Posuvná brána (2 políčka) (Střední kvalita)",
+    "SlidingGateChainLink4Low": "Posuvná brána (4 políčka) (Nízká kvalita)",
+    "SlidingGateChainLink4Medium": "Posuvná brána (4 políčka) (Střední kvalita)"
 }

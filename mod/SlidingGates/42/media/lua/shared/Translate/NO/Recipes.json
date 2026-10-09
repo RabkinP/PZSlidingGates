@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Skyveport (2 ruter)",
-    "SlidingGateChainLink4": "Skyveport (4 ruter)",
+    "SlidingGateChainLink2": "Skyveport (2 ruter) (Høy kvalitet)",
+    "SlidingGateChainLink4": "Skyveport (4 ruter) (Høy kvalitet)",
     "AssembleSlidingGateDrive": "Sett sammen motor til skyveport",
-    "AssembleSlidingGateRemote": "Lag portfjernkontroll"
+    "AssembleSlidingGateRemote": "Lag portfjernkontroll",
+    "SlidingGateChainLink2Low": "Skyveport (2 ruter) (Lav kvalitet)",
+    "SlidingGateChainLink2Medium": "Skyveport (2 ruter) (Middels kvalitet)",
+    "SlidingGateChainLink4Low": "Skyveport (4 ruter) (Lav kvalitet)",
+    "SlidingGateChainLink4Medium": "Skyveport (4 ruter) (Middels kvalitet)"
 }

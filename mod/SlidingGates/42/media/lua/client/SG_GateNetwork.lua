@@ -13,7 +13,7 @@ local function stateOf(id)
     if states[id] and states[id].removed then return end
     return states[id] or { id = id, instance = md.sgInstance, revision = md.sgRevision,
         width = md.sgWidth or 2, orientation = md.sgOrientation or "N", direction = md.sgDirection or "forward", type = md.sgType, open = md.sgOpen or false,
-        moving = md.sgMoving ~= nil, slavesOpen = md.sgSlavesOpen or false }
+        quality = md.sgQuality or "high", damage = md.sgDamage or 0, moving = md.sgMoving ~= nil, slavesOpen = md.sgSlavesOpen or false }
 end
 
 local function requestSnapshot(id, player)
@@ -82,7 +82,7 @@ local function receiveState(state, snapshot)
     end
     states[state.id] = state
     SGGate.registry()[state.id] = { width = state.width, type = state.type, orientation = state.orientation or "N", direction = state.direction or "forward",
-        instance = state.instance, revision = state.revision }
+        quality = state.quality or "high", damage = state.damage or 0, instance = state.instance, revision = state.revision }
     if not leaf or (md.sgInstance and md.sgInstance ~= state.instance) then return end
     applying = true
     md.sgOpen, md.sgSlavesOpen = state.open, state.slavesOpen
@@ -91,6 +91,9 @@ local function receiveState(state, snapshot)
     md.sgInstance, md.sgRevision, md.sgWidth = state.instance, state.revision, state.width
     md.sgOrientation = state.orientation or "N"
     md.sgDirection = state.direction or "forward"
+    md.sgQuality = state.quality or "high"
+    md.sgDamage = state.damage or 0
+    if state.type then md.sgBase = SGGate.leafModel(state.type, md.sgOrientation, md.sgDirection, md.sgQuality) end
     SGGateMotor.sync(state)
     local restingSnapshot = snapshot and not (known and known.instance == state.instance and known.moving)
     if restingSnapshot and leaf:IsOpen() ~= state.open then
@@ -161,17 +164,19 @@ Events.LoadGridsquare.Add(function(square)
         if md.sgGate then
             local entry = SGGate.registry()[md.sgGate]
             if type(entry) ~= "table" then
-                SGGate.registry()[md.sgGate] = { width = md.sgWidth or 2, orientation = md.sgOrientation or "N", direction = md.sgDirection or "forward", instance = md.sgInstance }
+                SGGate.registry()[md.sgGate] = { width = md.sgWidth or 2, orientation = md.sgOrientation or "N", direction = md.sgDirection or "forward", quality = md.sgQuality or "high", damage = md.sgDamage or 0, instance = md.sgInstance }
             else
                 entry.orientation = entry.orientation or md.sgOrientation or "N"
                 entry.direction = entry.direction or md.sgDirection or "forward"
+                entry.quality = entry.quality or md.sgQuality or "high"
+                entry.damage = entry.damage or md.sgDamage or 0
             end
             -- Restore model names even before the requested resting snapshot arrives.
             if md.sgBase or md.sgStatic then SGGate.applyModel(obj) end
             if not seen[md.sgGate] then
                 seen[md.sgGate] = true
                 local state = stateOf(md.sgGate)
-                if state then SGGate.registry()[md.sgGate] = { width = state.width, orientation = state.orientation or "N", direction = state.direction or "forward", instance = state.instance } end
+                if state then SGGate.registry()[md.sgGate] = { width = state.width, orientation = state.orientation or "N", direction = state.direction or "forward", quality = state.quality or "high", damage = state.damage or 0, instance = state.instance } end
                 requestSnapshot(md.sgGate)
             end
         end
@@ -187,6 +192,15 @@ local pollTicks = 0
 Events.OnTick.Add(function()
     SGGateMotor.update()
     pollTicks = pollTicks + 1
+    if pollTicks % 30 == 0 then
+        for id in pairs(SGGate.registry()) do
+            local leaf = SGGate.findRole(id, "leaf")
+            if leaf and not SGGate.isMoving(id) and not leaf:isAnimating() then
+                local md = leaf:getModData()
+                if (md.sgVisualDamage or 0) ~= (md.sgDamage or 0) then SGGate.applyModel(leaf) end
+            end
+        end
+    end
     if pollTicks % 120 ~= 0 then return end
     -- Refresh only locally loaded moving/pending gates, including after a lost result.
     for id in pairs(SGGate.registry()) do

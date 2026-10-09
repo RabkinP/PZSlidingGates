@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Openen met aandrijving",
     "ContextMenu_SG_PowerClose": "Sluiten met aandrijving",
     "ContextMenu_SG_LinkRemote": "Poortafstandsbediening koppelen",
-    "ContextMenu_SG_UseRemote": "Poortafstandsbediening gebruiken"
+    "ContextMenu_SG_UseRemote": "Poortafstandsbediening gebruiken",
+    "ContextMenu_SG_PutBattery": "Accu in aandrijving plaatsen",
+    "ContextMenu_SG_TakeBattery": "Accu uit aandrijving halen"
 }

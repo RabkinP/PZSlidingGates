@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Відкатні ворота (2 клітини)",
-    "SlidingGateChainLink4": "Відкатні ворота (4 клітини)",
+    "SlidingGateChainLink2": "Відкатні ворота (2 клітини) (Висока якість)",
+    "SlidingGateChainLink4": "Відкатні ворота (4 клітини) (Висока якість)",
     "AssembleSlidingGateDrive": "Зібрати привод відкатних воріт",
-    "AssembleSlidingGateRemote": "Зібрати пульт воріт"
+    "AssembleSlidingGateRemote": "Зібрати пульт воріт",
+    "SlidingGateChainLink2Low": "Відкатні ворота (2 клітини) (Низька якість)",
+    "SlidingGateChainLink2Medium": "Відкатні ворота (2 клітини) (Середня якість)",
+    "SlidingGateChainLink4Low": "Відкатні ворота (4 клітини) (Низька якість)",
+    "SlidingGateChainLink4Medium": "Відкатні ворота (4 клітини) (Середня якість)"
 }

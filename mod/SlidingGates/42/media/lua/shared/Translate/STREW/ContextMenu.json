@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Oepn unisg dvire",
     "ContextMenu_SG_PowerClose": "Csole unisg dvire",
     "ContextMenu_SG_LinkRemote": "Lnik gtae rtomee",
-    "ContextMenu_SG_UseRemote": "Use gtae rtomee"
+    "ContextMenu_SG_UseRemote": "Use gtae rtomee",
+    "ContextMenu_SG_PutBattery": "Put battery into drive",
+    "ContextMenu_SG_TakeBattery": "Take battery from drive"
 }

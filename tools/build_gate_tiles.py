@@ -15,7 +15,7 @@ MOD = ROOT / 'mod/SlidingGates'
 MEDIA = MOD / '42/media'
 TILESET = 'sg_gates_preview_01'
 FILE_NUMBER = 6842
-COUNT = 48  # append reverse footprints/statics; preserve indices 0..23
+COUNT = 96  # quality footprints append 48..95; preserve all existing indices
 
 
 def integer(n):
@@ -71,6 +71,17 @@ def bindings():
                                  (43, 'Drive', '-0.6 0 -0.5')):
         result[index] = dict(modelScript=f'Base.SG_{name}_Reverse', translate=offset,
                              rotate='0 90 0', scale='1')
+    for quality, start in (('Low',48),('Medium',72)):
+        for width, offset in ((2,0),(4,8)):
+            prefix = 'SG_ChainLink' if width == 2 else 'SG_ChainLink_4'
+            # Unique sprites for every entity footprint (global entity registry).
+            for face, leaf_index in ((0,width-1),(1,0),(2,0),(3,width-1)):
+                index=start+offset+face*width+leaf_index
+                west=face in (1,3); reverse=face in (2,3)
+                tx=-.5 if reverse else .5
+                result[index]=dict(modelScript=f'Base.{prefix}_{quality}_N_'+('Reverse' if reverse else 'Right'),
+                    translate=f'-0.38 0 {-tx}' if west else f'{tx} 0 -0.38',
+                    rotate='0 90 0' if west else '0 0 0',scale='1',animation='Open',animationTime='0')
     return result
 
 

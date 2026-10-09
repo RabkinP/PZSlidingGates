@@ -404,5 +404,421 @@ spriteModel
             rotate = 0 0 0,
             scale = 0.001,
         }
+        tile
+        {
+            xy = 0 6,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 1 6,
+            modelScript = Base.SG_ChainLink_Low_N_Right,
+            translate = 0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 2 6,
+            modelScript = Base.SG_ChainLink_Low_N_Right,
+            translate = -0.38 0 -0.5,
+            rotate = 0 90 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 3 6,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 4 6,
+            modelScript = Base.SG_ChainLink_Low_N_Reverse,
+            translate = -0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 5 6,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 6 6,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 7 6,
+            modelScript = Base.SG_ChainLink_Low_N_Reverse,
+            translate = -0.38 0 0.5,
+            rotate = 0 90 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 0 7,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 1 7,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 2 7,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 3 7,
+            modelScript = Base.SG_ChainLink_4_Low_N_Right,
+            translate = 0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 4 7,
+            modelScript = Base.SG_ChainLink_4_Low_N_Right,
+            translate = -0.38 0 -0.5,
+            rotate = 0 90 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 5 7,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 6 7,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 7 7,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 0 8,
+            modelScript = Base.SG_ChainLink_4_Low_N_Reverse,
+            translate = -0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 1 8,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 2 8,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 3 8,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 4 8,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 5 8,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 6 8,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 7 8,
+            modelScript = Base.SG_ChainLink_4_Low_N_Reverse,
+            translate = -0.38 0 0.5,
+            rotate = 0 90 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 0 9,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 1 9,
+            modelScript = Base.SG_ChainLink_Medium_N_Right,
+            translate = 0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 2 9,
+            modelScript = Base.SG_ChainLink_Medium_N_Right,
+            translate = -0.38 0 -0.5,
+            rotate = 0 90 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 3 9,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 4 9,
+            modelScript = Base.SG_ChainLink_Medium_N_Reverse,
+            translate = -0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 5 9,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 6 9,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 7 9,
+            modelScript = Base.SG_ChainLink_Medium_N_Reverse,
+            translate = -0.38 0 0.5,
+            rotate = 0 90 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 0 10,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 1 10,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 2 10,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 3 10,
+            modelScript = Base.SG_ChainLink_4_Medium_N_Right,
+            translate = 0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 4 10,
+            modelScript = Base.SG_ChainLink_4_Medium_N_Right,
+            translate = -0.38 0 -0.5,
+            rotate = 0 90 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 5 10,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 6 10,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 7 10,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 0 11,
+            modelScript = Base.SG_ChainLink_4_Medium_N_Reverse,
+            translate = -0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 1 11,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 2 11,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 3 11,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 4 11,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 5 11,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 6 11,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 7 11,
+            modelScript = Base.SG_ChainLink_4_Medium_N_Reverse,
+            translate = -0.38 0 0.5,
+            rotate = 0 90 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
     }
 }

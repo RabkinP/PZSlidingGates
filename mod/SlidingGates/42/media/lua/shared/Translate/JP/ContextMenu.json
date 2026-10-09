@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "駆動装置で開く",
     "ContextMenu_SG_PowerClose": "駆動装置で閉じる",
     "ContextMenu_SG_LinkRemote": "ゲートのリモコンを登録",
-    "ContextMenu_SG_UseRemote": "ゲートのリモコンを使用"
+    "ContextMenu_SG_UseRemote": "ゲートのリモコンを使用",
+    "ContextMenu_SG_PutBattery": "駆動装置にバッテリーを入れる",
+    "ContextMenu_SG_TakeBattery": "駆動装置からバッテリーを取る"
 }

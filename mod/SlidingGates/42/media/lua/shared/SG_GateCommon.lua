@@ -1,6 +1,47 @@
 require "SG_GateTypes"
 SGGate = SGGate or {}
 
+function SGGate.damageForRatio(ratio)
+    if ratio <= 0.25 then return 3 end
+    if ratio <= 0.50 then return 2 end
+    if ratio <= 0.75 then return 1 end
+    return 0
+end
+
+function SGGate.qualityForLevel(level)
+    if (tonumber(level) or 0) >= 8 then return "high" end
+    if (tonumber(level) or 0) >= 6 then return "medium" end
+    return "low"
+end
+
+function SGGate.weldingLevel(character)
+    if not character then return end
+    local ok, level = pcall(function() return character:getPerkLevel(Perks.MetalWelding) end)
+    if ok and type(level) == "number" then return level end
+end
+
+function SGGate.quality(id)
+    local entry = SGGate.registry()[id]
+    if type(entry) == "table" and entry.quality then return entry.quality end
+    for _, obj in ipairs(SGGate.parts(id)) do
+        if obj:getModData().sgQuality then return obj:getModData().sgQuality end
+    end
+    return "high" -- Legacy assemblies retain the existing model.
+end
+
+function SGGate.leafModel(typeId, orientation, direction, quality)
+    local t = SGGateTypes[typeId]
+    if not t then return end
+    local field = orientation == "W" and "westLeafModel" or "leafModel"
+    if direction == "reverse" then field = orientation == "W" and "westReverseLeafModel" or "reverseLeafModel" end
+    local base = t[field]
+    if quality == "low" or quality == "medium" then
+        local prefix = t.width == 4 and "SG_ChainLink_4" or "SG_ChainLink"
+        return prefix .. "_" .. (quality == "low" and "Low" or "Medium") .. base:sub(#prefix + 1)
+    end
+    return base
+end
+
 function SGGate.registry()
     local data = ModData.getOrCreate("SlidingGates")
     data.gates = data.gates or {}
@@ -93,7 +134,18 @@ function SGGate.applyModel(obj)
     if md.sgStatic then obj:setSpriteModelName("Base." .. md.sgStatic); return end
     local base = md.sgBase
     if base then
+        local visualChanged = false
+        if md.sgRole == "leaf" then
+            local entry = SGGate.registry()[md.sgGate]
+            local damage = type(entry) == "table" and entry.damage or md.sgDamage or 0
+            -- A running native track owns its model until it reaches its end pose.
+            if md.sgMoving ~= nil or obj:isAnimating() then damage = md.sgVisualDamage or 0 end
+            visualChanged = (md.sgVisualDamage or 0) ~= damage
+            md.sgVisualDamage = damage
+            if damage > 0 then base = base .. "_Damage" .. damage end
+        end
         obj:setSpriteModelName("Base." .. base .. (base == "SG_Hidden" and "" or (obj:IsOpen() and "_Open" or "_Closed")))
+        if visualChanged and obj:getSquare() then obj:invalidateRenderChunkLevel(256) end
     end
 end
 

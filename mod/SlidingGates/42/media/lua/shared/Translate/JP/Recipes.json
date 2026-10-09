@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "スライドゲート（2マス）",
-    "SlidingGateChainLink4": "スライドゲート（4マス）",
+    "SlidingGateChainLink2": "スライドゲート（2マス） (高品質)",
+    "SlidingGateChainLink4": "スライドゲート（4マス） (高品質)",
     "AssembleSlidingGateDrive": "スライドゲート駆動装置を組み立てる",
-    "AssembleSlidingGateRemote": "ゲートのリモコンを組み立てる"
+    "AssembleSlidingGateRemote": "ゲートのリモコンを組み立てる",
+    "SlidingGateChainLink2Low": "スライドゲート（2マス） (低品質)",
+    "SlidingGateChainLink2Medium": "スライドゲート（2マス） (中品質)",
+    "SlidingGateChainLink4Low": "スライドゲート（4マス） (低品質)",
+    "SlidingGateChainLink4Medium": "スライドゲート（4マス） (中品質)"
 }

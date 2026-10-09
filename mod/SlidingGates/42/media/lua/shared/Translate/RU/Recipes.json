@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Откатные ворота (2 клетки)",
-    "SlidingGateChainLink4": "Откатные ворота (4 клетки)",
+    "SlidingGateChainLink2": "Откатные ворота (2 клетки) (Высокое качество)",
+    "SlidingGateChainLink4": "Откатные ворота (4 клетки) (Высокое качество)",
     "AssembleSlidingGateDrive": "Собрать привод откатных ворот",
-    "AssembleSlidingGateRemote": "Собрать пульт ворот"
+    "AssembleSlidingGateRemote": "Собрать пульт ворот",
+    "SlidingGateChainLink2Low": "Откатные ворота (2 клетки) (Низкое качество)",
+    "SlidingGateChainLink2Medium": "Откатные ворота (2 клетки) (Среднее качество)",
+    "SlidingGateChainLink4Low": "Откатные ворота (4 клетки) (Низкое качество)",
+    "SlidingGateChainLink4Medium": "Откатные ворота (4 клетки) (Среднее качество)"
 }

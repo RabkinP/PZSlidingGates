@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Portail coulissant (2 cases)",
-    "SlidingGateChainLink4": "Portail coulissant (4 cases)",
+    "SlidingGateChainLink2": "Portail coulissant (2 cases) (Qualité élevée)",
+    "SlidingGateChainLink4": "Portail coulissant (4 cases) (Qualité élevée)",
     "AssembleSlidingGateDrive": "Assembler un moteur de portail coulissant",
-    "AssembleSlidingGateRemote": "Fabriquer une télécommande de portail"
+    "AssembleSlidingGateRemote": "Fabriquer une télécommande de portail",
+    "SlidingGateChainLink2Low": "Portail coulissant (2 cases) (Qualité faible)",
+    "SlidingGateChainLink2Medium": "Portail coulissant (2 cases) (Qualité moyenne)",
+    "SlidingGateChainLink4Low": "Portail coulissant (4 cases) (Qualité faible)",
+    "SlidingGateChainLink4Medium": "Portail coulissant (4 cases) (Qualité moyenne)"
 }

@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Strewberrie Strewberrie (2 Strewberrie)",
-    "SlidingGateChainLink4": "Strewberrie Strewberrie (4 Strewberrie)",
+    "SlidingGateChainLink2": "Strewberrie Strewberrie (2 Strewberrie) (High quality)",
+    "SlidingGateChainLink4": "Strewberrie Strewberrie (4 Strewberrie) (High quality)",
     "AssembleSlidingGateDrive": "Strewberrie Strewberrie Strewberrie Strewberrie",
-    "AssembleSlidingGateRemote": "Albmesse Gtae Rtomee"
+    "AssembleSlidingGateRemote": "Albmesse Gtae Rtomee",
+    "SlidingGateChainLink2Low": "Strewberrie Strewberrie (2 Strewberrie) (Low quality)",
+    "SlidingGateChainLink2Medium": "Strewberrie Strewberrie (2 Strewberrie) (Medium quality)",
+    "SlidingGateChainLink4Low": "Strewberrie Strewberrie (4 Strewberrie) (Low quality)",
+    "SlidingGateChainLink4Medium": "Strewberrie Strewberrie (4 Strewberrie) (Medium quality)"
 }

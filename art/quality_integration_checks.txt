@@ -1,0 +1,76 @@
+PASS 24 assemblies: quality models, Open/Close, persistence, metadata, snapshots and legacy default
+PASS six native recipe tiers/titles, unique entity footprints and all 16 quality preview anchors
+PASS late-client quality snapshot, model reconstruction and chunk metadata
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)

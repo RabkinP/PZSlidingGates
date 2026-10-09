@@ -311,6 +311,326 @@
       "translate": "0 0 0",
       "rotate": "0 0 0",
       "scale": "0.001"
+    },
+    "48": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "49": {
+      "modelScript": "Base.SG_ChainLink_Low_N_Right",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "50": {
+      "modelScript": "Base.SG_ChainLink_Low_N_Right",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 90 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "51": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "52": {
+      "modelScript": "Base.SG_ChainLink_Low_N_Reverse",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "53": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "54": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "55": {
+      "modelScript": "Base.SG_ChainLink_Low_N_Reverse",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 90 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "56": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "57": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "58": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "59": {
+      "modelScript": "Base.SG_ChainLink_4_Low_N_Right",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "60": {
+      "modelScript": "Base.SG_ChainLink_4_Low_N_Right",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 90 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "61": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "62": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "63": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "64": {
+      "modelScript": "Base.SG_ChainLink_4_Low_N_Reverse",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "65": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "66": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "67": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "68": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "69": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "70": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "71": {
+      "modelScript": "Base.SG_ChainLink_4_Low_N_Reverse",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 90 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "72": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "73": {
+      "modelScript": "Base.SG_ChainLink_Medium_N_Right",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "74": {
+      "modelScript": "Base.SG_ChainLink_Medium_N_Right",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 90 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "75": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "76": {
+      "modelScript": "Base.SG_ChainLink_Medium_N_Reverse",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "77": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "78": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "79": {
+      "modelScript": "Base.SG_ChainLink_Medium_N_Reverse",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 90 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "80": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "81": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "82": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "83": {
+      "modelScript": "Base.SG_ChainLink_4_Medium_N_Right",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "84": {
+      "modelScript": "Base.SG_ChainLink_4_Medium_N_Right",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 90 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "85": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "86": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "87": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "88": {
+      "modelScript": "Base.SG_ChainLink_4_Medium_N_Reverse",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "89": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "90": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "91": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "92": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "93": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "94": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "95": {
+      "modelScript": "Base.SG_ChainLink_4_Medium_N_Reverse",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 90 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
     }
   }
 }

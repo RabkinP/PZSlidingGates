@@ -4,5 +4,7 @@
     "ContextMenu_SG_PowerOpen": "Avaa moottorilla",
     "ContextMenu_SG_PowerClose": "Sulje moottorilla",
     "ContextMenu_SG_LinkRemote": "Yhdistä portin kaukosäädin",
-    "ContextMenu_SG_UseRemote": "Käytä portin kaukosäädintä"
+    "ContextMenu_SG_UseRemote": "Käytä portin kaukosäädintä",
+    "ContextMenu_SG_PutBattery": "Laita akku moottoriin",
+    "ContextMenu_SG_TakeBattery": "Ota akku moottorista"
 }

@@ -40,7 +40,7 @@ module SlidingGates
         SkillRequired = Electricity:2,
         Tags = AnySurfaceCraft;Electrical,
         AllowBatchCraft = false,
-        xpAward = Electricity:6,
+        xpAward = Electricity:10,
         inputs
         {
             item 1 [Base.Remote;Base.CordlessPhone;Base.Pager],
@@ -60,10 +60,10 @@ module SlidingGates
         timedAction = Welding,
         time = 500,
         category = Electrical,
-        SkillRequired = Electricity:3;Mechanics:2;MetalWelding:2,
+        SkillRequired = Electricity:3;MetalWelding:2,
         Tags = AnySurfaceCraft;Welding;Electrical,
         AllowBatchCraft = false,
-        xpAward = Electricity:20;Mechanics:10;MetalWelding:10,
+        xpAward = Electricity:30;MetalWelding:10,
         inputs
         {
             item 1 [SlidingGates.ElectricMotor],
@@ -71,6 +71,7 @@ module SlidingGates
             item 3 [Base.ScrapMetal],
             item 4 [Base.ElectronicsScrap],
             item 2 [Base.ElectricWire],
+            item 6 [Base.Wire],
             item 1 [Base.RadioReceiver],
             item 6 [Base.Screws;Base.NutsBolts],
             item 1 tags[base:screwdriver] mode:keep flags[NoBrokenItems],

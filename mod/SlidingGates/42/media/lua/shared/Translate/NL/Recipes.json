@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Schuifpoort (2 vakken)",
-    "SlidingGateChainLink4": "Schuifpoort (4 vakken)",
+    "SlidingGateChainLink2": "Schuifpoort (2 vakken) (Hoge kwaliteit)",
+    "SlidingGateChainLink4": "Schuifpoort (4 vakken) (Hoge kwaliteit)",
     "AssembleSlidingGateDrive": "Schuifpoortaandrijving samenstellen",
-    "AssembleSlidingGateRemote": "Poortafstandsbediening maken"
+    "AssembleSlidingGateRemote": "Poortafstandsbediening maken",
+    "SlidingGateChainLink2Low": "Schuifpoort (2 vakken) (Lage kwaliteit)",
+    "SlidingGateChainLink2Medium": "Schuifpoort (2 vakken) (Gemiddelde kwaliteit)",
+    "SlidingGateChainLink4Low": "Schuifpoort (4 vakken) (Lage kwaliteit)",
+    "SlidingGateChainLink4Medium": "Schuifpoort (4 vakken) (Gemiddelde kwaliteit)"
 }

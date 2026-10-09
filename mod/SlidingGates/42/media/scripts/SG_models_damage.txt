@@ -1,0 +1,1803 @@
+module Base
+{
+    animationsMesh SG_ChainLink_N_Right_Damage1
+    {
+        meshFile = IsoObject/SG_ChainLink_N_Right_Damage1,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_N_Right_Damage1
+    {
+        mesh = IsoObject/SG_ChainLink_N_Right_Damage1,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_N_Right_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_N_Right_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage1,
+        translate = 0.5 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+        }
+    spriteModel SG_ChainLink_N_Right_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage1,
+        translate = 0.5 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+        }
+    spriteModel SG_ChainLink_W_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage1,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+        }
+    spriteModel SG_ChainLink_W_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage1,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+        }
+    animationsMesh SG_ChainLink_N_Right_Damage2
+    {
+        meshFile = IsoObject/SG_ChainLink_N_Right_Damage2,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_N_Right_Damage2
+    {
+        mesh = IsoObject/SG_ChainLink_N_Right_Damage2,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_N_Right_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_N_Right_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage2,
+        translate = 0.5 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+        }
+    spriteModel SG_ChainLink_N_Right_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage2,
+        translate = 0.5 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+        }
+    spriteModel SG_ChainLink_W_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage2,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+        }
+    spriteModel SG_ChainLink_W_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage2,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+        }
+    animationsMesh SG_ChainLink_N_Right_Damage3
+    {
+        meshFile = IsoObject/SG_ChainLink_N_Right_Damage3,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_N_Right_Damage3
+    {
+        mesh = IsoObject/SG_ChainLink_N_Right_Damage3,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_N_Right_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_N_Right_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage3,
+        translate = 0.5 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+        }
+    spriteModel SG_ChainLink_N_Right_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage3,
+        translate = 0.5 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+        }
+    spriteModel SG_ChainLink_W_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage3,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+        }
+    spriteModel SG_ChainLink_W_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage3,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+        }
+    animationsMesh SG_ChainLink_N_Reverse_Damage1
+    {
+        meshFile = IsoObject/SG_ChainLink_N_Reverse_Damage1,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_N_Reverse_Damage1
+    {
+        mesh = IsoObject/SG_ChainLink_N_Reverse_Damage1,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_N_Reverse_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_N_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_N_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_W_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_W_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_N_Reverse_Damage2
+    {
+        meshFile = IsoObject/SG_ChainLink_N_Reverse_Damage2,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_N_Reverse_Damage2
+    {
+        mesh = IsoObject/SG_ChainLink_N_Reverse_Damage2,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_N_Reverse_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_N_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_N_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_W_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_W_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_N_Reverse_Damage3
+    {
+        meshFile = IsoObject/SG_ChainLink_N_Reverse_Damage3,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_N_Reverse_Damage3
+    {
+        mesh = IsoObject/SG_ChainLink_N_Reverse_Damage3,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_N_Reverse_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_N_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_N_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_W_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_W_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_Low_N_Right_Damage1
+    {
+        meshFile = IsoObject/SG_ChainLink_Low_N_Right_Damage1,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_Low_N_Right_Damage1
+    {
+        mesh = IsoObject/SG_ChainLink_Low_N_Right_Damage1,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_Low_N_Right_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_Low_N_Right_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Low_N_Right_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_Low_W_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Low_W_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_Low_N_Right_Damage2
+    {
+        meshFile = IsoObject/SG_ChainLink_Low_N_Right_Damage2,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_Low_N_Right_Damage2
+    {
+        mesh = IsoObject/SG_ChainLink_Low_N_Right_Damage2,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_Low_N_Right_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_Low_N_Right_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Low_N_Right_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_Low_W_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Low_W_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_Low_N_Right_Damage3
+    {
+        meshFile = IsoObject/SG_ChainLink_Low_N_Right_Damage3,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_Low_N_Right_Damage3
+    {
+        mesh = IsoObject/SG_ChainLink_Low_N_Right_Damage3,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_Low_N_Right_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_Low_N_Right_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Low_N_Right_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_Low_W_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Low_W_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_Low_N_Reverse_Damage1
+    {
+        meshFile = IsoObject/SG_ChainLink_Low_N_Reverse_Damage1,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_Low_N_Reverse_Damage1
+    {
+        mesh = IsoObject/SG_ChainLink_Low_N_Reverse_Damage1,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_Low_N_Reverse_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_Low_N_Reverse_Damage2
+    {
+        meshFile = IsoObject/SG_ChainLink_Low_N_Reverse_Damage2,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_Low_N_Reverse_Damage2
+    {
+        mesh = IsoObject/SG_ChainLink_Low_N_Reverse_Damage2,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_Low_N_Reverse_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_Low_N_Reverse_Damage3
+    {
+        meshFile = IsoObject/SG_ChainLink_Low_N_Reverse_Damage3,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_Low_N_Reverse_Damage3
+    {
+        mesh = IsoObject/SG_ChainLink_Low_N_Reverse_Damage3,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_Low_N_Reverse_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_Medium_N_Right_Damage1
+    {
+        meshFile = IsoObject/SG_ChainLink_Medium_N_Right_Damage1,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_Medium_N_Right_Damage1
+    {
+        mesh = IsoObject/SG_ChainLink_Medium_N_Right_Damage1,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_Medium_N_Right_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_Medium_N_Right_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Medium_N_Right_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_Medium_W_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Medium_W_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_Medium_N_Right_Damage2
+    {
+        meshFile = IsoObject/SG_ChainLink_Medium_N_Right_Damage2,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_Medium_N_Right_Damage2
+    {
+        mesh = IsoObject/SG_ChainLink_Medium_N_Right_Damage2,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_Medium_N_Right_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_Medium_N_Right_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Medium_N_Right_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_Medium_W_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Medium_W_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_Medium_N_Right_Damage3
+    {
+        meshFile = IsoObject/SG_ChainLink_Medium_N_Right_Damage3,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_Medium_N_Right_Damage3
+    {
+        mesh = IsoObject/SG_ChainLink_Medium_N_Right_Damage3,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_Medium_N_Right_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_Medium_N_Right_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Medium_N_Right_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_Medium_W_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Medium_W_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_Medium_N_Reverse_Damage1
+    {
+        meshFile = IsoObject/SG_ChainLink_Medium_N_Reverse_Damage1,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_Medium_N_Reverse_Damage1
+    {
+        mesh = IsoObject/SG_ChainLink_Medium_N_Reverse_Damage1,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_Medium_N_Reverse_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_Medium_N_Reverse_Damage2
+    {
+        meshFile = IsoObject/SG_ChainLink_Medium_N_Reverse_Damage2,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_Medium_N_Reverse_Damage2
+    {
+        mesh = IsoObject/SG_ChainLink_Medium_N_Reverse_Damage2,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_Medium_N_Reverse_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_Medium_N_Reverse_Damage3
+    {
+        meshFile = IsoObject/SG_ChainLink_Medium_N_Reverse_Damage3,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_Medium_N_Reverse_Damage3
+    {
+        mesh = IsoObject/SG_ChainLink_Medium_N_Reverse_Damage3,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_Medium_N_Reverse_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+        }
+    animationsMesh SG_ChainLink_4_N_Right_Damage1
+    {
+        meshFile = IsoObject/SG_ChainLink_4_N_Right_Damage1,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_N_Right_Damage1
+    {
+        mesh = IsoObject/SG_ChainLink_4_N_Right_Damage1,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_N_Right_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_N_Right_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage1,
+        translate = 0.5 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+        }
+    spriteModel SG_ChainLink_4_N_Right_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage1,
+        translate = 0.5 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+        }
+    spriteModel SG_ChainLink_4_W_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage1,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+        }
+    spriteModel SG_ChainLink_4_W_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage1,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+        }
+    animationsMesh SG_ChainLink_4_N_Right_Damage2
+    {
+        meshFile = IsoObject/SG_ChainLink_4_N_Right_Damage2,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_N_Right_Damage2
+    {
+        mesh = IsoObject/SG_ChainLink_4_N_Right_Damage2,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_N_Right_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_N_Right_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage2,
+        translate = 0.5 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+        }
+    spriteModel SG_ChainLink_4_N_Right_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage2,
+        translate = 0.5 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+        }
+    spriteModel SG_ChainLink_4_W_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage2,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+        }
+    spriteModel SG_ChainLink_4_W_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage2,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+        }
+    animationsMesh SG_ChainLink_4_N_Right_Damage3
+    {
+        meshFile = IsoObject/SG_ChainLink_4_N_Right_Damage3,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_N_Right_Damage3
+    {
+        mesh = IsoObject/SG_ChainLink_4_N_Right_Damage3,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_N_Right_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_N_Right_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage3,
+        translate = 0.5 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+        }
+    spriteModel SG_ChainLink_4_N_Right_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage3,
+        translate = 0.5 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+        }
+    spriteModel SG_ChainLink_4_W_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage3,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+        }
+    spriteModel SG_ChainLink_4_W_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage3,
+        translate = -0.38 0.0 -0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+        }
+    animationsMesh SG_ChainLink_4_N_Reverse_Damage1
+    {
+        meshFile = IsoObject/SG_ChainLink_4_N_Reverse_Damage1,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_N_Reverse_Damage1
+    {
+        mesh = IsoObject/SG_ChainLink_4_N_Reverse_Damage1,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_N_Reverse_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_N_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_N_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_W_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_W_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_N_Reverse_Damage2
+    {
+        meshFile = IsoObject/SG_ChainLink_4_N_Reverse_Damage2,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_N_Reverse_Damage2
+    {
+        mesh = IsoObject/SG_ChainLink_4_N_Reverse_Damage2,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_N_Reverse_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_N_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_N_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_W_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_W_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_N_Reverse_Damage3
+    {
+        meshFile = IsoObject/SG_ChainLink_4_N_Reverse_Damage3,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_N_Reverse_Damage3
+    {
+        mesh = IsoObject/SG_ChainLink_4_N_Reverse_Damage3,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_N_Reverse_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_N_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_N_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_W_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_W_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_Low_N_Right_Damage1
+    {
+        meshFile = IsoObject/SG_ChainLink_4_Low_N_Right_Damage1,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_Low_N_Right_Damage1
+    {
+        mesh = IsoObject/SG_ChainLink_4_Low_N_Right_Damage1,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_Low_N_Right_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_Low_W_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Low_W_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_Low_N_Right_Damage2
+    {
+        meshFile = IsoObject/SG_ChainLink_4_Low_N_Right_Damage2,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_Low_N_Right_Damage2
+    {
+        mesh = IsoObject/SG_ChainLink_4_Low_N_Right_Damage2,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_Low_N_Right_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_Low_W_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Low_W_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_Low_N_Right_Damage3
+    {
+        meshFile = IsoObject/SG_ChainLink_4_Low_N_Right_Damage3,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_Low_N_Right_Damage3
+    {
+        mesh = IsoObject/SG_ChainLink_4_Low_N_Right_Damage3,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_Low_N_Right_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_Low_W_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Low_W_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_Low_N_Reverse_Damage1
+    {
+        meshFile = IsoObject/SG_ChainLink_4_Low_N_Reverse_Damage1,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_Low_N_Reverse_Damage1
+    {
+        mesh = IsoObject/SG_ChainLink_4_Low_N_Reverse_Damage1,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_Low_N_Reverse_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_Low_N_Reverse_Damage2
+    {
+        meshFile = IsoObject/SG_ChainLink_4_Low_N_Reverse_Damage2,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_Low_N_Reverse_Damage2
+    {
+        mesh = IsoObject/SG_ChainLink_4_Low_N_Reverse_Damage2,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_Low_N_Reverse_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_Low_N_Reverse_Damage3
+    {
+        meshFile = IsoObject/SG_ChainLink_4_Low_N_Reverse_Damage3,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_Low_N_Reverse_Damage3
+    {
+        mesh = IsoObject/SG_ChainLink_4_Low_N_Reverse_Damage3,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_Low_N_Reverse_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_Medium_N_Right_Damage1
+    {
+        meshFile = IsoObject/SG_ChainLink_4_Medium_N_Right_Damage1,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_Medium_N_Right_Damage1
+    {
+        mesh = IsoObject/SG_ChainLink_4_Medium_N_Right_Damage1,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_Medium_N_Right_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_Medium_W_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Medium_W_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_Medium_N_Right_Damage2
+    {
+        meshFile = IsoObject/SG_ChainLink_4_Medium_N_Right_Damage2,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_Medium_N_Right_Damage2
+    {
+        mesh = IsoObject/SG_ChainLink_4_Medium_N_Right_Damage2,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_Medium_N_Right_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_Medium_W_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Medium_W_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_Medium_N_Right_Damage3
+    {
+        meshFile = IsoObject/SG_ChainLink_4_Medium_N_Right_Damage3,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_Medium_N_Right_Damage3
+    {
+        mesh = IsoObject/SG_ChainLink_4_Medium_N_Right_Damage3,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_Medium_N_Right_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_Medium_W_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Medium_W_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_Medium_N_Reverse_Damage1
+    {
+        meshFile = IsoObject/SG_ChainLink_4_Medium_N_Reverse_Damage1,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_Medium_N_Reverse_Damage1
+    {
+        mesh = IsoObject/SG_ChainLink_4_Medium_N_Reverse_Damage1,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_Medium_N_Reverse_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_Medium_N_Reverse_Damage2
+    {
+        meshFile = IsoObject/SG_ChainLink_4_Medium_N_Reverse_Damage2,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_Medium_N_Reverse_Damage2
+    {
+        mesh = IsoObject/SG_ChainLink_4_Medium_N_Reverse_Damage2,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_Medium_N_Reverse_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    animationsMesh SG_ChainLink_4_Medium_N_Reverse_Damage3
+    {
+        meshFile = IsoObject/SG_ChainLink_4_Medium_N_Reverse_Damage3,
+        keepMeshAnimations = true,
+        }
+    model SG_ChainLink_4_Medium_N_Reverse_Damage3
+    {
+        mesh = IsoObject/SG_ChainLink_4_Medium_N_Reverse_Damage3,
+        texture = IsoObject/SG_ChainLink_Atlas,
+        animationsMesh = SG_ChainLink_4_Medium_N_Reverse_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+        }
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+        }
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+        }
+}

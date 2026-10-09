@@ -38,6 +38,8 @@ function SGGate.ensureIdentity(id)
     entry.width = entry.width or 2
     entry.orientation = entry.orientation or SGGate.orientation(id)
     entry.direction = entry.direction or SGGate.direction(id)
+    entry.quality = entry.quality or SGGate.quality(id)
+    entry.damage = entry.damage or 0
     return entry
 end
 
@@ -48,7 +50,7 @@ function SGGate.snapshot(id)
     local md = leaf:getModData()
     return { id = id, instance = entry.instance, revision = entry.revision,
         type = md.sgType, width = entry.width, orientation = entry.orientation, direction = entry.direction, open = md.sgOpen or false,
-        moving = entry.moving ~= nil, slavesOpen = md.sgSlavesOpen or false,
+        quality = entry.quality, damage = entry.damage, moving = entry.moving ~= nil, slavesOpen = md.sgSlavesOpen or false,
         motor = entry.motorMoving == true,
         motionRemaining = SGGate.motionRemaining and SGGate.motionRemaining(id) or 0,
         hasDrive = SGGate.findRole(id, "drive") ~= nil }
@@ -69,6 +71,30 @@ end
 
 local function transmitNew(obj)
     if isServer() then obj:transmitCompleteItemToClients() end
+end
+
+-- Independent native door health: retain the worst stage across chunk unloads.
+function SGGate.updateDamage(id)
+    local entry = SGGate.ensureIdentity(id)
+    if not entry then return end
+    local parts, damage = SGGate.parts(id), entry.damage
+    for _, obj in ipairs(parts) do
+        local role = obj:getModData().sgRole
+        if role == "leaf" or role == "slave" or role == "block" then
+            local maximum = obj:getMaxHealth()
+            if maximum and maximum > 0 then
+                damage = math.max(damage, SGGate.damageForRatio(obj:getHealth() / maximum))
+            end
+        end
+    end
+    local changed = damage ~= entry.damage
+    entry.damage = damage
+    for _, obj in ipairs(parts) do obj:getModData().sgDamage = damage end
+    local leaf = SGGate.findRole(id, "leaf")
+    if leaf and not SGGate.isMoving(id) and not leaf:isAnimating()
+        and (leaf:getModData().sgVisualDamage or 0) ~= damage then SGGate.applyModel(leaf) end
+    if changed then publish(id) end
+    return damage
 end
 
 -- Door tiles without doorTrans (metal door, N edge: closed / open). A see-through (doorTrans) door in a fence cell lets the
@@ -121,6 +147,8 @@ local function tag(obj, id, role, extra)
     if entry then
         d.sgInstance, d.sgWidth, d.sgOrientation = entry.instance, entry.width, entry.orientation
         d.sgDirection = entry.direction
+        d.sgQuality = entry.quality
+        d.sgDamage = entry.damage
     end
     if extra then for k, v in pairs(extra) do d[k] = v end end
 end
@@ -199,19 +227,20 @@ local function addPocketBlockers(id, typeId, x, y, z)
 end
 
 -- Build a gate without drive. sq is the catcher cell; the master is one travel cell away.
-function SGGate.build(sq, typeId, healthBonus, orientation, direction)
+function SGGate.build(sq, typeId, healthBonus, orientation, direction, quality)
     typeId = typeId or "chainlink"
     orientation = orientation or "N"
     direction = direction or "forward"
+    quality = quality or "high"
+    if quality ~= "low" and quality ~= "medium" and quality ~= "high" then return end
     local ok, reason = SGGate.canBuild(sq, typeId, orientation, direction)
     if not ok then log(reason); return end
     local t = TYPES[typeId]
     local width = t.width
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
     local id = x .. "," .. y .. "," .. z
-    registry()[id] = { width = width, type = typeId, orientation = orientation, direction = direction, health = t.baseHealth + (healthBonus or 0) }
-    local model = orientation == "W" and t.westLeafModel or t.leafModel
-    if direction == "reverse" then model = orientation == "W" and t.westReverseLeafModel or t.reverseLeafModel end
+    registry()[id] = { width = width, type = typeId, orientation = orientation, direction = direction, quality = quality, health = t.baseHealth + (healthBonus or 0) }
+    local model = SGGate.leafModel(typeId, orientation, direction, quality)
     makeDoor(gateCell(id, x, y, z, 1), typeId, id, "leaf", model)
     for k = 1, width do makeDoor(gateCell(id, x, y, z, k), typeId, id, "slave", "SG_Hidden") end -- collision of the opening
     makeStatic(sq, id, "post", staticModel(id, "SG_CatcherPost"))
@@ -606,6 +635,7 @@ local function recover()
             local md, entry = part:getModData(), SGGate.ensureIdentity(id)
             if not md.sgInstance then md.sgInstance, md.sgWidth, md.sgOrientation = entry.instance, entry.width, entry.orientation end
             md.sgDirection = md.sgDirection or entry.direction
+            md.sgQuality = md.sgQuality or entry.quality
         end
         if type(e) == "table" and e.moving ~= nil then
             local ok, done = pcall(finalize, id)
@@ -749,6 +779,8 @@ cleanupSquare = function(square)
                 -- Upgrade legacy saves and restore each model after native deserialization.
                 md.sgInstance, md.sgWidth, md.sgOrientation = entry.instance, entry.width, entry.orientation
                 md.sgDirection = entry.direction
+                md.sgQuality = entry.quality
+                md.sgDamage = entry.damage
                 if md.sgRole == "leaf" then md.sgRevision = entry.revision end
                 SGGate.applyModel(obj)
             end

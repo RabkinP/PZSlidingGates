@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Brama przesuwna (2 pola)",
-    "SlidingGateChainLink4": "Brama przesuwna (4 pola)",
+    "SlidingGateChainLink2": "Brama przesuwna (2 pola) (Wysoka jakość)",
+    "SlidingGateChainLink4": "Brama przesuwna (4 pola) (Wysoka jakość)",
     "AssembleSlidingGateDrive": "Złóż napęd bramy przesuwnej",
-    "AssembleSlidingGateRemote": "Złóż pilot bramy"
+    "AssembleSlidingGateRemote": "Złóż pilot bramy",
+    "SlidingGateChainLink2Low": "Brama przesuwna (2 pola) (Niska jakość)",
+    "SlidingGateChainLink2Medium": "Brama przesuwna (2 pola) (Średnia jakość)",
+    "SlidingGateChainLink4Low": "Brama przesuwna (4 pola) (Niska jakość)",
+    "SlidingGateChainLink4Medium": "Brama przesuwna (4 pola) (Średnia jakość)"
 }

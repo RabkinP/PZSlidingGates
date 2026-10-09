@@ -1,6 +1,10 @@
 {
-    "SlidingGateChainLink2": "Gerbang geser (2 petak)",
-    "SlidingGateChainLink4": "Gerbang geser (4 petak)",
+    "SlidingGateChainLink2": "Gerbang geser (2 petak) (Kualitas tinggi)",
+    "SlidingGateChainLink4": "Gerbang geser (4 petak) (Kualitas tinggi)",
     "AssembleSlidingGateDrive": "Rakit penggerak gerbang geser",
-    "AssembleSlidingGateRemote": "Rakit remote gerbang"
+    "AssembleSlidingGateRemote": "Rakit remote gerbang",
+    "SlidingGateChainLink2Low": "Gerbang geser (2 petak) (Kualitas rendah)",
+    "SlidingGateChainLink2Medium": "Gerbang geser (2 petak) (Kualitas sedang)",
+    "SlidingGateChainLink4Low": "Gerbang geser (4 petak) (Kualitas rendah)",
+    "SlidingGateChainLink4Medium": "Gerbang geser (4 petak) (Kualitas sedang)"
 }

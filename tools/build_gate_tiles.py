@@ -15,7 +15,7 @@ MOD = ROOT / 'mod/SlidingGates'
 MEDIA = MOD / '42/media'
 TILESET = 'sg_gates_preview_01'
 FILE_NUMBER = 6842
-COUNT = 24  # append W statics; preserve all existing indices
+COUNT = 48  # append reverse footprints/statics; preserve indices 0..23
 
 
 def integer(n):
@@ -51,11 +51,32 @@ def bindings():
                                  (19, 'Drive', '-0.6 0 0.5')):
         result[index] = dict(modelScript=f'Base.SG_{name}', translate=offset,
                              rotate='0 90 0', scale='1')
+    for index, prefix in ((24, 'SG_ChainLink'), (26, 'SG_ChainLink_4')):
+        result[index] = dict(modelScript=f'Base.{prefix}_N_Reverse',
+                             translate='-0.5 0 -0.38', rotate='0 0 0', scale='1',
+                             animation='Open', animationTime='0')
+    for index, prefix in ((31, 'SG_ChainLink'), (35, 'SG_ChainLink_4')):
+        result[index] = dict(modelScript=f'Base.{prefix}_N_Reverse',
+                             translate='-0.38 0 0.5', rotate='0 90 0', scale='1',
+                             animation='Open', animationTime='0')
+    for index, name, offset in ((36, 'CatcherPost', '0.46 0 -0.38'),
+                                 (37, 'GuidePost', '0.54 0 -0.38'),
+                                 (38, 'Rail', '0.5 0 -0.38'),
+                                 (39, 'Drive', '0.5 0 -0.6')):
+        result[index] = dict(modelScript=f'Base.SG_{name}_Reverse', translate=offset,
+                             rotate='0 0 0', scale='1')
+    for index, name, offset in ((40, 'CatcherPost', '-0.38 0 -0.46'),
+                                 (41, 'GuidePost', '-0.38 0 -0.54'),
+                                 (42, 'Rail', '-0.38 0 -0.5'),
+                                 (43, 'Drive', '-0.6 0 -0.5')):
+        result[index] = dict(modelScript=f'Base.SG_{name}_Reverse', translate=offset,
+                             rotate='0 90 0', scale='1')
     return result
 
 
 def build():
-    atlas = Image.new('RGBA', (1024, 768), (0, 0, 0, 0))
+    rows = (COUNT + 7) // 8
+    atlas = Image.new('RGBA', (1024, rows*256), (0, 0, 0, 0))
     # Explicit untrimmed subtextures keep completely transparent carriers valid.
     png = BytesIO()
     atlas.save(png, format='PNG')
@@ -75,7 +96,7 @@ def build():
     # tdef v1: little-endian integers, LF-terminated ASCII strings (NOT CRLF).
     tiles = b'tdef' + integer(1) + integer(1)
     tiles += (TILESET + '\n' + TILESET + '.png\n').encode('ascii')
-    tiles += b''.join(integer(n) for n in (8, 3, 1, COUNT))
+    tiles += b''.join(integer(n) for n in (8, rows, 1, COUNT))
     # Construction carriers have no collision, door, floor or physics properties.
     tiles += integer(0) * COUNT
     (MEDIA / 'SG_GatesPreview.tiles').write_bytes(tiles)

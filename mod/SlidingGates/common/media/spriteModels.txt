@@ -204,5 +204,205 @@ spriteModel
             rotate = 0 0 0,
             scale = 0.001,
         }
+        tile
+        {
+            xy = 0 3,
+            modelScript = Base.SG_ChainLink_N_Reverse,
+            translate = -0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 1 3,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 2 3,
+            modelScript = Base.SG_ChainLink_4_N_Reverse,
+            translate = -0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 3 3,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 4 3,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 5 3,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 6 3,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 7 3,
+            modelScript = Base.SG_ChainLink_N_Reverse,
+            translate = -0.38 0 0.5,
+            rotate = 0 90 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 0 4,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 1 4,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 2 4,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 3 4,
+            modelScript = Base.SG_ChainLink_4_N_Reverse,
+            translate = -0.38 0 0.5,
+            rotate = 0 90 0,
+            scale = 1,
+            animation = Open,
+            animationTime = 0,
+        }
+        tile
+        {
+            xy = 4 4,
+            modelScript = Base.SG_CatcherPost_Reverse,
+            translate = 0.46 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 5 4,
+            modelScript = Base.SG_GuidePost_Reverse,
+            translate = 0.54 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 6 4,
+            modelScript = Base.SG_Rail_Reverse,
+            translate = 0.5 0 -0.38,
+            rotate = 0 0 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 7 4,
+            modelScript = Base.SG_Drive_Reverse,
+            translate = 0.5 0 -0.6,
+            rotate = 0 0 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 0 5,
+            modelScript = Base.SG_CatcherPost_Reverse,
+            translate = -0.38 0 -0.46,
+            rotate = 0 90 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 1 5,
+            modelScript = Base.SG_GuidePost_Reverse,
+            translate = -0.38 0 -0.54,
+            rotate = 0 90 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 2 5,
+            modelScript = Base.SG_Rail_Reverse,
+            translate = -0.38 0 -0.5,
+            rotate = 0 90 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 3 5,
+            modelScript = Base.SG_Drive_Reverse,
+            translate = -0.6 0 -0.5,
+            rotate = 0 90 0,
+            scale = 1,
+        }
+        tile
+        {
+            xy = 4 5,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 5 5,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 6 5,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
+        tile
+        {
+            xy = 7 5,
+            modelScript = Base.SG_Rail,
+            translate = 0 0 0,
+            rotate = 0 0 0,
+            scale = 0.001,
+        }
     }
 }

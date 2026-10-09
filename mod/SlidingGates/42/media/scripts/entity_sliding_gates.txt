@@ -5,14 +5,14 @@ module Base
         entity ES_SlidingGateChainLink2
         {
             LuaWindowClass = ISEntityWindow,
-            DisplayName = Sliding Gate (2 cells),
-            Icon = Build_ShortWireGate,
+            DisplayName = SlidingGateChainLink2,
+            Icon = SG_BuildGate2,
         }
         entity ES_SlidingGateChainLink4
         {
             LuaWindowClass = ISEntityWindow,
-            DisplayName = Sliding Gate (4 cells),
-            Icon = Build_ShortWireGate,
+            DisplayName = SlidingGateChainLink4,
+            Icon = SG_BuildGate4,
         }
     }
 
@@ -21,7 +21,8 @@ module Base
      * wrapped in client/SG_GateBuild.lua and builds the real gate (SGGate.build) instead of the placeholder tiles.
      * Own construction-only carriers have no collision properties. Their spriteModels draw the leaf natively;
      * the hook draws the static parts with RenderGhostTileColor without creating world objects.
-     * R alternates N (-X travel) and W (+Y travel); both use their own preview footprint.
+     * R cycles N (-X), W (+Y), reversed N (+X) and reversed W (-Y).
+     * S/E faces serialize the reversed variants; their collision edges remain N/W.
      * Footprint: the opening cells; the catcher post is on the cell right after the row, the pocket extends
      * the other way (checked by the wrapper).
      */
@@ -51,6 +52,21 @@ module Base
                 {
                     row = sg_gates_preview_01_6,
                     row = sg_gates_preview_01_7,
+                }
+            }
+            face S
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_24 sg_gates_preview_01_25,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_30,
+                    row = sg_gates_preview_01_31,
                 }
             }
         }
@@ -105,6 +121,23 @@ module Base
                     row = sg_gates_preview_01_13,
                     row = sg_gates_preview_01_14,
                     row = sg_gates_preview_01_15,
+                }
+            }
+            face S
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_26 sg_gates_preview_01_27 sg_gates_preview_01_28 sg_gates_preview_01_29,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_32,
+                    row = sg_gates_preview_01_33,
+                    row = sg_gates_preview_01_34,
+                    row = sg_gates_preview_01_35,
                 }
             }
         }

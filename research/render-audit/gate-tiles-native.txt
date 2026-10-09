@@ -1,4 +1,4 @@
-24
+48
 1024
-768
-PASS installed pack metadata, PNG decoder, tile definitions and all 24 spriteModel bindings
+1536
+PASS installed pack metadata, PNG decoder, tile definitions and all 48 spriteModel bindings

@@ -4,6 +4,7 @@ OUT=r'E:\git\SlidingGates\art\exports'
 rig=globals().get('EXPORT_RIG') or next(o for o in bpy.context.scene.objects if o.type=='ARMATURE' and 'gate_width_cells' in o)
 gate=globals().get('EXPORT_LEAF') or next(o for o in bpy.context.scene.objects if o.type=='MESH' and o.parent==rig)
 WIDTH=int(rig.get('gate_width_cells',2))
+assert rig.get('gate_direction','forward') == 'forward', 'Use export_reverse.py for reverse workbenches; never overwrite forward exports'
 PREFIX='SG_ChainLink' if WIDTH==2 else 'SG_ChainLink_'+str(WIDTH)
 SAVE_PATH=globals().get('EXPORT_SAVE_PATH',r'E:\git\SlidingGates\art\SG_ChainLink.blend')
 scene=bpy.context.scene

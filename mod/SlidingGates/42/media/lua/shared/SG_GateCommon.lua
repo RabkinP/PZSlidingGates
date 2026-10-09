@@ -18,7 +18,7 @@ end
 local function nearbyMetadata(id)
     local x, y, z = SGGate.parseId(id)
     if not x then return end
-    for _, offset in ipairs({ {-1, 0}, {0, 1}, {0, 0} }) do
+    for _, offset in ipairs({ {-1, 0}, {0, 1}, {0, 0}, {1, 0}, {0, -1} }) do
         local sq = getCell():getGridSquare(x + offset[1], y + offset[2], z)
         if sq then
             local objects = sq:getObjects()
@@ -37,7 +37,15 @@ function SGGate.orientation(id)
     return md and md.sgOrientation or "N"
 end
 
-function SGGate.cellAt(x, y, z, k, orientation)
+function SGGate.direction(id)
+    local entry = SGGate.registry()[id]
+    if type(entry) == "table" and entry.direction then return entry.direction end
+    local md = nearbyMetadata(id)
+    return md and md.sgDirection or "forward"
+end
+
+function SGGate.cellAt(x, y, z, k, orientation, direction)
+    if direction == "reverse" then k = -k end
     if orientation == "W" then return getCell():getGridSquare(x, y + k, z) end
     return getCell():getGridSquare(x - k, y, z)
 end
@@ -62,7 +70,7 @@ function SGGate.parts(id)
     local result = {}
     if not x then return result end
     for k = -1, 2 * SGGate.gateWidth(id) + 1 do
-        local sq = SGGate.cellAt(x, y, z, k, SGGate.orientation(id))
+        local sq = SGGate.cellAt(x, y, z, k, SGGate.orientation(id), SGGate.direction(id))
         if sq then
             local objects = sq:getObjects()
             for i = 0, objects:size() - 1 do
@@ -97,15 +105,17 @@ function SGGate.typeOf(id)
     return type(entry) == "table" and entry.type or (SGGate.gateWidth(id) == 4 and "chainlink4" or "chainlink")
 end
 
-function SGGate.canBuild(sq, typeId, orientation)
+function SGGate.canBuild(sq, typeId, orientation, direction)
     local definition = SGGateTypes[typeId]
     if not sq or not definition then return false, "unknown gate type" end
     orientation = orientation or "N"
+    direction = direction or "forward"
     if orientation ~= "N" and orientation ~= "W" then return false, "unsupported orientation" end
+    if direction ~= "forward" and direction ~= "reverse" then return false, "unsupported direction" end
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
     if SGGate.registry()[x .. "," .. y .. "," .. z] then return false, "gate already exists" end
     for k = 0, 2 * definition.width do
-        local cell = SGGate.cellAt(x, y, z, k, orientation)
+        local cell = SGGate.cellAt(x, y, z, k, orientation, direction)
         local north = SGGate.edgeNeighbour(cell, orientation)
         if not cell or not north then return false, "gate area is not loaded" end
         if k >= 1 and k <= definition.width and cell:isBlockedTo(north) then

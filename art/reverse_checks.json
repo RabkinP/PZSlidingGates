@@ -1,0 +1,22 @@
+[
+  {
+    "width": 2,
+    "scene": "SG_ChainLink_Reverse_Workbench",
+    "frames_checked": 146,
+    "reflection_axis": "X",
+    "negative_scale_export": false,
+    "source_mesh_and_assembly_reflection_verified": true,
+    "outward_face_and_clearance_preserved": true,
+    "source_clearance_evidence": "art/clearance_checks.json"
+  },
+  {
+    "width": 4,
+    "scene": "SG_ChainLink_4_Reverse_Workbench",
+    "frames_checked": 290,
+    "reflection_axis": "X",
+    "negative_scale_export": false,
+    "source_mesh_and_assembly_reflection_verified": true,
+    "outward_face_and_clearance_preserved": true,
+    "source_clearance_evidence": "art/clearance_checks.json"
+  }
+]

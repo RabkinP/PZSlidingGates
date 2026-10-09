@@ -20,12 +20,12 @@ def string(stream):
 pack = BytesIO((MEDIA/'texturepacks/SG_GatesPreview.pack').read_bytes())
 assert pack.read(4) == b'PZPK' and integer(pack) == 1 and integer(pack) == 1
 assert string(pack) == 'SG_GatesPreview_0'
-assert integer(pack) == 24 and integer(pack) == 1
-for index in range(24):
+assert integer(pack) == 48 and integer(pack) == 1
+for index in range(48):
     assert string(pack) == f'sg_gates_preview_01_{index}'
     assert [integer(pack) for _ in range(8)] == [index%8*128,index//8*256,128,256,0,0,128,256]
 image = Image.open(BytesIO(pack.read(integer(pack))))
-assert image.size == (1024,768) and image.mode == 'RGBA'
+assert image.size == (1024,1536) and image.mode == 'RGBA'
 assert image.getchannel('A').getextrema() == (0,0)
 assert not pack.read()
 
@@ -33,15 +33,16 @@ tiles = BytesIO((MEDIA/'SG_GatesPreview.tiles').read_bytes())
 assert tiles.read(4) == b'tdef' and integer(tiles) == 1 and integer(tiles) == 1
 assert tiles.readline() == b'sg_gates_preview_01\n'
 assert tiles.readline() == b'sg_gates_preview_01.png\n'
-assert [integer(tiles) for _ in range(4)] == [8,3,1,24]
-assert all(integer(tiles)==0 for _ in range(24))  # no inadvertent collision flags
+assert [integer(tiles) for _ in range(4)] == [8,6,1,48]
+assert all(integer(tiles)==0 for _ in range(48))  # no inadvertent collision flags
 assert not tiles.read()
 
 bindings=(ROOT/'mod/SlidingGates/common/media/spriteModels.txt').read_text()
-assert len(re.findall(r'\bxy\s*=',bindings)) == 24
+assert len(re.findall(r'\bxy\s*=',bindings)) == 48
 assert 'xy = 1 0,' in bindings and 'xy = 5 0,' in bindings
 assert 'Base.SG_ChainLink_N_Right,' in bindings and 'Base.SG_ChainLink_4_N_Right,' in bindings
 model_scripts = (MEDIA/'scripts/SG_models.txt').read_text()
+model_scripts += (MEDIA/'scripts/SG_models_reverse.txt').read_text()
 
 
 def properties(block):
@@ -59,7 +60,13 @@ for index, name in ((1,'SG_ChainLink_N_Right_G_Closed'),
                     (10,'SG_Rail_Static'), (11,'SG_Drive_Static'),
                     (6,'SG_ChainLink_W_G_Closed'), (12,'SG_ChainLink_4_W_G_Closed'),
                     (16,'SG_CatcherPost_W_Static'), (17,'SG_GuidePost_W_Static'),
-                    (18,'SG_Rail_W_Static'), (19,'SG_Drive_W_Static')):
+                    (18,'SG_Rail_W_Static'), (19,'SG_Drive_W_Static'),
+                    (24,'SG_ChainLink_N_Reverse_G_Closed'), (26,'SG_ChainLink_4_N_Reverse_G_Closed'),
+                    (31,'SG_ChainLink_W_Reverse_G_Closed'), (35,'SG_ChainLink_4_W_Reverse_G_Closed'),
+                    (36,'SG_CatcherPost_Reverse_Static'),(37,'SG_GuidePost_Reverse_Static'),
+                    (38,'SG_Rail_Reverse_Static'),(39,'SG_Drive_Reverse_Static'),
+                    (40,'SG_CatcherPost_Reverse_W_Static'),(41,'SG_GuidePost_Reverse_W_Static'),
+                    (42,'SG_Rail_Reverse_W_Static'),(43,'SG_Drive_Reverse_W_Static')):
     block = re.search(r'\bspriteModel\s+'+name+r'\s*\{([^}]+)\}',model_scripts).group(1)
     expected = properties(block)
     actual = tiles_by_index[index]
@@ -82,10 +89,23 @@ for width in (2,4):
         wx,wy=.5+wtx,k+.5+wty
         assert abs(wx-ny)<1e-6 and abs(wy-(1-nx))<1e-6,(n_index,w_index)
         assert list(map(float,w_pose['rotate'].split()))==[0,90,0]
+# True edge-axis reflection: every calibrated N X anchor changes sign; the
+# perpendicular anchor remains fixed. W then applies the same quarter turn.
+for width in (2,4):
+    for f,r,w,k in ((1 if width==2 else 5,24 if width==2 else 26,31 if width==2 else 35,1),
+                    (8,36,40,0),(9,37,41,width),(10,38,42,width),(11,39,43,width)):
+        fx,fy,fz=map(float,tiles_by_index[f]['translate'].split())
+        rx,ry,rz=map(float,tiles_by_index[r]['translate'].split())
+        wx,wy,wz=map(float,tiles_by_index[w]['translate'].split())
+        assert (rx,ry,rz)==(-fx,fy,fz)
+        assert (wx,wy,wz)==(rz,ry,-rx)
+        assert list(map(float,tiles_by_index[w]['rotate'].split()))==[0,90,0]
+        fnx=-k+.5+fx; rnx=k+.5+rx
+        assert abs(rnx-(1-fnx))<1e-6
 info=(MEDIA.parent/'mod.info').read_text()
 assert 'pack=SG_GatesPreview' in info and 'tiledef=SG_GatesPreview 6842' in info
 entities=(MEDIA/'scripts/entity_sliding_gates.txt').read_text()
 assert 'street_trafficlines' not in entities
-for index in (0,1,2,3,4,5,6,7,12,13,14,15):
+for index in (0,1,2,3,4,5,6,7,12,13,14,15,*range(24,36)):
     assert f'sg_gates_preview_01_{index}' in entities
 print('PASS pack v1, tdef v1, alpha, properties, entity carriers, registration and calibrated model poses')

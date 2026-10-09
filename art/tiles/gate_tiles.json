@@ -159,6 +159,158 @@
       "translate": "0 0 0",
       "rotate": "0 0 0",
       "scale": "0.001"
+    },
+    "24": {
+      "modelScript": "Base.SG_ChainLink_N_Reverse",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "25": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "26": {
+      "modelScript": "Base.SG_ChainLink_4_N_Reverse",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "27": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "28": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "29": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "30": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "31": {
+      "modelScript": "Base.SG_ChainLink_N_Reverse",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 90 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "32": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "33": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "34": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "35": {
+      "modelScript": "Base.SG_ChainLink_4_N_Reverse",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 90 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "36": {
+      "modelScript": "Base.SG_CatcherPost_Reverse",
+      "translate": "0.46 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1"
+    },
+    "37": {
+      "modelScript": "Base.SG_GuidePost_Reverse",
+      "translate": "0.54 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1"
+    },
+    "38": {
+      "modelScript": "Base.SG_Rail_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 0 0",
+      "scale": "1"
+    },
+    "39": {
+      "modelScript": "Base.SG_Drive_Reverse",
+      "translate": "0.5 0 -0.6",
+      "rotate": "0 0 0",
+      "scale": "1"
+    },
+    "40": {
+      "modelScript": "Base.SG_CatcherPost_Reverse",
+      "translate": "-0.38 0 -0.46",
+      "rotate": "0 90 0",
+      "scale": "1"
+    },
+    "41": {
+      "modelScript": "Base.SG_GuidePost_Reverse",
+      "translate": "-0.38 0 -0.54",
+      "rotate": "0 90 0",
+      "scale": "1"
+    },
+    "42": {
+      "modelScript": "Base.SG_Rail_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 90 0",
+      "scale": "1"
+    },
+    "43": {
+      "modelScript": "Base.SG_Drive_Reverse",
+      "translate": "-0.6 0 -0.5",
+      "rotate": "0 90 0",
+      "scale": "1"
+    },
+    "44": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "45": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "46": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "47": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
     }
   }
 }

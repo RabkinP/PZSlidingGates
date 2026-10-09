@@ -5,6 +5,7 @@
 -- Geometry: the cursor row covers the opening cells x..x+W-1 (N edge); the catcher post sits on x+W and the leaf
 -- slides towards -x into the pocket (x-1..x-W, checked in isValid).
 -- W uses a column y..y+W-1, catcher y-1 and pocket y+W..y+2W-1.
+-- Reversed N/W reflect travel along the edge, keeping the visible face unchanged.
 
 require "SG_GateCommon"
 
@@ -17,7 +18,15 @@ local function gateTypeOf(builder)
 end
 
 -- the catcher cell for a placement origin x (opening starts at x)
-local function catcherSquare(square, typeId, north)
+local function isNorth(nSprite) return nSprite == 2 or nSprite == 4 end
+local function direction(nSprite) return nSprite >= 3 and "reverse" or "forward" end
+local nextFace = { [2] = 1, [1] = 4, [4] = 3, [3] = 2 }
+
+local function catcherSquare(square, typeId, north, reversed)
+    if reversed then
+        if north then return getCell():getGridSquare(square:getX()-1, square:getY(), square:getZ()) end
+        return getCell():getGridSquare(square:getX(), square:getY()+SGGate.width(typeId), square:getZ())
+    end
     if not north then return getCell():getGridSquare(square:getX(), square:getY() - 1, square:getZ()) end
     return getCell():getGridSquare(square:getX() + SGGate.width(typeId), square:getY(), square:getZ())
 end
@@ -32,9 +41,9 @@ local function install()
     function ISBuildIsoEntity:new(character, objectInfo, nSprite, containers, logic)
         local o = originalNew(self, character, objectInfo, nSprite, containers, logic)
         if o and gateTypeOf(o) then
-            o.nSprite = nSprite == 1 and 1 or 2   -- 1=W 2=N
+            o.nSprite = nextFace[nSprite] and nSprite or 2 -- 1=W, 2=N, 3=reverse W, 4=reverse N
             o.nSpriteCache = -1
-            o.north = o.nSprite == 2
+            o.north = isNorth(o.nSprite)
         end
         return o
     end
@@ -43,9 +52,9 @@ local function install()
     function ISBuildIsoEntity:rotateKey(key)
         if not gateTypeOf(self) then return originalRotateKey(self, key) end
         if getCore():isKey(KeybindId.ROTATE_BUILDING, key) then
-            self.nSprite = self.nSprite == 2 and 1 or 2
+            self.nSprite = nextFace[self.nSprite] or 2
             self.nSpriteCache = -1
-            self.north = self.nSprite == 2
+            self.north = isNorth(self.nSprite)
         end
     end
 
@@ -54,11 +63,12 @@ local function install()
         local typeId = gateTypeOf(self)
         if not typeId then return originalIsValid(self, square) end
         if self.getFace then self:getFace() end
-        self.north = self.nSprite == 2
+        self.north = isNorth(self.nSprite)
         if not originalIsValid(self, square) then return false end
-        local catcher = catcherSquare(square, typeId, self.north)
+        local reversed = direction(self.nSprite) == "reverse"
+        local catcher = catcherSquare(square, typeId, self.north, reversed)
         if not catcher then return false end
-        return (SGGate.canBuild(catcher, typeId, self.north and "N" or "W"))
+        return (SGGate.canBuild(catcher, typeId, self.north and "N" or "W", direction(self.nSprite)))
     end
 
     -- never place the placeholder tiles of our entities; remember that the base class got as far as placing them
@@ -100,16 +110,20 @@ local function install()
         local r, g, b = 1, 1, 1
         if not valid then r, g, b = 0.65, 0.2, 0.2 end
         local width = SGGate.width(typeId)
-        local west = self.nSprite == 1
-        local catcherX, catcherY = west and x or x + width, west and y - 1 or y
+        local west = not isNorth(self.nSprite)
+        local reversed = direction(self.nSprite) == "reverse"
+        local catcherX = west and x or (reversed and x-1 or x+width)
+        local catcherY = west and (reversed and y+width or y-1) or y
+        local sign = reversed and -1 or 1
         local function draw(index, k)
             local sprite = getSprite("sg_gates_preview_01_" .. index)
-            if sprite then sprite:RenderGhostTileColor(catcherX - (west and 0 or k),
-                catcherY + (west and k or 0), z, r, g, b, 0.6) end
+            if sprite then sprite:RenderGhostTileColor(catcherX - (west and 0 or sign*k),
+                catcherY + (west and sign*k or 0), z, r, g, b, 0.6) end
         end
-        draw(west and 16 or 8, 0)
-        draw(west and 17 or 9, width)
-        for k = 0, 2 * width - 1 do draw(west and 18 or 10, k) end
+        local staticStart = reversed and (west and 40 or 36) or (west and 16 or 8)
+        draw(staticStart, 0)
+        draw(staticStart+1, width)
+        for k = 0, 2 * width - 1 do draw(staticStart+2, k) end
     end
 
     local originalCreate = ISBuildIsoEntity.create
@@ -118,18 +132,18 @@ local function install()
         if not typeId then return originalCreate(self, x, y, z, north, sprite) end
         if isClient() then return end -- native B42 build transaction invokes create on the authority
         local placement = getCell():getGridSquare(x, y, z)
-        if north ~= (self.nSprite == 2) or not placement or not self:isValid(placement) then return false end
+        if north ~= isNorth(self.nSprite) or not placement or not self:isValid(placement) then return false end
         print(string.format("[SGBuild] create %s at %d,%d,%d north=%s", typeId, x, y, z, tostring(north)))
         self.sgPlaceholdersReached = false
         originalCreate(self, x, y, z, north, sprite)
         if not self.sgPlaceholdersReached then print("[SGBuild] base create did not reach tile placement"); return end
         local square = getCell():getGridSquare(x, y, z)
-        local catcher = square and catcherSquare(square, typeId, self.north)
+        local catcher = square and catcherSquare(square, typeId, self.north, direction(self.nSprite) == "reverse")
         if not catcher then print("[SGBuild] no catcher square"); return end
         local bonus = 0
         local ok, level = pcall(function() return self.character:getPerkLevel(Perks.MetalWelding) end)
         if ok and type(level) == "number" then bonus = level * 50 end -- health: base + 50 per welding level
-        local id = SGGate.build(catcher, typeId, bonus, north and "N" or "W")
+        local id = SGGate.build(catcher, typeId, bonus, north and "N" or "W", direction(self.nSprite))
         print("[SGBuild] SGGate.build -> " .. tostring(id))
     end
     print("[SGBuild] ISBuildIsoEntity hooks installed")

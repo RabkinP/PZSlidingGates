@@ -1,5 +1,6 @@
 name=Sliding Gates
 id=SlidingGates
+poster=poster.png
 description=Animated manual chain-link gates in 2- and 4-cell widths, with construction and dismantling. Experimental multiplayer support; motor control is in development.
 author=pavel
 modversion=0.0.1

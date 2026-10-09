@@ -1,0 +1,8 @@
+{
+  "wood": "fencing_01_8",
+  "asphalt": "floors_exterior_street_01_17",
+  "grass": "blends_natural_01_64",
+  "cracks": "d_streetcracks_1_0..23",
+  "purpose": "Local poster Blender materials; not added to gameplay mod files.",
+  "transform": "Affine inverse isometric projection and native board grain crops."
+}

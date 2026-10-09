@@ -1,15 +1,17 @@
 # SlidingGates: implementation status
 
-Updated after the drive crafting/installation implementation. The user confirmed the singleplayer car-obstruction fix in
-game. The subsequent multiplayer implementation has only mock-based verification;
-dedicated-server/two-client gameplay and singleplayer regression still need a run.
+Updated 2026-10-09 after the drive, remote, reverse-direction and poster work was
+committed. The user reports that singleplayer works in game, including the new
+features; multiplayer has not been run yet and has only mock-based verification.
 
 ## Implemented
 
 - Manual chain-link gates in two- and four-cell widths; integrated assembly is
-  N-right along world -X and W along +Y, selected with R during construction.
-  W uses the same calibrated geometry rotated in spriteModel. The user confirmed
-  R rotation works in game; comprehensive vehicle/MP acceptance remains pending.
+  N-right along world -X and W along +Y, plus reversed N (+X) and reversed W (-Y).
+  R cycles N -> W -> reverse N -> reverse W during construction. W uses the
+  calibrated geometry rotated in spriteModel; reversed assemblies use separate
+  X-mirrored models (`*_Reverse.glb`) with positive scales, the same outward face
+  and a catcher on the opposite side. Comprehensive vehicle/MP acceptance remains pending.
 - Animated leaves, static posts/rails and optional decorative drive model.
 - Electric motor item: an independent 30% roll after vanilla dismantling removes a
   washer, dryer or combination washer/dryer. The normal scrap output is preserved;
@@ -57,7 +59,10 @@ dedicated-server/two-client gameplay and singleplayer regression still need a ru
   icons for both widths (48x48) are prepared and connected to the scripts.
   Originals, prompts and a reproducible preparation tool are retained in the repo.
   PNG/reference checks and small-size visual review pass; actual menu appearance
-  still requires gameplay acceptance. The Blender Workshop poster is deferred in SPEC.md.
+  still requires gameplay acceptance.
+- Workshop poster: a separate Blender scene (`art/build_poster_scene.py` and
+  helpers, `art/poster/`) renders `mod/SlidingGates/42/poster.png`, referenced
+  from `mod.info`. Game models and clips are not modified by the poster scene.
 - Opening collision transfers cell by cell; hidden physics carriers block vehicles.
 - Construction recipes, welding skill/health bonus and native model build cursor.
 - Queued mouse/menu toggles, vehicle obstruction checks and interrupted-motion recovery.
@@ -84,7 +89,7 @@ assemblies retain their recorded health; the entity description now agrees with 
 
 ## Verification
 
-All eleven test scripts pass with Python and lupa (including Lua 5.1 execution):
+All fourteen test scripts pass with Python and lupa (including Lua 5.1 execution):
 
 ```powershell
 $env:PYTHONPATH = 'C:/Users/pavel/AppData/Local/Temp/pz-skill-validation-deps'
@@ -99,6 +104,9 @@ python tests/test_gate_drive.py
 python tests/test_gate_power.py
 python tests/test_gate_remote.py
 python tests/test_gate_motor.py
+python tests/test_gate_direction.py
+python tests/test_gate_remote_rename.py
+python tests/test_localization.py
 ```
 
 The width suite also covers a car obstructing the closed master leaf with an empty
@@ -125,8 +133,12 @@ cell-by-cell motion, partial-load recovery and metadata before a registry snapsh
 Preview tests check R and serialized W construction; MP checks slave-first W loading.
 The recipe includes one rubber hose or any tights for roller tyres.
 
-The installed-game tile probe passes for all 24 carriers; all eight exported leaves pass clip/travel,
-weight and deployment checks. Existing geometry evidence lives in
+The installed-game tile probe passes for all 24 carriers; all ten exported leaves pass clip/travel,
+weight and deployment checks. `tests/test_model_variants.py` also checks that all six
+reverse models are exact X reflections (normals within 1e-3 after export
+re-quantization) without winding regressions or negative scales; evidence is in
+`art/reverse_checks.json`. `tests/test_gate_direction.py` covers reversed mechanics,
+metadata and MP regressions on mocks. Existing geometry evidence lives in
 `art/clearance_checks.json` and `art/handle_checks.json`; geometry was not rebuilt
 by the stabilization changes.
 
@@ -168,8 +180,8 @@ require acceptance.
    power, charging, powered movement, motor sound/noise and item replication. Then implement
    sandbox options. Include RF pairing, inventory
    use and F9 in the dedicated-server/two-client acceptance run.
-3. Validate W assembly appearance/collision in game; add the opposite opening
-   direction when requested (left-opening assemblies remain unimplemented).
+3. Validate W and reversed assemblies' appearance/collision with vehicles in game,
+   and in multiplayer.
 4. Complete obstacle policy, keys/locks and release polish. Wood/steel styles follow v1.
 
 Dedicated server plus two clients, coop and restart testing remain required.

@@ -7,3 +7,5 @@ research/render-audit/probe/*.class
 # Local discovery junction; canonical skill is versioned under skills/.
 .agents/skills/pz-models
 __pycache__/
+# Automatic source backups written by art scripts before migrations.
+art/*_before_*.blend

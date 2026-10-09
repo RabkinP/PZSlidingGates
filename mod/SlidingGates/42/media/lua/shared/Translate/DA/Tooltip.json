@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "En port af trådnet, der glider på en skinne langs hegnet.<br>Lavet af rør og tråd; hjul og ruller er lavet af metalskrot og skruer.",
+    "Tooltip_SG_GateDrive": "Monteres på en eksisterende skydeport.<br>Læg ét bilbatteri i motorens batterirum. Strøm fra elnettet oplader det.",
+    "Tooltip_SG_DriveMount": "Elektricitet 1, mekanik 1. Kræver skruetrækker og skruenøgle.<br>Montering: motor og 4 skruer eller møtrikker og bolte.<br>Monteringsbeslagene returneres ikke ved afmontering.",
+    "Tooltip_SG_Drive_missing": "Porten eller dens dele er ikke indlæst.",
+    "Tooltip_SG_Drive_instance": "Porten er blevet udskiftet. Åbn menuen igen.",
+    "Tooltip_SG_Drive_busy": "Vent, til porten holder op med at bevæge sig.",
+    "Tooltip_SG_Drive_changed": "Motoren er allerede monteret eller afmonteret. Åbn menuen igen.",
+    "Tooltip_SG_Drive_distance": "Stå tæt på motorens stolpe på samme etage.",
+    "Tooltip_SG_Drive_skills": "Kræver elektricitet 1 og mekanik 1.",
+    "Tooltip_SG_Drive_tools": "Kræver en ubeskadiget skruetrækker og skruenøgle.",
+    "Tooltip_SG_Drive_materials": "Kræver en motor og 4 skruer eller møtrikker og bolte.",
+    "Tooltip_SG_Drive_contents": "Tøm batterirummet, før du fjerner motoren.",
+    "Tooltip_SG_Drive_power": "Ingen strøm eller tilstrækkelig batteriladning.",
+    "Tooltip_SG_BatteryCompartment": "Læg ét bilbatteri i motorens batterirum. Strøm fra elnettet oplader det.",
+    "Tooltip_SG_GateRemote": "Tilknyt en motor i nærheden. Styrer én motor inden for 20 felter på samme etage; vægge blokerer ikke signalet. Brug fra inventaret eller med den indstillelige genvejstast.",
+    "Tooltip_SG_RemoteUnavailable": "Ingen passende fjernbetjening på dig eller port inden for rækkevidde."
+}

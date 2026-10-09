@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "Monter portmotor",
+    "ContextMenu_SG_RemoveDrive": "Afmonter portmotor",
+    "ContextMenu_SG_PowerOpen": "Åbn med motor",
+    "ContextMenu_SG_PowerClose": "Luk med motor",
+    "ContextMenu_SG_LinkRemote": "Tilknyt portfjernbetjening",
+    "ContextMenu_SG_UseRemote": "Brug portfjernbetjening"
+}

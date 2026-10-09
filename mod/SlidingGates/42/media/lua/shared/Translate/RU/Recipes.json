@@ -1,4 +1,6 @@
 {
     "SlidingGateChainLink2": "Откатные ворота (2 клетки)",
-    "SlidingGateChainLink4": "Откатные ворота (4 клетки)"
+    "SlidingGateChainLink4": "Откатные ворота (4 клетки)",
+    "AssembleSlidingGateDrive": "Собрать привод откатных ворот",
+    "AssembleSlidingGateRemote": "Собрать пульт ворот"
 }

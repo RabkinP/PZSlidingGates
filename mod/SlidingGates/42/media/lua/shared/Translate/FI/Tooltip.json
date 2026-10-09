@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "Verkkoportti, joka liukuu kiskoa pitkin aidan suuntaisesti.<br>Valmistettu putkista ja rautalangasta; pyörät ja rullat on tehty metalliromusta ja ruuveista.",
+    "Tooltip_SG_GateDrive": "Asennetaan olemassa olevaan liukuporttiin.<br>Aseta yksi auton akku moottorin akkukoteloon. Verkkovirta lataa sen.",
+    "Tooltip_SG_DriveMount": "Sähkötyöt 1, mekaniikka 1. Tarvitaan ruuvimeisseli ja jakoavain.<br>Asennus: moottori ja 4 ruuvia tai mutteria ja pulttia.<br>Kiinnitysosia ei palauteta irrotettaessa.",
+    "Tooltip_SG_Drive_missing": "Porttia tai sen osia ei ole ladattu.",
+    "Tooltip_SG_Drive_instance": "Portti on korvattu uudella. Avaa valikko uudelleen.",
+    "Tooltip_SG_Drive_busy": "Odota, että portti lakkaa liikkumasta.",
+    "Tooltip_SG_Drive_changed": "Moottori on jo asennettu tai irrotettu. Avaa valikko uudelleen.",
+    "Tooltip_SG_Drive_distance": "Seiso moottorin tolpan lähellä samassa kerroksessa.",
+    "Tooltip_SG_Drive_skills": "Vaatii sähkötyöt 1 ja mekaniikan 1.",
+    "Tooltip_SG_Drive_tools": "Tarvitaan ehjä ruuvimeisseli ja jakoavain.",
+    "Tooltip_SG_Drive_materials": "Tarvitaan moottori ja 4 ruuvia tai mutteria ja pulttia.",
+    "Tooltip_SG_Drive_contents": "Tyhjennä akkukotelo ennen moottorin irrottamista.",
+    "Tooltip_SG_Drive_power": "Ei sähköä tai riittävästi akun varausta.",
+    "Tooltip_SG_BatteryCompartment": "Aseta yksi auton akku moottorin akkukoteloon. Verkkovirta lataa sen.",
+    "Tooltip_SG_GateRemote": "Yhdistä lähellä olevaan moottoriin. Ohjaa yhtä moottoria 20 ruudun säteellä samassa kerroksessa; seinät eivät estä signaalia. Käytä tavaraluettelosta tai määritettävällä pikanäppäimellä.",
+    "Tooltip_SG_RemoteUnavailable": "Sinulla ei ole sopivaa kaukosäädintä tai porttia kantaman sisällä."
+}

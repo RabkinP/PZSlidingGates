@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "게이트 구동 장치 설치",
+    "ContextMenu_SG_RemoveDrive": "게이트 구동 장치 제거",
+    "ContextMenu_SG_PowerOpen": "구동기로 열기",
+    "ContextMenu_SG_PowerClose": "구동기로 닫기",
+    "ContextMenu_SG_LinkRemote": "문 리모컨 연결",
+    "ContextMenu_SG_UseRemote": "문 리모컨 사용"
+}

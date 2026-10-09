@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "Install Gate Drive",
+    "ContextMenu_SG_RemoveDrive": "Remove Gate Drive",
+    "ContextMenu_SG_PowerOpen": "Open using drive",
+    "ContextMenu_SG_PowerClose": "Close using drive",
+    "ContextMenu_SG_LinkRemote": "Link gate remote",
+    "ContextMenu_SG_UseRemote": "Use gate remote"
+}

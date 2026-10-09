@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "Una porta de malla metàl·lica que llisca sobre un rail al llarg de la tanca.<br>Feta de tubs i filferro; les rodes i els rodets són improvisats amb ferralla i cargols.",
+    "Tooltip_SG_GateDrive": "S'instal·la en una porta corredissa existent.<br>Posa una bateria de cotxe al compartiment del motor. L’electricitat de la xarxa la recarrega.",
+    "Tooltip_SG_DriveMount": "Electricitat 1, mecànica 1. Calen un tornavís i una clau anglesa.<br>Instal·lació: motor i 4 cargols o femelles amb perns.<br>Els elements de fixació no es recuperen en retirar el motor.",
+    "Tooltip_SG_Drive_missing": "La porta o les seves peces no estan carregades.",
+    "Tooltip_SG_Drive_instance": "La porta ha estat substituïda. Torna a obrir el menú.",
+    "Tooltip_SG_Drive_busy": "Espera que la porta deixi de moure's.",
+    "Tooltip_SG_Drive_changed": "El motor ja s'ha instal·lat o retirat. Torna a obrir el menú.",
+    "Tooltip_SG_Drive_distance": "Situa't a prop del pal del motor, al mateix pis.",
+    "Tooltip_SG_Drive_skills": "Calen electricitat 1 i mecànica 1.",
+    "Tooltip_SG_Drive_tools": "Calen un tornavís i una clau anglesa en bon estat.",
+    "Tooltip_SG_Drive_materials": "Calen un motor i 4 cargols o femelles amb perns.",
+    "Tooltip_SG_Drive_contents": "Buida el compartiment de la bateria abans de retirar el motor.",
+    "Tooltip_SG_Drive_power": "No hi ha electricitat ni prou càrrega a la bateria.",
+    "Tooltip_SG_BatteryCompartment": "Posa una bateria de cotxe al compartiment del motor. L’electricitat de la xarxa la recarrega.",
+    "Tooltip_SG_GateRemote": "Vincula’l a un motor proper. Controla un motor en un radi de 20 caselles a la mateixa planta; les parets no bloquegen el senyal. Utilitza’l des de l’inventari o amb la tecla configurable.",
+    "Tooltip_SG_RemoteUnavailable": "No portes un comandament vinculat o no hi ha una porta dins de l’abast."
+}

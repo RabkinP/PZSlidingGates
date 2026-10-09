@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "ゲート駆動装置を取り付ける",
+    "ContextMenu_SG_RemoveDrive": "ゲート駆動装置を取り外す",
+    "ContextMenu_SG_PowerOpen": "駆動装置で開く",
+    "ContextMenu_SG_PowerClose": "駆動装置で閉じる",
+    "ContextMenu_SG_LinkRemote": "ゲートのリモコンを登録",
+    "ContextMenu_SG_UseRemote": "ゲートのリモコンを使用"
+}

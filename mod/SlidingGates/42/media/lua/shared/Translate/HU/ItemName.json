@@ -1,0 +1,5 @@
+{
+    "SlidingGates.ElectricMotor": "Villanymotor",
+    "SlidingGates.GateDrive": "Tolókapumotor",
+    "SlidingGates.GateRemote": "Kaputávirányító"
+}

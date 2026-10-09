@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "울타리를 따라 레일 위로 움직이는 철망 게이트입니다.<br>파이프와 철사로 만들며, 바퀴와 롤러는 고철과 나사로 제작합니다.",
+    "Tooltip_SG_GateDrive": "이미 설치된 슬라이딩 게이트에 장착합니다.<br>구동기 수납칸에 자동차 배터리 하나를 넣으세요. 전기가 공급되면 충전됩니다.",
+    "Tooltip_SG_DriveMount": "전기공학 1, 차량정비 1. 드라이버와 렌치가 필요합니다.<br>설치: 구동 장치와 나사 또는 너트와 볼트 4개.<br>제거 시 고정 부품은 반환되지 않습니다.",
+    "Tooltip_SG_Drive_missing": "게이트 또는 부품이 로드되지 않았습니다.",
+    "Tooltip_SG_Drive_instance": "게이트가 교체되었습니다. 메뉴를 다시 여세요.",
+    "Tooltip_SG_Drive_busy": "게이트가 멈출 때까지 기다리세요.",
+    "Tooltip_SG_Drive_changed": "구동 장치가 이미 설치되었거나 제거되었습니다. 메뉴를 다시 여세요.",
+    "Tooltip_SG_Drive_distance": "구동 장치 기둥 근처의 같은 층에 서세요.",
+    "Tooltip_SG_Drive_skills": "전기공학 1과 차량정비 1이 필요합니다.",
+    "Tooltip_SG_Drive_tools": "고장 나지 않은 드라이버와 렌치가 필요합니다.",
+    "Tooltip_SG_Drive_materials": "구동 장치와 나사 또는 너트와 볼트 4개가 필요합니다.",
+    "Tooltip_SG_Drive_contents": "구동기를 제거하기 전에 배터리 수납칸을 비우세요.",
+    "Tooltip_SG_Drive_power": "전기 또는 배터리 충전량이 부족합니다.",
+    "Tooltip_SG_BatteryCompartment": "구동기 수납칸에 자동차 배터리 하나를 넣으세요. 전기가 공급되면 충전됩니다.",
+    "Tooltip_SG_GateRemote": "근처 구동기에 연결하세요. 같은 층에서 반경 20칸 이내의 구동기 하나를 제어하며 벽은 신호를 막지 않습니다. 소지품 창이나 설정 가능한 단축키로 사용하세요.",
+    "Tooltip_SG_RemoteUnavailable": "해당 리모컨을 소지하지 않았거나 범위 내에 문이 없습니다."
+}

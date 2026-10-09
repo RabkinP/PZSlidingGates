@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "柵に沿ってレール上を移動する金網のゲート。<br>パイプと針金で作られ、車輪とローラーは金属スクラップとネジで自作されている。",
+    "Tooltip_SG_GateDrive": "設置済みのスライドゲートに取り付ける。<br>駆動装置の収納部に車のバッテリーを1個入れてください。電力があると充電されます。",
+    "Tooltip_SG_DriveMount": "電気工学1、車両整備1。ドライバーとレンチが必要。<br>取り付けには駆動装置と、ネジまたはナットとボルトが4個必要。<br>取り外しても固定部品は戻らない。",
+    "Tooltip_SG_Drive_missing": "ゲートまたは部品が読み込まれていない。",
+    "Tooltip_SG_Drive_instance": "ゲートが置き換えられた。メニューを開き直してください。",
+    "Tooltip_SG_Drive_busy": "ゲートが停止するまで待ってください。",
+    "Tooltip_SG_Drive_changed": "駆動装置はすでに取り付け、または取り外されている。メニューを開き直してください。",
+    "Tooltip_SG_Drive_distance": "駆動装置の支柱の近くで、同じ階に立ってください。",
+    "Tooltip_SG_Drive_skills": "電気工学1と車両整備1が必要。",
+    "Tooltip_SG_Drive_tools": "壊れていないドライバーとレンチが必要。",
+    "Tooltip_SG_Drive_materials": "駆動装置と、ネジまたはナットとボルトが4個必要。",
+    "Tooltip_SG_Drive_contents": "駆動装置を取り外す前にバッテリー収納部を空にしてください。",
+    "Tooltip_SG_Drive_power": "電力またはバッテリーの充電が不足しています。",
+    "Tooltip_SG_BatteryCompartment": "駆動装置の収納部に車のバッテリーを1個入れてください。電力があると充電されます。",
+    "Tooltip_SG_GateRemote": "近くの駆動装置に登録してください。同じ階の20マス以内にある1台を操作でき、壁は信号を遮りません。所持品から、または設定可能なショートカットキーで使用します。",
+    "Tooltip_SG_RemoteUnavailable": "対応するリモコンを持っていないか、範囲内にゲートがありません。"
+}

@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "Çit boyunca ray üzerinde kayan tel örgü kapı.<br>Boru ve telden yapılır; tekerlekler ve makaralar hurda metal ve vidalardan üretilir.",
+    "Tooltip_SG_GateDrive": "Mevcut bir sürgülü kapıya takılır.<br>Motorun bölmesine bir araba aküsü yerleştir. Şebeke elektriği aküyü şarj eder.",
+    "Tooltip_SG_DriveMount": "Elektrik 1, mekanik 1. Tornavida ve İngiliz anahtarı gerekir.<br>Kurulum: motor ve 4 vida veya somun ve cıvata.<br>Montaj bağlantı parçaları söküldüğünde geri verilmez.",
+    "Tooltip_SG_Drive_missing": "Kapı veya parçaları yüklenmemiş.",
+    "Tooltip_SG_Drive_instance": "Kapı değiştirilmiş. Menüyü yeniden aç.",
+    "Tooltip_SG_Drive_busy": "Kapının hareketinin durmasını bekle.",
+    "Tooltip_SG_Drive_changed": "Motor zaten takılmış veya sökülmüş. Menüyü yeniden aç.",
+    "Tooltip_SG_Drive_distance": "Motor direğinin yakınında, aynı katta dur.",
+    "Tooltip_SG_Drive_skills": "Elektrik 1 ve mekanik 1 gerektirir.",
+    "Tooltip_SG_Drive_tools": "Sağlam bir tornavida ve İngiliz anahtarı gerekir.",
+    "Tooltip_SG_Drive_materials": "Motor ve 4 vida veya somun ve cıvata gerekir.",
+    "Tooltip_SG_Drive_contents": "Motoru sökmeden önce akü bölmesini boşalt.",
+    "Tooltip_SG_Drive_power": "Elektrik veya yeterli akü şarjı yok.",
+    "Tooltip_SG_BatteryCompartment": "Motorun bölmesine bir araba aküsü yerleştir. Şebeke elektriği aküyü şarj eder.",
+    "Tooltip_SG_GateRemote": "Yakındaki motorla eşleştir. Aynı katta 20 kare yarıçapında bir motoru kontrol eder; duvarlar sinyali engellemez. Envanterden veya atanabilir kısayol tuşuyla kullan.",
+    "Tooltip_SG_RemoteUnavailable": "Üzerinde eşleşen bir kumanda veya menzilde bir kapı yok."
+}

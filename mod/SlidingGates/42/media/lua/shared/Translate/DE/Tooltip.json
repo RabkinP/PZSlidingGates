@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "Ein Maschendrahttor, das auf einer Schiene am Zaun entlanggleitet.<br>Aus Rohren und Draht gebaut; Räder und Rollen bestehen aus Metallschrott und Schrauben.",
+    "Tooltip_SG_GateDrive": "Wird an einem vorhandenen Schiebetor montiert.<br>Eine Autobatterie in das Batteriefach des Antriebs legen. Netzstrom lädt sie auf.",
+    "Tooltip_SG_DriveMount": "Elektrik 1, Mechanik 1. Benötigt Schraubendreher und Schraubenschlüssel.<br>Montage: Antrieb und 4 Schrauben oder Muttern und Bolzen.<br>Die Befestigungsteile werden beim Abmontieren nicht zurückgegeben.",
+    "Tooltip_SG_Drive_missing": "Das Tor oder seine Teile sind nicht geladen.",
+    "Tooltip_SG_Drive_instance": "Das Tor wurde ersetzt. Öffne das Menü erneut.",
+    "Tooltip_SG_Drive_busy": "Warte, bis sich das Tor nicht mehr bewegt.",
+    "Tooltip_SG_Drive_changed": "Der Antrieb wurde bereits montiert oder abmontiert. Öffne das Menü erneut.",
+    "Tooltip_SG_Drive_distance": "Stelle dich in der Nähe des Antriebspfostens auf derselben Etage auf.",
+    "Tooltip_SG_Drive_skills": "Benötigt Elektrik 1 und Mechanik 1.",
+    "Tooltip_SG_Drive_tools": "Benötigt einen unbeschädigten Schraubendreher und Schraubenschlüssel.",
+    "Tooltip_SG_Drive_materials": "Benötigt einen Antrieb und 4 Schrauben oder Muttern und Bolzen.",
+    "Tooltip_SG_Drive_contents": "Vor dem Entfernen des Antriebs das Batteriefach leeren.",
+    "Tooltip_SG_Drive_power": "Kein Strom oder ausreichende Batterieladung.",
+    "Tooltip_SG_BatteryCompartment": "Eine Autobatterie in das Batteriefach des Antriebs legen. Netzstrom lädt sie auf.",
+    "Tooltip_SG_GateRemote": "In der Nähe mit einem Antrieb koppeln. Steuert einen Antrieb im Umkreis von 20 Feldern auf derselben Etage; Wände blockieren das Signal nicht. Im Inventar oder mit der einstellbaren Taste benutzen.",
+    "Tooltip_SG_RemoteUnavailable": "Keine passende Fernbedienung dabei oder kein Tor in Reichweite."
+}

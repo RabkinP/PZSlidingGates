@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "Un cancello in rete metallica che scorre su una rotaia lungo la recinzione.<br>Costruito con tubi e filo metallico; ruote e rulli sono realizzati con rottami metallici e viti.",
+    "Tooltip_SG_GateDrive": "Si installa su un cancello scorrevole già costruito.<br>Metti una batteria per auto nel vano del motore. La rete elettrica la ricarica.",
+    "Tooltip_SG_DriveMount": "Elettricità 1, meccanica 1. Richiede un cacciavite e una chiave inglese.<br>Installazione: motore e 4 viti oppure dadi e bulloni.<br>I fissaggi non vengono restituiti alla rimozione.",
+    "Tooltip_SG_Drive_missing": "Il cancello o le sue parti non sono caricati.",
+    "Tooltip_SG_Drive_instance": "Il cancello è stato sostituito. Riapri il menu.",
+    "Tooltip_SG_Drive_busy": "Attendi che il cancello smetta di muoversi.",
+    "Tooltip_SG_Drive_changed": "Il motore è già stato installato o rimosso. Riapri il menu.",
+    "Tooltip_SG_Drive_distance": "Posizionati vicino al palo del motore, sullo stesso piano.",
+    "Tooltip_SG_Drive_skills": "Richiede elettricità 1 e meccanica 1.",
+    "Tooltip_SG_Drive_tools": "Richiede un cacciavite e una chiave inglese integri.",
+    "Tooltip_SG_Drive_materials": "Richiede un motore e 4 viti oppure dadi e bulloni.",
+    "Tooltip_SG_Drive_contents": "Svuota il vano batteria prima di rimuovere il motore.",
+    "Tooltip_SG_Drive_power": "Non c’è elettricità né carica sufficiente nella batteria.",
+    "Tooltip_SG_BatteryCompartment": "Metti una batteria per auto nel vano del motore. La rete elettrica la ricarica.",
+    "Tooltip_SG_GateRemote": "Associalo a un motore vicino. Controlla un motore entro 20 caselle sullo stesso piano; i muri non bloccano il segnale. Usalo dall’inventario o con il tasto configurabile.",
+    "Tooltip_SG_RemoteUnavailable": "Non hai un telecomando associato o non c’è un cancello nel raggio d’azione."
+}

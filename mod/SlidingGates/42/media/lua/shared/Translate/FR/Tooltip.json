@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "Un portail grillagé qui coulisse sur un rail le long de la clôture.<br>Fabriqué avec des tubes et du fil de fer ; les roues et les galets sont faits de ferraille et de vis.",
+    "Tooltip_SG_GateDrive": "S'installe sur un portail coulissant existant.<br>Placez une batterie de voiture dans le compartiment du moteur. Le secteur la recharge.",
+    "Tooltip_SG_DriveMount": "Électricité 1, mécanique 1. Nécessite un tournevis et une clé.<br>Installation : moteur et 4 vis ou écrous et boulons.<br>Les fixations ne sont pas récupérées lors du retrait.",
+    "Tooltip_SG_Drive_missing": "Le portail ou ses pièces ne sont pas chargés.",
+    "Tooltip_SG_Drive_instance": "Le portail a été remplacé. Rouvrez le menu.",
+    "Tooltip_SG_Drive_busy": "Attendez que le portail cesse de bouger.",
+    "Tooltip_SG_Drive_changed": "Le moteur a déjà été installé ou retiré. Rouvrez le menu.",
+    "Tooltip_SG_Drive_distance": "Placez-vous près du poteau du moteur, au même étage.",
+    "Tooltip_SG_Drive_skills": "Nécessite électricité 1 et mécanique 1.",
+    "Tooltip_SG_Drive_tools": "Nécessite un tournevis et une clé en bon état.",
+    "Tooltip_SG_Drive_materials": "Nécessite un moteur et 4 vis ou écrous et boulons.",
+    "Tooltip_SG_Drive_contents": "Videz le compartiment de batterie avant de retirer le moteur.",
+    "Tooltip_SG_Drive_power": "Pas d’électricité ou de charge de batterie suffisante.",
+    "Tooltip_SG_BatteryCompartment": "Placez une batterie de voiture dans le compartiment du moteur. Le secteur la recharge.",
+    "Tooltip_SG_GateRemote": "Associez-la à un moteur proche. Commande un moteur dans un rayon de 20 cases au même étage ; les murs ne bloquent pas le signal. Utilisez-la depuis l’inventaire ou avec le raccourci configurable.",
+    "Tooltip_SG_RemoteUnavailable": "Aucune télécommande correspondante sur vous ou aucun portail à portée."
+}

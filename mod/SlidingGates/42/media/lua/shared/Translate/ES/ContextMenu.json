@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "Instalar motor de la puerta",
+    "ContextMenu_SG_RemoveDrive": "Retirar motor de la puerta",
+    "ContextMenu_SG_PowerOpen": "Abrir con el motor",
+    "ContextMenu_SG_PowerClose": "Cerrar con el motor",
+    "ContextMenu_SG_LinkRemote": "Vincular mando de la puerta",
+    "ContextMenu_SG_UseRemote": "Usar mando de la puerta"
+}

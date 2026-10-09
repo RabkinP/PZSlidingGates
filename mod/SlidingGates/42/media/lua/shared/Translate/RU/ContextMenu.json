@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "Установить привод ворот",
+    "ContextMenu_SG_RemoveDrive": "Снять привод ворот",
+    "ContextMenu_SG_PowerOpen": "Открыть приводом",
+    "ContextMenu_SG_PowerClose": "Закрыть приводом",
+    "ContextMenu_SG_LinkRemote": "Привязать пульт ворот",
+    "ContextMenu_SG_UseRemote": "Использовать пульт ворот"
+}

@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "Poortaandrijving installeren",
+    "ContextMenu_SG_RemoveDrive": "Poortaandrijving verwijderen",
+    "ContextMenu_SG_PowerOpen": "Openen met aandrijving",
+    "ContextMenu_SG_PowerClose": "Sluiten met aandrijving",
+    "ContextMenu_SG_LinkRemote": "Poortafstandsbediening koppelen",
+    "ContextMenu_SG_UseRemote": "Poortafstandsbediening gebruiken"
+}

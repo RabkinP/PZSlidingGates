@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "Installer le moteur du portail",
+    "ContextMenu_SG_RemoveDrive": "Retirer le moteur du portail",
+    "ContextMenu_SG_PowerOpen": "Ouvrir avec le moteur",
+    "ContextMenu_SG_PowerClose": "Fermer avec le moteur",
+    "ContextMenu_SG_LinkRemote": "Associer la télécommande du portail",
+    "ContextMenu_SG_UseRemote": "Utiliser la télécommande du portail"
+}

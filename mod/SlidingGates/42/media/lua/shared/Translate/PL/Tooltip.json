@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "Brama z siatki przesuwająca się po szynie wzdłuż ogrodzenia.<br>Zbudowana z rur i drutu; koła i rolki wykonano ze złomu i wkrętów.",
+    "Tooltip_SG_GateDrive": "Montowany na istniejącej bramie przesuwnej.<br>Włóż jeden akumulator samochodowy do komory napędu. Prąd z sieci go ładuje.",
+    "Tooltip_SG_DriveMount": "Elektryka 1, mechanika 1. Wymaga śrubokręta i klucza.<br>Montaż: napęd i 4 wkręty lub nakrętki ze śrubami.<br>Elementy mocujące nie są zwracane przy demontażu.",
+    "Tooltip_SG_Drive_missing": "Brama lub jej części nie są wczytane.",
+    "Tooltip_SG_Drive_instance": "Brama została zastąpiona. Otwórz menu ponownie.",
+    "Tooltip_SG_Drive_busy": "Poczekaj, aż brama przestanie się poruszać.",
+    "Tooltip_SG_Drive_changed": "Napęd został już zamontowany lub zdemontowany. Otwórz menu ponownie.",
+    "Tooltip_SG_Drive_distance": "Stań przy słupku napędu na tym samym piętrze.",
+    "Tooltip_SG_Drive_skills": "Wymaga elektryki 1 i mechaniki 1.",
+    "Tooltip_SG_Drive_tools": "Wymaga sprawnego śrubokręta i klucza.",
+    "Tooltip_SG_Drive_materials": "Wymaga napędu i 4 wkrętów lub nakrętek ze śrubami.",
+    "Tooltip_SG_Drive_contents": "Opróżnij komorę akumulatora przed zdjęciem napędu.",
+    "Tooltip_SG_Drive_power": "Brak prądu lub wystarczającego naładowania akumulatora.",
+    "Tooltip_SG_BatteryCompartment": "Włóż jeden akumulator samochodowy do komory napędu. Prąd z sieci go ładuje.",
+    "Tooltip_SG_GateRemote": "Sparuj z pobliskim napędem. Steruje jednym napędem w promieniu 20 pól na tym samym piętrze; ściany nie blokują sygnału. Używaj z ekwipunku lub przypisanym klawiszem.",
+    "Tooltip_SG_RemoteUnavailable": "Nie masz odpowiedniego pilota lub bramy w zasięgu."
+}

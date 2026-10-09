@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "安裝滑動門驅動裝置",
+    "ContextMenu_SG_RemoveDrive": "拆除滑動門驅動裝置",
+    "ContextMenu_SG_PowerOpen": "使用驅動器開啟",
+    "ContextMenu_SG_PowerClose": "使用驅動器關閉",
+    "ContextMenu_SG_LinkRemote": "綁定大門遙控器",
+    "ContextMenu_SG_UseRemote": "使用大門遙控器"
+}

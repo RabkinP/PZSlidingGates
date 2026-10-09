@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "Instalar motor do portão",
+    "ContextMenu_SG_RemoveDrive": "Remover motor do portão",
+    "ContextMenu_SG_PowerOpen": "Abrir com o motor",
+    "ContextMenu_SG_PowerClose": "Fechar com o motor",
+    "ContextMenu_SG_LinkRemote": "Associar comando do portão",
+    "ContextMenu_SG_UseRemote": "Usar comando do portão"
+}

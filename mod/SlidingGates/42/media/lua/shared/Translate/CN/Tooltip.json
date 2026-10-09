@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "沿着围栏在轨道上滑动的铁丝网门。<br>由金属管和铁丝制成；轮子和滚轮用废金属和螺丝制作。",
+    "Tooltip_SG_GateDrive": "安装在已建好的滑动门上。<br>将一个汽车电池放入驱动器电池仓。供电时会为电池充电。",
+    "Tooltip_SG_DriveMount": "电工1级、机械1级。需要螺丝刀和扳手。<br>安装需要驱动装置和4个螺丝或螺母与螺栓。<br>拆除时不会返还安装用的紧固件。",
+    "Tooltip_SG_Drive_missing": "门或其零件尚未加载。",
+    "Tooltip_SG_Drive_instance": "门已被替换。请重新打开菜单。",
+    "Tooltip_SG_Drive_busy": "请等待门停止移动。",
+    "Tooltip_SG_Drive_changed": "驱动装置已安装或拆除。请重新打开菜单。",
+    "Tooltip_SG_Drive_distance": "请站在驱动装置的立柱附近，并位于同一楼层。",
+    "Tooltip_SG_Drive_skills": "需要电工1级和机械1级。",
+    "Tooltip_SG_Drive_tools": "需要完好的螺丝刀和扳手。",
+    "Tooltip_SG_Drive_materials": "需要驱动装置和4个螺丝或螺母与螺栓。",
+    "Tooltip_SG_Drive_contents": "拆下驱动器前，请清空电池仓。",
+    "Tooltip_SG_Drive_power": "没有供电或电池电量不足。",
+    "Tooltip_SG_BatteryCompartment": "将一个汽车电池放入驱动器电池仓。供电时会为电池充电。",
+    "Tooltip_SG_GateRemote": "绑定附近的驱动器。可控制同一楼层20格范围内的一个驱动器；墙壁不会阻挡信号。从物品栏或使用可设置的快捷键操作。",
+    "Tooltip_SG_RemoteUnavailable": "未携带匹配的遥控器，或范围内没有大门。"
+}

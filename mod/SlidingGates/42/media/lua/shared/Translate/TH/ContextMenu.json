@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "ติดตั้งชุดขับเคลื่อนประตู",
+    "ContextMenu_SG_RemoveDrive": "ถอดชุดขับเคลื่อนประตู",
+    "ContextMenu_SG_PowerOpen": "เปิดด้วยมอเตอร์",
+    "ContextMenu_SG_PowerClose": "ปิดด้วยมอเตอร์",
+    "ContextMenu_SG_LinkRemote": "จับคู่รีโมตประตู",
+    "ContextMenu_SG_UseRemote": "ใช้รีโมตประตู"
+}

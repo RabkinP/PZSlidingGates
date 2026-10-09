@@ -1,3 +1,18 @@
 {
-    "Tooltip_craft_slidingGateDesc": "A chain-link gate that slides along the fence on a rail.<br>Built from pipes and wire; wheels and rollers are improvised from scrap metal and screws."
+    "Tooltip_craft_slidingGateDesc": "A chain-link gate that slides along the fence on a rail.<br>Built from pipes and wire; wheels and rollers are improvised from scrap metal and screws.",
+    "Tooltip_SG_GateDrive": "Install on an existing sliding gate.<br>Place one car battery in the drive compartment. Grid power charges it.",
+    "Tooltip_SG_DriveMount": "Electrical 1, Mechanics 1. Requires a screwdriver and wrench.<br>Installation: drive and 4 screws or nuts and bolts.<br>Mounting fasteners are not returned on removal.",
+    "Tooltip_SG_Drive_missing": "The gate or its parts are not loaded.",
+    "Tooltip_SG_Drive_instance": "The gate was replaced. Reopen the menu.",
+    "Tooltip_SG_Drive_busy": "Wait for the gate to stop moving.",
+    "Tooltip_SG_Drive_changed": "The drive was already installed or removed. Reopen the menu.",
+    "Tooltip_SG_Drive_distance": "Stand near the drive post on the same floor.",
+    "Tooltip_SG_Drive_skills": "Requires Electrical 1 and Mechanics 1.",
+    "Tooltip_SG_Drive_tools": "Requires an unbroken screwdriver and wrench.",
+    "Tooltip_SG_Drive_materials": "Requires a drive and 4 screws or nuts and bolts.",
+    "Tooltip_SG_Drive_contents": "Empty the battery compartment before removing the drive.",
+    "Tooltip_SG_Drive_power": "No electricity or sufficient battery charge.",
+    "Tooltip_SG_BatteryCompartment": "Place one car battery in the drive compartment. Grid power charges it.",
+    "Tooltip_SG_GateRemote": "Link to a drive nearby. Controls one drive within 20 cells on the same floor; walls do not block the signal. Use from inventory or the configurable hotkey.",
+    "Tooltip_SG_RemoteUnavailable": "No matching carried remote or gate within range."
 }

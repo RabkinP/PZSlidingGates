@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "Встановити привод воріт",
+    "ContextMenu_SG_RemoveDrive": "Зняти привод воріт",
+    "ContextMenu_SG_PowerOpen": "Відкрити приводом",
+    "ContextMenu_SG_PowerClose": "Закрити приводом",
+    "ContextMenu_SG_LinkRemote": "Прив’язати пульт воріт",
+    "ContextMenu_SG_UseRemote": "Використати пульт воріт"
+}

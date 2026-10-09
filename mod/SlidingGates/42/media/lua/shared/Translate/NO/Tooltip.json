@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "En nettingport som glir på en skinne langs gjerdet.<br>Laget av rør og ståltråd; hjul og ruller er laget av metallskrap og skruer.",
+    "Tooltip_SG_GateDrive": "Monteres på en eksisterende skyveport.<br>Legg ett bilbatteri i motorens batterirom. Strøm fra nettet lader det.",
+    "Tooltip_SG_DriveMount": "Elektrisitet 1, mekanikk 1. Krever skrutrekker og skiftenøkkel.<br>Montering: motor og 4 skruer eller muttere og bolter.<br>Festemidlene blir ikke returnert ved demontering.",
+    "Tooltip_SG_Drive_missing": "Porten eller delene er ikke lastet inn.",
+    "Tooltip_SG_Drive_instance": "Porten er erstattet. Åpne menyen på nytt.",
+    "Tooltip_SG_Drive_busy": "Vent til porten slutter å bevege seg.",
+    "Tooltip_SG_Drive_changed": "Motoren er allerede montert eller demontert. Åpne menyen på nytt.",
+    "Tooltip_SG_Drive_distance": "Stå nær motorstolpen i samme etasje.",
+    "Tooltip_SG_Drive_skills": "Krever elektrisitet 1 og mekanikk 1.",
+    "Tooltip_SG_Drive_tools": "Krever en uskadd skrutrekker og skiftenøkkel.",
+    "Tooltip_SG_Drive_materials": "Krever en motor og 4 skruer eller muttere og bolter.",
+    "Tooltip_SG_Drive_contents": "Tøm batterirommet før du fjerner motoren.",
+    "Tooltip_SG_Drive_power": "Ingen strøm eller tilstrekkelig batterilading.",
+    "Tooltip_SG_BatteryCompartment": "Legg ett bilbatteri i motorens batterirom. Strøm fra nettet lader det.",
+    "Tooltip_SG_GateRemote": "Koble til en motor i nærheten. Styrer én motor innenfor 20 ruter i samme etasje; vegger blokkerer ikke signalet. Bruk fra inventaret eller med den justerbare hurtigtasten.",
+    "Tooltip_SG_RemoteUnavailable": "Ingen passende fjernkontroll på deg eller port innenfor rekkevidde."
+}

@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "Torantrieb montieren",
+    "ContextMenu_SG_RemoveDrive": "Torantrieb abmontieren",
+    "ContextMenu_SG_PowerOpen": "Mit Antrieb öffnen",
+    "ContextMenu_SG_PowerClose": "Mit Antrieb schließen",
+    "ContextMenu_SG_LinkRemote": "Torfernbedienung koppeln",
+    "ContextMenu_SG_UseRemote": "Torfernbedienung benutzen"
+}

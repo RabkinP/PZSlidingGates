@@ -1,0 +1,5 @@
+{
+    "SlidingGates.ElectricMotor": "Elektromotor",
+    "SlidingGates.GateDrive": "Schiebetorantrieb",
+    "SlidingGates.GateRemote": "Torfernbedienung"
+}

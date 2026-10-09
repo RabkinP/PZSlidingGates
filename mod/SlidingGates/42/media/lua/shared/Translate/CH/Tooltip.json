@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "沿著圍欄在軌道上滑動的鐵絲網門。<br>由金屬管和鐵絲製成；輪子和滾輪以廢金屬和螺絲製作。",
+    "Tooltip_SG_GateDrive": "安裝在已建好的滑動門上。<br>將一個汽車電池放入驅動器電池倉。供電時會為電池充電。",
+    "Tooltip_SG_DriveMount": "電工1級、機械1級。需要螺絲起子和扳手。<br>安裝需要驅動裝置和4個螺絲或螺帽與螺栓。<br>拆除時不會返還安裝用的緊固件。",
+    "Tooltip_SG_Drive_missing": "門或其零件尚未載入。",
+    "Tooltip_SG_Drive_instance": "門已被替換。請重新開啟選單。",
+    "Tooltip_SG_Drive_busy": "請等待門停止移動。",
+    "Tooltip_SG_Drive_changed": "驅動裝置已安裝或拆除。請重新開啟選單。",
+    "Tooltip_SG_Drive_distance": "請站在驅動裝置的立柱附近，並位於同一樓層。",
+    "Tooltip_SG_Drive_skills": "需要電工1級和機械1級。",
+    "Tooltip_SG_Drive_tools": "需要完好的螺絲起子和扳手。",
+    "Tooltip_SG_Drive_materials": "需要驅動裝置和4個螺絲或螺帽與螺栓。",
+    "Tooltip_SG_Drive_contents": "拆下驅動器前，請清空電池倉。",
+    "Tooltip_SG_Drive_power": "沒有供電或電池電量不足。",
+    "Tooltip_SG_BatteryCompartment": "將一個汽車電池放入驅動器電池倉。供電時會為電池充電。",
+    "Tooltip_SG_GateRemote": "綁定附近的驅動器。可控制同一樓層20格範圍內的一個驅動器；牆壁不會阻擋訊號。從物品欄或使用可設定的快捷鍵操作。",
+    "Tooltip_SG_RemoteUnavailable": "未攜帶匹配的遙控器，或範圍內沒有大門。"
+}

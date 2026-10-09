@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "Installare il motore del cancello",
+    "ContextMenu_SG_RemoveDrive": "Rimuovere il motore del cancello",
+    "ContextMenu_SG_PowerOpen": "Apri con il motore",
+    "ContextMenu_SG_PowerClose": "Chiudi con il motore",
+    "ContextMenu_SG_LinkRemote": "Associa telecomando del cancello",
+    "ContextMenu_SG_UseRemote": "Usa telecomando del cancello"
+}

@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "Kapumotor felszerelése",
+    "ContextMenu_SG_RemoveDrive": "Kapumotor leszerelése",
+    "ContextMenu_SG_PowerOpen": "Nyitás meghajtással",
+    "ContextMenu_SG_PowerClose": "Zárás meghajtással",
+    "ContextMenu_SG_LinkRemote": "Kaputávirányító párosítása",
+    "ContextMenu_SG_UseRemote": "Kaputávirányító használata"
+}

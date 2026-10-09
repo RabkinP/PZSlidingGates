@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "Um portão de tela metálica que desliza sobre um trilho ao longo da cerca.<br>Feito de tubos e arame; as rodas e os roletes são feitos de sucata e parafusos.",
+    "Tooltip_SG_GateDrive": "Instalado em um portão deslizante já construído.<br>Coloque uma bateria de carro no compartimento do motor. A eletricidade da rede a recarrega.",
+    "Tooltip_SG_DriveMount": "Elétrica 1, mecânica 1. Requer uma chave de fenda e uma chave inglesa.<br>Instalação: motor e 4 parafusos ou porcas e parafusos sextavados.<br>As peças de fixação não são devolvidas ao remover o motor.",
+    "Tooltip_SG_Drive_missing": "O portão ou suas peças não estão carregados.",
+    "Tooltip_SG_Drive_instance": "O portão foi substituído. Abra o menu novamente.",
+    "Tooltip_SG_Drive_busy": "Espere até o portão parar de se mover.",
+    "Tooltip_SG_Drive_changed": "O motor já foi instalado ou removido. Abra o menu novamente.",
+    "Tooltip_SG_Drive_distance": "Fique perto do poste do motor, no mesmo andar.",
+    "Tooltip_SG_Drive_skills": "Requer elétrica 1 e mecânica 1.",
+    "Tooltip_SG_Drive_tools": "Requer uma chave de fenda e uma chave inglesa em bom estado.",
+    "Tooltip_SG_Drive_materials": "Requer um motor e 4 parafusos ou porcas e parafusos sextavados.",
+    "Tooltip_SG_Drive_contents": "Esvazie o compartimento da bateria antes de remover o motor.",
+    "Tooltip_SG_Drive_power": "Sem eletricidade ou carga suficiente na bateria.",
+    "Tooltip_SG_BatteryCompartment": "Coloque uma bateria de carro no compartimento do motor. A eletricidade da rede a recarrega.",
+    "Tooltip_SG_GateRemote": "Vincule a um motor próximo. Controla um motor em um raio de 20 quadrados no mesmo andar; as paredes não bloqueiam o sinal. Use pelo inventário ou com a tecla configurável.",
+    "Tooltip_SG_RemoteUnavailable": "Você não carrega um controle correspondente ou não há um portão ao alcance."
+}

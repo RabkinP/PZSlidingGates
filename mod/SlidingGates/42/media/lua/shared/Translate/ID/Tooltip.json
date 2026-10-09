@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "Gerbang kawat yang bergeser di atas rel sepanjang pagar.<br>Dibuat dari pipa dan kawat; roda dan rol dibuat dari besi bekas dan sekrup.",
+    "Tooltip_SG_GateDrive": "Dipasang pada gerbang geser yang sudah dibangun.<br>Masukkan satu aki mobil ke kompartemen motor. Listrik jaringan mengisi daya aki.",
+    "Tooltip_SG_DriveMount": "Kelistrikan 1, mekanik 1. Memerlukan obeng dan kunci pas.<br>Pemasangan: penggerak dan 4 sekrup atau mur dan baut.<br>Pengikat pemasangan tidak dikembalikan saat dilepas.",
+    "Tooltip_SG_Drive_missing": "Gerbang atau komponennya belum dimuat.",
+    "Tooltip_SG_Drive_instance": "Gerbang telah diganti. Buka kembali menu.",
+    "Tooltip_SG_Drive_busy": "Tunggu hingga gerbang berhenti bergerak.",
+    "Tooltip_SG_Drive_changed": "Penggerak sudah dipasang atau dilepas. Buka kembali menu.",
+    "Tooltip_SG_Drive_distance": "Berdirilah di dekat tiang penggerak pada lantai yang sama.",
+    "Tooltip_SG_Drive_skills": "Memerlukan kelistrikan 1 dan mekanik 1.",
+    "Tooltip_SG_Drive_tools": "Memerlukan obeng dan kunci pas yang tidak rusak.",
+    "Tooltip_SG_Drive_materials": "Memerlukan penggerak dan 4 sekrup atau mur dan baut.",
+    "Tooltip_SG_Drive_contents": "Kosongkan kompartemen aki sebelum melepas motor.",
+    "Tooltip_SG_Drive_power": "Tidak ada listrik atau daya aki yang cukup.",
+    "Tooltip_SG_BatteryCompartment": "Masukkan satu aki mobil ke kompartemen motor. Listrik jaringan mengisi daya aki.",
+    "Tooltip_SG_GateRemote": "Hubungkan ke motor di dekatmu. Mengontrol satu motor dalam radius 20 petak di lantai yang sama; dinding tidak menghalangi sinyal. Gunakan dari inventaris atau tombol pintasan yang dapat diatur.",
+    "Tooltip_SG_RemoteUnavailable": "Tidak membawa remote yang cocok atau tidak ada gerbang dalam jangkauan."
+}

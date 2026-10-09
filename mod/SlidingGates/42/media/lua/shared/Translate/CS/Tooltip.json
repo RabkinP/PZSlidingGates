@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "Brána z drátěného pletiva, která se posouvá po kolejnici podél plotu.<br>Vyrobená z trubek a drátu; kola a válečky jsou ze šrotu a šroubů.",
+    "Tooltip_SG_GateDrive": "Montuje se na již postavenou posuvnou bránu.<br>Vlož jednu autobaterii do prostoru v pohonu. Elektřina ze sítě ji nabíjí.",
+    "Tooltip_SG_DriveMount": "Elektrika 1, mechanika 1. Je potřeba šroubovák a klíč.<br>Montáž: pohon a 4 vruty nebo matice se šrouby.<br>Montážní spojovací materiál se při demontáži nevrací.",
+    "Tooltip_SG_Drive_missing": "Brána nebo její části nejsou načtené.",
+    "Tooltip_SG_Drive_instance": "Brána byla nahrazena. Znovu otevři nabídku.",
+    "Tooltip_SG_Drive_busy": "Počkej, až se brána přestane pohybovat.",
+    "Tooltip_SG_Drive_changed": "Pohon už byl namontován nebo demontován. Znovu otevři nabídku.",
+    "Tooltip_SG_Drive_distance": "Postav se poblíž sloupku pohonu ve stejném patře.",
+    "Tooltip_SG_Drive_skills": "Vyžaduje elektriku 1 a mechaniku 1.",
+    "Tooltip_SG_Drive_tools": "Je potřeba nepoškozený šroubovák a klíč.",
+    "Tooltip_SG_Drive_materials": "Je potřeba pohon a 4 vruty nebo matice se šrouby.",
+    "Tooltip_SG_Drive_contents": "Před odebráním pohonu vyprázdni prostor pro baterii.",
+    "Tooltip_SG_Drive_power": "Není elektřina ani dostatečně nabitá baterie.",
+    "Tooltip_SG_BatteryCompartment": "Vlož jednu autobaterii do prostoru v pohonu. Elektřina ze sítě ji nabíjí.",
+    "Tooltip_SG_GateRemote": "Spáruj s pohonem poblíž. Ovládá jeden pohon v okruhu 20 polí na stejném patře; zdi neblokují signál. Použij z inventáře nebo nastavitelnou klávesou.",
+    "Tooltip_SG_RemoteUnavailable": "Nemáš odpovídající ovladač nebo bránu v dosahu."
+}

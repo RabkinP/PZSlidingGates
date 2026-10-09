@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "O poartă din plasă metalică ce culisează pe o șină de-a lungul gardului.<br>Construită din țevi și sârmă; roțile și rolele sunt făcute din fier vechi și șuruburi.",
+    "Tooltip_SG_GateDrive": "Se instalează pe o poartă culisantă deja construită.<br>Pune o baterie auto în compartimentul motorului. Electricitatea din rețea o încarcă.",
+    "Tooltip_SG_DriveMount": "Electricitate 1, mecanică 1. Necesită o șurubelniță și o cheie.<br>Instalare: motor și 4 șuruburi sau piulițe cu buloane.<br>Elementele de fixare nu se recuperează la demontare.",
+    "Tooltip_SG_Drive_missing": "Poarta sau piesele ei nu sunt încărcate.",
+    "Tooltip_SG_Drive_instance": "Poarta a fost înlocuită. Redeschide meniul.",
+    "Tooltip_SG_Drive_busy": "Așteaptă până când poarta se oprește.",
+    "Tooltip_SG_Drive_changed": "Motorul a fost deja instalat sau demontat. Redeschide meniul.",
+    "Tooltip_SG_Drive_distance": "Stai lângă stâlpul motorului, la același etaj.",
+    "Tooltip_SG_Drive_skills": "Necesită electricitate 1 și mecanică 1.",
+    "Tooltip_SG_Drive_tools": "Necesită o șurubelniță și o cheie în stare bună.",
+    "Tooltip_SG_Drive_materials": "Necesită un motor și 4 șuruburi sau piulițe cu buloane.",
+    "Tooltip_SG_Drive_contents": "Golește compartimentul bateriei înainte de a scoate motorul.",
+    "Tooltip_SG_Drive_power": "Nu există electricitate sau suficientă încărcare a bateriei.",
+    "Tooltip_SG_BatteryCompartment": "Pune o baterie auto în compartimentul motorului. Electricitatea din rețea o încarcă.",
+    "Tooltip_SG_GateRemote": "Asociază cu un motor din apropiere. Controlează un motor pe o rază de 20 de pătrate la același etaj; pereții nu blochează semnalul. Folosește din inventar sau cu tasta configurabilă.",
+    "Tooltip_SG_RemoteUnavailable": "Nu ai o telecomandă asociată sau o poartă în raza de acțiune."
+}

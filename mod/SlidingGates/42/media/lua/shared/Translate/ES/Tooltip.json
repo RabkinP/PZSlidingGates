@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "Una puerta de malla metálica que se desliza por un raíl junto a la valla.<br>Hecha con tubos y alambre; las ruedas y los rodillos se fabrican con chatarra y tornillos.",
+    "Tooltip_SG_GateDrive": "Se instala en una puerta corredera ya construida.<br>Coloca una batería de coche en el compartimento del motor. La electricidad de la red la recarga.",
+    "Tooltip_SG_DriveMount": "Electricidad 1, mecánica 1. Requiere un destornillador y una llave inglesa.<br>Instalación: motor y 4 tornillos o tuercas con pernos.<br>Las piezas de fijación no se recuperan al retirar el motor.",
+    "Tooltip_SG_Drive_missing": "La puerta o sus piezas no están cargadas.",
+    "Tooltip_SG_Drive_instance": "La puerta ha sido reemplazada. Vuelve a abrir el menú.",
+    "Tooltip_SG_Drive_busy": "Espera a que la puerta deje de moverse.",
+    "Tooltip_SG_Drive_changed": "El motor ya se ha instalado o retirado. Vuelve a abrir el menú.",
+    "Tooltip_SG_Drive_distance": "Colócate cerca del poste del motor, en la misma planta.",
+    "Tooltip_SG_Drive_skills": "Requiere electricidad 1 y mecánica 1.",
+    "Tooltip_SG_Drive_tools": "Requiere un destornillador y una llave inglesa en buen estado.",
+    "Tooltip_SG_Drive_materials": "Requiere un motor y 4 tornillos o tuercas con pernos.",
+    "Tooltip_SG_Drive_contents": "Vacía el compartimento de batería antes de retirar el motor.",
+    "Tooltip_SG_Drive_power": "No hay electricidad ni carga suficiente en la batería.",
+    "Tooltip_SG_BatteryCompartment": "Coloca una batería de coche en el compartimento del motor. La electricidad de la red la recarga.",
+    "Tooltip_SG_GateRemote": "Vincúlalo a un motor cercano. Controla un motor en un radio de 20 casillas en la misma planta; las paredes no bloquean la señal. Úsalo desde el inventario o con la tecla configurable.",
+    "Tooltip_SG_RemoteUnavailable": "No llevas un mando vinculado o no hay una puerta dentro del alcance."
+}

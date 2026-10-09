@@ -1,0 +1,8 @@
+{
+    "ContextMenu_SG_InstallDrive": "Namontovat pohon brány",
+    "ContextMenu_SG_RemoveDrive": "Demontovat pohon brány",
+    "ContextMenu_SG_PowerOpen": "Otevřít pohonem",
+    "ContextMenu_SG_PowerClose": "Zavřít pohonem",
+    "ContextMenu_SG_LinkRemote": "Spárovat ovladač brány",
+    "ContextMenu_SG_UseRemote": "Použít ovladač brány"
+}

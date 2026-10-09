@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "Dróthálós kapu, amely a kerítés mentén, sínen csúszik.<br>Csövekből és drótból készült; a kerekek és görgők fémhulladékból és csavarokból készülnek.",
+    "Tooltip_SG_GateDrive": "Már megépített tolókapura szerelhető.<br>Tegyél egy autóakkumulátort a meghajtás rekeszébe. A hálózati áram tölti.",
+    "Tooltip_SG_DriveMount": "Elektromosság 1, mechanika 1. Csavarhúzó és csavarkulcs szükséges.<br>Felszerelés: motor és 4 csavar vagy anya és csavar.<br>A rögzítőelemek leszereléskor nem járnak vissza.",
+    "Tooltip_SG_Drive_missing": "A kapu vagy az alkatrészei nincsenek betöltve.",
+    "Tooltip_SG_Drive_instance": "A kaput lecserélték. Nyisd meg újra a menüt.",
+    "Tooltip_SG_Drive_busy": "Várd meg, amíg a kapu megáll.",
+    "Tooltip_SG_Drive_changed": "A motort már felszerelték vagy leszerelték. Nyisd meg újra a menüt.",
+    "Tooltip_SG_Drive_distance": "Állj a motor oszlopa közelébe, ugyanazon a szinten.",
+    "Tooltip_SG_Drive_skills": "Elektromosság 1 és mechanika 1 szükséges.",
+    "Tooltip_SG_Drive_tools": "Ép csavarhúzó és csavarkulcs szükséges.",
+    "Tooltip_SG_Drive_materials": "Motor és 4 csavar vagy anya és csavar szükséges.",
+    "Tooltip_SG_Drive_contents": "A meghajtás leszerelése előtt ürítsd ki az akkumulátorrekeszt.",
+    "Tooltip_SG_Drive_power": "Nincs áram vagy elegendő akkumulátortöltés.",
+    "Tooltip_SG_BatteryCompartment": "Tegyél egy autóakkumulátort a meghajtás rekeszébe. A hálózati áram tölti.",
+    "Tooltip_SG_GateRemote": "Párosítsd egy közeli meghajtással. Egy meghajtást vezérel 20 mező sugarú körben, ugyanazon a szinten; a falak nem blokkolják a jelet. Használd a leltárból vagy beállítható gyorsbillentyűvel.",
+    "Tooltip_SG_RemoteUnavailable": "Nincs nálad megfelelő távirányító, vagy nincs kapu hatótávolságon belül."
+}

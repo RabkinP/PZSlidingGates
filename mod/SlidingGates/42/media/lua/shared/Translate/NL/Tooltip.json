@@ -1,0 +1,18 @@
+{
+    "Tooltip_craft_slidingGateDesc": "Een gaaspoort die op een rail langs het hek schuift.<br>Gemaakt van buizen en draad; de wielen en rollen zijn gemaakt van metaalschroot en schroeven.",
+    "Tooltip_SG_GateDrive": "Wordt op een bestaande schuifpoort gemonteerd.<br>Plaats één autoaccu in het accuvak van de aandrijving. Netstroom laadt deze op.",
+    "Tooltip_SG_DriveMount": "Elektriciteit 1, mechanica 1. Vereist een schroevendraaier en moersleutel.<br>Installatie: aandrijving en 4 schroeven of moeren en bouten.<br>Bevestigingsmateriaal wordt bij verwijdering niet teruggegeven.",
+    "Tooltip_SG_Drive_missing": "De poort of de onderdelen zijn niet geladen.",
+    "Tooltip_SG_Drive_instance": "De poort is vervangen. Open het menu opnieuw.",
+    "Tooltip_SG_Drive_busy": "Wacht tot de poort niet meer beweegt.",
+    "Tooltip_SG_Drive_changed": "De aandrijving is al geïnstalleerd of verwijderd. Open het menu opnieuw.",
+    "Tooltip_SG_Drive_distance": "Ga bij de aandrijfpaal op dezelfde verdieping staan.",
+    "Tooltip_SG_Drive_skills": "Vereist elektriciteit 1 en mechanica 1.",
+    "Tooltip_SG_Drive_tools": "Vereist een onbeschadigde schroevendraaier en moersleutel.",
+    "Tooltip_SG_Drive_materials": "Vereist een aandrijving en 4 schroeven of moeren en bouten.",
+    "Tooltip_SG_Drive_contents": "Leeg het accuvak voordat je de aandrijving verwijdert.",
+    "Tooltip_SG_Drive_power": "Geen stroom of voldoende acculading.",
+    "Tooltip_SG_BatteryCompartment": "Plaats één autoaccu in het accuvak van de aandrijving. Netstroom laadt deze op.",
+    "Tooltip_SG_GateRemote": "Koppel aan een aandrijving dichtbij. Bedient één aandrijving binnen 20 vakken op dezelfde verdieping; muren blokkeren het signaal niet. Gebruik vanuit de inventaris of met de instelbare sneltoets.",
+    "Tooltip_SG_RemoteUnavailable": "Geen passende afstandsbediening bij je of geen poort binnen bereik."
+}

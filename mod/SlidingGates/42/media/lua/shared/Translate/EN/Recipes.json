@@ -1,4 +1,6 @@
 {
     "SlidingGateChainLink2": "Sliding Gate (2 cells)",
-    "SlidingGateChainLink4": "Sliding Gate (4 cells)"
+    "SlidingGateChainLink4": "Sliding Gate (4 cells)",
+    "AssembleSlidingGateDrive": "Assemble Sliding Gate Drive",
+    "AssembleSlidingGateRemote": "Assemble Gate Remote"
 }

@@ -1,4 +1,5 @@
 require "SG_GateCommon"
+require "SG_GateMotor"
 if not isClient() then return end
 
 local states, pending, snapshotAt = {}, {}, {}
@@ -11,7 +12,7 @@ local function stateOf(id)
     local md = leaf:getModData()
     if states[id] and states[id].removed then return end
     return states[id] or { id = id, instance = md.sgInstance, revision = md.sgRevision,
-        width = md.sgWidth or 2, orientation = md.sgOrientation or "N", type = md.sgType, open = md.sgOpen or false,
+        width = md.sgWidth or 2, orientation = md.sgOrientation or "N", direction = md.sgDirection or "forward", type = md.sgType, open = md.sgOpen or false,
         moving = md.sgMoving ~= nil, slavesOpen = md.sgSlavesOpen or false }
 end
 
@@ -55,6 +56,18 @@ function SGGate.toggle(id, player)
     return requestDesired(id, not state.open, player)
 end
 
+function SGGate.requestRemote(id, player, remoteId, driveIdentity)
+    local state = stateOf(id)
+    if not state or pending[id] or state.moving then return false end
+    if not state.instance or not state.revision then requestSnapshot(id, player); return false end
+    requestSerial = requestSerial + 1
+    pending[id] = { time = getTimestampMs(), request = requestSerial }
+    sendClientCommand(player, "SlidingGates", "remote", { id = id, instance = state.instance,
+        revision = state.revision, open = not state.open, request = requestSerial,
+        remoteId = remoteId, driveIdentity = driveIdentity })
+    return true
+end
+
 local function receiveState(state, snapshot)
     if type(state) ~= "table" or not SGGate.parseId(state.id) then return end
     local known = states[state.id]
@@ -64,8 +77,11 @@ local function receiveState(state, snapshot)
     local revision = (known and known.revision) or (md and md.sgRevision) or -1
     if instance and (state.instance < instance or (state.instance == instance and state.revision < revision)) then return end
     if known and known.removed and state.instance == known.instance and state.revision <= known.revision then return end
+    if (known and known.instance ~= state.instance) or not state.moving or not state.motor then
+        SGGateMotor.stop(state.id)
+    end
     states[state.id] = state
-    SGGate.registry()[state.id] = { width = state.width, type = state.type, orientation = state.orientation or "N",
+    SGGate.registry()[state.id] = { width = state.width, type = state.type, orientation = state.orientation or "N", direction = state.direction or "forward",
         instance = state.instance, revision = state.revision }
     if not leaf or (md.sgInstance and md.sgInstance ~= state.instance) then return end
     applying = true
@@ -74,6 +90,8 @@ local function receiveState(state, snapshot)
     if state.moving then md.sgMoving = state.open else md.sgMoving = nil end
     md.sgInstance, md.sgRevision, md.sgWidth = state.instance, state.revision, state.width
     md.sgOrientation = state.orientation or "N"
+    md.sgDirection = state.direction or "forward"
+    SGGateMotor.sync(state)
     local restingSnapshot = snapshot and not (known and known.instance == state.instance and known.moving)
     if restingSnapshot and leaf:IsOpen() ~= state.open then
         leaf:ToggleDoorSilent()
@@ -93,7 +111,9 @@ Events.OnServerCommand.Add(function(module, command, args)
         local queued = pending[args.id]
         if queued and queued.request == args.request then pending[args.id] = nil end
         if args.state then receiveState(args.state, false) end
-        if args.reason == "blocked" then
+        if args.remote and not args.accepted and SGGateRemote then
+            SGGateRemote.message(getPlayer(), args.reason)
+        elseif args.reason == "blocked" then
             local player = getPlayer()
             if player then player:setHaloNote(getText("IGUI_PlayerText_DoorBlocked"), 255, 255, 255, 256) end
         end
@@ -103,6 +123,7 @@ Events.OnServerCommand.Add(function(module, command, args)
             states[args.id] = { instance = args.instance, revision = args.revision, removed = true }
             pending[args.id] = nil
             SGGate.registry()[args.id] = nil
+            SGGateMotor.stop(args.id)
         end
     end
 end)
@@ -140,14 +161,17 @@ Events.LoadGridsquare.Add(function(square)
         if md.sgGate then
             local entry = SGGate.registry()[md.sgGate]
             if type(entry) ~= "table" then
-                SGGate.registry()[md.sgGate] = { width = md.sgWidth or 2, orientation = md.sgOrientation or "N", instance = md.sgInstance }
-            elseif not entry.orientation then entry.orientation = md.sgOrientation or "N" end
+                SGGate.registry()[md.sgGate] = { width = md.sgWidth or 2, orientation = md.sgOrientation or "N", direction = md.sgDirection or "forward", instance = md.sgInstance }
+            else
+                entry.orientation = entry.orientation or md.sgOrientation or "N"
+                entry.direction = entry.direction or md.sgDirection or "forward"
+            end
             -- Restore model names even before the requested resting snapshot arrives.
             if md.sgBase or md.sgStatic then SGGate.applyModel(obj) end
             if not seen[md.sgGate] then
                 seen[md.sgGate] = true
                 local state = stateOf(md.sgGate)
-                if state then SGGate.registry()[md.sgGate] = { width = state.width, orientation = state.orientation or "N", instance = state.instance } end
+                if state then SGGate.registry()[md.sgGate] = { width = state.width, orientation = state.orientation or "N", direction = state.direction or "forward", instance = state.instance } end
                 requestSnapshot(md.sgGate)
             end
         end
@@ -161,6 +185,7 @@ end)
 
 local pollTicks = 0
 Events.OnTick.Add(function()
+    SGGateMotor.update()
     pollTicks = pollTicks + 1
     if pollTicks % 120 ~= 0 then return end
     -- Refresh only locally loaded moving/pending gates, including after a lost result.

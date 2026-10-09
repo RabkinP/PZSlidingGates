@@ -1,0 +1,16 @@
+true
+false
+3
+3
+500
+12
+1
+false
+true
+false
+1
+1
+100
+5
+1
+false

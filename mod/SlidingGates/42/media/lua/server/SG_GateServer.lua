@@ -1,4 +1,5 @@
 require "SG_GateCore"
+require "SG_GateRemote"
 if not isServer() then return end
 
 SGGate.onStateChanged = function(state)
@@ -38,11 +39,14 @@ Events.OnClientCommand.Add(function(module, command, player, args)
         if state and sq and sq:getZ() == z and math.abs(player:getX()-x) <= 32 and math.abs(player:getY()-y) <= 32 then
             sendServerCommand(player, "SlidingGates", "snapshot", state)
         end
-    elseif command == "toggle" then
-        local accepted, reason = SGGate.handleRequest(player, args)
+    elseif command == "toggle" or command == "remote" then
+        local accepted, reason
+        if command == "remote" then accepted, reason = SGGateRemote.handleRequest(player, args)
+        else accepted, reason = SGGate.handleRequest(player, args) end
         local state = SGGate.parseId(args.id) and SGGate.snapshot(args.id)
         sendServerCommand(player, "SlidingGates", "result", {
             id = args.id, request = args.request, accepted = accepted, reason = reason, state = state,
+            remote = command == "remote",
         })
     end
 end)

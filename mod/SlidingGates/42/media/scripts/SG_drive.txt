@@ -1,0 +1,87 @@
+module SlidingGates
+{
+    item ElectricMotor
+    {
+        DisplayCategory = Electronics,
+        ItemType = base:normal,
+        Weight = 5.0,
+        Icon = SG_ElectricMotor,
+        MetalValue = 100.0,
+        Tags = base:hasmetal,
+    }
+
+    item GateDrive
+    {
+        DisplayCategory = Electronics,
+        ItemType = base:normal,
+        Weight = 8.0,
+        Icon = SG_GateDrive,
+        MetalValue = 150.0,
+        Tooltip = Tooltip_SG_GateDrive,
+        Tags = base:hasmetal,
+    }
+
+    item GateRemote
+    {
+        DisplayCategory = Electronics,
+        ItemType = base:normal,
+        Weight = 0.4,
+        Icon = SG_GateRemote,
+        WorldStaticModel = RemoteController,
+        Tooltip = Tooltip_SG_GateRemote,
+        Tags = base:hasmetal;base:fitskeyring,
+    }
+
+    craftRecipe AssembleSlidingGateRemote
+    {
+        timedAction = MakingElectrical,
+        time = 100,
+        category = Electrical,
+        SkillRequired = Electricity:2,
+        Tags = AnySurfaceCraft;Electrical,
+        AllowBatchCraft = false,
+        xpAward = Electricity:6,
+        inputs
+        {
+            item 1 [Base.Remote;Base.CordlessPhone;Base.Pager],
+            item 1 [Base.RadioTransmitter],
+            item 2 [Base.ElectronicsScrap],
+            item 1 [Base.ElectricWire],
+            item 1 tags[base:screwdriver] mode:keep flags[NoBrokenItems],
+        }
+        outputs
+        {
+            item 1 SlidingGates.GateRemote,
+        }
+    }
+
+    craftRecipe AssembleSlidingGateDrive
+    {
+        timedAction = Welding,
+        time = 500,
+        category = Electrical,
+        SkillRequired = Electricity:3;Mechanics:2;MetalWelding:2,
+        Tags = AnySurfaceCraft;Welding;Electrical,
+        AllowBatchCraft = false,
+        xpAward = Electricity:20;Mechanics:10;MetalWelding:10,
+        inputs
+        {
+            item 1 [SlidingGates.ElectricMotor],
+            item 2 [Base.SmallSheetMetal],
+            item 3 [Base.ScrapMetal],
+            item 4 [Base.ElectronicsScrap],
+            item 2 [Base.ElectricWire],
+            item 1 [Base.RadioReceiver],
+            item 6 [Base.Screws;Base.NutsBolts],
+            item 1 tags[base:screwdriver] mode:keep flags[NoBrokenItems],
+            item 1 tags[base:wrench] mode:keep flags[NoBrokenItems],
+            item 1 tags[base:weldingmask] mode:keep,
+            item 4 [Base.BlowTorch] flags[DontRecordInput],
+            item 4 [Base.WeldingRods] flags[DontRecordInput],
+        }
+        outputs
+        {
+            item 1 SlidingGates.GateDrive,
+        }
+    }
+}

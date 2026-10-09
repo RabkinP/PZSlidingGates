@@ -14,6 +14,7 @@ Events={OnContainerUpdate={Add=function(fn) sync=fn end},
  LoadGridsquare={Add=function(fn) gridLoaded=fn end},
  OnDestroyIsoThumpable={Add=function(fn) destroyed=fn end},
  OnTick={Add=function(fn) tick=fn end,Remove=function() tick=nil end}}
+Events.EveryOneMinute={Add=function(fn) powerMinute=fn end}
 debug=false
 clientMode=false; serverMode=false
 function isClient() return clientMode end
@@ -34,6 +35,7 @@ function square(x,y,z)
  function s:getX() return self.x end
  function s:getY() return self.y end
  function s:getZ() return self.z end
+ function s:haveElectricity() return self.electricity or false end
  function s:getObjects() return {size=function() return #self.objects end,get=function(_,i) return self.objects[i+1] end} end
  function s:AddSpecialObject(o) table.insert(self.objects,o) end
  function s:AddTileObject(o) table.insert(self.objects,o) end
@@ -52,11 +54,27 @@ function square(x,y,z)
 end
 local cell={getGridSquare=function(_,x,y,z) return square(x,y,z) end}
 function getCell() return cell end
-function getWorld() return {getCell=function() return cell end} end
+soundEmitters={};worldSounds={}
+function addSound(source,x,y,z,radius,volume)
+ table.insert(worldSounds,{source=source,x=x,y=y,z=z,radius=radius,volume=volume})
+end
+function getWorld() return {getCell=function() return cell end,
+ getFreeEmitter=function(_,x,y,z)
+  assert(not isServer(), 'dedicated server must not allocate audio emitters')
+  local emitter={x=x,y=y,z=z,plays=0,stops=0}
+  function emitter:playSoundImpl(name,parent)
+   self.plays=self.plays+1;self.name=name;self.parent=parent;return self.plays
+  end
+  function emitter:stopSound(handle) self.stops=self.stops+1;self.stopped=handle end
+  table.insert(soundEmitters,emitter);return emitter
+ end} end
 local function object(_,sq,sprite,openSprite,north)
  local o={sq=sq,md={},open=false,door=false,sprite=sprite,north=north}
  function o:getModData() return self.md end
  function o:getSquare() return self.sq end
+ function o:getContainer() return self.container end
+ function o:setContainer(c) self.container=c end
+ function o:flagForHotSave() self.hotSave=true end
  function o:setSpriteModelName(name) self.model=name end
  function o:setMaxHealth(v) self.maxHealth=v end
  function o:setHealth(v) self.health=v end
@@ -83,6 +101,19 @@ local function object(_,sq,sprite,openSprite,north)
  return o
 end
 IsoThumpable={new=object}; IsoObject={new=object}
+ItemContainer={new=function(kind,sq,parent,...)
+ assert(select('#',...)==0, 'B42 ItemContainer has no five-argument constructor')
+ local c={items={},parent=parent,kind=kind}
+ function c:getItems() return {size=function() return #self.items end,get=function(_,i) return self.items[i+1] end} end
+ function c:getParent() return self.parent end
+ function c:setType(v) self.kind=v end
+ function c:setCapacity(v) self.capacity=v end
+ function c:setExplored(v) self.explored=v end
+ function c:setAcceptItemFunction(v) self.accept=v end
+ function c:Remove(item) for i,v in ipairs(self.items) do if v==item then table.remove(self.items,i);item.container=nil;return end end end
+ function c:AddItem(item) item.container=self;table.insert(self.items,item);return item end
+ return c
+end}
 function partsWithRole(id,role)
  local res={}
  for _,o in ipairs(SGGate.parts(id)) do if o.md.sgRole==role then res[#res+1]=o end end

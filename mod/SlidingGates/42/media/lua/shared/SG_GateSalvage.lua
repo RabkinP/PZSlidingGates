@@ -51,7 +51,8 @@ local function install()
         props.scrapSize = "Medium"
         props.scrapToolUses = 5
         props.isMultiSprite = false
-        props.name = obj:getName() or "Sliding gate"
+        local width = SGGate.width(SGGate.typeOf(md.sgGate)) or 2
+        props.name = Translator.getRecipeName("SlidingGateChainLink" .. width)
         return props
     end
 
@@ -78,7 +79,7 @@ local function install()
         if not ok then error(result) end
         -- Vanilla returns nil even on success. Check actual removal, not its return value or skill roll.
         if obj:getObjectIndex() == -1 then
-            SGGate.destroyGate(gateId, character, DROP_PERCENT)
+            SGGate.destroyGate(gateId, character, DROP_PERCENT, true)
         end
         return result
     end

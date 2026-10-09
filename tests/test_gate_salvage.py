@@ -19,6 +19,7 @@ for width, server_mode in product((2,4), (False, True)):
       local event={Add=function() end,Remove=function() end}; t[key]=event; return event
     end})
     Events.OnGameBoot={Add=function(fn) installScrap=fn end}
+    Translator={getRecipeName=function(key) return 'translated:'..key end}
     drops={}; function ZombRand() return 0 end
     function instanceItem(kind)
       return {kind=kind,getUseDelta=function() return .1 end,setUsedDelta=function(self,v) self.delta=v end}
@@ -88,6 +89,7 @@ for width, server_mode in product((2,4), (False, True)):
     ISDisassembleMenu.createMenu({post})
     assert(#menuObjects==1 and menuObjects[1]==obj)
     local props=ISMoveableSpriteProps.fromObject(obj)
+    assert(props.name=='translated:SlidingGateChainLink'..width)
     assert(props:canScrapObject().craftValid and props.canScrap and props.isFromObject)
     assert(props.scrapUseTool and props.scrapUseSkill and props.scrapToolUses==5)
     assert(props.material2==nil and props.material3==nil and props.isMultiSprite==false)

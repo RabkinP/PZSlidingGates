@@ -1,0 +1,6 @@
+true
+true
+media/sound/SG_GateMotorRunning.wav
+2.0
+20.0
+1.0

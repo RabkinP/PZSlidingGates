@@ -8,6 +8,8 @@
 -- N edges extend along -X; W edges along +Y. Registry/part metadata stores the orientation.
 
 require "SG_GateCommon"
+require "SG_GatePower"
+require "SG_GateMotor"
 if isClient() then return end
 if SGGate.coreLoaded then return end
 SGGate.coreLoaded = true
@@ -16,6 +18,7 @@ SGGate = SGGate or {}
 local TYPES = SGGateTypes
 local requestPlayer
 local authorizedGate
+local poweredRequest
 local recoveryReady = false
 local deferredSquares = {}
 local cleanupSquare
@@ -34,6 +37,7 @@ function SGGate.ensureIdentity(id)
     entry.revision = entry.revision or 0
     entry.width = entry.width or 2
     entry.orientation = entry.orientation or SGGate.orientation(id)
+    entry.direction = entry.direction or SGGate.direction(id)
     return entry
 end
 
@@ -43,8 +47,11 @@ function SGGate.snapshot(id)
     if not entry or not leaf then return end
     local md = leaf:getModData()
     return { id = id, instance = entry.instance, revision = entry.revision,
-        type = md.sgType, width = entry.width, orientation = entry.orientation, open = md.sgOpen or false,
-        moving = entry.moving ~= nil, slavesOpen = md.sgSlavesOpen or false }
+        type = md.sgType, width = entry.width, orientation = entry.orientation, direction = entry.direction, open = md.sgOpen or false,
+        moving = entry.moving ~= nil, slavesOpen = md.sgSlavesOpen or false,
+        motor = entry.motorMoving == true,
+        motionRemaining = SGGate.motionRemaining and SGGate.motionRemaining(id) or 0,
+        hasDrive = SGGate.findRole(id, "drive") ~= nil }
 end
 
 local function publish(id)
@@ -55,6 +62,7 @@ local function publish(id)
     local md = leaf:getModData()
     md.sgInstance, md.sgRevision, md.sgWidth = entry.instance, entry.revision, entry.width
     entry.open = md.sgOpen or false
+    SGGateMotor.sync(SGGate.snapshot(id))
     if isServer() then leaf:transmitModData() end
     if SGGate.onStateChanged then SGGate.onStateChanged(SGGate.snapshot(id)) end
 end
@@ -91,12 +99,15 @@ local function log(msg)
 end
 
 local function sqAt(x, y, z) return getCell():getGridSquare(x, y, z) end
-local function gateCell(id, x, y, z, k) return SGGate.cellAt(x, y, z, k, SGGate.orientation(id)) end
+local function gateCell(id, x, y, z, k)
+    return SGGate.cellAt(x, y, z, k, SGGate.orientation(id), SGGate.direction(id))
+end
 local function gateNeighbour(id, sq) return SGGate.edgeNeighbour(sq, SGGate.orientation(id)) end
 local function opaquePair(id)
     return SGGate.orientation(id) == "W" and { "fixtures_doors_01_68", "fixtures_doors_01_70" } or OPAQUE_DOOR_SPRITES
 end
 local function staticModel(id, name)
+    if SGGate.direction(id) == "reverse" then name = name .. "_Reverse" end
     return name .. (SGGate.orientation(id) == "W" and "_W_Static" or "_Static")
 end
 
@@ -107,7 +118,10 @@ local function tag(obj, id, role, extra)
     d.sgGate = id
     d.sgRole = role
     local entry = SGGate.ensureIdentity(id)
-    if entry then d.sgInstance, d.sgWidth, d.sgOrientation = entry.instance, entry.width, entry.orientation end
+    if entry then
+        d.sgInstance, d.sgWidth, d.sgOrientation = entry.instance, entry.width, entry.orientation
+        d.sgDirection = entry.direction
+    end
     if extra then for k, v in pairs(extra) do d[k] = v end end
 end
 
@@ -130,12 +144,14 @@ local function makeDoor(sq, typeId, id, role, modelBase, spritePair)
     return obj
 end
 
-local function makeStatic(sq, id, role, modelName)
+local function makeStatic(sq, id, role, modelName, itemData)
     if not sq then return end
     local obj = IsoObject.new(getWorld():getCell(), sq, "vegetation_groundcover_01_0")
     obj:setSpriteModelName("Base." .. modelName)
     tag(obj, id, role, { sgStatic = modelName })
+    if itemData then obj:getModData().sgDriveData = copyTable(itemData) end
     sq:AddTileObject(obj)
+    if role == "drive" then SGGatePower.ensureContainer(obj) end
     transmitNew(obj)
     return obj
 end
@@ -183,17 +199,20 @@ local function addPocketBlockers(id, typeId, x, y, z)
 end
 
 -- Build a gate without drive. sq is the catcher cell; the master is one travel cell away.
-function SGGate.build(sq, typeId, healthBonus, orientation)
+function SGGate.build(sq, typeId, healthBonus, orientation, direction)
     typeId = typeId or "chainlink"
     orientation = orientation or "N"
-    local ok, reason = SGGate.canBuild(sq, typeId, orientation)
+    direction = direction or "forward"
+    local ok, reason = SGGate.canBuild(sq, typeId, orientation, direction)
     if not ok then log(reason); return end
     local t = TYPES[typeId]
     local width = t.width
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
     local id = x .. "," .. y .. "," .. z
-    registry()[id] = { width = width, type = typeId, orientation = orientation, health = t.baseHealth + (healthBonus or 0) }
-    makeDoor(gateCell(id, x, y, z, 1), typeId, id, "leaf", orientation == "W" and t.westLeafModel or t.leafModel)
+    registry()[id] = { width = width, type = typeId, orientation = orientation, direction = direction, health = t.baseHealth + (healthBonus or 0) }
+    local model = orientation == "W" and t.westLeafModel or t.leafModel
+    if direction == "reverse" then model = orientation == "W" and t.westReverseLeafModel or t.reverseLeafModel end
+    makeDoor(gateCell(id, x, y, z, 1), typeId, id, "leaf", model)
     for k = 1, width do makeDoor(gateCell(id, x, y, z, k), typeId, id, "slave", "SG_Hidden") end -- collision of the opening
     makeStatic(sq, id, "post", staticModel(id, "SG_CatcherPost"))
     makeStatic(gateCell(id, x, y, z, width), id, "post", staticModel(id, "SG_GuidePost"))
@@ -203,16 +222,25 @@ function SGGate.build(sq, typeId, healthBonus, orientation)
     return id
 end
 
-function SGGate.installDrive(id)
-    if findRole(id, "drive") then log("drive already installed"); return end
+function SGGate.installDrive(id, itemData)
+    if not SGGate.snapshot(id) or SGGate.isMoving(id) or findRole(id, "drive") then return end
     local x, y, z = parseId(id)
-    makeStatic(gateCell(id, x, y, z, gateWidth(id)), id, "drive", staticModel(id, "SG_Drive"))
+    local sq = gateCell(id, x, y, z, gateWidth(id))
+    if not sq then return end
+    local obj = makeStatic(sq, id, "drive", staticModel(id, "SG_Drive"), itemData)
+    publish(id)
     log("drive installed on " .. id)
+    return obj
 end
 
 function SGGate.removeDrive(id)
     local d = findRole(id, "drive")
-    if d then removeObj(d); log("drive removed from " .. id) end
+    if not d or SGGate.isMoving(id) then return end
+    if d:getContainer() and d:getContainer():getItems():size() > 0 then return end
+    removeObj(d)
+    publish(id)
+    log("drive removed from " .. id)
+    return d
 end
 
 -- Collision of the opening is carried by hidden "slave" doors (one per opening cell, also on the leaf cell),
@@ -256,6 +284,7 @@ local function indexParts(id)
         local role, sq = o:getModData().sgRole, o:getSquare()
         if sq then
             local k = SGGate.orientation(id) == "W" and sq:getY() - y or x - sq:getX()
+            if SGGate.direction(id) == "reverse" then k = -k end
             if role == "slave" then slaves[k] = o
             elseif role == "block" then blockers[k] = o
             elseif role == "collider" then colliders[k] = o end
@@ -345,6 +374,8 @@ local function finalize(id)
     md.sgSlavesOpen = open
     md.sgMoving = nil
     entryOf(id).moving = nil
+    entryOf(id).motorMoving = nil
+    SGGateMotor.stop(id)
     moving[id] = nil
     if isServer() then leaf:setAnimating(false) end
     publish(id)
@@ -392,12 +423,16 @@ onTick = function()
         for id, tr in pairs(moving) do
             local leaf = findRole(id, "leaf")
             if not leaf then
+                SGGateMotor.stop(id)
+                entryOf(id).motorMoving = nil
                 moving[id] = nil
                 unresolved[id] = true
             elseif (isServer() and tr.t >= tr.seconds - EPS) or (not isServer() and not leaf:isAnimating() and tr.t > 0) then
                 if finalize(id) then
                     log("gate " .. id .. " settled")
                 else
+                    SGGateMotor.stop(id)
+                    entryOf(id).motorMoving = nil
                     moving[id] = nil
                     unresolved[id] = true
                 end
@@ -407,6 +442,7 @@ onTick = function()
             end
         end
     end
+    SGGateMotor.update()
     tickCount = tickCount + 1
     if hasEntries(unresolved) and tickCount % 60 == 0 then
         for id, _ in pairs(unresolved) do
@@ -424,11 +460,17 @@ local function startMotion(id, leaf, target)
     local md = leaf:getModData()
     md.sgMoving = target
     entryOf(id).moving = target
+    entryOf(id).motorMoving = poweredRequest == true or nil
     local tr = { opening = target, t = 0, seconds = TYPES[md.sgType].clipSeconds, width = gateWidth(id), typeId = md.sgType, x = x, y = y, z = z }
     moving[id] = tr
     applyProgress(id, tr, 0)
     publish(id)
     ensureTick()
+end
+
+function SGGate.motionRemaining(id)
+    local tr = moving[id]
+    return tr and math.max(0, tr.seconds - tr.t) or 0
 end
 
 -- Vanilla refuses to move a door while a vehicle stands in its way and shows "The door is blocked" over the
@@ -563,6 +605,7 @@ local function recover()
         for _, part in ipairs(SGGate.parts(id)) do
             local md, entry = part:getModData(), SGGate.ensureIdentity(id)
             if not md.sgInstance then md.sgInstance, md.sgWidth, md.sgOrientation = entry.instance, entry.width, entry.orientation end
+            md.sgDirection = md.sgDirection or entry.direction
         end
         if type(e) == "table" and e.moving ~= nil then
             local ok, done = pcall(finalize, id)
@@ -575,7 +618,7 @@ Events.OnServerStarted.Add(recover)
 
 -- Destruction: when any door part of a gate is destroyed (zombies, weapons, vehicles) the whole gate falls apart and
 -- drops part of its materials (50% per unit, like vanilla thumpables). Every part has the full gate health.
-function SGGate.destroyGate(id, destroyer, dropPercent)
+function SGGate.destroyGate(id, destroyer, dropPercent, recoverDrive)
     -- Multiple parts/events can report the same destruction. Claim the registry entry only once.
     if registry()[id] == nil then return false end
     local leaf = findRole(id, "leaf")
@@ -593,10 +636,34 @@ function SGGate.destroyGate(id, destroyer, dropPercent)
         typeId = typeId or (gateWidth(id) == 4 and "chainlink4" or "chainlink")
     end
     local parts = SGGate.parts(id)
+    local driveItem, driveContents
+    if recoverDrive then
+        local drive = findRole(id, "drive")
+        if drive and drive:getContainer() then driveContents = drive:getContainer() end
+        local data = drive and drive:getModData().sgDriveData
+        if data then
+            driveItem = instanceItem("SlidingGates.GateDrive")
+            if driveItem then
+                for key, value in pairs(copyTable(data)) do driveItem:getModData()[key] = value end
+            end
+        end
+    end
+    SGGateMotor.stop(id)
     moving[id] = nil
     unresolved[id] = nil
     registry()[id] = nil
+    -- Take contents out before removing the object; return each actual item once.
+    if dropSq and driveContents then
+        local items = driveContents:getItems()
+        while items:size() > 0 do
+            local item = items:get(0)
+            driveContents:Remove(item)
+            if isServer() then sendRemoveItemFromContainer(driveContents, item) end
+            dropSq:AddWorldInventoryItem(item, 0.5, 0.5, 0.0)
+        end
+    end
     for _, o in ipairs(parts) do removeObj(o) end
+    if dropSq and driveItem then dropSq:AddWorldInventoryItem(driveItem, 0.5, 0.5, 0.0) end
     if dropSq and typeId and TYPES[typeId] then
         for itemType, count in pairs(TYPES[typeId].materials) do
             local recovered = 0
@@ -643,19 +710,20 @@ function SGGate.isMoving(id)
 end
 
 -- open/close from code (menu, remote): toggling the leaf triggers the sync above
-function SGGate.toggle(id, player)
+function SGGate.toggle(id, player, powered)
     local leaf = findRole(id, "leaf")
     if not leaf then log("gate parts missing for " .. id); return end
     if SGGate.isMoving(id) then log("gate " .. id .. " is moving"); return end
     if SGGate.isBlocked(id, not leaf:IsOpen()) then notifyBlocked(); return false end
-    requestPlayer, authorizedGate = player, id
+    requestPlayer, authorizedGate, poweredRequest = player, id, powered == true
     local ok, result = pcall(toggleDoor, leaf)
-    requestPlayer, authorizedGate = nil, nil
+    requestPlayer, authorizedGate, poweredRequest = nil, nil, nil
     if not ok then error(result) end
     return result
 end
 
 function SGGate.remove(id)
+    SGGateMotor.stop(id)
     local identity = SGGate.ensureIdentity(id)
     moving[id] = nil
     unresolved[id] = nil
@@ -680,6 +748,7 @@ cleanupSquare = function(square)
             else
                 -- Upgrade legacy saves and restore each model after native deserialization.
                 md.sgInstance, md.sgWidth, md.sgOrientation = entry.instance, entry.width, entry.orientation
+                md.sgDirection = entry.direction
                 if md.sgRole == "leaf" then md.sgRevision = entry.revision end
                 SGGate.applyModel(obj)
             end

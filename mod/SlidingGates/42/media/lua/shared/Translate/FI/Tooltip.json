@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "Ei sähköä tai riittävästi akun varausta.",
     "Tooltip_SG_BatteryCompartment": "Aseta yksi auton akku moottorin akkukoteloon. Verkkovirta lataa sen.",
     "Tooltip_SG_GateRemote": "Yhdistä lähellä olevaan moottoriin. Ohjaa yhtä moottoria 20 ruudun säteellä samassa kerroksessa; seinät eivät estä signaalia. Käytä tavaraluettelosta tai määritettävällä pikanäppäimellä.",
-    "Tooltip_SG_RemoteUnavailable": "Sinulla ei ole sopivaa kaukosäädintä tai porttia kantaman sisällä."
+    "Tooltip_SG_RemoteUnavailable": "Sinulla ei ole sopivaa kaukosäädintä tai porttia kantaman sisällä.",
+    "Tooltip_craft_slidingWoodGateDesc": "Puinen portti, joka liukuu aidan viertä kiskolla.<br>Laudat on naulattu tuettuun puukehikkoon; metallitangot muodostavat hammastangon ja akselit, ja rullat on päällystetty kumiletkulla."
 }

@@ -6,5 +6,11 @@
     "SlidingGateChainLink2Low": "Tolókapu (2 mező) (Alacsony minőség)",
     "SlidingGateChainLink2Medium": "Tolókapu (2 mező) (Közepes minőség)",
     "SlidingGateChainLink4Low": "Tolókapu (4 mező) (Alacsony minőség)",
-    "SlidingGateChainLink4Medium": "Tolókapu (4 mező) (Közepes minőség)"
+    "SlidingGateChainLink4Medium": "Tolókapu (4 mező) (Közepes minőség)",
+    "SlidingGateWood2": "Fa tolókapu (2 mező) (Magas minőség)",
+    "SlidingGateWood2Low": "Fa tolókapu (2 mező) (Alacsony minőség)",
+    "SlidingGateWood2Medium": "Fa tolókapu (2 mező) (Közepes minőség)",
+    "SlidingGateWood4": "Fa tolókapu (4 mező) (Magas minőség)",
+    "SlidingGateWood4Low": "Fa tolókapu (4 mező) (Alacsony minőség)",
+    "SlidingGateWood4Medium": "Fa tolókapu (4 mező) (Közepes minőség)"
 }

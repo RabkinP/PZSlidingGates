@@ -105,7 +105,7 @@ for width, server_mode in product((2,4), (False, True)):
     print(f'PASS {width} server={server_mode}: limited wire uses, recipe amounts, no duplicate drops, zero yield, successful/failed dismantle')
 
 # Preserve correspondence between consumed recipe resources and the maximum salvage budget.
-recipe=(ROOT/'mod/SlidingGates/42/media/scripts/entity_sliding_gates.txt').read_text()
+recipe='\n'.join(p.read_text() for p in (ROOT/'mod/SlidingGates/42/media/scripts').glob('entity_sliding_gates*.txt'))
 for entity,pipes,wire,scrap,sheets in [('SlidingGateChainLink2',6,4,2,1),('SlidingGateChainLink4',10,8,3,2)]:
     block=recipe.split('entity '+entity+'\n',1)[1].split('inputs',1)[1].split('}',1)[0]
     for name,count in [('MetalPipe',pipes),('Wire',wire),('ScrapMetal',scrap),('SmallSheetMetal',sheets)]:

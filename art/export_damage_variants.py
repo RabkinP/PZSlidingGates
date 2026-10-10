@@ -13,7 +13,7 @@ OUT=os.path.join(ART,'exports','damage')
 os.makedirs(OUT,exist_ok=True)
 previous=bpy.context.window.scene
 for scene in bpy.data.scenes:
-    if not scene.get('sg_damage'):continue
+    if scene.get('sg_material') == 'wood' or not scene.get('sg_damage'):continue
     bpy.context.window.scene=scene
     rig=next(o for o in scene.objects if o.type=='ARMATURE' and o.get('gate_width_cells'))
     leaf=next(o for o in scene.objects if o.type=='MESH' and o.parent==rig)

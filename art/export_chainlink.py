@@ -8,6 +8,7 @@ assert rig.get('gate_direction','forward') == 'forward', 'Use export_reverse.py 
 PREFIX='SG_ChainLink' if WIDTH==2 else 'SG_ChainLink_'+str(WIDTH)
 SAVE_PATH=globals().get('EXPORT_SAVE_PATH',r'E:\git\SlidingGates\art\SG_ChainLink.blend')
 scene=bpy.context.scene
+assert scene.get('sg_material') != 'wood', 'Use export_wood_variants.py for wooden workbenches'
 def export_selected(name,objects,animated):
     for obj in bpy.context.view_layer.objects: obj.select_set(False)
     for obj in objects: obj.select_set(True)

@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "Brak prądu lub wystarczającego naładowania akumulatora.",
     "Tooltip_SG_BatteryCompartment": "Włóż jeden akumulator samochodowy do komory napędu. Prąd z sieci go ładuje.",
     "Tooltip_SG_GateRemote": "Sparuj z pobliskim napędem. Steruje jednym napędem w promieniu 20 pól na tym samym piętrze; ściany nie blokują sygnału. Używaj z ekwipunku lub przypisanym klawiszem.",
-    "Tooltip_SG_RemoteUnavailable": "Nie masz odpowiedniego pilota lub bramy w zasięgu."
+    "Tooltip_SG_RemoteUnavailable": "Nie masz odpowiedniego pilota lub bramy w zasięgu.",
+    "Tooltip_craft_slidingWoodGateDesc": "Drewniana brama, która przesuwa się wzdłuż ogrodzenia po szynie.<br>Deski przybite do usztywnionej drewnianej ramy; metalowe pręty tworzą listwę zębatą i osie, a rolki są obciągnięte gumowym wężem."
 }

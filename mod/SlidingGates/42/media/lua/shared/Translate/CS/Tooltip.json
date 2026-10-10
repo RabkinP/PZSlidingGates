@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "Není elektřina ani dostatečně nabitá baterie.",
     "Tooltip_SG_BatteryCompartment": "Vlož jednu autobaterii do prostoru v pohonu. Elektřina ze sítě ji nabíjí.",
     "Tooltip_SG_GateRemote": "Spáruj s pohonem poblíž. Ovládá jeden pohon v okruhu 20 polí na stejném patře; zdi neblokují signál. Použij z inventáře nebo nastavitelnou klávesou.",
-    "Tooltip_SG_RemoteUnavailable": "Nemáš odpovídající ovladač nebo bránu v dosahu."
+    "Tooltip_SG_RemoteUnavailable": "Nemáš odpovídající ovladač nebo bránu v dosahu.",
+    "Tooltip_craft_slidingWoodGateDesc": "Dřevěná brána, která jezdí podél plotu po kolejnici.<br>Prkna jsou přitlučená k vyztuženému dřevěnému rámu; kovové tyče tvoří ozubený hřeben a osy a kladky jsou potažené gumovou hadicí."
 }

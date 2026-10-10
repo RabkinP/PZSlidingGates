@@ -1,0 +1,1327 @@
+tests\test_gate_damage.py
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[PASS 24 assemblies: thresholds, weakest slave, one publish per stage, motion deferral, saved damage, late/stale MP snapshots
+PASS authority polling every 500ms
+PASS 36 deployed GLBs, 144 poses and exact clips
+PASS exact reflected geometry of all 18 forward/reverse damage pairs
+PASS full-frame clearance evidence and conservative stage-3 aperture bounds
+SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+
+tests\test_gate_direction.py
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=false, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 completed after load
+[SGGate] drive removed from 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 completed after load
+[SGGate] drive removed from 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=false, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 completed after load
+[SGGate] drive removed from 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 completed after load
+[SGGate] drive removed from 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=false, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 completed after load
+[SGGate] drive removed from 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 completed after load
+[SGGate] drive removed from 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, lePASS reverse 2/N/server=False: cells, models, vehicles, RF/power/audio, collision, pocket E, fences, reload and cleanup
+PASS reverse 2/N/server=True: cells, models, vehicles, RF/power/audio, collision, pocket E, fences, reload and cleanup
+PASS reverse 2/W/server=False: cells, models, vehicles, RF/power/audio, collision, pocket E, fences, reload and cleanup
+PASS reverse 2/W/server=True: cells, models, vehicles, RF/power/audio, collision, pocket E, fences, reload and cleanup
+PASS reverse 4/N/server=False: cells, models, vehicles, RF/power/audio, collision, pocket E, fences, reload and cleanup
+PASS reverse 4/N/server=True: cells, models, vehicles, RF/power/audio, collision, pocket E, fences, reload and cleanup
+PASS reverse 4/W/server=False: cells, models, vehicles, RF/power/audio, collision, pocket E, fences, reload and cleanup
+PASS reverse 4/W/server=True: cells, models, vehicles, RF/power/audio, collision, pocket E, fences, reload and cleanup
+PASS reverse N client: slave-first loading, snapshots, native animation ordering and stale direction rejection
+PASS reverse W client: slave-first loading, snapshots, native animation ordering and stale direction rejection
+af toggled by engine=false, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 completed after load
+[SGGate] drive removed from 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 completed after load
+[SGGate] drive removed from 30,20,0
+[SGGate] gate removed 30,20,0
+
+tests\test_gate_drive.py
+PASS drive server=False: 2/4 N/W, bag items, mixed fasteners, validation, replication, refund, duplicate/replacement rejection
+PASS drive server=True: 2/4 N/W, bag items, mixed fasteners, validation, replication, refund, duplicate/replacement rejection
+PASS motor singleplayer: whitelist, ordinary loot, one roll, reentry, failed removal and 30% boundary
+PASS motor server: whitelist, ordinary loot, one roll, reentry, failed removal and 30% boundary
+PASS motor client: whitelist, ordinary loot, one roll, reentry, failed removal and 30% boundary
+PASS native-action contract: captured identity, cancellation, no client mutation/double completion; menu, walk and unavailable materials
+PASS Lua 5.1 syntax and translation JSON
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+
+tests\test_gate_motor.py
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0:PASS motor SP/authority: manual silence, powered open/close, pause, repeats, finish, rejection and destruction
+PASS motor client: local loop, no zombie noise, deduplication, stale packets, late join, timeout, unload and removal
+PASS synthetic motor loop: 4s mono PCM16/48kHz, continuous seam, no silent windows
+ target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 dismantled
+
+tests\test_gate_multiplayer.py
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 completed after load
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 completed after load
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] queued action runs for gate 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+PASS server 2: authority, replication, identity, revision, proximity, concurrent commands, clock, restart
+PASS server 4: authority, replication, identity, revision, proximity, concurrent commands, clock, restart
+PASS client: no world mutation, requests, native animation ordering, stale state, late join, timeout, removal
+PASS shared timed action: one command, no server double toggle, identity after rebuild
+PASS two-client protocol simulation: concurrent open, convergence and no echo/reversal
+PASS W client: slave-first load, orientation snapshot, correct resting pose and remote leaf request
+PASS N pocket client: close request, proximity and no duplicate/reversal
+PASS W pocket client: close request, proximity and no duplicate/reversal
+PASS N pocket server: native correction and authoritative close from retracted leaf
+PASS W pocket server: native correction and authoritative close from retracted leaf
+
+tests\test_gate_orientation.py
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=false, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 completed after load
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 completed after load
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=false, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 completed after load
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 completed after load
+[SGGate] gate removed 30,20,0
+PASS W 2 server=False: parts, models, door/vehicle carriers, motion, fences, reload, metadata, cleanup
+PASS W 2 server=True: parts, models, door/vehicle carriers, motion, fences, reload, metadata, cleanup
+PASS W 4 server=False: parts, models, door/vehicle carriers, motion, fences, reload, metadata, cleanup
+PASS W 4 server=True: parts, models, door/vehicle carriers, motion, fences, reload, metadata, cleanup
+
+tests\test_gate_power.py
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive insPASS battery power server=False N width=2: filtering, cost, grid, charging, authority, teardown
+PASS battery power server=False N width=4: filtering, cost, grid, charging, authority, teardown
+PASS battery power server=False W width=2: filtering, cost, grid, charging, authority, teardown
+PASS battery power server=False W width=4: filtering, cost, grid, charging, authority, teardown
+PASS battery power server=True N width=2: filtering, cost, grid, charging, authority, teardown
+PASS battery power server=True N width=4: filtering, cost, grid, charging, authority, teardown
+PASS battery power server=True W width=2: filtering, cost, grid, charging, authority, teardown
+PASS battery power server=True W width=4: filtering, cost, grid, charging, authority, teardown
+PASS Lua 5.1 syntax
+PASS powered timed action: primitive fields, authority-only completion and no duplicate movement
+talled on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+
+tests\test_gate_preview.py
+[SGBuild] ISBuildIsoEntity hooks installed
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=true
+[SGBuild] SGGate.build -> gate
+[SGBuild] create chainlink4 at 100,200,0 north=false
+[SGBuild] SGGate.build -> gate
+PASS four R faces, native reconstruction/cache, reflected 2/4 anchors/rails, validity tint, no preview writes, foreign builders
+
+tests\test_gate_quality.py
+PASS 24 assemblies: quality models, Open/Close, persistence, metadata, snapshots and legacy default
+PASS six native recipe tiers/titles, unique entity footprints and all 16 quality preview anchors
+PASS late-client quality snapshot, model reconstruction and chunk metadata
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate built 30,20,0 (no drive)
+
+tests\test_gate_remote.py
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate built 60,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] drive installed on 60,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 60,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 60,20,0 opening
+[SGGate] gate 60,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate built 60,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] drive installed on 60,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 60,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 60,20,0 opening
+[SGGate] gate 60,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate built 60,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] drive installed on 60,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 60,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 60,20,0 opening
+[SGGate] gate 60,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate built 60,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] drive installed on 60,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 60,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 60,20,0 opening
+[SGGate] gate 60,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate built 60,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] drive installed on 60,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gatPASS RF server=False width=2 N: pairing, bags, nearest, range, state, possession and lifecycle
+PASS RF server=False width=2 W: pairing, bags, nearest, range, state, possession and lifecycle
+PASS RF server=False width=4 N: pairing, bags, nearest, range, state, possession and lifecycle
+PASS RF server=False width=4 W: pairing, bags, nearest, range, state, possession and lifecycle
+PASS RF server=True width=2 N: pairing, bags, nearest, range, state, possession and lifecycle
+PASS RF server=True width=2 W: pairing, bags, nearest, range, state, possession and lifecycle
+PASS RF server=True width=4 N: pairing, bags, nearest, range, state, possession and lifecycle
+PASS RF server=True width=4 W: pairing, bags, nearest, range, state, possession and lifecycle
+PASS RF client: pair action fields, no client mutation, command/pending/result, inventory and remappable hotkey
+PASS RF server command: 10-cell operation, replicated result, duplicate and malformed request rejection
+e 30,20,0 settled
+[SGGate] toggle request for 60,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 60,20,0 opening
+[SGGate] gate 60,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate built 60,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] drive installed on 60,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 60,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 60,20,0 opening
+[SGGate] gate 60,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate built 60,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] drive installed on 60,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 60,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 60,20,0 opening
+[SGGate] gate 60,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate built 60,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] drive installed on 60,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 60,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 60,20,0 opening
+[SGGate] gate 60,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] drive removed from 30,20,0
+[SGGate] drive installed on 30,20,0
+[SGGate] gate removed 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+
+tests\test_gate_remote_rename.py
+PASS native remote rename: More menu, grouped selection, vanilla dialog, name synchronization, length/cancel, pairing preservation and other-item compatibility
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] drive installed on 30,20,0
+
+tests\test_gate_salvage.py
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate 30,20,0 dismantled
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate 30,20,0 dismantled
+PASS 2 server=False: limited wire uses, recipe amounts, no duplicate drops, zero yield, successful/failed dismantle
+PASS 2 server=True: limited wire uses, recipe amounts, no duplicate drops, zero yield, successful/failed dismantle
+PASS 4 server=False: limited wire uses, recipe amounts, no duplicate drops, zero yield, successful/failed dismantle
+PASS 4 server=True: limited wire uses, recipe amounts, no duplicate drops, zero yield, successful/failed dismantle
+PASS shared gate definitions agree with entity base health
+
+tests\test_gate_tiles.py
+PASS pack v1, tdef v1, alpha, properties, entity carriers, registration and calibrated model poses
+
+tests\test_gate_widths.py
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate already exists
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=false, vehicle=nil
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=false, vehicle=nil
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=false, vehicle=nil
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 is moving
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=false, vehicle=nil
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=false, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=false, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=false, vehicle=nil
+[SGGate] gate 30,20,0 completed after load
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 completed after load
+[SGGate] gate removed 30,20,0
+[SGGate] gate area is not loaded
+[SGGate] gate built 30,20,0 (no drive)
+[SGGate] gate already exists
+[SGGate] drive installed on 30,20,0
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=false, vehicle=nil
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=false, vehicle=nil
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=false, vehicle=nil
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 is moving
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=false, vehicle=nil
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=false, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=false, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=true, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 opening
+[SGGate] gate 30,20,0 settled
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=false, vehicle=nil
+[SGGate] gate 30,20,0 completed after load
+[SGGate] toggle request for 30,20,0: target open=false, leaf toggled by engine=true, vehicle=nil
+[SGGate] gate 30,20,0 closing
+[SGGate] gate 30,20,0 completed after load
+[SGGate] gate removed 30,20,0
+[SGGate] gate area is not loaded
+PASS 2 cells: health, motion collision, pause, concurrency, fences, vehicles, chunk recovery, removal, legacy, preflight
+PASS 4 cells: health, motion collision, pause, concurrency, fences, vehicles, chunk recovery, removal, legacy, preflight
+
+tests\test_gate_wood.py
+PASS 40 wood assemblies: carpentry, health, static parts/drive, animation, damage deferral, persistence and late MP
+PASS six native carpentry recipes: materials, quality thresholds and unique preview footprints
+PASS authority construction: min carpentry 4, exact recipe quality and skill-specific health bonus
+PASS 56 deployed GLBs: single meshes, normals, rigid weights, clips/stroke/duration and 10,464 checked frames
+
+tests\test_localization.py
+PASS: 29 locales, 45 keys; loader categories, construction, recipes, items and UI coverage
+
+tests\test_model_variants.py
+SG_ChainLink_4_Low_N_Reverse_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Reverse_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Reverse_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Right_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Right_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Right_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Reverse_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Reverse_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Reverse_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Right_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Right_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Right_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Reverse_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Reverse_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Reverse_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Right_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Right_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Right_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Reverse_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Reverse_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Reverse_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Right_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Right_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Right_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Reverse_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Reverse_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Reverse_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Right_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Right_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Right_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Reverse_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Reverse_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Reverse_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Right_Damage1.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Right_Damage2.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Right_Damage3.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Reverse.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Low_N_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Reverse.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_Medium_N_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Reverse.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Low_N_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Reverse.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_Medium_N_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Left.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Reverse.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_N_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_W_Left.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_4_W_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Left.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Reverse.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_W_Left.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_W_Right.glb PASS clips, stroke, duration, weights, deployment
+SG_ChainLink_N_Reverse.glb PASS exact X reflection, source winding/normals preserved, positive scales, reverse stroke and deployment
+SG_ChainLink_4_N_Reverse.glb PASS exact X reflection, source winding/normals preserved, positive scales, reverse stroke and deployment
+SG_CatcherPost_Reverse.glb PASS exact X reflection, source winding/normals preserved, positive scales, reverse stroke and deployment
+SG_GuidePost_Reverse.glb PASS exact X reflection, source winding/normals preserved, positive scales, reverse stroke and deployment
+SG_Rail_Reverse.glb PASS exact X reflection, source winding/normals preserved, positive scales, reverse stroke and deployment
+SG_Drive_Reverse.glb PASS exact X reflection, source winding/normals preserved, positive scales, reverse stroke and deployment

@@ -42,7 +42,8 @@ local function install()
         local props = ISMoveableSpriteProps.new(obj:getSprite())
         props.object = obj
         props.isFromObject = true
-        props.material = "MetalPipe"
+        local definition = SGGateTypes[SGGate.typeOf(md.sgGate)]
+        props.material = definition and definition.skill == "Woodwork" and "Wood" or "MetalPipe"
         props.material2 = nil
         props.material3 = nil
         props.canScrap = true
@@ -52,7 +53,7 @@ local function install()
         props.scrapToolUses = 5
         props.isMultiSprite = false
         local width = SGGate.width(SGGate.typeOf(md.sgGate)) or 2
-        props.name = Translator.getRecipeName("SlidingGateChainLink" .. width)
+        props.name = Translator.getRecipeName(definition and definition.entity or ("SlidingGateChainLink" .. width))
         return props
     end
 

@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "没有供电或电池电量不足。",
     "Tooltip_SG_BatteryCompartment": "将一个汽车电池放入驱动器电池仓。供电时会为电池充电。",
     "Tooltip_SG_GateRemote": "绑定附近的驱动器。可控制同一楼层20格范围内的一个驱动器；墙壁不会阻挡信号。从物品栏或使用可设置的快捷键操作。",
-    "Tooltip_SG_RemoteUnavailable": "未携带匹配的遥控器，或范围内没有大门。"
+    "Tooltip_SG_RemoteUnavailable": "未携带匹配的遥控器，或范围内没有大门。",
+    "Tooltip_craft_slidingWoodGateDesc": "沿围栏在导轨上滑动的木制大门。<br>木板钉在带斜撑的木框上；金属棒做成齿条和轴，滚轮外包橡胶软管。"
 }

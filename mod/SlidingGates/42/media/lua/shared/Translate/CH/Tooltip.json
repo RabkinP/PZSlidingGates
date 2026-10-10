@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "沒有供電或電池電量不足。",
     "Tooltip_SG_BatteryCompartment": "將一個汽車電池放入驅動器電池倉。供電時會為電池充電。",
     "Tooltip_SG_GateRemote": "綁定附近的驅動器。可控制同一樓層20格範圍內的一個驅動器；牆壁不會阻擋訊號。從物品欄或使用可設定的快捷鍵操作。",
-    "Tooltip_SG_RemoteUnavailable": "未攜帶匹配的遙控器，或範圍內沒有大門。"
+    "Tooltip_SG_RemoteUnavailable": "未攜帶匹配的遙控器，或範圍內沒有大門。",
+    "Tooltip_craft_slidingWoodGateDesc": "沿圍欄在導軌上滑動的木製大門。<br>木板釘在帶斜撐的木框上；金屬棒做成齒條和軸，滾輪外包橡膠軟管。"
 }

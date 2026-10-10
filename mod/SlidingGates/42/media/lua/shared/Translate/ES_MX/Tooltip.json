@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "No hay electricidad ni carga suficiente en la batería.",
     "Tooltip_SG_BatteryCompartment": "Coloca una batería de automóvil en el compartimento del motor. La electricidad de la red la recarga.",
     "Tooltip_SG_GateRemote": "Vincúlalo a un motor cercano. Controla un motor en un radio de 20 casillas en el mismo piso; las paredes no bloquean la señal. Úsalo desde el inventario o con la tecla configurable.",
-    "Tooltip_SG_RemoteUnavailable": "No llevas un control vinculado o no hay un portón dentro del alcance."
+    "Tooltip_SG_RemoteUnavailable": "No llevas un control vinculado o no hay un portón dentro del alcance.",
+    "Tooltip_craft_slidingWoodGateDesc": "Una puerta de madera que se desliza junto a la cerca sobre un riel.<br>Tablones clavados a un marco de madera arriostrado; barras de metal forman la cremallera y los ejes, y los rodillos están forrados con manguera de goma."
 }

@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "Pas d’électricité ou de charge de batterie suffisante.",
     "Tooltip_SG_BatteryCompartment": "Placez une batterie de voiture dans le compartiment du moteur. Le secteur la recharge.",
     "Tooltip_SG_GateRemote": "Associez-la à un moteur proche. Commande un moteur dans un rayon de 20 cases au même étage ; les murs ne bloquent pas le signal. Utilisez-la depuis l’inventaire ou avec le raccourci configurable.",
-    "Tooltip_SG_RemoteUnavailable": "Aucune télécommande correspondante sur vous ou aucun portail à portée."
+    "Tooltip_SG_RemoteUnavailable": "Aucune télécommande correspondante sur vous ou aucun portail à portée.",
+    "Tooltip_craft_slidingWoodGateDesc": "Un portail en bois qui coulisse le long de la clôture sur un rail.<br>Des planches sont clouées sur un cadre en bois contreventé ; des barres métalliques forment la crémaillère et les axes, et les galets sont garnis de tuyau en caoutchouc."
 }

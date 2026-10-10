@@ -36,6 +36,16 @@ function SGGateHighRecipeTest(param)
     return param.shouldShowAll or SGGate.qualityForLevel(SGGate.weldingLevel(param.player)) == "high"
 end
 
+function SGGateWoodLowRecipeTest(param)
+    return param.shouldShowAll or SGGate.qualityForLevel(SGGate.buildLevel(param.player, "wood"), "wood") == "low"
+end
+function SGGateWoodMediumRecipeTest(param)
+    return param.shouldShowAll or SGGate.qualityForLevel(SGGate.buildLevel(param.player, "wood"), "wood") == "medium"
+end
+function SGGateWoodHighRecipeTest(param)
+    return param.shouldShowAll or SGGate.qualityForLevel(SGGate.buildLevel(param.player, "wood"), "wood") == "high"
+end
+
 local function gateTypeOf(builder)
     local ok, name = pcall(function() return builder.objectInfo:getScript():getName() end)
     return ok and GATE_TYPES[name] or nil
@@ -86,8 +96,8 @@ local function install()
     function ISBuildIsoEntity:isValid(square)
         local typeId = gateTypeOf(self)
         if not typeId then return originalIsValid(self, square) end
-        local level = SGGate.weldingLevel(self.character)
-        if level and (level < 4 or SGGate.qualityForLevel(level) ~= recipeQuality(self)) then return false end
+        local level = SGGate.buildLevel(self.character, typeId)
+        if level and (level < SGGate.MIN_BUILD_LEVEL or SGGate.qualityForLevel(level, typeId) ~= recipeQuality(self)) then return false end
         if self.getFace then self:getFace() end
         self.north = isNorth(self.nSprite)
         if not originalIsValid(self, square) then return false end
@@ -147,6 +157,9 @@ local function install()
                 catcherY + (west and sign*k or 0), z, r, g, b, 0.6) end
         end
         local staticStart = reversed and (west and 40 or 36) or (west and 16 or 8)
+        if SGGateTypes[typeId].previewStaticStart then
+            staticStart = SGGateTypes[typeId].previewStaticStart + (reversed and 8 or 0) + (west and 4 or 0)
+        end
         draw(staticStart, 0)
         draw(staticStart+1, width)
         for k = 0, 2 * width - 1 do draw(staticStart+2, k) end
@@ -166,10 +179,9 @@ local function install()
         local square = getCell():getGridSquare(x, y, z)
         local catcher = square and catcherSquare(square, typeId, self.north, direction(self.nSprite) == "reverse")
         if not catcher then print("[SGBuild] no catcher square"); return end
-        local level = SGGate.weldingLevel(self.character)
-        local bonus = level and level * 50 or 0 -- health: base + 50 per welding level
-        local quality = level and SGGate.qualityForLevel(level) or recipeQuality(self)
-        local id = SGGate.build(catcher, typeId, bonus, north and "N" or "W", direction(self.nSprite), quality)
+        local level = SGGate.buildLevel(self.character, typeId)
+        local quality = level and SGGate.qualityForLevel(level, typeId) or recipeQuality(self)
+        local id = SGGate.build(catcher, typeId, level, north and "N" or "W", direction(self.nSprite), quality)
         print("[SGBuild] SGGate.build -> " .. tostring(id))
     end
     print("[SGBuild] ISBuildIsoEntity hooks installed")

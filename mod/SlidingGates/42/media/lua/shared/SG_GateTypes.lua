@@ -1,6 +1,31 @@
 -- Data shared by gameplay, construction and the future server controller.
 -- Existing type IDs are saved in modData: keep them stable.
+-- baseHealth is health per build-skill level (vanilla skillBaseHealth): level x 300.
 SGGateTypes = {
+    wood = {
+        entity = "SlidingGateWood2", width = 2, skill = "Woodwork",
+        modelPrefix = "SG_Wood", staticPrefix = "SG_Wood", previewStaticStart = 168,
+        baseHealth = 300,
+        materials = { ["Base.Plank"] = 12, ["Base.Nails"] = 24, ["Base.Screws"] = 8,
+            ["Base.Doorknob"] = 1, ["Base.MetalBar"] = 2, ["Base.RubberHose"] = 1 },
+        clipSeconds = 3.0,
+        leafModel = "SG_Wood_N_Right_G", westLeafModel = "SG_Wood_W_G",
+        reverseLeafModel = "SG_Wood_N_Reverse_G", westReverseLeafModel = "SG_Wood_W_Reverse_G",
+        doorSprites = { "carpentry_01_49", "carpentry_01_51" },
+        westDoorSprites = { "carpentry_01_48", "carpentry_01_50" },
+    },
+    wood4 = {
+        entity = "SlidingGateWood4", width = 4, skill = "Woodwork",
+        modelPrefix = "SG_Wood_4", staticPrefix = "SG_Wood", previewStaticStart = 168,
+        baseHealth = 300,
+        materials = { ["Base.Plank"] = 20, ["Base.Nails"] = 40, ["Base.Screws"] = 8,
+            ["Base.Doorknob"] = 2, ["Base.MetalBar"] = 3, ["Base.RubberHose"] = 2 },
+        clipSeconds = 6.0,
+        leafModel = "SG_Wood_4_N_Right_G", westLeafModel = "SG_Wood_4_W_G",
+        reverseLeafModel = "SG_Wood_4_N_Reverse_G", westReverseLeafModel = "SG_Wood_4_W_Reverse_G",
+        doorSprites = { "carpentry_01_49", "carpentry_01_51" },
+        westDoorSprites = { "carpentry_01_48", "carpentry_01_50" },
+    },
     chainlink = {
         entity = "SlidingGateChainLink2",
         width = 2,
@@ -17,7 +42,7 @@ SGGateTypes = {
     chainlink4 = {
         entity = "SlidingGateChainLink4",
         width = 4,
-        baseHealth = 450,
+        baseHealth = 300,
         materials = { ["Base.MetalPipe"] = 10, ["Base.Wire"] = 8, ["Base.ScrapMetal"] = 3, ["Base.SmallSheetMetal"] = 2, ["Base.Screws"] = 4 },
         clipSeconds = 6.0,
         leafModel = "SG_ChainLink_4_N_Right_G",

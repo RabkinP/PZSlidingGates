@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "No hay electricidad ni carga suficiente en la batería.",
     "Tooltip_SG_BatteryCompartment": "Colocá una batería de auto en el compartimento del motor. La electricidad de la red la recarga.",
     "Tooltip_SG_GateRemote": "Vinculalo a un motor cercano. Controla un motor en un radio de 20 casillas en el mismo piso; las paredes no bloquean la señal. Usalo desde el inventario o con la tecla configurable.",
-    "Tooltip_SG_RemoteUnavailable": "No llevás un control vinculado o no hay un portón dentro del alcance."
+    "Tooltip_SG_RemoteUnavailable": "No llevás un control vinculado o no hay un portón dentro del alcance.",
+    "Tooltip_craft_slidingWoodGateDesc": "بوابة خشبية تنزلق على سكة بمحاذاة السياج.<br>ألواح مثبتة بالمسامير على إطار خشبي مدعّم؛ القضبان المعدنية تشكّل الجريدة المسننة والمحاور، والبكرات مغلّفة بخرطوم مطاطي."
 }

@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "Nu există electricitate sau suficientă încărcare a bateriei.",
     "Tooltip_SG_BatteryCompartment": "Pune o baterie auto în compartimentul motorului. Electricitatea din rețea o încarcă.",
     "Tooltip_SG_GateRemote": "Asociază cu un motor din apropiere. Controlează un motor pe o rază de 20 de pătrate la același etaj; pereții nu blochează semnalul. Folosește din inventar sau cu tasta configurabilă.",
-    "Tooltip_SG_RemoteUnavailable": "Nu ai o telecomandă asociată sau o poartă în raza de acțiune."
+    "Tooltip_SG_RemoteUnavailable": "Nu ai o telecomandă asociată sau o poartă în raza de acțiune.",
+    "Tooltip_craft_slidingWoodGateDesc": "O poartă din lemn care culisează de-a lungul gardului pe o șină.<br>Scânduri bătute în cuie pe un cadru de lemn contravântuit; barele metalice formează cremaliera și axele, iar rolele sunt îmbrăcate în furtun de cauciuc."
 }

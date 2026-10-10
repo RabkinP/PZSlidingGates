@@ -6,5 +6,11 @@
     "SlidingGateChainLink2Low": "Portão de correr (2 quadrículas) (Qualidade baixa)",
     "SlidingGateChainLink2Medium": "Portão de correr (2 quadrículas) (Qualidade média)",
     "SlidingGateChainLink4Low": "Portão de correr (4 quadrículas) (Qualidade baixa)",
-    "SlidingGateChainLink4Medium": "Portão de correr (4 quadrículas) (Qualidade média)"
+    "SlidingGateChainLink4Medium": "Portão de correr (4 quadrículas) (Qualidade média)",
+    "SlidingGateWood2": "Portão de correr de madeira (2 quadrículas) (Qualidade alta)",
+    "SlidingGateWood2Low": "Portão de correr de madeira (2 quadrículas) (Qualidade baixa)",
+    "SlidingGateWood2Medium": "Portão de correr de madeira (2 quadrículas) (Qualidade média)",
+    "SlidingGateWood4": "Portão de correr de madeira (4 quadrículas) (Qualidade alta)",
+    "SlidingGateWood4Low": "Portão de correr de madeira (4 quadrículas) (Qualidade baixa)",
+    "SlidingGateWood4Medium": "Portão de correr de madeira (4 quadrículas) (Qualidade média)"
 }

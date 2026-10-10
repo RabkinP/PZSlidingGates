@@ -1,0 +1,457 @@
+module Base
+{
+    xuiSkin default
+    {
+        entity ES_SlidingGateWood2
+        {
+            LuaWindowClass = ISEntityWindow,
+            DisplayName = SlidingGateWood2,
+            Icon = SG_BuildWood2,
+        }
+        entity ES_SlidingGateWood2Low
+        {
+            LuaWindowClass = ISEntityWindow,
+            DisplayName = SlidingGateWood2Low,
+            Icon = SG_BuildWood2,
+        }
+        entity ES_SlidingGateWood2Medium
+        {
+            LuaWindowClass = ISEntityWindow,
+            DisplayName = SlidingGateWood2Medium,
+            Icon = SG_BuildWood2,
+        }
+        entity ES_SlidingGateWood4
+        {
+            LuaWindowClass = ISEntityWindow,
+            DisplayName = SlidingGateWood4,
+            Icon = SG_BuildWood4,
+        }
+        entity ES_SlidingGateWood4Low
+        {
+            LuaWindowClass = ISEntityWindow,
+            DisplayName = SlidingGateWood4Low,
+            Icon = SG_BuildWood4,
+        }
+        entity ES_SlidingGateWood4Medium
+        {
+            LuaWindowClass = ISEntityWindow,
+            DisplayName = SlidingGateWood4Medium,
+            Icon = SG_BuildWood4,
+        }
+    }
+
+    entity SlidingGateWood2Low
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_SlidingGateWood2Low,
+            uiEnabled = false,
+        }
+        component SpriteConfig
+        {
+            skillBaseHealth = 300,
+            dontNeedFrame = true,
+            BreakSound = BreakDoor,
+            face N
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_96 sg_gates_preview_01_97,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_98,
+                    row = sg_gates_preview_01_99,
+                }
+            }
+            face S
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_100 sg_gates_preview_01_101,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_102,
+                    row = sg_gates_preview_01_103,
+                }
+            }
+        }
+        component CraftRecipe
+        {
+            OnAddToMenu = SGGateWoodLowRecipeTest,
+            timedAction = BuildWallHammer,
+            time = 300,
+            category = Carpentry,
+            SkillRequired = Woodwork:4,
+            xpAward = Woodwork:40,
+            Tooltip = Tooltip_craft_slidingWoodGateDesc,
+            inputs
+            {
+                item 1 tags[base:hammer] mode:keep flags[Prop1;MayDegradeVeryLight],
+                item 1 tags[base:saw] mode:keep flags[MayDegradeVeryLight],
+                item 12 [Base.Plank],
+                item 24 [Base.Nails],
+                item 8 [Base.Screws],
+                item 1 [Base.Doorknob],
+                item 2 [Base.MetalBar],
+                item 1 [Base.RubberHose],
+            }
+        }
+    }
+
+    entity SlidingGateWood2Medium
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_SlidingGateWood2Medium,
+            uiEnabled = false,
+        }
+        component SpriteConfig
+        {
+            skillBaseHealth = 300,
+            dontNeedFrame = true,
+            BreakSound = BreakDoor,
+            face N
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_120 sg_gates_preview_01_121,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_122,
+                    row = sg_gates_preview_01_123,
+                }
+            }
+            face S
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_124 sg_gates_preview_01_125,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_126,
+                    row = sg_gates_preview_01_127,
+                }
+            }
+        }
+        component CraftRecipe
+        {
+            OnAddToMenu = SGGateWoodMediumRecipeTest,
+            timedAction = BuildWallHammer,
+            time = 300,
+            category = Carpentry,
+            SkillRequired = Woodwork:5,
+            xpAward = Woodwork:40,
+            Tooltip = Tooltip_craft_slidingWoodGateDesc,
+            inputs
+            {
+                item 1 tags[base:hammer] mode:keep flags[Prop1;MayDegradeVeryLight],
+                item 1 tags[base:saw] mode:keep flags[MayDegradeVeryLight],
+                item 12 [Base.Plank],
+                item 24 [Base.Nails],
+                item 8 [Base.Screws],
+                item 1 [Base.Doorknob],
+                item 2 [Base.MetalBar],
+                item 1 [Base.RubberHose],
+            }
+        }
+    }
+
+    entity SlidingGateWood2
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_SlidingGateWood2,
+            uiEnabled = false,
+        }
+        component SpriteConfig
+        {
+            skillBaseHealth = 300,
+            dontNeedFrame = true,
+            BreakSound = BreakDoor,
+            face N
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_144 sg_gates_preview_01_145,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_146,
+                    row = sg_gates_preview_01_147,
+                }
+            }
+            face S
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_148 sg_gates_preview_01_149,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_150,
+                    row = sg_gates_preview_01_151,
+                }
+            }
+        }
+        component CraftRecipe
+        {
+            OnAddToMenu = SGGateWoodHighRecipeTest,
+            timedAction = BuildWallHammer,
+            time = 300,
+            category = Carpentry,
+            SkillRequired = Woodwork:7,
+            xpAward = Woodwork:40,
+            Tooltip = Tooltip_craft_slidingWoodGateDesc,
+            inputs
+            {
+                item 1 tags[base:hammer] mode:keep flags[Prop1;MayDegradeVeryLight],
+                item 1 tags[base:saw] mode:keep flags[MayDegradeVeryLight],
+                item 12 [Base.Plank],
+                item 24 [Base.Nails],
+                item 8 [Base.Screws],
+                item 1 [Base.Doorknob],
+                item 2 [Base.MetalBar],
+                item 1 [Base.RubberHose],
+            }
+        }
+    }
+
+    entity SlidingGateWood4Low
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_SlidingGateWood4Low,
+            uiEnabled = false,
+        }
+        component SpriteConfig
+        {
+            skillBaseHealth = 300,
+            dontNeedFrame = true,
+            BreakSound = BreakDoor,
+            face N
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_104 sg_gates_preview_01_105 sg_gates_preview_01_106 sg_gates_preview_01_107,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_108,
+                    row = sg_gates_preview_01_109,
+                    row = sg_gates_preview_01_110,
+                    row = sg_gates_preview_01_111,
+                }
+            }
+            face S
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_112 sg_gates_preview_01_113 sg_gates_preview_01_114 sg_gates_preview_01_115,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_116,
+                    row = sg_gates_preview_01_117,
+                    row = sg_gates_preview_01_118,
+                    row = sg_gates_preview_01_119,
+                }
+            }
+        }
+        component CraftRecipe
+        {
+            OnAddToMenu = SGGateWoodLowRecipeTest,
+            timedAction = BuildWallHammer,
+            time = 500,
+            category = Carpentry,
+            SkillRequired = Woodwork:4,
+            xpAward = Woodwork:50,
+            Tooltip = Tooltip_craft_slidingWoodGateDesc,
+            inputs
+            {
+                item 1 tags[base:hammer] mode:keep flags[Prop1;MayDegradeVeryLight],
+                item 1 tags[base:saw] mode:keep flags[MayDegradeVeryLight],
+                item 20 [Base.Plank],
+                item 40 [Base.Nails],
+                item 8 [Base.Screws],
+                item 2 [Base.Doorknob],
+                item 3 [Base.MetalBar],
+                item 2 [Base.RubberHose],
+            }
+        }
+    }
+
+    entity SlidingGateWood4Medium
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_SlidingGateWood4Medium,
+            uiEnabled = false,
+        }
+        component SpriteConfig
+        {
+            skillBaseHealth = 300,
+            dontNeedFrame = true,
+            BreakSound = BreakDoor,
+            face N
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_128 sg_gates_preview_01_129 sg_gates_preview_01_130 sg_gates_preview_01_131,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_132,
+                    row = sg_gates_preview_01_133,
+                    row = sg_gates_preview_01_134,
+                    row = sg_gates_preview_01_135,
+                }
+            }
+            face S
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_136 sg_gates_preview_01_137 sg_gates_preview_01_138 sg_gates_preview_01_139,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_140,
+                    row = sg_gates_preview_01_141,
+                    row = sg_gates_preview_01_142,
+                    row = sg_gates_preview_01_143,
+                }
+            }
+        }
+        component CraftRecipe
+        {
+            OnAddToMenu = SGGateWoodMediumRecipeTest,
+            timedAction = BuildWallHammer,
+            time = 500,
+            category = Carpentry,
+            SkillRequired = Woodwork:5,
+            xpAward = Woodwork:50,
+            Tooltip = Tooltip_craft_slidingWoodGateDesc,
+            inputs
+            {
+                item 1 tags[base:hammer] mode:keep flags[Prop1;MayDegradeVeryLight],
+                item 1 tags[base:saw] mode:keep flags[MayDegradeVeryLight],
+                item 20 [Base.Plank],
+                item 40 [Base.Nails],
+                item 8 [Base.Screws],
+                item 2 [Base.Doorknob],
+                item 3 [Base.MetalBar],
+                item 2 [Base.RubberHose],
+            }
+        }
+    }
+
+    entity SlidingGateWood4
+    {
+        component UiConfig
+        {
+            xuiSkin = default,
+            entityStyle = ES_SlidingGateWood4,
+            uiEnabled = false,
+        }
+        component SpriteConfig
+        {
+            skillBaseHealth = 300,
+            dontNeedFrame = true,
+            BreakSound = BreakDoor,
+            face N
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_152 sg_gates_preview_01_153 sg_gates_preview_01_154 sg_gates_preview_01_155,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_156,
+                    row = sg_gates_preview_01_157,
+                    row = sg_gates_preview_01_158,
+                    row = sg_gates_preview_01_159,
+                }
+            }
+            face S
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_160 sg_gates_preview_01_161 sg_gates_preview_01_162 sg_gates_preview_01_163,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = sg_gates_preview_01_164,
+                    row = sg_gates_preview_01_165,
+                    row = sg_gates_preview_01_166,
+                    row = sg_gates_preview_01_167,
+                }
+            }
+        }
+        component CraftRecipe
+        {
+            OnAddToMenu = SGGateWoodHighRecipeTest,
+            timedAction = BuildWallHammer,
+            time = 500,
+            category = Carpentry,
+            SkillRequired = Woodwork:7,
+            xpAward = Woodwork:50,
+            Tooltip = Tooltip_craft_slidingWoodGateDesc,
+            inputs
+            {
+                item 1 tags[base:hammer] mode:keep flags[Prop1;MayDegradeVeryLight],
+                item 1 tags[base:saw] mode:keep flags[MayDegradeVeryLight],
+                item 20 [Base.Plank],
+                item 40 [Base.Nails],
+                item 8 [Base.Screws],
+                item 2 [Base.Doorknob],
+                item 3 [Base.MetalBar],
+                item 2 [Base.RubberHose],
+            }
+        }
+    }
+
+}

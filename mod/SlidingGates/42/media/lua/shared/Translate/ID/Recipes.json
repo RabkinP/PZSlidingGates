@@ -6,5 +6,11 @@
     "SlidingGateChainLink2Low": "Gerbang geser (2 petak) (Kualitas rendah)",
     "SlidingGateChainLink2Medium": "Gerbang geser (2 petak) (Kualitas sedang)",
     "SlidingGateChainLink4Low": "Gerbang geser (4 petak) (Kualitas rendah)",
-    "SlidingGateChainLink4Medium": "Gerbang geser (4 petak) (Kualitas sedang)"
+    "SlidingGateChainLink4Medium": "Gerbang geser (4 petak) (Kualitas sedang)",
+    "SlidingGateWood2": "Gerbang geser kayu (2 petak) (Kualitas tinggi)",
+    "SlidingGateWood2Low": "Gerbang geser kayu (2 petak) (Kualitas rendah)",
+    "SlidingGateWood2Medium": "Gerbang geser kayu (2 petak) (Kualitas sedang)",
+    "SlidingGateWood4": "Gerbang geser kayu (4 petak) (Kualitas tinggi)",
+    "SlidingGateWood4Low": "Gerbang geser kayu (4 petak) (Kualitas rendah)",
+    "SlidingGateWood4Medium": "Gerbang geser kayu (4 petak) (Kualitas sedang)"
 }

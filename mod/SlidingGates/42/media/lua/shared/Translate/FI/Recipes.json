@@ -6,5 +6,11 @@
     "SlidingGateChainLink2Low": "Liukuportti (2 ruutua) (Heikko laatu)",
     "SlidingGateChainLink2Medium": "Liukuportti (2 ruutua) (Keskitasoinen laatu)",
     "SlidingGateChainLink4Low": "Liukuportti (4 ruutua) (Heikko laatu)",
-    "SlidingGateChainLink4Medium": "Liukuportti (4 ruutua) (Keskitasoinen laatu)"
+    "SlidingGateChainLink4Medium": "Liukuportti (4 ruutua) (Keskitasoinen laatu)",
+    "SlidingGateWood2": "Puinen liukuportti (2 ruutua) (Korkea laatu)",
+    "SlidingGateWood2Low": "Puinen liukuportti (2 ruutua) (Heikko laatu)",
+    "SlidingGateWood2Medium": "Puinen liukuportti (2 ruutua) (Keskitasoinen laatu)",
+    "SlidingGateWood4": "Puinen liukuportti (4 ruutua) (Korkea laatu)",
+    "SlidingGateWood4Low": "Puinen liukuportti (4 ruutua) (Heikko laatu)",
+    "SlidingGateWood4Medium": "Puinen liukuportti (4 ruutua) (Keskitasoinen laatu)"
 }

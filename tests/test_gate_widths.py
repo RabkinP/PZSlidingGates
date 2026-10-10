@@ -130,10 +130,10 @@ for width in (2,4):
     lua.globals().width=width
     lua.execute(r'''
 local kind=width==2 and 'chainlink' or 'chainlink4'
-local id=SGGate.build(square(30,20,0),kind,100)
+local id=SGGate.build(square(30,20,0),kind,5)
 assert(id=='30,20,0')
 local leaf=partsWithRole(id,'leaf')[1]
-assert(leaf.health==(width==2 and 400 or 550))
+assert(leaf.health==1500)
 assert(#partsWithRole(id,'slave')==width)
 assert(#partsWithRole(id,'rail')==2*width)
 assert(#partsWithRole(id,'collider')==width)

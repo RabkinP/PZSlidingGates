@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "Nincs áram vagy elegendő akkumulátortöltés.",
     "Tooltip_SG_BatteryCompartment": "Tegyél egy autóakkumulátort a meghajtás rekeszébe. A hálózati áram tölti.",
     "Tooltip_SG_GateRemote": "Párosítsd egy közeli meghajtással. Egy meghajtást vezérel 20 mező sugarú körben, ugyanazon a szinten; a falak nem blokkolják a jelet. Használd a leltárból vagy beállítható gyorsbillentyűvel.",
-    "Tooltip_SG_RemoteUnavailable": "Nincs nálad megfelelő távirányító, vagy nincs kapu hatótávolságon belül."
+    "Tooltip_SG_RemoteUnavailable": "Nincs nálad megfelelő távirányító, vagy nincs kapu hatótávolságon belül.",
+    "Tooltip_craft_slidingWoodGateDesc": "Fa kapu, amely sínen csúszik a kerítés mentén.<br>A deszkák merevített fakeretre vannak szögelve; fémrudak alkotják a fogaslécet és a tengelyeket, a görgőket gumitömlő borítja."
 }

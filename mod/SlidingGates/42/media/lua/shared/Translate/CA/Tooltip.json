@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "No hi ha electricitat ni prou càrrega a la bateria.",
     "Tooltip_SG_BatteryCompartment": "Posa una bateria de cotxe al compartiment del motor. L’electricitat de la xarxa la recarrega.",
     "Tooltip_SG_GateRemote": "Vincula’l a un motor proper. Controla un motor en un radi de 20 caselles a la mateixa planta; les parets no bloquegen el senyal. Utilitza’l des de l’inventari o amb la tecla configurable.",
-    "Tooltip_SG_RemoteUnavailable": "No portes un comandament vinculat o no hi ha una porta dins de l’abast."
+    "Tooltip_SG_RemoteUnavailable": "No portes un comandament vinculat o no hi ha una porta dins de l’abast.",
+    "Tooltip_craft_slidingWoodGateDesc": "Una porta de fusta que llisca al llarg de la tanca sobre un rail.<br>Taulons clavats a un marc de fusta travat; barres de metall formen la cremallera i els eixos, i els corrons estan folrats amb mànega de goma."
 }

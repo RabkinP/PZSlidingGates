@@ -15,7 +15,7 @@ MOD = ROOT / 'mod/SlidingGates'
 MEDIA = MOD / '42/media'
 TILESET = 'sg_gates_preview_01'
 FILE_NUMBER = 6842
-COUNT = 96  # quality footprints append 48..95; preserve all existing indices
+COUNT = 184  # wooden footprints 96..167, static carriers 168..183
 
 
 def integer(n):
@@ -82,6 +82,19 @@ def bindings():
                 result[index]=dict(modelScript=f'Base.{prefix}_{quality}_N_'+('Reverse' if reverse else 'Right'),
                     translate=f'-0.38 0 {-tx}' if west else f'{tx} 0 -0.38',
                     rotate='0 90 0' if west else '0 0 0',scale='1',animation='Open',animationTime='0')
+    for quality, start in (('Low',96),('Medium',120),('',144)):
+        for width, offset in ((2,0),(4,8)):
+            prefix = 'SG_Wood' if width == 2 else 'SG_Wood_4'
+            for face, leaf_index in ((0,width-1),(1,0),(2,0),(3,width-1)):
+                index=start+offset+face*width+leaf_index
+                west=face in (1,3); reverse=face in (2,3);tx=-.5 if reverse else .5
+                result[index]=dict(modelScript=f'Base.{prefix}'+('_'+quality if quality else '')+'_N_'+('Reverse' if reverse else 'Right'),
+                    translate=f'-0.38 0 {-tx}' if west else f'{tx} 0 -0.38',
+                    rotate='0 90 0' if west else '0 0 0',scale='1',animation='Open',animationTime='0')
+    for original, target in ((8,168),(16,172),(36,176),(40,180)):
+        for k in range(4):
+            result[target+k]=dict(result[original+k])
+            result[target+k]['modelScript']=result[target+k]['modelScript'].replace('Base.SG_', 'Base.SG_Wood_')
     return result
 
 

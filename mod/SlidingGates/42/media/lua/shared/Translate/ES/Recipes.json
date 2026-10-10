@@ -6,5 +6,11 @@
     "SlidingGateChainLink2Low": "Puerta corredera (2 casillas) (Calidad baja)",
     "SlidingGateChainLink2Medium": "Puerta corredera (2 casillas) (Calidad media)",
     "SlidingGateChainLink4Low": "Puerta corredera (4 casillas) (Calidad baja)",
-    "SlidingGateChainLink4Medium": "Puerta corredera (4 casillas) (Calidad media)"
+    "SlidingGateChainLink4Medium": "Puerta corredera (4 casillas) (Calidad media)",
+    "SlidingGateWood2": "Puerta corredera de madera (2 casillas) (Calidad alta)",
+    "SlidingGateWood2Low": "Puerta corredera de madera (2 casillas) (Calidad baja)",
+    "SlidingGateWood2Medium": "Puerta corredera de madera (2 casillas) (Calidad media)",
+    "SlidingGateWood4": "Puerta corredera de madera (4 casillas) (Calidad alta)",
+    "SlidingGateWood4Low": "Puerta corredera de madera (4 casillas) (Calidad baja)",
+    "SlidingGateWood4Medium": "Puerta corredera de madera (4 casillas) (Calidad media)"
 }

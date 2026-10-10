@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "Geen stroom of voldoende acculading.",
     "Tooltip_SG_BatteryCompartment": "Plaats één autoaccu in het accuvak van de aandrijving. Netstroom laadt deze op.",
     "Tooltip_SG_GateRemote": "Koppel aan een aandrijving dichtbij. Bedient één aandrijving binnen 20 vakken op dezelfde verdieping; muren blokkeren het signaal niet. Gebruik vanuit de inventaris of met de instelbare sneltoets.",
-    "Tooltip_SG_RemoteUnavailable": "Geen passende afstandsbediening bij je of geen poort binnen bereik."
+    "Tooltip_SG_RemoteUnavailable": "Geen passende afstandsbediening bij je of geen poort binnen bereik.",
+    "Tooltip_craft_slidingWoodGateDesc": "Een houten poort die over een rail langs het hek schuift.<br>Planken zijn op een geschoord houten frame genageld; metalen staven vormen de tandheugel en assen, en de rollen zijn bekleed met rubberslang."
 }

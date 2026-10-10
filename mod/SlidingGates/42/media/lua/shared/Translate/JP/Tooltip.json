@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "電力またはバッテリーの充電が不足しています。",
     "Tooltip_SG_BatteryCompartment": "駆動装置の収納部に車のバッテリーを1個入れてください。電力があると充電されます。",
     "Tooltip_SG_GateRemote": "近くの駆動装置に登録してください。同じ階の20マス以内にある1台を操作でき、壁は信号を遮りません。所持品から、または設定可能なショートカットキーで使用します。",
-    "Tooltip_SG_RemoteUnavailable": "対応するリモコンを持っていないか、範囲内にゲートがありません。"
+    "Tooltip_SG_RemoteUnavailable": "対応するリモコンを持っていないか、範囲内にゲートがありません。",
+    "Tooltip_craft_slidingWoodGateDesc": "レールに沿ってフェンス沿いにスライドする木製ゲート。<br>筋交い入りの木枠に板を釘打ちし、金属棒でラックと車軸を作り、ローラーにはゴムホースを巻いてある。"
 }

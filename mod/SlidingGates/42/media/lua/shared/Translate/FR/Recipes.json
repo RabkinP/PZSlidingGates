@@ -6,5 +6,11 @@
     "SlidingGateChainLink2Low": "Portail coulissant (2 cases) (Qualité faible)",
     "SlidingGateChainLink2Medium": "Portail coulissant (2 cases) (Qualité moyenne)",
     "SlidingGateChainLink4Low": "Portail coulissant (4 cases) (Qualité faible)",
-    "SlidingGateChainLink4Medium": "Portail coulissant (4 cases) (Qualité moyenne)"
+    "SlidingGateChainLink4Medium": "Portail coulissant (4 cases) (Qualité moyenne)",
+    "SlidingGateWood2": "Portail coulissant en bois (2 cases) (Qualité élevée)",
+    "SlidingGateWood2Low": "Portail coulissant en bois (2 cases) (Qualité faible)",
+    "SlidingGateWood2Medium": "Portail coulissant en bois (2 cases) (Qualité moyenne)",
+    "SlidingGateWood4": "Portail coulissant en bois (4 cases) (Qualité élevée)",
+    "SlidingGateWood4Low": "Portail coulissant en bois (4 cases) (Qualité faible)",
+    "SlidingGateWood4Medium": "Portail coulissant en bois (4 cases) (Qualité moyenne)"
 }

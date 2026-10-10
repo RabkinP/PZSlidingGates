@@ -1,0 +1,338 @@
+[
+  {
+    "scene": "SG_Wood_2_high_Damage1_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_high_Damage2_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_high_Damage3_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_high_Reverse_Damage1_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_high_Reverse_Damage2_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_high_Reverse_Damage3_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_high_Reverse_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_high_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_low_Damage1_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_low_Damage2_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_low_Damage3_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_low_Reverse_Damage1_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_low_Reverse_Damage2_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_low_Reverse_Damage3_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_low_Reverse_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_low_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_medium_Damage1_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_medium_Damage2_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_medium_Damage3_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_medium_Reverse_Damage1_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_medium_Reverse_Damage2_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_medium_Reverse_Damage3_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_medium_Reverse_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_2_medium_Workbench",
+    "frames": 146,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_high_Damage1_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_high_Damage2_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_high_Damage3_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_high_Reverse_Damage1_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_high_Reverse_Damage2_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_high_Reverse_Damage3_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_high_Reverse_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_high_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_low_Damage1_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_low_Damage2_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_low_Damage3_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_low_Reverse_Damage1_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_low_Reverse_Damage2_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_low_Reverse_Damage3_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_low_Reverse_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_low_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_medium_Damage1_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_medium_Damage2_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_medium_Damage3_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_medium_Reverse_Damage1_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_medium_Reverse_Damage2_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_medium_Reverse_Damage3_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_medium_Reverse_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  },
+  {
+    "scene": "SG_Wood_4_medium_Workbench",
+    "frames": 290,
+    "collisions": [],
+    "rail_capture": true,
+    "rigid_weights": true
+  }
+]

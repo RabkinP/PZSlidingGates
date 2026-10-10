@@ -90,7 +90,7 @@ features; multiplayer has not been run yet and has only mock-based verification.
   interaction uses shared timed actions and explicit server commands without a
   second toggle on the timed action's server completion.
 
-The four-cell base health is 450, plus 50 per welding level. Existing saved
+Gate health follows vanilla thumpables: build-skill level × 300 (welding or carpentry, minimum 4). Existing saved
 assemblies retain their recorded health; the entity description now agrees with Lua.
 
 ## Verification

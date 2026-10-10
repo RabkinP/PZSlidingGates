@@ -24,6 +24,62 @@ local deferredSquares = {}
 local cleanupSquare
 local removingParts = 0
 
+-- Versioned migrations of saved data, applied once per registry entry and per loaded part.
+-- Each step upgrades from version-1 to version; append new steps and raise SGGate.DATA_VERSION.
+local DOOR_ROLES = { leaf = true, slave = true, block = true }
+-- Version 1 health: base + per-level bonus (+ quality bonus for unreleased wood builds).
+local LEGACY_HEALTH = {
+    chainlink = { base = 300, perLevel = 50 }, chainlink4 = { base = 450, perLevel = 50 },
+    wood = { base = 450, perLevel = 20, quality = { medium = 100, high = 200 } },
+    wood4 = { base = 650, perLevel = 20, quality = { medium = 100, high = 200 } },
+}
+local MIGRATIONS = {
+    [2] = {
+        -- Vanilla health: builder level x baseHealth. The level is recovered from the recorded health.
+        entry = function(id, entry)
+            local typeId = entry.type or (entry.width == 4 and "chainlink4" or "chainlink")
+            local legacy, t = LEGACY_HEALTH[typeId], TYPES[typeId]
+            if not legacy or not t then return end
+            local bonus = legacy.quality and legacy.quality[entry.quality] or 0
+            local level = math.floor(((entry.health or legacy.base) - legacy.base - bonus) / legacy.perLevel + 0.5)
+            entry.health = t.baseHealth * math.max(math.min(level, 10), SGGate.MIN_BUILD_LEVEL)
+        end,
+        -- Keep each carrier's damage fraction of its old maximum.
+        part = function(obj, entry)
+            if not DOOR_ROLES[obj:getModData().sgRole] or not entry.health then return end
+            local maximum = obj:getMaxHealth()
+            local ratio = maximum and maximum > 0 and math.max(0, math.min(1, obj:getHealth() / maximum)) or 1
+            obj:setMaxHealth(entry.health)
+            obj:setHealth(math.max(1, math.floor(entry.health * ratio + 0.5)))
+        end,
+    },
+}
+
+local function migrateEntry(id, entry)
+    local version = entry.version or 1
+    while version < SGGate.DATA_VERSION do
+        version = version + 1
+        local step = MIGRATIONS[version]
+        if step and step.entry then step.entry(id, entry) end
+    end
+    entry.version = version
+end
+
+-- Upgrade a loaded part to its registry entry's layout; parts load later than the registry.
+local function migratePart(obj, entry)
+    local md = obj:getModData()
+    local version = md.sgVersion or 1
+    if version >= SGGate.DATA_VERSION then return end
+    while version < SGGate.DATA_VERSION do
+        version = version + 1
+        local step = MIGRATIONS[version]
+        if step and step.part then step.part(obj, entry) end
+    end
+    md.sgVersion = version
+    if obj.flagForHotSave then obj:flagForHotSave() end
+end
+SGGate.migratePart = migratePart
+
 function SGGate.ensureIdentity(id)
     local gates = SGGate.registry()
     local entry = gates[id]
@@ -40,6 +96,7 @@ function SGGate.ensureIdentity(id)
     entry.direction = entry.direction or SGGate.direction(id)
     entry.quality = entry.quality or SGGate.quality(id)
     entry.damage = entry.damage or 0
+    if (entry.version or 1) < SGGate.DATA_VERSION then migrateEntry(id, entry) end
     return entry
 end
 
@@ -115,7 +172,7 @@ local gateWidth = SGGate.gateWidth
 local function gateHealth(id, typeId)
     local entry = (ModData.getOrCreate("SlidingGates").gates or {})[id]
     if type(entry) == "table" and entry.health then return entry.health end
-    return TYPES[typeId] and TYPES[typeId].baseHealth or 300
+    return (TYPES[typeId] and TYPES[typeId].baseHealth or 300) * SGGate.MIN_BUILD_LEVEL
 end
 
 local function log(msg)
@@ -133,6 +190,9 @@ local function opaquePair(id)
     return SGGate.orientation(id) == "W" and { "fixtures_doors_01_68", "fixtures_doors_01_70" } or OPAQUE_DOOR_SPRITES
 end
 local function staticModel(id, name)
+    local entry = SGGate.registry()[id]
+    local t = type(entry) == "table" and TYPES[entry.type]
+    if t and t.staticPrefix then name = name:gsub("^SG_", t.staticPrefix .. "_") end
     if SGGate.direction(id) == "reverse" then name = name .. "_Reverse" end
     return name .. (SGGate.orientation(id) == "W" and "_W_Static" or "_Static")
 end
@@ -150,6 +210,7 @@ local function tag(obj, id, role, extra)
         d.sgQuality = entry.quality
         d.sgDamage = entry.damage
     end
+    d.sgVersion = SGGate.DATA_VERSION
     if extra then for k, v in pairs(extra) do d[k] = v end end
 end
 
@@ -227,7 +288,8 @@ local function addPocketBlockers(id, typeId, x, y, z)
 end
 
 -- Build a gate without drive. sq is the catcher cell; the master is one travel cell away.
-function SGGate.build(sq, typeId, healthBonus, orientation, direction, quality)
+-- skillLevel: builder's level of the type's skill; health = level x baseHealth, as vanilla thumpables.
+function SGGate.build(sq, typeId, skillLevel, orientation, direction, quality)
     typeId = typeId or "chainlink"
     orientation = orientation or "N"
     direction = direction or "forward"
@@ -239,7 +301,8 @@ function SGGate.build(sq, typeId, healthBonus, orientation, direction, quality)
     local width = t.width
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
     local id = x .. "," .. y .. "," .. z
-    registry()[id] = { width = width, type = typeId, orientation = orientation, direction = direction, quality = quality, health = t.baseHealth + (healthBonus or 0) }
+    registry()[id] = { version = SGGate.DATA_VERSION, width = width, type = typeId, orientation = orientation, direction = direction, quality = quality,
+        health = t.baseHealth * math.max(tonumber(skillLevel) or 0, SGGate.MIN_BUILD_LEVEL) }
     local model = SGGate.leafModel(typeId, orientation, direction, quality)
     makeDoor(gateCell(id, x, y, z, 1), typeId, id, "leaf", model)
     for k = 1, width do makeDoor(gateCell(id, x, y, z, k), typeId, id, "slave", "SG_Hidden") end -- collision of the opening
@@ -636,6 +699,7 @@ local function recover()
             if not md.sgInstance then md.sgInstance, md.sgWidth, md.sgOrientation = entry.instance, entry.width, entry.orientation end
             md.sgDirection = md.sgDirection or entry.direction
             md.sgQuality = md.sgQuality or entry.quality
+            migratePart(part, entry)
         end
         if type(e) == "table" and e.moving ~= nil then
             local ok, done = pcall(finalize, id)
@@ -782,6 +846,7 @@ cleanupSquare = function(square)
                 md.sgQuality = entry.quality
                 md.sgDamage = entry.damage
                 if md.sgRole == "leaf" then md.sgRevision = entry.revision end
+                migratePart(obj, entry)
                 SGGate.applyModel(obj)
             end
         end

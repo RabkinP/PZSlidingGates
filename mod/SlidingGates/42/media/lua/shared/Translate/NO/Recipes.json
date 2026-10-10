@@ -6,5 +6,11 @@
     "SlidingGateChainLink2Low": "Skyveport (2 ruter) (Lav kvalitet)",
     "SlidingGateChainLink2Medium": "Skyveport (2 ruter) (Middels kvalitet)",
     "SlidingGateChainLink4Low": "Skyveport (4 ruter) (Lav kvalitet)",
-    "SlidingGateChainLink4Medium": "Skyveport (4 ruter) (Middels kvalitet)"
+    "SlidingGateChainLink4Medium": "Skyveport (4 ruter) (Middels kvalitet)",
+    "SlidingGateWood2": "Skyveport av tre (2 ruter) (Høy kvalitet)",
+    "SlidingGateWood2Low": "Skyveport av tre (2 ruter) (Lav kvalitet)",
+    "SlidingGateWood2Medium": "Skyveport av tre (2 ruter) (Middels kvalitet)",
+    "SlidingGateWood4": "Skyveport av tre (4 ruter) (Høy kvalitet)",
+    "SlidingGateWood4Low": "Skyveport av tre (4 ruter) (Lav kvalitet)",
+    "SlidingGateWood4Medium": "Skyveport av tre (4 ruter) (Middels kvalitet)"
 }

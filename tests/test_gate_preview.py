@@ -158,13 +158,13 @@ for _,width in ipairs({2,4}) do
  local b=builder(width)
  b.character={getPerkLevel=function() return 8 end}
  b:create(100,200,0,true)
- assert(built[1]==100+width and built[4]==(width==2 and 'chainlink' or 'chainlink4') and built[5]==400 and built[8]=='high')
+ assert(built[1]==100+width and built[4]==(width==2 and 'chainlink' or 'chainlink4') and built[5]==8 and built[8]=='high')
 end
 assert(worldWrites==2 and baseCreates==2)
 for _,width in ipairs({2,4}) do
  local b=builder(width,1); b.character={getPerkLevel=function() return 8 end}
  valid=true; b:create(100,200,0,false)
- assert(built[1]==100 and built[2]==199 and built[6]=='W' and built[5]==400 and built[8]=='high')
+ assert(built[1]==100 and built[2]==199 and built[6]=='W' and built[5]==8 and built[8]=='high')
 end
 assert(worldWrites==4 and baseCreates==4)
 -- Boundary levels select the native recipe tier and its unique preview carrier.
@@ -188,7 +188,7 @@ for _,width in ipairs({2,4}) do
    for _,c in ipairs(calls) do if c[1]=='sg_gates_preview_01_'..leafIndex then found=true end end
    assert(found)
    b:create(100,200,0,not west)
-   assert(built[5]==level*50 and built[8]==SGGate.qualityForLevel(level))
+   assert(built[5]==level and built[8]==SGGate.qualityForLevel(level))
   end
   local wrong=level<8 and builder(width,2) or builder(width,2,'Low');wrong.character=character
   assert(not wrong:isValid(square(100,200,0)))

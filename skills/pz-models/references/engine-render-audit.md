@@ -20,6 +20,36 @@ ModelManager, отличаются. Сравнение — в `render-audit/mani
 
 ## Что подтверждено кодом
 
+### Деревянные ворота (2026-10-10)
+
+Fingerprint установленного JAR совпадает с указанным выше. Текущие
+`entity_wood_walllvl1/2/3.txt` задают Woodwork 2/4/6, health 450/550/650,
+skillBaseHealth 20 и sprites `walls_exterior_wooden_01_44/45`, `40/41`, `24/25`.
+`entity_wood_doubledoor.txt` требует Woodwork 4 и два Base.Doorknob.
+Пороги деревянных откатных ворот 4/5/7 — согласованное решение мода.
+
+Текущий `generated/items/normal.txt`, item Doorknob: Icon DoorKnob,
+WorldStaticModel DoorKnob, MetalValue 10 и tag base:hasmetal. Native FBX/texture
+находятся в `media/models_X/WorldItems/DoorKnob.fbx` и
+`media/textures/WorldItems/DoorKnob.png`. Деревянность ворот не означает
+деревянную штатную ручку. Подтверждено импортом FBX в Blender и чтением recipes.
+
+Бинарный `media/newtiledefinitions.tiles` прочитан по текущему tdef v1:
+carpentry_01_48/49 имеют doorW/doorN и MaterialType Wood, без doorTrans;
+50/51 — открытые sprites без doorW/doorN. Это обосновывает деревянные непрозрачные
+collision carriers; финальные vision/cutaway в мире ещё требуют игровой проверки.
+Текущий `lua/shared/Moveables/ISMoveableDefinitions.lua` определяет material Wood
+и разборку через молоток/Perks.Woodwork. Собственный material yield мода
+по-прежнему подавляет штатную выдачу от carrier sprites.
+
+`research/probe-wood-native.py` успешно проверяет 56 model scripts,
+48 animationMeshes, 208 spriteModels и шесть CraftRecipe с Woodwork 4/5/7
+через текущие ScriptManager/ScriptBucketCollection. Native JNI импорт всех
+56 GLB: `art/wood_native_import.txt`; проба сообщает counts и один vertex/normal/UV.
+`research/probe-gate-tiles.py` теперь проверяет все 184 preview sprites,
+PNG 1024×5888, `.tiles` и spriteModel bindings. Прежние indices 0..95 сохранены.
+Проверки не являются подтверждением игрового вида или реального MP.
+
 ### Стадии повреждения ворот (2026-10-10)
 
 Fingerprint установленного JAR совпадает с указанным выше. В текущем

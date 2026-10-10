@@ -8,6 +8,10 @@ The maintained engine evidence is `skills/pz-models/references/engine-render-aud
 
 ## Current gate invariants
 
+- Wooden gates: `wood`/`wood4` are separate saved type IDs, widths 2/4, all four directions and the existing travel profile. Carpentry minimum 4; low 4, medium 5–6, high 7+. Quality is fixed at construction. Timber posts, frame, boards, guide rails, brackets and drive mounting plinth; native `Base.Doorknob` geometry/texture, metal rack/axes/drive internals and rubber wheel/roller surfaces. Two-cell has one outward knob; four-cell has two. Low-quality knob plates tilt and four-cell knobs differ in height; medium/high are aligned. Damage1 breaks selected boards in half, Damage2 breaks more, Damage3 additionally breaks each diagonal; both board halves remain secured to their crossbars and no human passage appears. Outer frame and running surfaces remain intact. Source workbenches are `SG_Wood_*` in `art/SG_ChainLink.blend`; `sg_material=wood`. Use only `art/export_wood_variants.py` and `tools/register_wood_models.py`; chain-link/quality/damage exporters skip or refuse wood. Details/evidence: `art/WOOD_VARIANTS.md`, `wood_motion_checks.json`, `wood_native_import.txt`, `tests/test_gate_wood.py`. Preview footprint indices 96..167 and wooden static parts 168..183 are append-only.
+
+- Wooden frame geometry: four-cell leaves have a central 90 mm upright; diagonal ends are clipped to each bay's frame opening and abut the timbers. Boards reach the bottom timber at Z .18; bottom timber spans .095..180, preserving clearance above the lower catcher slot. Medium quality mixes straight/leaning boards and variable gaps without overlapping adjacent upper ends. Preserve these joints in all quality, reverse and damage variants.
+
 - Damage visuals: intact plus stages 1/2/3 at <=75/50/25% health, independent of construction quality. Preserve small wire tears with crossing infill; never create a visually human-sized passage while collision is intact. Sources/export/checks: `art/DAMAGE_VARIANTS.md`. `art/export_damage_variants.py` and `tools/register_damage_models.py` handle damage assets separately; never run the general exporter on damage scenes. Authority retains the worst observed stage across chunk unloads and defers model replacement until motion ends.
 
 - Source: `art/SG_ChainLink.blend`. Work through the existing Blender MCP instance when available. Inspect its active file/scene first.
@@ -26,6 +30,8 @@ The maintained engine evidence is `skills/pz-models/references/engine-render-aud
 Use `art/update_straight_slide.py` and `art/export_chainlink.py` after inspecting them; `build_chainlink.py` is a builder that can alter the active scene and should not be blindly rerun on a finished workbench. Relevant checks include two-cell bounds, both clips, continuous roller capture, motor/post intersections and native import. The PZ preview is approximate; only gameplay tests establish final appearance.
 
 `art/README.md` records historical designs. Its tail, long-beam and earlier placement sections are superseded by the current invariants above. Update these rules when an authorized design change alters them.
+
+- Saved data is versioned: registry `entry.version` and part `modData.sgVersion` (absent = 1), current `SGGate.DATA_VERSION`. Any change to saved meaning (health, model names, roles) raises the version and appends a step to `MIGRATIONS` in `SG_GateCore.lua` (`entry` runs once per registry entry via `ensureIdentity`; `part` runs when each part loads). Version 2 converts old health (base + per-level bonus) to vanilla level × 300, keeping each carrier's damage fraction. Verify with `tests/test_gate_migration.py`.
 
 ## Construction preview resources
 

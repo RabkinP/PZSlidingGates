@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "Sem eletricidade ou carga suficiente na bateria.",
     "Tooltip_SG_BatteryCompartment": "Coloque uma bateria de carro no compartimento do motor. A eletricidade da rede a recarrega.",
     "Tooltip_SG_GateRemote": "Vincule a um motor próximo. Controla um motor em um raio de 20 quadrados no mesmo andar; as paredes não bloqueiam o sinal. Use pelo inventário ou com a tecla configurável.",
-    "Tooltip_SG_RemoteUnavailable": "Você não carrega um controle correspondente ou não há um portão ao alcance."
+    "Tooltip_SG_RemoteUnavailable": "Você não carrega um controle correspondente ou não há um portão ao alcance.",
+    "Tooltip_craft_slidingWoodGateDesc": "Um portão de madeira que desliza ao longo da cerca sobre um trilho.<br>Tábuas pregadas em uma estrutura de madeira travada; barras de metal formam a cremalheira e os eixos, e os roletes são revestidos com mangueira de borracha."
 }

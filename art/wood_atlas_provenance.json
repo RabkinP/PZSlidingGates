@@ -1,0 +1,15 @@
+{
+  "timber": "Installed Tiles2x.pack: walls_exterior_wooden_01_25, interior grain crops; quality is geometry.",
+  "doorknob": "Installed media/textures/WorldItems/DoorKnob.png; native FBX UV retained within atlas tile 5.",
+  "opaque": true,
+  "swatches": {
+    "0": "wood",
+    "1": "light wood",
+    "2": "dark wood",
+    "3": "weathered wood",
+    "4": "steel",
+    "5": "native doorknob",
+    "6": "rubber",
+    "7": "fasteners"
+  }
+}

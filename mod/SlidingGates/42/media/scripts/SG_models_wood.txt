@@ -1,0 +1,2891 @@
+module Base
+{
+    animationsMesh SG_Wood_N_Right
+    {
+        meshFile = IsoObject/SG_Wood_N_Right,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_N_Right
+    {
+        mesh = IsoObject/SG_Wood_N_Right,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_N_Right,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Open
+    {
+        modelScript = Base.SG_Wood_N_Right,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_G_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_G_Open
+    {
+        modelScript = Base.SG_Wood_N_Right,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_N_Right_Damage1
+    {
+        meshFile = IsoObject/SG_Wood_N_Right_Damage1,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_N_Right_Damage1
+    {
+        mesh = IsoObject/SG_Wood_N_Right_Damage1,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_N_Right_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_N_Right_Damage2
+    {
+        meshFile = IsoObject/SG_Wood_N_Right_Damage2,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_N_Right_Damage2
+    {
+        mesh = IsoObject/SG_Wood_N_Right_Damage2,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_N_Right_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_N_Right_Damage3
+    {
+        meshFile = IsoObject/SG_Wood_N_Right_Damage3,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_N_Right_Damage3
+    {
+        mesh = IsoObject/SG_Wood_N_Right_Damage3,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_N_Right_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_N_Reverse
+    {
+        meshFile = IsoObject/SG_Wood_N_Reverse,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_N_Reverse
+    {
+        mesh = IsoObject/SG_Wood_N_Reverse,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_N_Reverse,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_N_Reverse_Damage1
+    {
+        meshFile = IsoObject/SG_Wood_N_Reverse_Damage1,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_N_Reverse_Damage1
+    {
+        mesh = IsoObject/SG_Wood_N_Reverse_Damage1,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_N_Reverse_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_N_Reverse_Damage2
+    {
+        meshFile = IsoObject/SG_Wood_N_Reverse_Damage2,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_N_Reverse_Damage2
+    {
+        mesh = IsoObject/SG_Wood_N_Reverse_Damage2,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_N_Reverse_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_N_Reverse_Damage3
+    {
+        meshFile = IsoObject/SG_Wood_N_Reverse_Damage3,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_N_Reverse_Damage3
+    {
+        mesh = IsoObject/SG_Wood_N_Reverse_Damage3,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_N_Reverse_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Low_N_Right
+    {
+        meshFile = IsoObject/SG_Wood_Low_N_Right,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Low_N_Right
+    {
+        mesh = IsoObject/SG_Wood_Low_N_Right,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Low_N_Right,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Low_N_Right_Damage1
+    {
+        meshFile = IsoObject/SG_Wood_Low_N_Right_Damage1,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Low_N_Right_Damage1
+    {
+        mesh = IsoObject/SG_Wood_Low_N_Right_Damage1,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Low_N_Right_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Low_N_Right_Damage2
+    {
+        meshFile = IsoObject/SG_Wood_Low_N_Right_Damage2,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Low_N_Right_Damage2
+    {
+        mesh = IsoObject/SG_Wood_Low_N_Right_Damage2,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Low_N_Right_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Low_N_Right_Damage3
+    {
+        meshFile = IsoObject/SG_Wood_Low_N_Right_Damage3,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Low_N_Right_Damage3
+    {
+        mesh = IsoObject/SG_Wood_Low_N_Right_Damage3,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Low_N_Right_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Low_N_Reverse
+    {
+        meshFile = IsoObject/SG_Wood_Low_N_Reverse,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Low_N_Reverse
+    {
+        mesh = IsoObject/SG_Wood_Low_N_Reverse,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Low_N_Reverse,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Low_N_Reverse_Damage1
+    {
+        meshFile = IsoObject/SG_Wood_Low_N_Reverse_Damage1,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Low_N_Reverse_Damage1
+    {
+        mesh = IsoObject/SG_Wood_Low_N_Reverse_Damage1,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Low_N_Reverse_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Low_N_Reverse_Damage2
+    {
+        meshFile = IsoObject/SG_Wood_Low_N_Reverse_Damage2,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Low_N_Reverse_Damage2
+    {
+        mesh = IsoObject/SG_Wood_Low_N_Reverse_Damage2,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Low_N_Reverse_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Low_N_Reverse_Damage3
+    {
+        meshFile = IsoObject/SG_Wood_Low_N_Reverse_Damage3,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Low_N_Reverse_Damage3
+    {
+        mesh = IsoObject/SG_Wood_Low_N_Reverse_Damage3,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Low_N_Reverse_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Medium_N_Right
+    {
+        meshFile = IsoObject/SG_Wood_Medium_N_Right,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Medium_N_Right
+    {
+        mesh = IsoObject/SG_Wood_Medium_N_Right,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Medium_N_Right,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Medium_N_Right_Damage1
+    {
+        meshFile = IsoObject/SG_Wood_Medium_N_Right_Damage1,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Medium_N_Right_Damage1
+    {
+        mesh = IsoObject/SG_Wood_Medium_N_Right_Damage1,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Medium_N_Right_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Medium_N_Right_Damage2
+    {
+        meshFile = IsoObject/SG_Wood_Medium_N_Right_Damage2,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Medium_N_Right_Damage2
+    {
+        mesh = IsoObject/SG_Wood_Medium_N_Right_Damage2,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Medium_N_Right_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Medium_N_Right_Damage3
+    {
+        meshFile = IsoObject/SG_Wood_Medium_N_Right_Damage3,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Medium_N_Right_Damage3
+    {
+        mesh = IsoObject/SG_Wood_Medium_N_Right_Damage3,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Medium_N_Right_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Medium_N_Reverse
+    {
+        meshFile = IsoObject/SG_Wood_Medium_N_Reverse,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Medium_N_Reverse
+    {
+        mesh = IsoObject/SG_Wood_Medium_N_Reverse,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Medium_N_Reverse,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Medium_N_Reverse_Damage1
+    {
+        meshFile = IsoObject/SG_Wood_Medium_N_Reverse_Damage1,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Medium_N_Reverse_Damage1
+    {
+        mesh = IsoObject/SG_Wood_Medium_N_Reverse_Damage1,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Medium_N_Reverse_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Medium_N_Reverse_Damage2
+    {
+        meshFile = IsoObject/SG_Wood_Medium_N_Reverse_Damage2,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Medium_N_Reverse_Damage2
+    {
+        mesh = IsoObject/SG_Wood_Medium_N_Reverse_Damage2,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Medium_N_Reverse_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_Medium_N_Reverse_Damage3
+    {
+        meshFile = IsoObject/SG_Wood_Medium_N_Reverse_Damage3,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_Medium_N_Reverse_Damage3
+    {
+        mesh = IsoObject/SG_Wood_Medium_N_Reverse_Damage3,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_Medium_N_Reverse_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    animationsMesh SG_Wood_4_N_Right
+    {
+        meshFile = IsoObject/SG_Wood_4_N_Right,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_N_Right
+    {
+        mesh = IsoObject/SG_Wood_4_N_Right,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_N_Right,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_G_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_G_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_N_Right_Damage1
+    {
+        meshFile = IsoObject/SG_Wood_4_N_Right_Damage1,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_N_Right_Damage1
+    {
+        mesh = IsoObject/SG_Wood_4_N_Right_Damage1,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_N_Right_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_N_Right_Damage2
+    {
+        meshFile = IsoObject/SG_Wood_4_N_Right_Damage2,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_N_Right_Damage2
+    {
+        mesh = IsoObject/SG_Wood_4_N_Right_Damage2,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_N_Right_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_N_Right_Damage3
+    {
+        meshFile = IsoObject/SG_Wood_4_N_Right_Damage3,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_N_Right_Damage3
+    {
+        mesh = IsoObject/SG_Wood_4_N_Right_Damage3,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_N_Right_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_N_Reverse
+    {
+        meshFile = IsoObject/SG_Wood_4_N_Reverse,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_N_Reverse
+    {
+        mesh = IsoObject/SG_Wood_4_N_Reverse,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_N_Reverse,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_N_Reverse_Damage1
+    {
+        meshFile = IsoObject/SG_Wood_4_N_Reverse_Damage1,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_N_Reverse_Damage1
+    {
+        mesh = IsoObject/SG_Wood_4_N_Reverse_Damage1,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_N_Reverse_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_N_Reverse_Damage2
+    {
+        meshFile = IsoObject/SG_Wood_4_N_Reverse_Damage2,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_N_Reverse_Damage2
+    {
+        mesh = IsoObject/SG_Wood_4_N_Reverse_Damage2,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_N_Reverse_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_N_Reverse_Damage3
+    {
+        meshFile = IsoObject/SG_Wood_4_N_Reverse_Damage3,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_N_Reverse_Damage3
+    {
+        mesh = IsoObject/SG_Wood_4_N_Reverse_Damage3,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_N_Reverse_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Low_N_Right
+    {
+        meshFile = IsoObject/SG_Wood_4_Low_N_Right,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Low_N_Right
+    {
+        mesh = IsoObject/SG_Wood_4_Low_N_Right,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Low_N_Right,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Low_N_Right_Damage1
+    {
+        meshFile = IsoObject/SG_Wood_4_Low_N_Right_Damage1,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Low_N_Right_Damage1
+    {
+        mesh = IsoObject/SG_Wood_4_Low_N_Right_Damage1,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Low_N_Right_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Low_N_Right_Damage2
+    {
+        meshFile = IsoObject/SG_Wood_4_Low_N_Right_Damage2,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Low_N_Right_Damage2
+    {
+        mesh = IsoObject/SG_Wood_4_Low_N_Right_Damage2,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Low_N_Right_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Low_N_Right_Damage3
+    {
+        meshFile = IsoObject/SG_Wood_4_Low_N_Right_Damage3,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Low_N_Right_Damage3
+    {
+        mesh = IsoObject/SG_Wood_4_Low_N_Right_Damage3,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Low_N_Right_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Low_N_Reverse
+    {
+        meshFile = IsoObject/SG_Wood_4_Low_N_Reverse,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Low_N_Reverse
+    {
+        mesh = IsoObject/SG_Wood_4_Low_N_Reverse,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Low_N_Reverse,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Low_N_Reverse_Damage1
+    {
+        meshFile = IsoObject/SG_Wood_4_Low_N_Reverse_Damage1,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Low_N_Reverse_Damage1
+    {
+        mesh = IsoObject/SG_Wood_4_Low_N_Reverse_Damage1,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Low_N_Reverse_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Low_N_Reverse_Damage2
+    {
+        meshFile = IsoObject/SG_Wood_4_Low_N_Reverse_Damage2,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Low_N_Reverse_Damage2
+    {
+        mesh = IsoObject/SG_Wood_4_Low_N_Reverse_Damage2,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Low_N_Reverse_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Low_N_Reverse_Damage3
+    {
+        meshFile = IsoObject/SG_Wood_4_Low_N_Reverse_Damage3,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Low_N_Reverse_Damage3
+    {
+        mesh = IsoObject/SG_Wood_4_Low_N_Reverse_Damage3,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Low_N_Reverse_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Medium_N_Right
+    {
+        meshFile = IsoObject/SG_Wood_4_Medium_N_Right,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Medium_N_Right
+    {
+        mesh = IsoObject/SG_Wood_4_Medium_N_Right,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Medium_N_Right,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Medium_N_Right_Damage1
+    {
+        meshFile = IsoObject/SG_Wood_4_Medium_N_Right_Damage1,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Medium_N_Right_Damage1
+    {
+        mesh = IsoObject/SG_Wood_4_Medium_N_Right_Damage1,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Medium_N_Right_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Medium_N_Right_Damage2
+    {
+        meshFile = IsoObject/SG_Wood_4_Medium_N_Right_Damage2,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Medium_N_Right_Damage2
+    {
+        mesh = IsoObject/SG_Wood_4_Medium_N_Right_Damage2,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Medium_N_Right_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Medium_N_Right_Damage3
+    {
+        meshFile = IsoObject/SG_Wood_4_Medium_N_Right_Damage3,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Medium_N_Right_Damage3
+    {
+        mesh = IsoObject/SG_Wood_4_Medium_N_Right_Damage3,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Medium_N_Right_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Medium_N_Reverse
+    {
+        meshFile = IsoObject/SG_Wood_4_Medium_N_Reverse,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Medium_N_Reverse
+    {
+        mesh = IsoObject/SG_Wood_4_Medium_N_Reverse,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Medium_N_Reverse,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Medium_N_Reverse_Damage1
+    {
+        meshFile = IsoObject/SG_Wood_4_Medium_N_Reverse_Damage1,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Medium_N_Reverse_Damage1
+    {
+        mesh = IsoObject/SG_Wood_4_Medium_N_Reverse_Damage1,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Medium_N_Reverse_Damage1,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Medium_N_Reverse_Damage2
+    {
+        meshFile = IsoObject/SG_Wood_4_Medium_N_Reverse_Damage2,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Medium_N_Reverse_Damage2
+    {
+        mesh = IsoObject/SG_Wood_4_Medium_N_Reverse_Damage2,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Medium_N_Reverse_Damage2,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    animationsMesh SG_Wood_4_Medium_N_Reverse_Damage3
+    {
+        meshFile = IsoObject/SG_Wood_4_Medium_N_Reverse_Damage3,
+        keepMeshAnimations = true,
+    }
+
+    model SG_Wood_4_Medium_N_Reverse_Damage3
+    {
+        mesh = IsoObject/SG_Wood_4_Medium_N_Reverse_Damage3,
+        texture = IsoObject/SG_Wood_Atlas,
+        animationsMesh = SG_Wood_4_Medium_N_Reverse_Damage3,
+        shader = door,
+        static = false,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 90 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    model SG_Wood_CatcherPost
+    {
+        mesh = IsoObject/SG_Wood_CatcherPost,
+        texture = IsoObject/SG_Wood_Atlas,
+        shader = door,
+        static = true,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_CatcherPost_Static
+    {
+        modelScript = Base.SG_Wood_CatcherPost,
+        translate = -0.46 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Wood_CatcherPost_W_Static
+    {
+        modelScript = Base.SG_Wood_CatcherPost,
+        translate = -0.38 0.0 0.46,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+    }
+
+    model SG_Wood_CatcherPost_Reverse
+    {
+        mesh = IsoObject/SG_Wood_CatcherPost_Reverse,
+        texture = IsoObject/SG_Wood_Atlas,
+        shader = door,
+        static = true,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_CatcherPost_Reverse_Static
+    {
+        modelScript = Base.SG_Wood_CatcherPost_Reverse,
+        translate = 0.46 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Wood_CatcherPost_Reverse_W_Static
+    {
+        modelScript = Base.SG_Wood_CatcherPost_Reverse,
+        translate = -0.38 0 -0.46,
+        rotate = 0 90 0,
+        scale = 1,
+    }
+
+    model SG_Wood_GuidePost
+    {
+        mesh = IsoObject/SG_Wood_GuidePost,
+        texture = IsoObject/SG_Wood_Atlas,
+        shader = door,
+        static = true,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_GuidePost_Static
+    {
+        modelScript = Base.SG_Wood_GuidePost,
+        translate = -0.54 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Wood_GuidePost_W_Static
+    {
+        modelScript = Base.SG_Wood_GuidePost,
+        translate = -0.38 0.0 0.54,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+    }
+
+    model SG_Wood_GuidePost_Reverse
+    {
+        mesh = IsoObject/SG_Wood_GuidePost_Reverse,
+        texture = IsoObject/SG_Wood_Atlas,
+        shader = door,
+        static = true,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_GuidePost_Reverse_Static
+    {
+        modelScript = Base.SG_Wood_GuidePost_Reverse,
+        translate = 0.54 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Wood_GuidePost_Reverse_W_Static
+    {
+        modelScript = Base.SG_Wood_GuidePost_Reverse,
+        translate = -0.38 0 -0.54,
+        rotate = 0 90 0,
+        scale = 1,
+    }
+
+    model SG_Wood_Rail
+    {
+        mesh = IsoObject/SG_Wood_Rail,
+        texture = IsoObject/SG_Wood_Atlas,
+        shader = door,
+        static = true,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Rail_Static
+    {
+        modelScript = Base.SG_Wood_Rail,
+        translate = -0.5 0.0 -0.38,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Wood_Rail_W_Static
+    {
+        modelScript = Base.SG_Wood_Rail,
+        translate = -0.38 0.0 0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+    }
+
+    model SG_Wood_Rail_Reverse
+    {
+        mesh = IsoObject/SG_Wood_Rail_Reverse,
+        texture = IsoObject/SG_Wood_Atlas,
+        shader = door,
+        static = true,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Rail_Reverse_Static
+    {
+        modelScript = Base.SG_Wood_Rail_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 0 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Wood_Rail_Reverse_W_Static
+    {
+        modelScript = Base.SG_Wood_Rail_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+    }
+
+    model SG_Wood_Drive
+    {
+        mesh = IsoObject/SG_Wood_Drive,
+        texture = IsoObject/SG_Wood_Atlas,
+        shader = door,
+        static = true,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Drive_Static
+    {
+        modelScript = Base.SG_Wood_Drive,
+        translate = -0.5 0.0 -0.6,
+        rotate = 0.0 0.0 0.0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Wood_Drive_W_Static
+    {
+        modelScript = Base.SG_Wood_Drive,
+        translate = -0.6 0.0 0.5,
+        rotate = 0.0 90.0 0.0,
+        scale = 1.0,
+    }
+
+    model SG_Wood_Drive_Reverse
+    {
+        mesh = IsoObject/SG_Wood_Drive_Reverse,
+        texture = IsoObject/SG_Wood_Atlas,
+        shader = door,
+        static = true,
+        undoCoreScale = true,
+    }
+
+    spriteModel SG_Wood_Drive_Reverse_Static
+    {
+        modelScript = Base.SG_Wood_Drive_Reverse,
+        translate = 0.5 0 -0.6,
+        rotate = 0 0 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Wood_Drive_Reverse_W_Static
+    {
+        modelScript = Base.SG_Wood_Drive_Reverse,
+        translate = -0.6 0 -0.5,
+        rotate = 0 90 0,
+        scale = 1,
+    }
+
+}

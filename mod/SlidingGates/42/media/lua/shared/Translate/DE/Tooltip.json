@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "Kein Strom oder ausreichende Batterieladung.",
     "Tooltip_SG_BatteryCompartment": "Eine Autobatterie in das Batteriefach des Antriebs legen. Netzstrom lädt sie auf.",
     "Tooltip_SG_GateRemote": "In der Nähe mit einem Antrieb koppeln. Steuert einen Antrieb im Umkreis von 20 Feldern auf derselben Etage; Wände blockieren das Signal nicht. Im Inventar oder mit der einstellbaren Taste benutzen.",
-    "Tooltip_SG_RemoteUnavailable": "Keine passende Fernbedienung dabei oder kein Tor in Reichweite."
+    "Tooltip_SG_RemoteUnavailable": "Keine passende Fernbedienung dabei oder kein Tor in Reichweite.",
+    "Tooltip_craft_slidingWoodGateDesc": "Ein Holztor, das auf einer Schiene am Zaun entlanggleitet.<br>Bretter sind auf einen verstrebten Holzrahmen genagelt; Metallstangen bilden Zahnstange und Achsen, die Rollen sind mit Gummischlauch bezogen."
 }

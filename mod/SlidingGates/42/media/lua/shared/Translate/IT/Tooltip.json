@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "Non c’è elettricità né carica sufficiente nella batteria.",
     "Tooltip_SG_BatteryCompartment": "Metti una batteria per auto nel vano del motore. La rete elettrica la ricarica.",
     "Tooltip_SG_GateRemote": "Associalo a un motore vicino. Controlla un motore entro 20 caselle sullo stesso piano; i muri non bloccano il segnale. Usalo dall’inventario o con il tasto configurabile.",
-    "Tooltip_SG_RemoteUnavailable": "Non hai un telecomando associato o non c’è un cancello nel raggio d’azione."
+    "Tooltip_SG_RemoteUnavailable": "Non hai un telecomando associato o non c’è un cancello nel raggio d’azione.",
+    "Tooltip_craft_slidingWoodGateDesc": "Un cancello in legno che scorre lungo la recinzione su una rotaia.<br>Assi inchiodate a un telaio in legno controventato; barre di metallo formano la cremagliera e gli assi, e i rulli sono rivestiti di tubo di gomma."
 }

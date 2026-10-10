@@ -23,7 +23,7 @@ assert(not SGGate.canBuild(square(30,20,0),kind,orientation,'bad'))
 function c(k) return SGGate.cellAt(30,20,0,k,orientation,'reverse') end
 c(1).fence=true
 assert(not SGGate.canBuild(square(30,20,0),kind,orientation,'reverse'));c(1).fence=false
-id=SGGate.build(square(30,20,0),kind,100,orientation,'reverse')
+id=SGGate.build(square(30,20,0),kind,5,orientation,'reverse')
 assert(SGGate.direction(id)=='reverse' and SGGate.snapshot(id).direction=='reverse')
 leaf=SGGate.findRole(id,'leaf');instance=leaf.md.sgInstance
 assert(leaf:getSquare()==c(1) and leaf.north==(orientation=='N'))

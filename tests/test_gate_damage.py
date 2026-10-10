@@ -21,7 +21,7 @@ for width in (2,4):
                     if k in ('width','orientation','direction','quality'):lua.globals()[k]=v
                 lua.execute(r'''
 require 'SG_Gate'
-id=SGGate.build(square(30,20,0),width==2 and 'chainlink' or 'chainlink4',200,orientation,direction,quality)
+id=SGGate.build(square(30,20,0),width==2 and 'chainlink' or 'chainlink4',5,orientation,direction,quality)
 local leaf=SGGate.findRole(id,'leaf');local base=leaf.md.sgBase
 for _,p in ipairs(SGGate.parts(id)) do
  function p:getHealth() return self.health end

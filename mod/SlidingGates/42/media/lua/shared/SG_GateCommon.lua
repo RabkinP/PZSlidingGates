@@ -1,5 +1,9 @@
 require "SG_GateTypes"
 SGGate = SGGate or {}
+SGGate.MIN_BUILD_LEVEL = 4
+-- Saved data layout of registry entries (entry.version) and parts (modData.sgVersion).
+-- Data without a version is 1. Migrations live in SG_GateCore.lua.
+SGGate.DATA_VERSION = 2
 
 function SGGate.damageForRatio(ratio)
     if ratio <= 0.25 then return 3 end
@@ -8,10 +12,24 @@ function SGGate.damageForRatio(ratio)
     return 0
 end
 
-function SGGate.qualityForLevel(level)
+function SGGate.qualityForLevel(level, typeId)
+    if SGGateTypes[typeId] and SGGateTypes[typeId].skill == "Woodwork" then
+        if (tonumber(level) or 0) >= 7 then return "high" end
+        if (tonumber(level) or 0) >= 5 then return "medium" end
+        return "low"
+    end
     if (tonumber(level) or 0) >= 8 then return "high" end
     if (tonumber(level) or 0) >= 6 then return "medium" end
     return "low"
+end
+
+function SGGate.buildLevel(character, typeId)
+    if not character then return end
+    local t = SGGateTypes[typeId]
+    local ok, level = pcall(function()
+        return character:getPerkLevel(t and t.skill == "Woodwork" and Perks.Woodwork or Perks.MetalWelding)
+    end)
+    if ok and type(level) == "number" then return level end
 end
 
 function SGGate.weldingLevel(character)
@@ -36,7 +54,7 @@ function SGGate.leafModel(typeId, orientation, direction, quality)
     if direction == "reverse" then field = orientation == "W" and "westReverseLeafModel" or "reverseLeafModel" end
     local base = t[field]
     if quality == "low" or quality == "medium" then
-        local prefix = t.width == 4 and "SG_ChainLink_4" or "SG_ChainLink"
+        local prefix = t.modelPrefix or (t.width == 4 and "SG_ChainLink_4" or "SG_ChainLink")
         return prefix .. "_" .. (quality == "low" and "Low" or "Medium") .. base:sub(#prefix + 1)
     end
     return base

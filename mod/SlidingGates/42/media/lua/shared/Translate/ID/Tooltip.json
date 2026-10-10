@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "Tidak ada listrik atau daya aki yang cukup.",
     "Tooltip_SG_BatteryCompartment": "Masukkan satu aki mobil ke kompartemen motor. Listrik jaringan mengisi daya aki.",
     "Tooltip_SG_GateRemote": "Hubungkan ke motor di dekatmu. Mengontrol satu motor dalam radius 20 petak di lantai yang sama; dinding tidak menghalangi sinyal. Gunakan dari inventaris atau tombol pintasan yang dapat diatur.",
-    "Tooltip_SG_RemoteUnavailable": "Tidak membawa remote yang cocok atau tidak ada gerbang dalam jangkauan."
+    "Tooltip_SG_RemoteUnavailable": "Tidak membawa remote yang cocok atau tidak ada gerbang dalam jangkauan.",
+    "Tooltip_craft_slidingWoodGateDesc": "Gerbang kayu yang bergeser di sepanjang pagar di atas rel.<br>Papan dipaku ke rangka kayu berpenguat; batang logam menjadi rak gigi dan poros, dan roda gulirnya dilapisi selang karet."
 }

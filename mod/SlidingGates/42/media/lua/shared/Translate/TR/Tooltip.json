@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "Elektrik veya yeterli akü şarjı yok.",
     "Tooltip_SG_BatteryCompartment": "Motorun bölmesine bir araba aküsü yerleştir. Şebeke elektriği aküyü şarj eder.",
     "Tooltip_SG_GateRemote": "Yakındaki motorla eşleştir. Aynı katta 20 kare yarıçapında bir motoru kontrol eder; duvarlar sinyali engellemez. Envanterden veya atanabilir kısayol tuşuyla kullan.",
-    "Tooltip_SG_RemoteUnavailable": "Üzerinde eşleşen bir kumanda veya menzilde bir kapı yok."
+    "Tooltip_SG_RemoteUnavailable": "Üzerinde eşleşen bir kumanda veya menzilde bir kapı yok.",
+    "Tooltip_craft_slidingWoodGateDesc": "Çit boyunca ray üzerinde kayan ahşap bir kapı.<br>Tahtalar çaprazlı ahşap bir çerçeveye çakılmıştır; metal çubuklar kremayeri ve aksları oluşturur, makaralar lastik hortumla kaplanmıştır."
 }

@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "No electricity or sufficient battery charge.",
     "Tooltip_SG_BatteryCompartment": "Place one car battery in the drive compartment. Grid power charges it.",
     "Tooltip_SG_GateRemote": "Link to a drive nearby. Controls one drive within 20 cells on the same floor; walls do not block the signal. Use from inventory or the configurable hotkey.",
-    "Tooltip_SG_RemoteUnavailable": "No matching carried remote or gate within range."
+    "Tooltip_SG_RemoteUnavailable": "No matching carried remote or gate within range.",
+    "Tooltip_craft_slidingWoodGateDesc": "A wooden gate that slides along the fence on a rail.<br>Planks are nailed to a braced timber frame; metal bars form the rack and axles, and the rollers are tyred with rubber hose."
 }

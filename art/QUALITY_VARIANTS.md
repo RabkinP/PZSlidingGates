@@ -50,7 +50,7 @@ Six native entity recipes use the wooden-wall OnAddToMenu filter pattern and
 translated quality suffixes in parentheses. High-quality entity IDs remain
 unchanged. With Show All enabled, all tiers are listed; placement rejects a tier
 that does not match the character's current welding level before materials are
-consumed. Welding health scaling remains base health + level × 50.
+consumed. Health follows vanilla: build-skill level × 300 per carrier (minimum level 4).
 
 Assembly quality is saved in registry `quality`, part `sgQuality` and server
 snapshots. Saved gates without quality retain High; the player's later skill

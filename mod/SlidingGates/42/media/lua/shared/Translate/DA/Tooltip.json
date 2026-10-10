@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "Ingen strøm eller tilstrækkelig batteriladning.",
     "Tooltip_SG_BatteryCompartment": "Læg ét bilbatteri i motorens batterirum. Strøm fra elnettet oplader det.",
     "Tooltip_SG_GateRemote": "Tilknyt en motor i nærheden. Styrer én motor inden for 20 felter på samme etage; vægge blokerer ikke signalet. Brug fra inventaret eller med den indstillelige genvejstast.",
-    "Tooltip_SG_RemoteUnavailable": "Ingen passende fjernbetjening på dig eller port inden for rækkevidde."
+    "Tooltip_SG_RemoteUnavailable": "Ingen passende fjernbetjening på dig eller port inden for rækkevidde.",
+    "Tooltip_craft_slidingWoodGateDesc": "En træport, der glider langs hegnet på en skinne.<br>Planker er sømmet på en afstivet træramme; metalstænger danner tandstang og aksler, og rullerne er beklædt med gummislange."
 }

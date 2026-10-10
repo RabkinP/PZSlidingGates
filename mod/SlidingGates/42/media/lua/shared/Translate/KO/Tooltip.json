@@ -14,5 +14,6 @@
     "Tooltip_SG_Drive_power": "전기 또는 배터리 충전량이 부족합니다.",
     "Tooltip_SG_BatteryCompartment": "구동기 수납칸에 자동차 배터리 하나를 넣으세요. 전기가 공급되면 충전됩니다.",
     "Tooltip_SG_GateRemote": "근처 구동기에 연결하세요. 같은 층에서 반경 20칸 이내의 구동기 하나를 제어하며 벽은 신호를 막지 않습니다. 소지품 창이나 설정 가능한 단축키로 사용하세요.",
-    "Tooltip_SG_RemoteUnavailable": "해당 리모컨을 소지하지 않았거나 범위 내에 문이 없습니다."
+    "Tooltip_SG_RemoteUnavailable": "해당 리모컨을 소지하지 않았거나 범위 내에 문이 없습니다.",
+    "Tooltip_craft_slidingWoodGateDesc": "레일 위에서 울타리를 따라 미끄러지는 나무 게이트.<br>가새를 댄 나무 틀에 판자를 못으로 박았고, 금속 막대로 랙과 축을 만들었으며, 롤러는 고무 호스로 감쌌다."
 }

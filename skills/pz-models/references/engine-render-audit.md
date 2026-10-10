@@ -353,3 +353,59 @@ Scope: engine transform and carrier properties are installed-game evidence;
 anchor mathematics and gameplay/layout are automated tests. Actual W appearance,
 Bullet collision, animations, and multiplayer packet delivery still require gameplay
 acceptance. This does not establish support for left-opening assemblies.
+
+## Vision through constructed walls and door carriers (2026-10-10)
+
+Installed JAR SHA256 `E1A69EB743EDE60B213A0FE7F8B83D4FCAB773036D256CC4543A336F3B058A33`;
+classes decompiled from that JAR with CFR, `newtiledefinitions.tiles` parsed (tdef v1).
+
+- Zombie spotting (`IsoZombie.spottedNew/Old`) requires `square.isCanSee(playerIndex)`:
+  the player's native LOS grid from `LightingJNI.updateChunk`. Per square it sends
+  `visionMatrix` (from `CalculateVisionBlocked`, sprite flags such as collideN/W and
+  transparentN/W) and `testVisionAdjacent`, then special objects. A thumpable is sent
+  via `squareAddThumpable(north, open, isDoor, doorTrans)`; `IsoThumpable.TestVision`
+  is Unblocked only for `doorTrans` sprites, open doors, windows or `canPassThrough`.
+- Vanilla wooden wall levels 1/2/3 (`walls_exterior_wooden_01_44/45`, `40/41`, `24/25`)
+  have identical vision flags (`WallW`/`WallN`, `wall`, no `*Trans`/transparent flags);
+  all use `LogicClass = WoodenWall`. Level 1 differs by health (450 + 20/level), not
+  by vision. No health- or level-dependent vision rule was found in `IsoThumpable`,
+  `IsoGridSquare` or `LightingJNI`.
+- Therefore a see-through gate needs a carrier sprite with `doorTrans` (as chain-link
+  fence gates). Not yet verified in gameplay.
+
+## Open door carriers render at 0.6 alpha (2026-10-10)
+
+Same JAR as above; `FBORenderCell` decompiled with CFR.
+
+- `FBORenderCell.calculateObjectTargetAlpha`: for objects in the MinusFloor/
+  MinusFloorSE/Translucent(SE) layers, an open `IsoDoor` or an `IsoThumpable` with
+  `open == true` returns target alpha **0.6**, unless its sprite properties contain
+  `GarageDoor` (`IsoPropertyType.GARAGE_DOOR`). The model drawer multiplies
+  `colorInfo.a` into the door shader alpha, so an opaque model over the floor looks
+  darker/greyer. Observed in gameplay on wooden gates (open leaf darker, closing
+  restores colour); chain-link has the same rule but its sparse mesh hides it.
+- Our leaves are door thumpables on shared vanilla sprites (`carpentry_01_48..51`,
+  `fixtures_doors_fences_01_128..131`), so a property cannot be added to them
+  without changing vanilla doors. `getGarageDoorIndex` returns -1 for values outside
+  1..6, but vanilla Lua (`ISLockDoor`, `ISDestroyStuffAction`, `ISBuildUtil`,
+  `ISMoveableSpriteProps`, `ClientCommands`) also tests `GarageDoor` presence.
+  A fix needs own carrier sprites or another non-door open state; not yet chosen.
+
+## Resting spriteModel around door clips (2026-10-10)
+
+Same JAR fingerprint as above; `IsoThumpable`, `FBORenderCell`, `IsoObject`,
+`IsoObjectAnimations` read from CFR output.
+
+- `IsoThumpable.ToggleDoorActual` flips `open`, swaps the sprite, invalidates the render
+  chunk and calls `PlayAnimation` (`IsoObjectAnimations.addObject` with the object's current
+  spriteModel and clip `Open`/`Close`, then `setAnimating(true)`) in one Java call. It never
+  changes the object's `spriteModelName`, so the resting pose stays that of the old state.
+- While `isAnimating()`, `FBORenderCell` excludes the object from cached MinusFloor layers and
+  draws it every frame; `IsoObject` model rendering uses the **current** `getSpriteModel()`
+  for the transform and the running `AnimationPlayer` for bones.
+- On clip end, `IsoObjectAnimations.update` calls `onAnimationFinished` (`setAnimating(false)`)
+  and `invalidateRenderChunkLevel(256)`; the rebuilt chunk uses the spriteModel set at that
+  moment. Setting the new resting spriteModel only after the clip lets the old pose show
+  briefly. Setting it mid-clip, right after the flip, avoids that: confirmed in gameplay on the
+  sliding-door prototype (now the separate SlidingDoors mod, SD_Proto watcher). The gates show no such flash in gameplay, so
+  their own motion path does not need this change; the cause there was not investigated.

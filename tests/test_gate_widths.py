@@ -41,6 +41,7 @@ function square(x,y,z)
  function s:AddTileObject(o) table.insert(self.objects,o) end
  function s:RecalcAllWithNeighbours() end
  function s:isVehicleIntersecting() return self.vehicle or false end
+ function s:getVehicleContainer() return self.vehicleContainer end
  function s:transmitRemoveItemFromSquare(o)
    for i,v in ipairs(self.objects) do if v==o then table.remove(self.objects,i); break end end
    if sync then sync() end
@@ -182,13 +183,19 @@ leaf.animating=false; tick()
 assert(not SGGate.isMoving(id) and tick==nil)
 for k=1,width do assert(not blocked(30-k)) end
 for k=width+1,2*width do assert(blocked(30-k)) end
--- A trailer whose Z dips just below the level is missed by the engine's square check but still blocks closing.
-local trailer={getX=function() return 29.5 end,getY=function() return 20.4 end,getZ=function() return -0.01 end}
+-- A trailer towed through the opening, whose Z dips just below the level, is found through its towing car.
+local trailer={getZ=function() return -0.01 end}
 function trailer:isIntersectingSquare(x,y,z) return x==29 and y==20 and z==math.floor(self:getZ()) end
+function trailer:getVehicleTowing() return nil end
+local car={getZ=function() return 0.02 end}
+function car:isIntersectingSquare() return false end
+function car:getVehicleTowing() return trailer end
+function car:getVehicleTowedBy() return nil end
+function trailer:getVehicleTowedBy() return car end
 assert(not SGGate.isBlocked(id,false))
-getCell().getVehicles=function() return {size=function() return 1 end,get=function(_,i) return trailer end} end
+square(29,23,0).vehicleContainer=car
 assert(SGGate.isBlocked(id,false))
-getCell().getVehicles=nil
+square(29,23,0).vehicleContainer=nil
 -- E on the retracted leaf operates its pocket proxy, including a refused close.
 local pocket=partsWithRole(id,'block')[width]
 square(29,20,0).vehicle=true

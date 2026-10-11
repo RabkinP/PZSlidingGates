@@ -564,23 +564,38 @@ function SGGate.motionRemaining(id)
 end
 
 -- IsoGridSquare.isVehicleIntersecting only sees vehicles whose floor(getZ()) equals the square's level. A trailer's
--- body rides low enough for its Z to dip just below the level (e.g. -0.01 -> level -1), so the engine misses it and
--- the closing leaf presses the trailer into the ground. Test nearby vehicles ourselves with a vertical tolerance.
-local function vehicleOnSquare(sq)
-    if sq:isVehicleIntersecting() then return true end
+-- body may ride low enough for its Z to dip just below the level, so the engine can miss it and the closing leaf
+-- presses the trailer into the ground. IsoCell.getVehicles is a Java Set (no indexed access), so collect vehicles
+-- from squares around the gate instead, add their tow partners, and test each with a vertical tolerance.
+local VEHICLE_SCAN_RADIUS = 6
+local function nearbyVehicleOnSquare(sq)
     local cell = getCell and getCell()
-    local list = cell and cell.getVehicles and cell:getVehicles()
-    if not list then return false end
+    if not cell then return false end
     local sx, sy, sz = sq:getX(), sq:getY(), sq:getZ()
-    for i = 0, list:size() - 1 do
-        local v = list:get(i)
-        local vz = v:getZ()
-        if math.abs(vz - sz) < 0.75 and math.abs(v:getX() - sx) < 10 and math.abs(v:getY() - sy) < 10
-            and v:isIntersectingSquare(sx, sy, math.floor(vz)) then
-            return true
+    local seen, candidates = {}, {}
+    local function add(v)
+        if v and not seen[v] then seen[v] = true; candidates[#candidates + 1] = v end
+    end
+    for dy = -VEHICLE_SCAN_RADIUS, VEHICLE_SCAN_RADIUS do
+        for dx = -VEHICLE_SCAN_RADIUS, VEHICLE_SCAN_RADIUS do
+            local near = cell:getGridSquare(sx + dx, sy + dy, sz)
+            local v = near and near:getVehicleContainer()
+            if v then add(v); add(v:getVehicleTowing()); add(v:getVehicleTowedBy()) end
         end
     end
+    for _, v in ipairs(candidates) do
+        local vz = v:getZ()
+        if math.abs(vz - sz) < 0.75 and v:isIntersectingSquare(sx, sy, math.floor(vz)) then return true end
+    end
     return false
+end
+
+local function vehicleOnSquare(sq)
+    if sq:isVehicleIntersecting() then return true end
+    -- The extra scan must never stop the gate: on failure keep the engine result.
+    local ok, hit = pcall(nearbyVehicleOnSquare, sq)
+    if not ok then print("[SGGate] vehicle scan failed: " .. tostring(hit)); return false end
+    return hit
 end
 
 -- Vanilla refuses to move a door while a vehicle stands in its way and shows "The door is blocked" over the

@@ -19,8 +19,6 @@ local TYPES = {
 
 local function log(msg)
     print("[SGProto] " .. tostring(msg))
-    local pl = getPlayer()
-    if pl then pl:setHaloNote(tostring(msg), 255, 255, 255, 120) end
 end
 
 local function applyModel(obj)

@@ -177,8 +177,6 @@ end
 
 local function log(msg)
     print("[SGGate] " .. tostring(msg))
-    local pl = getPlayer()
-    if pl then pl:setHaloNote(tostring(msg), 255, 255, 255, 120) end
 end
 
 local function sqAt(x, y, z) return getCell():getGridSquare(x, y, z) end

@@ -182,6 +182,13 @@ leaf.animating=false; tick()
 assert(not SGGate.isMoving(id) and tick==nil)
 for k=1,width do assert(not blocked(30-k)) end
 for k=width+1,2*width do assert(blocked(30-k)) end
+-- A trailer whose Z dips just below the level is missed by the engine's square check but still blocks closing.
+local trailer={getX=function() return 29.5 end,getY=function() return 20.4 end,getZ=function() return -0.01 end}
+function trailer:isIntersectingSquare(x,y,z) return x==29 and y==20 and z==math.floor(self:getZ()) end
+assert(not SGGate.isBlocked(id,false))
+getCell().getVehicles=function() return {size=function() return 1 end,get=function(_,i) return trailer end} end
+assert(SGGate.isBlocked(id,false))
+getCell().getVehicles=nil
 -- E on the retracted leaf operates its pocket proxy, including a refused close.
 local pocket=partsWithRole(id,'block')[width]
 square(29,20,0).vehicle=true

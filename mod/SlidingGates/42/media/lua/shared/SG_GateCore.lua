@@ -563,6 +563,26 @@ function SGGate.motionRemaining(id)
     return tr and math.max(0, tr.seconds - tr.t) or 0
 end
 
+-- IsoGridSquare.isVehicleIntersecting only sees vehicles whose floor(getZ()) equals the square's level. A trailer's
+-- body rides low enough for its Z to dip just below the level (e.g. -0.01 -> level -1), so the engine misses it and
+-- the closing leaf presses the trailer into the ground. Test nearby vehicles ourselves with a vertical tolerance.
+local function vehicleOnSquare(sq)
+    if sq:isVehicleIntersecting() then return true end
+    local cell = getCell and getCell()
+    local list = cell and cell.getVehicles and cell:getVehicles()
+    if not list then return false end
+    local sx, sy, sz = sq:getX(), sq:getY(), sq:getZ()
+    for i = 0, list:size() - 1 do
+        local v = list:get(i)
+        local vz = v:getZ()
+        if math.abs(vz - sz) < 0.75 and math.abs(v:getX() - sx) < 10 and math.abs(v:getY() - sy) < 10
+            and v:isIntersectingSquare(sx, sy, math.floor(vz)) then
+            return true
+        end
+    end
+    return false
+end
+
 -- Vanilla refuses to move a door while a vehicle stands in its way and shows "The door is blocked" over the
 -- character. A gate needs the cells its leaf will move through to be free of vehicles: the opening cells when
 -- closing, the pocket cells when opening (characters do not obstruct doors in vanilla either).
@@ -573,7 +593,7 @@ function SGGate.isBlocked(id, opening)
     if opening then from, to = W + 1, 2 * W end
     for k = from, to do
         local sq = gateCell(id, x, y, z, k)
-        if not sq or not gateNeighbour(id, gateCell(id, x, y, z, k)) or sq:isVehicleIntersecting() then return true end
+        if not sq or not gateNeighbour(id, gateCell(id, x, y, z, k)) or vehicleOnSquare(sq) then return true end
     end
     -- The native leaf door checks its own obstruction in BOTH directions. A car
     -- pressed against a closed leaf may obstruct it even with an empty pocket.

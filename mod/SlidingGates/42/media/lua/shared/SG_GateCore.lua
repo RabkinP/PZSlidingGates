@@ -563,39 +563,59 @@ function SGGate.motionRemaining(id)
     return tr and math.max(0, tr.seconds - tr.t) or 0
 end
 
--- IsoGridSquare.isVehicleIntersecting only sees vehicles whose floor(getZ()) equals the square's level. A trailer's
--- body may ride low enough for its Z to dip just below the level, so the engine can miss it and the closing leaf
--- presses the trailer into the ground. IsoCell.getVehicles is a Java Set (no indexed access), so collect vehicles
--- from squares around the gate instead, add their tow partners, and test each with a vertical tolerance.
-local VEHICLE_SCAN_RADIUS = 6
-local function nearbyVehicleOnSquare(sq)
-    local cell = getCell and getCell()
-    if not cell then return false end
-    local sx, sy, sz = sq:getX(), sq:getY(), sq:getZ()
-    local seen, candidates = {}, {}
+-- Vehicle obstruction. Vanilla doors test vehicles only on toggle: IsoDoor.isDoubleDoorObstructed checks the body
+-- polygon over the door row and the swing row, IsoDoor.isDoorObstructed the larger shadow polygon on the door square.
+-- Both require floor(vehicle Z) to equal the square's level. In multiplayer that misses vehicles on the server, and
+-- the closing leaf pressed them into the ground. We test the gate row and the row across the edge, body and shadow,
+-- with a vertical tolerance. Candidates: the cell's vehicle Set (copied to a list; it has no indexed access),
+-- vehicles found on surrounding squares and their tow partners.
+local VEHICLE_SCAN_RADIUS = 8
+local function nearbyVehicles(cx, cy, cz, reach)
+    local seen, out = {}, {}
     local function add(v)
-        if v and not seen[v] then seen[v] = true; candidates[#candidates + 1] = v end
-    end
-    for dy = -VEHICLE_SCAN_RADIUS, VEHICLE_SCAN_RADIUS do
-        for dx = -VEHICLE_SCAN_RADIUS, VEHICLE_SCAN_RADIUS do
-            local near = cell:getGridSquare(sx + dx, sy + dy, sz)
-            local v = near and near:getVehicleContainer()
-            if v then add(v); add(v:getVehicleTowing()); add(v:getVehicleTowedBy()) end
+        if v and not seen[v] and math.abs(v:getX() - cx) <= reach and math.abs(v:getY() - cy) <= reach then
+            seen[v] = true; out[#out + 1] = v
+            add(v:getVehicleTowing()); add(v:getVehicleTowedBy())
         end
     end
-    for _, v in ipairs(candidates) do
-        local vz = v:getZ()
-        if math.abs(vz - sz) < 0.75 and v:isIntersectingSquare(sx, sy, math.floor(vz)) then return true end
+    local cell = getCell and getCell()
+    if not cell then return out end
+    pcall(function()
+        local list = ArrayList.new()
+        list:addAll(cell:getVehicles())
+        for i = 0, list:size() - 1 do add(list:get(i)) end
+    end)
+    for dy = -reach, reach do
+        for dx = -reach, reach do
+            local near = cell:getGridSquare(cx + dx, cy + dy, cz)
+            add(near and near:getVehicleContainer())
+        end
     end
-    return false
+    return out
 end
 
-local function vehicleOnSquare(sq)
-    if sq:isVehicleIntersecting() then return true end
-    -- The extra scan must never stop the gate: on failure keep the engine result.
-    local ok, hit = pcall(nearbyVehicleOnSquare, sq)
-    if not ok then print("[SGGate] vehicle scan failed: " .. tostring(hit)); return false end
-    return hit
+local function vehicleOnSquares(squares)
+    local first = squares[1]
+    local sz = first:getZ()
+    local vehicles = nearbyVehicles(first:getX(), first:getY(), sz, VEHICLE_SCAN_RADIUS + #squares)
+    for _, v in ipairs(vehicles) do
+        local vz = v:getZ()
+        local level = math.floor(vz)
+        local hitAt
+        if math.abs(vz - sz) < 0.75 then
+            for _, sq in ipairs(squares) do
+                local qx, qy = sq:getX(), sq:getY()
+                if v:isIntersectingSquare(qx, qy, level) or v:isIntersectingSquareWithShadow(qx, qy, level) then
+                    hitAt = sq; break
+                end
+            end
+        end
+        -- Diagnostic for multiplayer reports: what the server sees near the gate.
+        print(string.format("[SGGate] vehicle %s at %.2f,%.2f z=%.3f: %s", tostring(v:getScriptName()),
+            v:getX(), v:getY(), vz, hitAt and ("blocks " .. hitAt:getX() .. "," .. hitAt:getY()) or "clear"))
+        if hitAt then return true end
+    end
+    return false
 end
 
 -- Vanilla refuses to move a door while a vehicle stands in its way and shows "The door is blocked" over the
@@ -606,10 +626,18 @@ function SGGate.isBlocked(id, opening)
     local W = gateWidth(id)
     local from, to = 1, W
     if opening then from, to = W + 1, 2 * W end
+    local squares = {}
     for k = from, to do
         local sq = gateCell(id, x, y, z, k)
-        if not sq or not gateNeighbour(id, gateCell(id, x, y, z, k)) or vehicleOnSquare(sq) then return true end
+        local across = sq and gateNeighbour(id, sq)
+        if not sq or not across then return true end
+        if sq:isVehicleIntersecting() or across:isVehicleIntersecting() then return true end
+        squares[#squares + 1] = sq
+        squares[#squares + 1] = across
     end
+    -- The extra scan must never stop the gate: on failure keep the engine result.
+    local ok, hit = pcall(vehicleOnSquares, squares)
+    if not ok then print("[SGGate] vehicle scan failed: " .. tostring(hit)) elseif hit then return true end
     -- The native leaf door checks its own obstruction in BOTH directions. A car
     -- pressed against a closed leaf may obstruct it even with an empty pocket.
     local leaf = findRole(id, "leaf")

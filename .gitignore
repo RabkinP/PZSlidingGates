@@ -9,3 +9,6 @@ research/render-audit/probe/*.class
 __pycache__/
 # Automatic source backups written by art scripts before migrations.
 art/*_before_*.blend
+
+# Game textures extracted by research/inspect-wood-references.py; not redistributable
+research/wood-references/

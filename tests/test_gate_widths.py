@@ -41,7 +41,6 @@ function square(x,y,z)
  function s:AddTileObject(o) table.insert(self.objects,o) end
  function s:RecalcAllWithNeighbours() end
  function s:isVehicleIntersecting() return self.vehicle or false end
- function s:getVehicleContainer() return self.vehicleContainer end
  function s:transmitRemoveItemFromSquare(o)
    for i,v in ipairs(self.objects) do if v==o then table.remove(self.objects,i); break end end
    if sync then sync() end
@@ -183,21 +182,21 @@ leaf.animating=false; tick()
 assert(not SGGate.isMoving(id) and tick==nil)
 for k=1,width do assert(not blocked(30-k)) end
 for k=width+1,2*width do assert(blocked(30-k)) end
--- A trailer towed through the opening, whose Z dips just below the level, is found through its towing car.
-local trailer={getZ=function() return -0.01 end,getX=function() return 29.5 end,getY=function() return 20.5 end,getScriptName=function() return 'Trailer' end}
-function trailer:isIntersectingSquare(x,y,z) return x==29 and y==20 and z==math.floor(self:getZ()) end
-function trailer:isIntersectingSquareWithShadow() return false end
-function trailer:getVehicleTowing() return nil end
-local car={getZ=function() return 0.02 end,getX=function() return 29.5 end,getY=function() return 23.5 end,getScriptName=function() return 'Car' end}
-function car:isIntersectingSquare() return false end
-function car:isIntersectingSquareWithShadow() return false end
-function car:getVehicleTowing() return trailer end
-function car:getVehicleTowedBy() return nil end
-function trailer:getVehicleTowedBy() return car end
-assert(not SGGate.isBlocked(id,false))
-square(28,22,0).vehicleContainer=car
+-- A towed trailer keeps a stale engine polygon on a server; its current body over the opening blocks closing.
+local function vec(x,y,z) return {x=function() return x end,y=function() return y end,z=function() return z end} end
+Vector3f={new=function() local v={} function v:set(x,y) self.x=function() return x end; self.y=function() return y end end return v end}
+local trailerAt=29.5
+local trailer={getX=function() return trailerAt end,getY=function() return 20.5 end,getZ=function() return 0 end}
+function trailer:getVehicleTowedBy() return {} end
+function trailer:getScript() return {getExtents=function() return vec(0.8,1,0.8) end,getCenterOfMassOffset=function() return vec(0,0,0) end} end
+function trailer:getWorldPos(lx,ly,lz,out) out:set(trailerAt+lx,20.5+lz) return out end
+ArrayList={new=function() local l={items={}} function l:addAll(t) for _,v in ipairs(t) do table.insert(self.items,v) end end
+  function l:size() return #self.items end function l:get(i) return self.items[i+1] end return l end}
+getCell().getVehicles=function() return {trailer} end
 assert(SGGate.isBlocked(id,false))
-square(28,22,0).vehicleContainer=nil
+trailerAt=29.5+6
+assert(not SGGate.isBlocked(id,false))
+getCell().getVehicles=nil; ArrayList=nil; Vector3f=nil
 -- E on the retracted leaf operates its pocket proxy, including a refused close.
 local pocket=partsWithRole(id,'block')[width]
 square(29,20,0).vehicle=true

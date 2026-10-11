@@ -563,57 +563,61 @@ function SGGate.motionRemaining(id)
     return tr and math.max(0, tr.seconds - tr.t) or 0
 end
 
--- Vehicle obstruction. Vanilla doors test vehicles only on toggle: IsoDoor.isDoubleDoorObstructed checks the body
--- polygon over the door row and the swing row, IsoDoor.isDoorObstructed the larger shadow polygon on the door square.
--- Both require floor(vehicle Z) to equal the square's level. In multiplayer that misses vehicles on the server, and
--- the closing leaf pressed them into the ground. We test the gate row and the row across the edge, body and shadow,
--- with a vertical tolerance. Candidates: the cell's vehicle Set (copied to a list; it has no indexed access),
--- vehicles found on surrounding squares and their tow partners.
-local VEHICLE_SCAN_RADIUS = 8
-local function nearbyVehicles(cx, cy, cz, reach)
-    local seen, out = {}, {}
-    local function add(v)
-        if v and not seen[v] and math.abs(v:getX() - cx) <= reach and math.abs(v:getY() - cy) <= reach then
-            seen[v] = true; out[#out + 1] = v
-            add(v:getVehicleTowing()); add(v:getVehicleTowedBy())
-        end
-    end
-    local cell = getCell and getCell()
-    if not cell then return out end
-    pcall(function()
-        local list = ArrayList.new()
-        list:addAll(cell:getVehicles())
-        for i = 0, list:size() - 1 do add(list:get(i)) end
-    end)
-    for dy = -reach, reach do
-        for dx = -reach, reach do
-            local near = cell:getGridSquare(cx + dx, cy + dy, cz)
-            add(near and near:getVehicleContainer())
-        end
+-- A server only rebuilds a vehicle's cached polygon (used by isVehicleIntersecting/isObstructed) on some events, e.g.
+-- when passengers leave. A parked car is therefore found, but a towed trailer keeps a stale polygon and the closing
+-- leaf pressed it into the ground. For towed vehicles compute the body polygon from the current transform, the same
+-- way zombie.pathfind.VehiclePoly.init does, and test it against the cells the leaf moves through.
+local function trailerCorners(v)
+    local script = v:getScript()
+    if not script then return end
+    local ext, com = script:getExtents(), script:getCenterOfMassOffset()
+    local w, l = ext:x() / 2, ext:z() / 2
+    local pos, out = Vector3f.new(), {}
+    for _, c in ipairs({ { -w, l }, { w, l }, { w, -l }, { -w, -l } }) do
+        v:getWorldPos(com:x() + c[1], 0, com:z() + c[2], pos)
+        out[#out + 1] = { pos:x(), pos:y() }
     end
     return out
 end
 
-local function vehicleOnSquares(squares)
+-- Separating axis test between a convex quad and the unit square at (qx, qy).
+local function quadHitsSquare(quad, qx, qy)
+    local square = { { qx, qy }, { qx + 1, qy }, { qx + 1, qy + 1 }, { qx, qy + 1 } }
+    local function separated(ax, ay)
+        local function range(points)
+            local lo, hi
+            for _, p in ipairs(points) do
+                local d = p[1] * ax + p[2] * ay
+                lo, hi = math.min(lo or d, d), math.max(hi or d, d)
+            end
+            return lo, hi
+        end
+        local lo1, hi1 = range(quad)
+        local lo2, hi2 = range(square)
+        return hi1 <= lo2 or hi2 <= lo1
+    end
+    if separated(1, 0) or separated(0, 1) then return false end
+    for i = 1, 4 do
+        local p, q = quad[i], quad[i % 4 + 1]
+        if separated(q[2] - p[2], p[1] - q[1]) then return false end
+    end
+    return true
+end
+
+local function trailerOnSquares(squares)
+    local cell = getCell()
+    local list = ArrayList.new()
+    list:addAll(cell:getVehicles())
     local first = squares[1]
-    local sz = first:getZ()
-    local vehicles = nearbyVehicles(first:getX(), first:getY(), sz, VEHICLE_SCAN_RADIUS + #squares)
-    for _, v in ipairs(vehicles) do
-        local vz = v:getZ()
-        local level = math.floor(vz)
-        local hitAt
-        if math.abs(vz - sz) < 0.75 then
-            for _, sq in ipairs(squares) do
-                local qx, qy = sq:getX(), sq:getY()
-                if v:isIntersectingSquare(qx, qy, level) or v:isIntersectingSquareWithShadow(qx, qy, level) then
-                    hitAt = sq; break
-                end
+    for i = 0, list:size() - 1 do
+        local v = list:get(i)
+        if v:getVehicleTowedBy() and math.abs(v:getX() - first:getX()) < 12 and math.abs(v:getY() - first:getY()) < 12
+            and math.abs(v:getZ() - first:getZ()) < 1 then
+            local quad = trailerCorners(v)
+            for _, sq in ipairs(quad and squares or {}) do
+                if quadHitsSquare(quad, sq:getX(), sq:getY()) then return true end
             end
         end
-        -- Diagnostic for multiplayer reports: what the server sees near the gate.
-        print(string.format("[SGGate] vehicle %s at %.2f,%.2f z=%.3f: %s", tostring(v:getScriptName()),
-            v:getX(), v:getY(), vz, hitAt and ("blocks " .. hitAt:getX() .. "," .. hitAt:getY()) or "clear"))
-        if hitAt then return true end
     end
     return false
 end
@@ -629,15 +633,12 @@ function SGGate.isBlocked(id, opening)
     local squares = {}
     for k = from, to do
         local sq = gateCell(id, x, y, z, k)
-        local across = sq and gateNeighbour(id, sq)
-        if not sq or not across then return true end
-        if sq:isVehicleIntersecting() or across:isVehicleIntersecting() then return true end
+        if not sq or not gateNeighbour(id, gateCell(id, x, y, z, k)) or sq:isVehicleIntersecting() then return true end
         squares[#squares + 1] = sq
-        squares[#squares + 1] = across
     end
-    -- The extra scan must never stop the gate: on failure keep the engine result.
-    local ok, hit = pcall(vehicleOnSquares, squares)
-    if not ok then print("[SGGate] vehicle scan failed: " .. tostring(hit)) elseif hit then return true end
+    -- The trailer test must never stop the gate: on failure keep the engine result.
+    local ok, hit = pcall(trailerOnSquares, squares)
+    if not ok then print("[SGGate] trailer check failed: " .. tostring(hit)) elseif hit then return true end
     -- The native leaf door checks its own obstruction in BOTH directions. A car
     -- pressed against a closed leaf may obstruct it even with an empty pocket.
     local leaf = findRole(id, "leaf")

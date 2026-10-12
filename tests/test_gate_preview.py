@@ -194,7 +194,7 @@ for _,width in ipairs({2,4}) do
   assert(not wrong:isValid(square(100,200,0)))
  end
 end
-local tooLow=builder(2,2,'Low');tooLow.character={getPerkLevel=function() return 3 end}
+local tooLow=builder(2,2,'Low');tooLow.character={getPerkLevel=function() return 10 end} -- wrong quality tier
 local writes=worldWrites;tooLow:create(100,200,0,true);assert(worldWrites==writes)
 worldWrites=4;baseCreates=4 -- following cancellation regressions use their original baseline
 clientMode=true; builder(2):create(100,200,0,true)

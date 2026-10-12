@@ -65,6 +65,12 @@ local function catcherSquare(square, typeId, north, reversed)
     return getCell():getGridSquare(square:getX() + SGGate.width(typeId), square:getY(), square:getZ())
 end
 
+-- Vanilla build cheat (debug Force Build) skips skill requirements; the chosen recipe then sets quality.
+local function buildCheat(build)
+    local ok, cheat = pcall(function() return build.character:isBuildCheat() end)
+    return ok and cheat == true
+end
+
 -- ISBuildIsoEntity lives in lua/server and is not loaded yet when client files run: wrap it once the game started.
 local function install()
     if not ISBuildIsoEntity or ISBuildIsoEntity.sgHooked then return end
@@ -96,8 +102,9 @@ local function install()
     function ISBuildIsoEntity:isValid(square)
         local typeId = gateTypeOf(self)
         if not typeId then return originalIsValid(self, square) end
-        local level = SGGate.buildLevel(self.character, typeId)
-        if level and (level < SGGate.MIN_BUILD_LEVEL or SGGate.qualityForLevel(level, typeId) ~= recipeQuality(self)) then return false end
+        local level = not buildCheat(self) and SGGate.buildLevel(self.character, typeId)
+        -- like vanilla, the minimum level is the recipe's SkillRequired; only the exact quality tier is ours
+        if level and SGGate.qualityForLevel(level, typeId) ~= recipeQuality(self) then return false end
         if self.getFace then self:getFace() end
         self.north = isNorth(self.nSprite)
         if not originalIsValid(self, square) then return false end
@@ -180,7 +187,7 @@ local function install()
         local catcher = square and catcherSquare(square, typeId, self.north, direction(self.nSprite) == "reverse")
         if not catcher then print("[SGBuild] no catcher square"); return end
         local level = SGGate.buildLevel(self.character, typeId)
-        local quality = level and SGGate.qualityForLevel(level, typeId) or recipeQuality(self)
+        local quality = (not buildCheat(self) and level) and SGGate.qualityForLevel(level, typeId) or recipeQuality(self)
         local id = SGGate.build(catcher, typeId, level, north and "N" or "W", direction(self.nSprite), quality)
         print("[SGBuild] SGGate.build -> " .. tostring(id))
     end

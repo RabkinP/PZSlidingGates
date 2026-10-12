@@ -97,14 +97,13 @@ for _,width in ipairs({2,4}) do
   local b=ISBuildIsoEntity:new(player,info,2);b.character=player
   local sq=square(100,200,0)
   assert(b:isValid(sq))
-  level=3;assert(not b:isValid(sq))
   level=tier[2];b:create(100,200,0,true)
   assert(built[4]==(width==2 and 'wood' or 'wood4') and built[5]==level and built[8]==tier[3])
   level=10;if tier[3]~='high' then assert(not b:isValid(sq)) end
  end
 end
 ''')
-print('PASS authority construction: min carpentry 4, exact recipe quality and skill-level vanilla health')
+print('PASS authority construction: exact recipe quality and skill-level vanilla health')
 
 # Deployed single meshes, exact animation intervals, rigid weights and normals.
 tree=ast.parse((ROOT/'tests/test_model_variants.py').read_text())

@@ -564,9 +564,9 @@ function SGGate.motionRemaining(id)
 end
 
 -- A server only rebuilds a vehicle's cached polygon (used by isVehicleIntersecting/isObstructed) on some events, e.g.
--- when passengers leave. A parked car is therefore found, but a towed trailer keeps a stale polygon and the closing
--- leaf pressed it into the ground. For towed vehicles compute the body polygon from the current transform, the same
--- way zombie.pathfind.VehiclePoly.init does, and test it against the cells the leaf moves through.
+-- when passengers leave. A towed trailer or a car driven into the opening keeps a stale polygon and the closing leaf
+-- passed through it. For every nearby vehicle compute the body polygon from the current transform, the same way
+-- zombie.pathfind.VehiclePoly.init does, and test it against the cells the leaf moves through.
 local function trailerCorners(v)
     local script = v:getScript()
     if not script then return end
@@ -611,7 +611,7 @@ local function trailerOnSquares(squares)
     local first = squares[1]
     for i = 0, list:size() - 1 do
         local v = list:get(i)
-        if v:getVehicleTowedBy() and math.abs(v:getX() - first:getX()) < 12 and math.abs(v:getY() - first:getY()) < 12
+        if math.abs(v:getX() - first:getX()) < 12 and math.abs(v:getY() - first:getY()) < 12
             and math.abs(v:getZ() - first:getZ()) < 1 then
             local quad = trailerCorners(v)
             for _, sq in ipairs(quad and squares or {}) do
@@ -636,9 +636,9 @@ function SGGate.isBlocked(id, opening)
         if not sq or not gateNeighbour(id, gateCell(id, x, y, z, k)) or sq:isVehicleIntersecting() then return true end
         squares[#squares + 1] = sq
     end
-    -- The trailer test must never stop the gate: on failure keep the engine result.
+    -- The vehicle test must never stop the gate: on failure keep the engine result.
     local ok, hit = pcall(trailerOnSquares, squares)
-    if not ok then print("[SGGate] trailer check failed: " .. tostring(hit)) elseif hit then return true end
+    if not ok then print("[SGGate] vehicle check failed: " .. tostring(hit)) elseif hit then return true end
     -- The native leaf door checks its own obstruction in BOTH directions. A car
     -- pressed against a closed leaf may obstruct it even with an empty pocket.
     local leaf = findRole(id, "leaf")

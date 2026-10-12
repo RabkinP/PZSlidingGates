@@ -1,0 +1,58 @@
+Animated sliding chain-link and wooden gates for Build 42 in 2- and 4-cell widths.
+
+Features:
+- Chain-link (Welding) and wooden (Carpentry) gates, 2 or 4 cells wide.
+- Build quality depends on your skill: low, medium or high, each with its own look. Built gates keep their quality.
+- Maximum gate health is your building skill level x 300. Damage is shown visually in three stages.
+- Build gates in four orientations (press R while placing to rotate/reverse).
+- Smooth sliding animation with cell-by-cell collision; vehicles in the leaf's path block movement.
+- Recover an electric motor from washing machines and dryers, craft a gate drive and mount it on an existing gate.
+- Power the drive from the grid or a car battery; grid power recharges the battery.
+- Craft an RF remote, pair it with a drive and operate the gate from up to 20 tiles (F9 by default, rebindable). Fits on a key ring.
+- Whole-assembly dismantling with material recovery.
+- Translated into all vanilla languages.
+
+Multiplayer support.
+
+HOW TO USE
+
+1. Build the gate
+- Chain-link: Building menu → Welding → Sliding Gate (2 or 4 cells).
+- Wooden: Building menu → Carpentry → Wooden Sliding Gate (2 or 4 cells). Needs a hammer and a saw.
+- Minimum skill is 4. Quality: Welding 4–5 low, 6–7 medium, 8+ high; Carpentry 4 low, 5–6 medium, 7+ high. The menu shows the tier that matches your current skill.
+- While placing, press R repeatedly. It cycles through FOUR positions: north edge, west edge, north edge reversed, west edge reversed. Reversed gates slide the other way, with the motor post at the opposite end.
+- Check the ghost preview, then place the gate.
+
+2. Install the drive
+- Disassemble washing machines or dryers for a 30% chance to recover an electric motor.
+- Crafting menu → Electrical → Assemble Sliding Gate Drive (Electrical 3, Welding 2).
+- The recipe requires the motor, metal parts, electronics scrap, electrical wire, wire, a radio receiver and fasteners. You also need an unbroken screwdriver and wrench, a welding mask, a blowtorch with fuel and welding rods.
+- To install the finished drive you need Electrical 1, Mechanics 1, an unbroken screwdriver and wrench, the drive, and 4 fasteners (screws, nuts and bolts, or a mixture).
+- Stand next to the gate's motor post, right-click → Install Gate Drive.
+
+3. Power it
+- With grid power, the drive works right away.
+- With no grid power, put ONE car battery into the drive: right-click the gate → Put battery into drive. Your character walks over and inserts it.
+- Right-click → Take battery from drive to retrieve it. The "Drive battery compartment" in the loot window next to the post works too.
+- Grid power recharges the battery.
+- Right-click the gate → Open using drive / Close using drive.
+- Empty the battery compartment before removing the drive.
+
+4. Pair the remote
+- Crafting menu → Electrical → Assemble Gate Remote (Electrical 2; needs an unbroken screwdriver).
+- Keep the remote in your inventory, stand near the gate with the drive, right-click → Link gate remote.
+- Use the remote from your inventory or press F9 (rebind it in Options → Key bindings).
+- Range is 20 tiles from the drive on the same floor, and walls don't block it. One remote controls one drive.
+
+Recipes:
+- Chain-link gates: Building menu → Welding.
+- Wooden gates: Building menu → Carpentry.
+- Gate drive and RF remote: Crafting menu → Electrical.
+
+Debug: with Build Cheat enabled, any gate variant can be placed regardless of skill.
+
+REQUIREMENTS
+Project Zomboid Build 42+
+
+Workshop ID: 3816625730
+Mod ID: SlidingGates

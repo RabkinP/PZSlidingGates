@@ -12,5 +12,11 @@
     "SlidingGateWood2Medium": "木製スライドゲート（2マス） (中品質)",
     "SlidingGateWood4": "木製スライドゲート（4マス） (高品質)",
     "SlidingGateWood4Low": "木製スライドゲート（4マス） (低品質)",
-    "SlidingGateWood4Medium": "木製スライドゲート（4マス） (中品質)"
+    "SlidingGateWood4Medium": "木製スライドゲート（4マス） (中品質)",
+    "SlidingGateChainLink6": "スライドゲート（6マス） (高品質)",
+    "SlidingGateChainLink6Low": "スライドゲート（6マス） (低品質)",
+    "SlidingGateChainLink6Medium": "スライドゲート（6マス） (中品質)",
+    "SlidingGateWood6": "木製スライドゲート（6マス） (高品質)",
+    "SlidingGateWood6Low": "木製スライドゲート（6マス） (低品質)",
+    "SlidingGateWood6Medium": "木製スライドゲート（6マス） (中品質)"
 }

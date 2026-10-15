@@ -12,5 +12,11 @@
     "SlidingGateWood2Medium": "木製滑動門（2格） (中等品質)",
     "SlidingGateWood4": "木製滑動門（4格） (高品質)",
     "SlidingGateWood4Low": "木製滑動門（4格） (低品質)",
-    "SlidingGateWood4Medium": "木製滑動門（4格） (中等品質)"
+    "SlidingGateWood4Medium": "木製滑動門（4格） (中等品質)",
+    "SlidingGateChainLink6": "滑動門（6格） (高品質)",
+    "SlidingGateChainLink6Low": "滑動門（6格） (低品質)",
+    "SlidingGateChainLink6Medium": "滑動門（6格） (中等品質)",
+    "SlidingGateWood6": "木製滑動門（6格） (高品質)",
+    "SlidingGateWood6Low": "木製滑動門（6格） (低品質)",
+    "SlidingGateWood6Medium": "木製滑動門（6格） (中等品質)"
 }

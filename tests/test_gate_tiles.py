@@ -20,12 +20,12 @@ def string(stream):
 pack = BytesIO((MEDIA/'texturepacks/SG_GatesPreview.pack').read_bytes())
 assert pack.read(4) == b'PZPK' and integer(pack) == 1 and integer(pack) == 1
 assert string(pack) == 'SG_GatesPreview_0'
-assert integer(pack) == 184 and integer(pack) == 1
-for index in range(184):
+assert integer(pack) == 328 and integer(pack) == 1
+for index in range(328):
     assert string(pack) == f'sg_gates_preview_01_{index}'
     assert [integer(pack) for _ in range(8)] == [index%8*128,index//8*256,128,256,0,0,128,256]
 image = Image.open(BytesIO(pack.read(integer(pack))))
-assert image.size == (1024,5888) and image.mode == 'RGBA'
+assert image.size == (1024,10496) and image.mode == 'RGBA'
 assert image.getchannel('A').getextrema() == (0,0)
 assert not pack.read()
 
@@ -33,12 +33,12 @@ tiles = BytesIO((MEDIA/'SG_GatesPreview.tiles').read_bytes())
 assert tiles.read(4) == b'tdef' and integer(tiles) == 1 and integer(tiles) == 1
 assert tiles.readline() == b'sg_gates_preview_01\n'
 assert tiles.readline() == b'sg_gates_preview_01.png\n'
-assert [integer(tiles) for _ in range(4)] == [8,23,1,184]
-assert all(integer(tiles)==0 for _ in range(184))  # no inadvertent collision flags
+assert [integer(tiles) for _ in range(4)] == [8,41,1,328]
+assert all(integer(tiles)==0 for _ in range(328))  # no inadvertent collision flags
 assert not tiles.read()
 
 bindings=(ROOT/'mod/SlidingGates/common/media/spriteModels.txt').read_text()
-assert len(re.findall(r'\bxy\s*=',bindings)) == 184
+assert len(re.findall(r'\bxy\s*=',bindings)) == 328
 assert 'xy = 1 0,' in bindings and 'xy = 5 0,' in bindings
 assert 'Base.SG_ChainLink_N_Right,' in bindings and 'Base.SG_ChainLink_4_N_Right,' in bindings
 model_scripts = (MEDIA/'scripts/SG_models.txt').read_text()
@@ -108,4 +108,18 @@ entities=(MEDIA/'scripts/entity_sliding_gates.txt').read_text()
 assert 'street_trafficlines' not in entities
 for index in (0,1,2,3,4,5,6,7,12,13,14,15,*range(24,36)):
     assert f'sg_gates_preview_01_{index}' in entities
+# Six-cell footprints 184..327: leaf carriers match the registered resting poses.
+six=(MEDIA/'scripts/SG_models_six.txt').read_text(encoding='utf-8')
+six_entities=(MEDIA/'scripts/entity_sliding_gates_six.txt').read_text(encoding='utf-8')
+for (material,quality),start in ((('ChainLink','_Low'),184),(('ChainLink','_Medium'),208),(('ChainLink',''),232),
+                                 (('Wood','_Low'),256),(('Wood','_Medium'),280),(('Wood',''),304)):
+    for index in range(start,start+24):
+        assert f'sg_gates_preview_01_{index},' in six_entities or f'sg_gates_preview_01_{index} ' in six_entities
+    stem=f'SG_{material}_6{quality}'
+    for offset,pose in ((5,'_N_Right_G'),(6,'_W_G'),(12,'_N_Reverse_G'),(23,'_W_Reverse_G')):
+        expected=properties(re.search(r'\bspriteModel\s+'+stem+pose+r'_Closed\s*\{([^}]+)\}',six)[1])
+        actual=tiles_by_index[start+offset]
+        assert actual['modelScript'].strip()==expected['modelScript'].strip(),(start+offset)
+        for key in ('translate','rotate','scale','animationTime'):
+            assert list(map(float,actual[key].split()))==list(map(float,expected[key].split())),(start+offset,key)
 print('PASS pack v1, tdef v1, alpha, properties, entity carriers, registration and calibrated model poses')

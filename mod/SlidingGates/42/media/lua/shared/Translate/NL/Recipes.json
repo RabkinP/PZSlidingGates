@@ -12,5 +12,11 @@
     "SlidingGateWood2Medium": "Houten schuifpoort (2 vakken) (Gemiddelde kwaliteit)",
     "SlidingGateWood4": "Houten schuifpoort (4 vakken) (Hoge kwaliteit)",
     "SlidingGateWood4Low": "Houten schuifpoort (4 vakken) (Lage kwaliteit)",
-    "SlidingGateWood4Medium": "Houten schuifpoort (4 vakken) (Gemiddelde kwaliteit)"
+    "SlidingGateWood4Medium": "Houten schuifpoort (4 vakken) (Gemiddelde kwaliteit)",
+    "SlidingGateChainLink6": "Schuifpoort (6 vakken) (Hoge kwaliteit)",
+    "SlidingGateChainLink6Low": "Schuifpoort (6 vakken) (Lage kwaliteit)",
+    "SlidingGateChainLink6Medium": "Schuifpoort (6 vakken) (Gemiddelde kwaliteit)",
+    "SlidingGateWood6": "Houten schuifpoort (6 vakken) (Hoge kwaliteit)",
+    "SlidingGateWood6Low": "Houten schuifpoort (6 vakken) (Lage kwaliteit)",
+    "SlidingGateWood6Medium": "Houten schuifpoort (6 vakken) (Gemiddelde kwaliteit)"
 }

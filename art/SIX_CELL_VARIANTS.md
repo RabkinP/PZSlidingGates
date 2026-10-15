@@ -76,7 +76,19 @@ W orientation reuses the N assets by spriteModel rotation at integration time.
 The old wooden updater also assumes 2/4; do not run it on six-cell scenes until its
 scene lookup is generalized. The guarded six-cell builder refuses existing targets.
 
-Future integration needs `wood6`/`chainlink6`, width-specific model/script names,
-9-second resting open poses, recipes/resources/icons, appended preview footprints,
-and runtime checks for a six-cell opening and six-cell runback. None is registered
-by this art change.
+## Integration
+
+`tools/register_six_models.py` deploys the 48 GLBs and writes `SG_models_six.txt`
+(48 models, 48 animation meshes, 192 carrier poses) and `entity_sliding_gates_six.txt`
+(six recipes) by cloning the registered four-cell blocks, so all anchors stay
+calibrated: names `_4`→`_6`, resting open pose 6→9 seconds. Lua types `chainlink6`/
+`wood6` use 9-second clips. Preview footprints 184..327 come from
+`tools/build_gate_tiles.py`; `research/probe-gate-tiles.py` parses all 328 with the
+installed game. Native import of all GLBs: `six_native_import.txt`. Recipe icons
+reuse the four-cell icons. No in-game visual test has been performed yet.
+
+Six-cell recipe balance, all three quality tiers: 60 XP for both materials;
+8 screws for wood and 4 screws/nuts-bolts for chain-link, matching widths 2/4;
+2 rubber hoses (or the existing chain-link alternatives) for both materials.
+Wood's shared material/salvage budget matches its recipe. Chain-link retains the
+existing metal-only salvage budget, with 4 screws like the smaller widths.

@@ -15,7 +15,7 @@ MOD = ROOT / 'mod/SlidingGates'
 MEDIA = MOD / '42/media'
 TILESET = 'sg_gates_preview_01'
 FILE_NUMBER = 6842
-COUNT = 184  # wooden footprints 96..167, static carriers 168..183
+COUNT = 328  # wooden footprints 96..167, static carriers 168..183, six-cell footprints 184..327
 
 
 def integer(n):
@@ -91,6 +91,14 @@ def bindings():
                 result[index]=dict(modelScript=f'Base.{prefix}'+('_'+quality if quality else '')+'_N_'+('Reverse' if reverse else 'Right'),
                     translate=f'-0.38 0 {-tx}' if west else f'{tx} 0 -0.38',
                     rotate='0 90 0' if west else '0 0 0',scale='1',animation='Open',animationTime='0')
+    # Six-cell entity footprints: 24 tiles each (N row, W column, S row, E column of 6).
+    for (material, quality), start in ((('ChainLink','Low'),184),(('ChainLink','Medium'),208),(('ChainLink',''),232),
+                                      (('Wood','Low'),256),(('Wood','Medium'),280),(('Wood',''),304)):
+        for face, leaf_index in ((0,5),(1,0),(2,0),(3,5)):
+            west=face in (1,3); reverse=face in (2,3); tx=-.5 if reverse else .5
+            result[start+face*6+leaf_index]=dict(modelScript=f'Base.SG_{material}_6'+('_'+quality if quality else '')+'_N_'+('Reverse' if reverse else 'Right'),
+                translate=f'-0.38 0 {-tx}' if west else f'{tx} 0 -0.38',
+                rotate='0 90 0' if west else '0 0 0',scale='1',animation='Open',animationTime='0')
     for original, target in ((8,168),(16,172),(36,176),(40,180)):
         for k in range(4):
             result[target+k]=dict(result[original+k])

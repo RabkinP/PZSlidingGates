@@ -31,7 +31,7 @@ keys = {key for values in english.values() for key in values}
 entity = '\n'.join(p.read_text() for p in (MEDIA/'scripts').glob('entity_sliding_gates*.txt'))
 # XuiSkinScript removes spaces and calls Translator.getRecipeName.
 names = re.findall(r'DisplayName\s*=\s*([^,\r\n]+)', entity)
-assert len(names) == 12
+assert len(names) == 18
 for name in names:
     assert name.replace(' ', '') in english['Recipes'], name
 for recipe in re.findall(r'\b(?:craftRecipe|buildRecipe)\s+(\w+)', '\n'.join(p.read_text() for p in (MEDIA / 'scripts').glob('*.txt'))):

@@ -17,7 +17,7 @@ properties to preview sprites or reuse these entity sprites for other buildable 
 SpriteConfig's entity-to-sprite registry is global.
 
 The namespace is `sg_gates_preview_01`, tileset number **1**, eight columns,
-184 tiles / twenty-three rows (PNG 1024×5888). R cycles N, W, reverse N, reverse W.
+328 tiles / forty-one rows (PNG 1024×10496). R cycles N, W, reverse N, reverse W.
 Keep file number, tileset number and existing indices stable:
 
 | Index | Purpose |
@@ -47,6 +47,12 @@ Keep file number, tileset number and existing indices stable:
 | 172..175 | Wooden W catcher, guide, rail and drive |
 | 176..179 | Wooden reverse N catcher, guide, rail and drive |
 | 180..183 | Wooden reverse W catcher, guide, rail and drive |
+| 184..207 | Six-cell chain-link low: N row, W column, S row, E column (6 tiles each) |
+| 208..231 | Six-cell chain-link medium |
+| 232..255 | Six-cell chain-link high |
+| 256..279 | Six-cell wooden low |
+| 280..303 | Six-cell wooden medium |
+| 304..327 | Six-cell wooden high |
 
 Blank indices use the existing tiny hidden rail model. Atlas entries have explicit
 untrimmed 128×256 bounds, even though every pixel is transparent. Do not run an atlas

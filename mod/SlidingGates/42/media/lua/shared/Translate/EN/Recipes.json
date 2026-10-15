@@ -12,5 +12,11 @@
     "SlidingGateWood2Medium": "Wooden Sliding Gate (2 cells) (Medium quality)",
     "SlidingGateWood4": "Wooden Sliding Gate (4 cells) (High quality)",
     "SlidingGateWood4Low": "Wooden Sliding Gate (4 cells) (Low quality)",
-    "SlidingGateWood4Medium": "Wooden Sliding Gate (4 cells) (Medium quality)"
+    "SlidingGateWood4Medium": "Wooden Sliding Gate (4 cells) (Medium quality)",
+    "SlidingGateChainLink6": "Sliding Gate (6 cells) (High quality)",
+    "SlidingGateChainLink6Low": "Sliding Gate (6 cells) (Low quality)",
+    "SlidingGateChainLink6Medium": "Sliding Gate (6 cells) (Medium quality)",
+    "SlidingGateWood6": "Wooden Sliding Gate (6 cells) (High quality)",
+    "SlidingGateWood6Low": "Wooden Sliding Gate (6 cells) (Low quality)",
+    "SlidingGateWood6Medium": "Wooden Sliding Gate (6 cells) (Medium quality)"
 }

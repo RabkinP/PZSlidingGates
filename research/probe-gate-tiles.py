@@ -70,7 +70,7 @@ c+=b'\x2b'+text('filename')+text(str(REPO/'mod/SlidingGates/42/media/texturepack
 c+=call('PZGateTilesProbe','setField','(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V',0xb8)
 c+=new('zombie/fileSystem/FileSystem$TexturePackTextures')+b'\x4d\x2b\x2c'
 c+=call('zombie/fileSystem/TexturePackDevice','getSubTextureInfo','(Lzombie/fileSystem/FileSystem$TexturePackTextures;)V')
-for i in range(184):
+for i in range(328):
     c+=b'\x2c'+text(f'sg_gates_preview_01_{i}')+call('java/util/HashMap','get','(Ljava/lang/Object;)Ljava/lang/Object;')
     c+=call('java/util/Objects','requireNonNull','(Ljava/lang/Object;)Ljava/lang/Object;',0xb8)+b'\x57'
 c+=field('java/lang/System','out','Ljava/io/PrintStream;')+b'\x2c'+call('java/util/HashMap','size','()I')
@@ -85,25 +85,27 @@ c+=field('zombie/iso/IsoWorld','instance','Lzombie/iso/IsoWorld;')
 c+=field('zombie/iso/sprite/IsoSpriteManager','instance','Lzombie/iso/sprite/IsoSpriteManager;')
 c+=text(str(REPO/'mod/SlidingGates/42/media/SG_GatesPreview.tiles'))+b'\x11'+struct.pack('>h',6842)
 c+=call('zombie/iso/IsoWorld','LoadTileDefinitions','(Lzombie/iso/sprite/IsoSpriteManager;Ljava/lang/String;I)V')
-for i in range(184):
+for i in range(328):
     c+=field('zombie/iso/sprite/IsoSpriteManager','instance','Lzombie/iso/sprite/IsoSpriteManager;')
     c+=field('zombie/iso/sprite/IsoSpriteManager','namedMap','Ljava/util/HashMap;',0xb4)
     c+=text(f'sg_gates_preview_01_{i}')+call('java/util/HashMap','get','(Ljava/lang/Object;)Ljava/lang/Object;')
     c+=call('java/util/Objects','requireNonNull','(Ljava/lang/Object;)Ljava/lang/Object;',0xb8)+b'\x57'
 c+=new('zombie/iso/SpriteModelsFile')+b'\x4c\x2b'+text('parseFile')
-c+=text((REPO/'mod/SlidingGates/common/media/spriteModels.txt').read_text())
+# Read the file in Java: its text exceeds the 65535-byte class constant limit.
+c+=new('java/lang/String','([B)V',new('java/io/File','(Ljava/lang/String;)V',text(str(REPO/'mod/SlidingGates/common/media/spriteModels.txt')))
+    +call('java/io/File','toPath','()Ljava/nio/file/Path;')+call('java/nio/file/Files','readAllBytes','(Ljava/nio/file/Path;)[B',0xb8))
 c+=call('PZGateTilesProbe','invokeString','(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V',0xb8)
 c+=b'\x2b'+text('tilesets')+call('PZGateTilesProbe','getField','(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;',0xb8)
 c+=b'\xc0'+u2(p.cls('java/util/ArrayList'))+b'\x03'+call('java/util/ArrayList','get','(I)Ljava/lang/Object;')
 c+=text('initSprites')+call('PZGateTilesProbe','invokeNoArg','(Ljava/lang/Object;Ljava/lang/String;)V',0xb8)
-for i in range(184):
+for i in range(328):
     c+=field('zombie/iso/sprite/IsoSpriteManager','instance','Lzombie/iso/sprite/IsoSpriteManager;')
     c+=field('zombie/iso/sprite/IsoSpriteManager','namedMap','Ljava/util/HashMap;',0xb4)
     c+=text(f'sg_gates_preview_01_{i}')+call('java/util/HashMap','get','(Ljava/lang/Object;)Ljava/lang/Object;')
     c+=b'\xc0'+u2(p.cls('zombie/iso/sprite/IsoSprite'))
     c+=field('zombie/iso/sprite/IsoSprite','spriteModel','Lzombie/iso/SpriteModel;',0xb4)
     c+=call('java/util/Objects','requireNonNull','(Ljava/lang/Object;)Ljava/lang/Object;',0xb8)+b'\x57'
-c+=field('java/lang/System','out','Ljava/io/PrintStream;')+text('PASS installed pack metadata, PNG decoder, tile definitions and all 184 spriteModel bindings')
+c+=field('java/lang/System','out','Ljava/io/PrintStream;')+text('PASS installed pack metadata, PNG decoder, tile definitions and all 328 spriteModel bindings')
 c+=call('java/io/PrintStream','println','(Ljava/lang/String;)V')+b'\xb1'
 p.method('main','([Ljava/lang/String;)V',c,9)
 p.save('PZGateTilesProbe')
@@ -114,6 +116,6 @@ print(run.stdout, end='')
 print(run.stderr, end='')
 if run.returncode:
     raise SystemExit(run.returncode)
-assert '\n184\n1024\n5888\n' in '\n'+run.stdout.replace('\r','')
+assert '\n328\n1024\n10496\n' in '\n'+run.stdout.replace('\r','')
 report=REPO/'research/render-audit/gate-tiles-native.txt'
 report.write_text(run.stdout+run.stderr)

@@ -122,14 +122,14 @@ end
 function blocked(x) return square(x,20,0):isBlockedTo(square(x,19,0)) end
 '''
 
-for width in (2,4):
+for width in (2,4,6):
     lua=LuaRuntime()
     lua.globals().package.path = str(ROOT/'mod/SlidingGates/42/media/lua/shared/?.lua').replace('\\', '/') + ';' + lua.globals().package.path
     lua.execute(MOCK)
     lua.execute((ROOT/'mod/SlidingGates/42/media/lua/client/SG_Gate.lua').read_text(encoding='utf-8'))
     lua.globals().width=width
     lua.execute(r'''
-local kind=width==2 and 'chainlink' or 'chainlink4'
+local kind=width==2 and 'chainlink' or 'chainlink'..width
 local id=SGGate.build(square(30,20,0),kind,5)
 assert(id=='30,20,0')
 local leaf=partsWithRole(id,'leaf')[1]

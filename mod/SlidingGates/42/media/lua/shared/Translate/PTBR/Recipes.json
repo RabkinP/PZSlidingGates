@@ -12,5 +12,11 @@
     "SlidingGateWood2Medium": "Portão deslizante de madeira (2 células) (Qualidade média)",
     "SlidingGateWood4": "Portão deslizante de madeira (4 células) (Qualidade alta)",
     "SlidingGateWood4Low": "Portão deslizante de madeira (4 células) (Qualidade baixa)",
-    "SlidingGateWood4Medium": "Portão deslizante de madeira (4 células) (Qualidade média)"
+    "SlidingGateWood4Medium": "Portão deslizante de madeira (4 células) (Qualidade média)",
+    "SlidingGateChainLink6": "Portão deslizante (6 células) (Qualidade alta)",
+    "SlidingGateChainLink6Low": "Portão deslizante (6 células) (Qualidade baixa)",
+    "SlidingGateChainLink6Medium": "Portão deslizante (6 células) (Qualidade média)",
+    "SlidingGateWood6": "Portão deslizante de madeira (6 células) (Qualidade alta)",
+    "SlidingGateWood6Low": "Portão deslizante de madeira (6 células) (Qualidade baixa)",
+    "SlidingGateWood6Medium": "Portão deslizante de madeira (6 células) (Qualidade média)"
 }

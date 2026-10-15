@@ -12,5 +12,11 @@
     "SlidingGateWood2Medium": "Porta corredissa de fusta (2 caselles) (Qualitat mitjana)",
     "SlidingGateWood4": "Porta corredissa de fusta (4 caselles) (Qualitat alta)",
     "SlidingGateWood4Low": "Porta corredissa de fusta (4 caselles) (Qualitat baixa)",
-    "SlidingGateWood4Medium": "Porta corredissa de fusta (4 caselles) (Qualitat mitjana)"
+    "SlidingGateWood4Medium": "Porta corredissa de fusta (4 caselles) (Qualitat mitjana)",
+    "SlidingGateChainLink6": "Porta corredissa (6 caselles) (Qualitat alta)",
+    "SlidingGateChainLink6Low": "Porta corredissa (6 caselles) (Qualitat baixa)",
+    "SlidingGateChainLink6Medium": "Porta corredissa (6 caselles) (Qualitat mitjana)",
+    "SlidingGateWood6": "Porta corredissa de fusta (6 caselles) (Qualitat alta)",
+    "SlidingGateWood6Low": "Porta corredissa de fusta (6 caselles) (Qualitat baixa)",
+    "SlidingGateWood6Medium": "Porta corredissa de fusta (6 caselles) (Qualitat mitjana)"
 }

@@ -1,0 +1,626 @@
+[
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Low_N_Reverse_Damage1.glb",
+    "vertices": 40906,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Low_N_Reverse_Damage2.glb",
+    "vertices": 41050,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Low_N_Reverse_Damage3.glb",
+    "vertices": 41158,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Low_N_Right_Damage1.glb",
+    "vertices": 40906,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Low_N_Right_Damage2.glb",
+    "vertices": 41050,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Low_N_Right_Damage3.glb",
+    "vertices": 41158,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Medium_N_Reverse_Damage1.glb",
+    "vertices": 40042,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Medium_N_Reverse_Damage2.glb",
+    "vertices": 40186,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Medium_N_Reverse_Damage3.glb",
+    "vertices": 40294,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Medium_N_Right_Damage1.glb",
+    "vertices": 40042,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Medium_N_Right_Damage2.glb",
+    "vertices": 40186,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Medium_N_Right_Damage3.glb",
+    "vertices": 40294,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_N_Reverse_Damage1.glb",
+    "vertices": 39748,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_N_Reverse_Damage2.glb",
+    "vertices": 39904,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_N_Reverse_Damage3.glb",
+    "vertices": 39964,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_N_Right_Damage1.glb",
+    "vertices": 39748,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_N_Right_Damage2.glb",
+    "vertices": 39904,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_N_Right_Damage3.glb",
+    "vertices": 39964,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/quality/SG_ChainLink_6_Low_N_Reverse.glb",
+    "vertices": 30092,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/quality/SG_ChainLink_6_Low_N_Right.glb",
+    "vertices": 30092,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/quality/SG_ChainLink_6_Medium_N_Reverse.glb",
+    "vertices": 29660,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/quality/SG_ChainLink_6_Medium_N_Right.glb",
+    "vertices": 29660,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/SG_ChainLink_6_N_Reverse.glb",
+    "vertices": 8764,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/SG_ChainLink_6_N_Right.glb",
+    "vertices": 8764,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Reverse.glb",
+    "vertices": 6920,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Reverse_Damage1.glb",
+    "vertices": 7496,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Reverse_Damage2.glb",
+    "vertices": 8072,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Reverse_Damage3.glb",
+    "vertices": 8216,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Right.glb",
+    "vertices": 6920,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Right_Damage1.glb",
+    "vertices": 7496,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Right_Damage2.glb",
+    "vertices": 8072,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Right_Damage3.glb",
+    "vertices": 8216,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Reverse.glb",
+    "vertices": 6920,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Reverse_Damage1.glb",
+    "vertices": 7496,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Reverse_Damage2.glb",
+    "vertices": 8072,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Reverse_Damage3.glb",
+    "vertices": 8216,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Right.glb",
+    "vertices": 6920,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Right_Damage1.glb",
+    "vertices": 7496,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Right_Damage2.glb",
+    "vertices": 8072,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Right_Damage3.glb",
+    "vertices": 8216,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Reverse.glb",
+    "vertices": 6920,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Reverse_Damage1.glb",
+    "vertices": 7496,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Reverse_Damage2.glb",
+    "vertices": 8072,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Reverse_Damage3.glb",
+    "vertices": 8216,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Right.glb",
+    "vertices": 6920,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Right_Damage1.glb",
+    "vertices": 7496,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Right_Damage2.glb",
+    "vertices": 8072,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Right_Damage3.glb",
+    "vertices": 8216,
+    "clips": [
+      "Open",
+      "Close"
+    ],
+    "seconds": 9,
+    "stroke": 6,
+    "normals": true,
+    "uv": true,
+    "rigid_weights": true
+  }
+]

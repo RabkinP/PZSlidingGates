@@ -9,11 +9,15 @@ import json
 import struct
 
 ART=r'E:\git\SlidingGates\art'
-OUT=os.path.join(ART,'exports','quality')
+OUT=os.path.join(globals().get('EXPORT_ROOT',os.path.join(ART,'exports')),'quality')
+WIDTHS=globals().get('EXPORT_WIDTHS',(2,4))
 os.makedirs(OUT,exist_ok=True)
 previous=bpy.context.window.scene
 for scene in bpy.data.scenes:
     if scene.get('sg_material') == 'wood' or not scene.get('sg_quality') or scene.get('sg_damage'):continue
+    if scene['sg_quality']=='high':continue
+    rig=next(o for o in scene.objects if o.type=='ARMATURE')
+    if rig['gate_width_cells'] not in WIDTHS:continue
     bpy.context.window.scene=scene
     rig=next(o for o in scene.objects if o.type=='ARMATURE')
     leaf=next(o for o in scene.objects if o.type=='MESH' and o.parent==rig)
@@ -21,7 +25,7 @@ for scene in bpy.data.scenes:
     action,slot=ad.action,ad.action_slot
     mutes=[t.mute for t in ad.nla_tracks]
     frame=scene.frame_current
-    prefix='SG_ChainLink' if rig['gate_width_cells']==2 else 'SG_ChainLink_4'
+    prefix='SG_ChainLink' if rig['gate_width_cells']==2 else f"SG_ChainLink_{rig['gate_width_cells']}"
     filename=prefix+'_'+scene['sg_quality'].title()+'_N_'+('Reverse' if rig.get('gate_direction')=='reverse' else 'Right')+'.glb'
     path=os.path.join(OUT,filename)
     try:

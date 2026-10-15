@@ -1,0 +1,770 @@
+[
+  {
+    "scene": "SG_Wood_6_high_Workbench",
+    "frames": 434,
+    "shells": 279,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Workbench",
+    "frames": 434,
+    "shells": 266,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Damage1_Workbench",
+    "frames": 434,
+    "shells": 266,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Damage2_Workbench",
+    "frames": 434,
+    "shells": 279,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Damage3_Workbench",
+    "frames": 434,
+    "shells": 284,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Low_Damage1_Workbench",
+    "frames": 434,
+    "shells": 289,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Low_Damage2_Workbench",
+    "frames": 434,
+    "shells": 301,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Low_Damage3_Workbench",
+    "frames": 434,
+    "shells": 310,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Low_Workbench",
+    "frames": 434,
+    "shells": 289,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Medium_Damage1_Workbench",
+    "frames": 434,
+    "shells": 271,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Medium_Damage2_Workbench",
+    "frames": 434,
+    "shells": 283,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Medium_Damage3_Workbench",
+    "frames": 434,
+    "shells": 292,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Medium_Workbench",
+    "frames": 434,
+    "shells": 271,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Reverse_Damage1_Workbench",
+    "frames": 434,
+    "shells": 266,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Reverse_Damage2_Workbench",
+    "frames": 434,
+    "shells": 279,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Reverse_Damage3_Workbench",
+    "frames": 434,
+    "shells": 284,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Reverse_Low_Damage1_Workbench",
+    "frames": 434,
+    "shells": 289,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Reverse_Low_Damage2_Workbench",
+    "frames": 434,
+    "shells": 301,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Reverse_Low_Damage3_Workbench",
+    "frames": 434,
+    "shells": 310,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Reverse_Low_Workbench",
+    "frames": 434,
+    "shells": 289,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Reverse_Medium_Damage1_Workbench",
+    "frames": 434,
+    "shells": 271,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Reverse_Medium_Damage2_Workbench",
+    "frames": 434,
+    "shells": 283,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Reverse_Medium_Damage3_Workbench",
+    "frames": 434,
+    "shells": 292,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Reverse_Medium_Workbench",
+    "frames": 434,
+    "shells": 271,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_ChainLink_6_Reverse_Workbench",
+    "frames": 434,
+    "shells": 266,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_high_Damage1_Workbench",
+    "frames": 434,
+    "shells": 291,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_high_Damage2_Workbench",
+    "frames": 434,
+    "shells": 303,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_high_Damage3_Workbench",
+    "frames": 434,
+    "shells": 309,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_high_Reverse_Damage1_Workbench",
+    "frames": 434,
+    "shells": 291,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_high_Reverse_Damage2_Workbench",
+    "frames": 434,
+    "shells": 303,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_high_Reverse_Damage3_Workbench",
+    "frames": 434,
+    "shells": 309,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_high_Reverse_Workbench",
+    "frames": 434,
+    "shells": 279,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_low_Damage1_Workbench",
+    "frames": 434,
+    "shells": 291,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_low_Damage2_Workbench",
+    "frames": 434,
+    "shells": 303,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_low_Damage3_Workbench",
+    "frames": 434,
+    "shells": 309,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_low_Reverse_Damage1_Workbench",
+    "frames": 434,
+    "shells": 291,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_low_Reverse_Damage2_Workbench",
+    "frames": 434,
+    "shells": 303,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_low_Reverse_Damage3_Workbench",
+    "frames": 434,
+    "shells": 309,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_low_Reverse_Workbench",
+    "frames": 434,
+    "shells": 279,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_low_Workbench",
+    "frames": 434,
+    "shells": 279,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_medium_Damage1_Workbench",
+    "frames": 434,
+    "shells": 291,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_medium_Damage2_Workbench",
+    "frames": 434,
+    "shells": 303,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_medium_Damage3_Workbench",
+    "frames": 434,
+    "shells": 309,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_medium_Reverse_Damage1_Workbench",
+    "frames": 434,
+    "shells": 291,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_medium_Reverse_Damage2_Workbench",
+    "frames": 434,
+    "shells": 303,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_medium_Reverse_Damage3_Workbench",
+    "frames": 434,
+    "shells": 309,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_medium_Reverse_Workbench",
+    "frames": 434,
+    "shells": 279,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  },
+  {
+    "scene": "SG_Wood_6_medium_Workbench",
+    "frames": 434,
+    "shells": 279,
+    "collisions": [],
+    "width": 6,
+    "duration": 9,
+    "rail_capture": true,
+    "rigid_weights": true,
+    "outward_shells": true,
+    "uv_checked": true,
+    "clips": [
+      "Open",
+      "Close"
+    ]
+  }
+]

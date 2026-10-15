@@ -4,15 +4,19 @@ import os
 import json
 import struct
 
-ART=r'E:\git\SlidingGates\art';OUT=os.path.join(ART,'exports','wood');os.makedirs(OUT,exist_ok=True)
+ART=r'E:\git\SlidingGates\art'
+OUT=os.path.join(globals().get('EXPORT_ROOT',os.path.join(ART,'exports')),'wood');os.makedirs(OUT,exist_ok=True)
+WIDTHS=globals().get('EXPORT_WIDTHS',(2,4))
 previous=bpy.context.window.scene;count=0
 for scene in bpy.data.scenes:
     if scene.get('sg_material')!='wood':continue
+    rig=next(o for o in scene.objects if o.type=='ARMATURE')
+    if rig['gate_width_cells'] not in WIDTHS:continue
     bpy.context.window.scene=scene
     rig=next(o for o in scene.objects if o.type=='ARMATURE');ad=rig.animation_data
     leaf=next(o for o in scene.objects if o.type=='MESH' and o.parent==rig)
     width=rig['gate_width_cells'];reverse=rig.get('gate_direction')=='reverse'
-    model=('SG_Wood' if width==2 else 'SG_Wood_4')+('' if scene['sg_quality']=='high' else '_'+scene['sg_quality'].title())
+    model=('SG_Wood' if width==2 else f'SG_Wood_{width}')+('' if scene['sg_quality']=='high' else '_'+scene['sg_quality'].title())
     model+='_N_'+('Reverse' if reverse else 'Right')+(f"_Damage{scene['sg_damage']}" if scene['sg_damage'] else '')
     oldaction,oldslot=ad.action,ad.action_slot;mutes=[t.mute for t in ad.nla_tracks]
     def export(name,objects,animated):

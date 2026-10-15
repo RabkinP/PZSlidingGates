@@ -1,0 +1,242 @@
+[
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Low_N_Reverse_Damage1.glb",
+    "bytes": 2584104,
+    "sha256": "f1827d261b60bb7d1c89362552654b2ebe804c7d6e2deda4d2073da421319ef6"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Low_N_Reverse_Damage2.glb",
+    "bytes": 2591304,
+    "sha256": "5e078ee43b9dfb870fbd256c97f59881138359fc37121b55caa19f24c7827bc5"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Low_N_Reverse_Damage3.glb",
+    "bytes": 2596704,
+    "sha256": "28fa44479e2536b95ba29ea0fe6aad2d56305bccee1fbc6c1989c4acacc925b5"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Low_N_Right_Damage1.glb",
+    "bytes": 2584064,
+    "sha256": "f858c5593634474e08104753474bf6840e82fcf13beea433c8b23158649d210f"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Low_N_Right_Damage2.glb",
+    "bytes": 2591264,
+    "sha256": "8c174c6868e22e78fd307f5ba56493a368d25ee009910effe9d78a4aff4bf5f0"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Low_N_Right_Damage3.glb",
+    "bytes": 2596664,
+    "sha256": "db0b1b44b2fb6b849560a048f096aec8df2a9a5a6cbf193c109144b28ad279be"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Medium_N_Reverse_Damage1.glb",
+    "bytes": 2532712,
+    "sha256": "c7bb0f1b83ea717f74af03b6f585cd764ddd3abc0a009b8c24928f15c5ff99e8"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Medium_N_Reverse_Damage2.glb",
+    "bytes": 2539912,
+    "sha256": "ca6e574f31376a849d16a2969b31392e942925734c56196f8c5c1efb4146c47d"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Medium_N_Reverse_Damage3.glb",
+    "bytes": 2545312,
+    "sha256": "2fa8252124e09d880837294c3168c8a0ccfe67cb11185feb63072500cdabc029"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Medium_N_Right_Damage1.glb",
+    "bytes": 2532672,
+    "sha256": "8729a18b1887456ac61f236e3a38bc7a96c9869367b5bf6192fdf05cae1f2a65"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Medium_N_Right_Damage2.glb",
+    "bytes": 2539872,
+    "sha256": "fe968f82fba6e44ad10ea2dc4f2e84e8373b4cb3f3601b60159e478ca7599069"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_Medium_N_Right_Damage3.glb",
+    "bytes": 2545272,
+    "sha256": "ea2ff8332bc3c672eaa8b412c43065e80300a79bf6d002db38df1fe999aebc6b"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_N_Reverse_Damage1.glb",
+    "bytes": 2516452,
+    "sha256": "f630a1f5424f18c6547128465efeb2053e9644f1c1efb06ed4d22356b9f6af8e"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_N_Reverse_Damage2.glb",
+    "bytes": 2524252,
+    "sha256": "78e670b7759c459651021551d7e656cbcb18df3acec544d6911fa4aef3902f36"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_N_Reverse_Damage3.glb",
+    "bytes": 2527252,
+    "sha256": "2b1b20615874d190f47c4a8077b37b9229e745d9cd4b1f4fe4598945ea6adc8d"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_N_Right_Damage1.glb",
+    "bytes": 2516412,
+    "sha256": "6460f197fe8488dd55e22038b38631be62e40ea36ee7738da39e2988ac1308d1"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_N_Right_Damage2.glb",
+    "bytes": 2524212,
+    "sha256": "0e30cd55af120d4ec814085b67da6473398c5913e0d79d8e1b1d32e4ef4a92b5"
+  },
+  {
+    "path": "exports/six/damage/SG_ChainLink_6_N_Right_Damage3.glb",
+    "bytes": 2527212,
+    "sha256": "7292aa42bfd9487c01911e36431db82e30635eac4bdc698e202effef72784e95"
+  },
+  {
+    "path": "exports/six/quality/SG_ChainLink_6_Low_N_Reverse.glb",
+    "bytes": 1688832,
+    "sha256": "a1890d864f206efd964eb4833edc0971b8e378857499341e9a689e1f1f5a2b83"
+  },
+  {
+    "path": "exports/six/quality/SG_ChainLink_6_Low_N_Right.glb",
+    "bytes": 1688788,
+    "sha256": "17fb8b72846b010b72cb676daa4fffcde546d65adad05171b4eb421233839a25"
+  },
+  {
+    "path": "exports/six/quality/SG_ChainLink_6_Medium_N_Reverse.glb",
+    "bytes": 1665084,
+    "sha256": "9b7604a250bbb1b864cf93679354e9a1e6a19dd78aaf2580e742ae80caf2eda1"
+  },
+  {
+    "path": "exports/six/quality/SG_ChainLink_6_Medium_N_Right.glb",
+    "bytes": 1665044,
+    "sha256": "33c61e3321bb3806bce7c761fe682942db887dac67b9d7fd81c3b7d9022a976c"
+  },
+  {
+    "path": "exports/six/SG_ChainLink_6_N_Reverse.glb",
+    "bytes": 515752,
+    "sha256": "853df99b8e6714a7e519a3feaa174d11660b3bd08c62278f64f4eb4c82381da6"
+  },
+  {
+    "path": "exports/six/SG_ChainLink_6_N_Right.glb",
+    "bytes": 515712,
+    "sha256": "45fb6d04e678c9e3f19c815ba2f8bca7c0011f2d6f0de5f49fddf268a9a47169"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Reverse.glb",
+    "bytes": 463536,
+    "sha256": "65e9c9bc420c371237009b0c0c25baf25390450f339e35e9e5ac8ebe862bf2ad"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Reverse_Damage1.glb",
+    "bytes": 495544,
+    "sha256": "f18fd2ddad18ecb43497bbb3933150b5478b5d192e7458d20a2a249dedbf5c73"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Reverse_Damage2.glb",
+    "bytes": 527508,
+    "sha256": "8328574107ccc59a35e1957abc2b1555479b2a58d3cf59a4a5717ebfa2060f45"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Reverse_Damage3.glb",
+    "bytes": 535428,
+    "sha256": "819a7b1799cc7ea7ca5ab37a660c703320189c0fad4ec048738ee983bbe44c7f"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Right.glb",
+    "bytes": 463492,
+    "sha256": "283e5189044ff3f10e669f0f2dc29982ddd868b2640aa90861cda21517da3f0e"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Right_Damage1.glb",
+    "bytes": 495500,
+    "sha256": "572500908c96e166a2572bb2c4683278d72021522911e6e470b6228d77bffbf8"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Right_Damage2.glb",
+    "bytes": 527468,
+    "sha256": "c9d71791075c82d3f53e3ed9c1f14e9f6e33cc0bbeb92f9aa797535dd85ae94d"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Low_N_Right_Damage3.glb",
+    "bytes": 535388,
+    "sha256": "79dc446201ce761e9dfffede877ed3c828fb74955fa30c2e26ad2572b58cd677"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Reverse.glb",
+    "bytes": 463548,
+    "sha256": "616421b9df62a2c243e3f31a211521f8e486dbafc4fece21ce56703385e4a5f0"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Reverse_Damage1.glb",
+    "bytes": 495556,
+    "sha256": "4186b7c0e1244b1e15703102c6d59e2420444fbf608d4edfe21475220254d597"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Reverse_Damage2.glb",
+    "bytes": 527524,
+    "sha256": "d0fc47590bcd41c476c1251e1aeb67924d6759879ef75966f07dd89639642be0"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Reverse_Damage3.glb",
+    "bytes": 535444,
+    "sha256": "e2acfbba8a5ccfc8f5127accb5c2f54eb2e5a7838fb44d24bbdc666f6bd6820c"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Right.glb",
+    "bytes": 463508,
+    "sha256": "3f109f3b5c07fef15a04e836d985caf0b099e1134748effe5399b78c301c28e1"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Right_Damage1.glb",
+    "bytes": 495516,
+    "sha256": "83bf4fa7d29f977e013b34ae2d29ebacf9e17eb39c5d6ad085f97fdf752dd051"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Right_Damage2.glb",
+    "bytes": 527484,
+    "sha256": "f69f09768d267f3da5af019f9d0e6222938eaba4cd47a7b6eca3e7e57a61f9c9"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_Medium_N_Right_Damage3.glb",
+    "bytes": 535404,
+    "sha256": "9c582b5ef1b4516a70780dd01c1d5a90f69534317660d36c43ddfbcf9598d11f"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Reverse.glb",
+    "bytes": 463540,
+    "sha256": "f1faed886f7aaf948ae038149db3dd2b7bb8ed959f81058a986384e1eca0ba5e"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Reverse_Damage1.glb",
+    "bytes": 495548,
+    "sha256": "3cafc6fe199a0b504480bf29e6ea278e221dcc98469871b808b95d77d5b7e4e5"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Reverse_Damage2.glb",
+    "bytes": 527516,
+    "sha256": "0f7848fa7631f3c4619e80b02d3251e98ae38b2006a39ae40c6e41710f5dba84"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Reverse_Damage3.glb",
+    "bytes": 535436,
+    "sha256": "d45ae8bae0ee73cd377b46c6186de039bf07cf0644ef5d72657e0e43e62eea5f"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Right.glb",
+    "bytes": 463500,
+    "sha256": "cc8a0d6c0c3ff0b7de9c05410fbda91d51b97ee087d28413d3f9e9a84d3b4959"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Right_Damage1.glb",
+    "bytes": 495508,
+    "sha256": "89fc525ab379404b320003ee4772a3a11770539da41d44e11bf8636c4fca1f9a"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Right_Damage2.glb",
+    "bytes": 527472,
+    "sha256": "06827d8c84c5edf7394c984213812491a0cbd3819d22cc08f784d5e23384c94b"
+  },
+  {
+    "path": "exports/six/wood/SG_Wood_6_N_Right_Damage3.glb",
+    "bytes": 535392,
+    "sha256": "03707eeb8031ad139980cd68760702276972e8861969f7d8804ab09ed451056a"
+  }
+]

@@ -9,11 +9,18 @@ from pathlib import Path
 import json
 import struct
 from PIL import Image
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from outer_variant import outer  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 MOD = ROOT / 'mod/SlidingGates'
 MEDIA = MOD / '42/media'
 TILESET = 'sg_gates_preview_01'
+# Outer-side carriers: same index as the inner carrier, assembly mirrored across the fence line.
+# Separate tileset (number 2): the installed tdef loader rejects a tileset above 512 tiles.
+OUTER_TILESET = 'sg_gates_preview_02'
 FILE_NUMBER = 6842
 COUNT = 328  # wooden footprints 96..167, static carriers 168..183, six-cell footprints 184..327
 
@@ -106,6 +113,10 @@ def bindings():
     return result
 
 
+def outer_bindings():
+    return [fields if fields['scale'] == '0.001' else outer(fields) for fields in bindings()]
+
+
 def build():
     rows = (COUNT + 7) // 8
     atlas = Image.new('RGBA', (1024, rows*256), (0, 0, 0, 0))
@@ -113,35 +124,40 @@ def build():
     png = BytesIO()
     atlas.save(png, format='PNG')
     payload = png.getvalue()
-    pack = b'PZPK' + integer(1) + integer(1)
-    pack += pack_string('SG_GatesPreview_0') + integer(COUNT) + integer(1)
-    for index in range(COUNT):
-        pack += pack_string(f'{TILESET}_{index}')
-        pack += b''.join(integer(n) for n in
-                         ((index % 8) * 128, (index // 8) * 256,
-                          128, 256, 0, 0, 128, 256))
-    pack += integer(len(payload)) + payload
+    tilesets = ((TILESET, bindings()), (OUTER_TILESET, outer_bindings()))
+    pack = b'PZPK' + integer(1) + integer(len(tilesets))
+    for page, (tileset, _) in enumerate(tilesets):  # one page per tileset keeps each texture 10496 px high
+        pack += pack_string(f'SG_GatesPreview_{page}') + integer(COUNT) + integer(1)
+        for index in range(COUNT):
+            pack += pack_string(f'{tileset}_{index}')
+            pack += b''.join(integer(n) for n in
+                             ((index % 8) * 128, (index // 8) * 256,
+                              128, 256, 0, 0, 128, 256))
+        pack += integer(len(payload)) + payload
     textures = MEDIA / 'texturepacks'
     textures.mkdir(parents=True, exist_ok=True)
     (textures / 'SG_GatesPreview.pack').write_bytes(pack)
 
     # tdef v1: little-endian integers, LF-terminated ASCII strings (NOT CRLF).
-    tiles = b'tdef' + integer(1) + integer(1)
-    tiles += (TILESET + '\n' + TILESET + '.png\n').encode('ascii')
-    tiles += b''.join(integer(n) for n in (8, rows, 1, COUNT))
-    # Construction carriers have no collision, door, floor or physics properties.
-    tiles += integer(0) * COUNT
+    tiles = b'tdef' + integer(1) + integer(len(tilesets))
+    for tileset, _ in tilesets:
+        tiles += (tileset + '\n' + tileset + '.png\n').encode('ascii')
+        tiles += b''.join(integer(n) for n in (8, rows, 1, COUNT))
+        # Construction carriers have no collision, door, floor or physics properties.
+        tiles += integer(0) * COUNT
     (MEDIA / 'SG_GatesPreview.tiles').write_bytes(tiles)
 
     common = MOD / 'common/media'
     common.mkdir(parents=True, exist_ok=True)
-    lines = ['spriteModel', '{', '    VERSION = 1,', '    tileset', '    {',
-             f'        name = {TILESET},']
-    for index, fields in enumerate(bindings()):
-        lines += ['        tile', '        {', f'            xy = {index % 8} {index // 8},']
-        lines += [f'            {key} = {value},' for key, value in fields.items()]
-        lines += ['        }']
-    lines += ['    }', '}', '']
+    lines = ['spriteModel', '{', '    VERSION = 1,']
+    for tileset, fields_list in tilesets:
+        lines += ['    tileset', '    {', f'        name = {tileset},']
+        for index, fields in enumerate(fields_list):
+            lines += ['        tile', '        {', f'            xy = {index % 8} {index // 8},']
+            lines += [f'            {key} = {value},' for key, value in fields.items()]
+            lines += ['        }']
+        lines += ['    }']
+    lines += ['}', '']
     (common / 'spriteModels.txt').write_text('\n'.join(lines), encoding='utf-8')
 
     source = ROOT / 'art/tiles'
@@ -149,9 +165,11 @@ def build():
     atlas.save(source / f'{TILESET}.png')
     manifest = dict(tileset=TILESET, file_number=FILE_NUMBER, tileset_number=1,
                     tile_size=[128, 256], construction_only=True,
-                    indices={str(i): fields for i, fields in enumerate(bindings())})
+                    indices={str(i): fields for i, fields in enumerate(bindings())},
+                    outer_tileset=OUTER_TILESET, outer_tileset_number=2,
+                    outer_indices={str(i): fields for i, fields in enumerate(outer_bindings())})
     (source / 'gate_tiles.json').write_text(json.dumps(manifest, indent=2) + '\n')
-    print(f'Built {COUNT} carriers: .pack/.tiles and common/media/spriteModels.txt')
+    print(f'Built {COUNT} inner and {COUNT} outer carriers: .pack/.tiles and common/media/spriteModels.txt')
 
 
 if __name__ == '__main__':

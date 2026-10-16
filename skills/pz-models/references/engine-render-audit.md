@@ -409,3 +409,25 @@ Same JAR fingerprint as above; `IsoThumpable`, `FBORenderCell`, `IsoObject`,
   briefly. Setting it mid-clip, right after the flip, avoids that: confirmed in gameplay on the
   sliding-door prototype (now the separate SlidingDoors mod, SD_Proto watcher). The gates show no such flash in gameplay, so
   their own motion path does not need this change; the cause there was not investigated.
+
+## Outer-side assemblies and tdef tileset limit (2026-10-15)
+
+Installed JAR SHA256 `E1A69EB743EDE60B213A0FE7F8B83D4FCAB773036D256CC4543A336F3B058A33`.
+
+- `IsoWorld.LoadTileDefinitions` rejects a whole tdef tileset above 512 tiles: a
+  headless probe registered every sprite for 336 and 512 tiles and none for 520 (all
+  `IsoSpriteManager.namedMap` lookups null, no exception). Add a second tileset in the
+  same `.tiles` file instead (`sg_gates_preview_02`, tileset number 2); a `.pack` with two
+  pages and a `spriteModels.txt` with two `tileset` blocks parse natively
+  (`research/probe-gate-tiles.py`, `research/render-audit/gate-tiles-native.txt`).
+- Fence plane of the calibrated assets: GLB posts are centred on local Z=0 and placed at
+  perpendicular translate -0.38; the drive (translate -0.6) has its pinion tip at local Z
+  0.156, i.e. 0.064 from the fence plane, matching the Blender rack contact Y 0.040..0.065.
+  So every part's fence plane is translate -0.38. An X-mirrored model rotated Y by 180
+  equals the original reflected through its origin's perpendicular plane; the outer side
+  keeps the edge-parallel translate and maps perp -> -0.76 - perp (N: Z, W: X with
+  rotate 270). `tools/outer_variant.py`; 608 spriteModels parse natively
+  (`research/probe-gate-outer.py`). Visual placement still needs gameplay confirmation.
+- `ISBuildingObject.getSprite` and `ISBuildIsoEntity.getFace` only understand nSprite 1..4.
+  The build packet serializes the Lua nSprite value as-is, so nSprite 5..8 can carry an
+  extra cursor state to the authority if both functions are wrapped to see 1..4.

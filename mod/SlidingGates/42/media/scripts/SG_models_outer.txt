@@ -1,0 +1,6019 @@
+module Base
+{
+    spriteModel SG_ChainLink_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+    }
+
+    spriteModel SG_ChainLink_4_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_4_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+    }
+
+    spriteModel SG_GuidePost_Out_Static
+    {
+        modelScript = Base.SG_GuidePost_Reverse,
+        translate = -0.54 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_CatcherPost_Out_Static
+    {
+        modelScript = Base.SG_CatcherPost_Reverse,
+        translate = -0.46 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Rail_Out_Static
+    {
+        modelScript = Base.SG_Rail_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Drive_Out_Static
+    {
+        modelScript = Base.SG_Drive_Reverse,
+        translate = -0.5 0 -0.16,
+        rotate = 0 180 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_ChainLink_W_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_W_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+    }
+
+    spriteModel SG_ChainLink_4_W_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_4_W_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+    }
+
+    spriteModel SG_CatcherPost_W_Out_Static
+    {
+        modelScript = Base.SG_CatcherPost_Reverse,
+        translate = -0.38 0 0.46,
+        rotate = 0 270 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_GuidePost_W_Out_Static
+    {
+        modelScript = Base.SG_GuidePost_Reverse,
+        translate = -0.38 0 0.54,
+        rotate = 0 270 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Rail_W_Out_Static
+    {
+        modelScript = Base.SG_Rail_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Drive_W_Out_Static
+    {
+        modelScript = Base.SG_Drive_Reverse,
+        translate = -0.16 0 0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_ChainLink_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+    }
+
+    spriteModel SG_ChainLink_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+    }
+
+    spriteModel SG_ChainLink_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+    }
+
+    spriteModel SG_ChainLink_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+    }
+
+    spriteModel SG_ChainLink_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+    }
+
+    spriteModel SG_ChainLink_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 3.0,
+    }
+
+    spriteModel SG_ChainLink_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_4_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_4_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+    }
+
+    spriteModel SG_ChainLink_4_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_4_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+    }
+
+    spriteModel SG_ChainLink_4_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_4_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+    }
+
+    spriteModel SG_ChainLink_4_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_4_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+    }
+
+    spriteModel SG_ChainLink_4_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_4_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+    }
+
+    spriteModel SG_ChainLink_4_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_4_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 6.0,
+    }
+
+    spriteModel SG_ChainLink_4_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_W_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_W_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Low_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_Low_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_Medium_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_Medium_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Low_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Low_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_Medium_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_4_Medium_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_ChainLink_4_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_ChainLink_4_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_4_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_4_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_CatcherPost_Reverse_Out_Static
+    {
+        modelScript = Base.SG_CatcherPost,
+        translate = 0.46 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+    }
+
+    spriteModel SG_CatcherPost_Reverse_W_Out_Static
+    {
+        modelScript = Base.SG_CatcherPost,
+        translate = -0.38 0 -0.46,
+        rotate = 0 270 0,
+        scale = 1,
+    }
+
+    spriteModel SG_GuidePost_Reverse_Out_Static
+    {
+        modelScript = Base.SG_GuidePost,
+        translate = 0.54 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+    }
+
+    spriteModel SG_GuidePost_Reverse_W_Out_Static
+    {
+        modelScript = Base.SG_GuidePost,
+        translate = -0.38 0 -0.54,
+        rotate = 0 270 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Rail_Reverse_Out_Static
+    {
+        modelScript = Base.SG_Rail,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Rail_Reverse_W_Out_Static
+    {
+        modelScript = Base.SG_Rail,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Drive_Reverse_Out_Static
+    {
+        modelScript = Base.SG_Drive,
+        translate = 0.5 0 -0.16,
+        rotate = 0 180 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Drive_Reverse_W_Out_Static
+    {
+        modelScript = Base.SG_Drive,
+        translate = -0.16 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+    }
+
+    spriteModel SG_ChainLink_6_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_6_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_W_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_6_W_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_6_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_6_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_6_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_6_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_6_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 0.0,
+    }
+
+    spriteModel SG_ChainLink_6_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_6_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Low_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Low_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_ChainLink_6_Medium_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_ChainLink_6_Medium_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_W_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_W_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_6_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_6_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_W_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_W_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Low_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Low_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_6_Low_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_6_Medium_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_6_Medium_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 9,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Low_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Low_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_Medium_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_Medium_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 3,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Low_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Low_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage1,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage1,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage2,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage2,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Right_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage3,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Reverse_Damage3,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Out_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Out_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage1,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Out_Damage1_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Out_Damage1_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage1,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage2,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Out_Damage2_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Out_Damage2_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage2,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_N_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage3,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Out_Damage3_Closed
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 0,
+    }
+
+    spriteModel SG_Wood_4_Medium_W_Reverse_G_Out_Damage3_Open
+    {
+        modelScript = Base.SG_Wood_4_Medium_N_Right_Damage3,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1,
+        animation = Open,
+        animationTime = 6,
+    }
+
+    spriteModel SG_Wood_CatcherPost_Out_Static
+    {
+        modelScript = Base.SG_Wood_CatcherPost_Reverse,
+        translate = -0.46 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Wood_CatcherPost_W_Out_Static
+    {
+        modelScript = Base.SG_Wood_CatcherPost_Reverse,
+        translate = -0.38 0 0.46,
+        rotate = 0 270 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Wood_CatcherPost_Reverse_Out_Static
+    {
+        modelScript = Base.SG_Wood_CatcherPost,
+        translate = 0.46 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Wood_CatcherPost_Reverse_W_Out_Static
+    {
+        modelScript = Base.SG_Wood_CatcherPost,
+        translate = -0.38 0 -0.46,
+        rotate = 0 270 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Wood_GuidePost_Out_Static
+    {
+        modelScript = Base.SG_Wood_GuidePost_Reverse,
+        translate = -0.54 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Wood_GuidePost_W_Out_Static
+    {
+        modelScript = Base.SG_Wood_GuidePost_Reverse,
+        translate = -0.38 0 0.54,
+        rotate = 0 270 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Wood_GuidePost_Reverse_Out_Static
+    {
+        modelScript = Base.SG_Wood_GuidePost,
+        translate = 0.54 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Wood_GuidePost_Reverse_W_Out_Static
+    {
+        modelScript = Base.SG_Wood_GuidePost,
+        translate = -0.38 0 -0.54,
+        rotate = 0 270 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Wood_Rail_Out_Static
+    {
+        modelScript = Base.SG_Wood_Rail_Reverse,
+        translate = -0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Wood_Rail_W_Out_Static
+    {
+        modelScript = Base.SG_Wood_Rail_Reverse,
+        translate = -0.38 0 0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Wood_Rail_Reverse_Out_Static
+    {
+        modelScript = Base.SG_Wood_Rail,
+        translate = 0.5 0 -0.38,
+        rotate = 0 180 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Wood_Rail_Reverse_W_Out_Static
+    {
+        modelScript = Base.SG_Wood_Rail,
+        translate = -0.38 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Wood_Drive_Out_Static
+    {
+        modelScript = Base.SG_Wood_Drive_Reverse,
+        translate = -0.5 0 -0.16,
+        rotate = 0 180 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Wood_Drive_W_Out_Static
+    {
+        modelScript = Base.SG_Wood_Drive_Reverse,
+        translate = -0.16 0 0.5,
+        rotate = 0 270 0,
+        scale = 1.0,
+    }
+
+    spriteModel SG_Wood_Drive_Reverse_Out_Static
+    {
+        modelScript = Base.SG_Wood_Drive,
+        translate = 0.5 0 -0.16,
+        rotate = 0 180 0,
+        scale = 1,
+    }
+
+    spriteModel SG_Wood_Drive_Reverse_W_Out_Static
+    {
+        modelScript = Base.SG_Wood_Drive,
+        translate = -0.16 0 -0.5,
+        rotate = 0 270 0,
+        scale = 1,
+    }
+
+}

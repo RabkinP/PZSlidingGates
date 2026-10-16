@@ -94,6 +94,7 @@ function SGGate.ensureIdentity(id)
     entry.width = entry.width or 2
     entry.orientation = entry.orientation or SGGate.orientation(id)
     entry.direction = entry.direction or SGGate.direction(id)
+    entry.side = entry.side or SGGate.side(id)
     entry.quality = entry.quality or SGGate.quality(id)
     entry.damage = entry.damage or 0
     if (entry.version or 1) < SGGate.DATA_VERSION then migrateEntry(id, entry) end
@@ -106,7 +107,7 @@ function SGGate.snapshot(id)
     if not entry or not leaf then return end
     local md = leaf:getModData()
     return { id = id, instance = entry.instance, revision = entry.revision,
-        type = md.sgType, width = entry.width, orientation = entry.orientation, direction = entry.direction, open = md.sgOpen or false,
+        type = md.sgType, width = entry.width, orientation = entry.orientation, direction = entry.direction, side = entry.side, open = md.sgOpen or false,
         quality = entry.quality, damage = entry.damage, moving = entry.moving ~= nil, slavesOpen = md.sgSlavesOpen or false,
         motor = entry.motorMoving == true,
         motionRemaining = SGGate.motionRemaining and SGGate.motionRemaining(id) or 0,
@@ -192,7 +193,7 @@ local function staticModel(id, name)
     local t = type(entry) == "table" and TYPES[entry.type]
     if t and t.staticPrefix then name = name:gsub("^SG_", t.staticPrefix .. "_") end
     if SGGate.direction(id) == "reverse" then name = name .. "_Reverse" end
-    return name .. (SGGate.orientation(id) == "W" and "_W_Static" or "_Static")
+    return name .. (SGGate.orientation(id) == "W" and "_W" or "") .. (SGGate.side(id) == "outer" and "_Out" or "") .. "_Static"
 end
 
 local parseId = SGGate.parseId
@@ -205,6 +206,7 @@ local function tag(obj, id, role, extra)
     if entry then
         d.sgInstance, d.sgWidth, d.sgOrientation = entry.instance, entry.width, entry.orientation
         d.sgDirection = entry.direction
+        d.sgSide = entry.side
         d.sgQuality = entry.quality
         d.sgDamage = entry.damage
     end
@@ -287,21 +289,22 @@ end
 
 -- Build a gate without drive. sq is the catcher cell; the master is one travel cell away.
 -- skillLevel: builder's level of the type's skill; health = level x baseHealth, as vanilla thumpables.
-function SGGate.build(sq, typeId, skillLevel, orientation, direction, quality)
+function SGGate.build(sq, typeId, skillLevel, orientation, direction, quality, side)
     typeId = typeId or "chainlink"
     orientation = orientation or "N"
     direction = direction or "forward"
     quality = quality or "high"
+    side = side or "inner"
     if quality ~= "low" and quality ~= "medium" and quality ~= "high" then return end
-    local ok, reason = SGGate.canBuild(sq, typeId, orientation, direction)
+    local ok, reason = SGGate.canBuild(sq, typeId, orientation, direction, side)
     if not ok then log(reason); return end
     local t = TYPES[typeId]
     local width = t.width
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
     local id = x .. "," .. y .. "," .. z
-    registry()[id] = { version = SGGate.DATA_VERSION, width = width, type = typeId, orientation = orientation, direction = direction, quality = quality,
+    registry()[id] = { version = SGGate.DATA_VERSION, width = width, type = typeId, orientation = orientation, direction = direction, side = side, quality = quality,
         health = t.baseHealth * math.max(tonumber(skillLevel) or 0, SGGate.MIN_BUILD_LEVEL) }
-    local model = SGGate.leafModel(typeId, orientation, direction, quality)
+    local model = SGGate.leafModel(typeId, orientation, direction, quality, side)
     makeDoor(gateCell(id, x, y, z, 1), typeId, id, "leaf", model)
     for k = 1, width do makeDoor(gateCell(id, x, y, z, k), typeId, id, "slave", "SG_Hidden") end -- collision of the opening
     makeStatic(sq, id, "post", staticModel(id, "SG_CatcherPost"))
@@ -635,6 +638,12 @@ function SGGate.isBlocked(id, opening)
         local sq = gateCell(id, x, y, z, k)
         if not sq or not gateNeighbour(id, gateCell(id, x, y, z, k)) or sq:isVehicleIntersecting() then return true end
         squares[#squares + 1] = sq
+        -- An outer leaf runs on the far side of the fence line, over the neighbouring row.
+        if SGGate.side(id) == "outer" then
+            local far = gateNeighbour(id, sq)
+            if far:isVehicleIntersecting() then return true end
+            squares[#squares + 1] = far
+        end
     end
     -- The vehicle test must never stop the gate: on failure keep the engine result.
     local ok, hit = pcall(trailerOnSquares, squares)
@@ -760,6 +769,7 @@ local function recover()
             local md, entry = part:getModData(), SGGate.ensureIdentity(id)
             if not md.sgInstance then md.sgInstance, md.sgWidth, md.sgOrientation = entry.instance, entry.width, entry.orientation end
             md.sgDirection = md.sgDirection or entry.direction
+            md.sgSide = md.sgSide or entry.side
             md.sgQuality = md.sgQuality or entry.quality
             migratePart(part, entry)
         end
@@ -905,6 +915,7 @@ cleanupSquare = function(square)
                 -- Upgrade legacy saves and restore each model after native deserialization.
                 md.sgInstance, md.sgWidth, md.sgOrientation = entry.instance, entry.width, entry.orientation
                 md.sgDirection = entry.direction
+                md.sgSide = entry.side
                 md.sgQuality = entry.quality
                 md.sgDamage = entry.damage
                 if md.sgRole == "leaf" then md.sgRevision = entry.revision end

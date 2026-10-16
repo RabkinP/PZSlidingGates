@@ -121,8 +121,13 @@ for _,width in ipairs({2,4}) do
   for _,c in ipairs(calls) do assert(c[5]==(good and 1 or .65)) end
   assert(worldWrites==0 and foreign==0)
  end
+ -- Outer faces (5..8) sit between the inner ones; see tests/test_gate_outer.py.
+ b:rotateKey('rotate'); assert(b.nSprite==6)
+ b:rotateKey('rotate'); assert(b.nSprite==5)
  b:rotateKey('rotate'); assert(b.nSprite==4 and b.north)
  b:rotateKey('rotate'); assert(b.nSprite==3 and not b.north)
+ b:rotateKey('rotate'); assert(b.nSprite==8)
+ b:rotateKey('rotate'); assert(b.nSprite==7)
  b:rotateKey('rotate'); assert(b.nSprite==2 and b.north)
  assert(builder(width,1).nSprite==1) -- native server reconstruction preserves W
 end

@@ -47,7 +47,8 @@ function SGGate.quality(id)
     return "high" -- Legacy assemblies retain the existing model.
 end
 
-function SGGate.leafModel(typeId, orientation, direction, quality)
+-- side "outer" mirrors the whole assembly across the fence line (same edge, cells and collision).
+function SGGate.leafModel(typeId, orientation, direction, quality, side)
     local t = SGGateTypes[typeId]
     if not t then return end
     local field = orientation == "W" and "westLeafModel" or "leafModel"
@@ -55,9 +56,9 @@ function SGGate.leafModel(typeId, orientation, direction, quality)
     local base = t[field]
     if quality == "low" or quality == "medium" then
         local prefix = t.modelPrefix or (t.width == 4 and "SG_ChainLink_4" or "SG_ChainLink")
-        return prefix .. "_" .. (quality == "low" and "Low" or "Medium") .. base:sub(#prefix + 1)
+        base = prefix .. "_" .. (quality == "low" and "Low" or "Medium") .. base:sub(#prefix + 1)
     end
-    return base
+    return side == "outer" and base .. "_Out" or base
 end
 
 function SGGate.registry()
@@ -101,6 +102,13 @@ function SGGate.direction(id)
     if type(entry) == "table" and entry.direction then return entry.direction end
     local md = nearbyMetadata(id)
     return md and md.sgDirection or "forward"
+end
+
+function SGGate.side(id)
+    local entry = SGGate.registry()[id]
+    if type(entry) == "table" and entry.side then return entry.side end
+    local md = nearbyMetadata(id)
+    return md and md.sgSide or "inner"
 end
 
 function SGGate.cellAt(x, y, z, k, orientation, direction)
@@ -175,13 +183,14 @@ function SGGate.typeOf(id)
     return type(entry) == "table" and entry.type or (SGGate.gateWidth(id) == 4 and "chainlink4" or "chainlink")
 end
 
-function SGGate.canBuild(sq, typeId, orientation, direction)
+function SGGate.canBuild(sq, typeId, orientation, direction, side)
     local definition = SGGateTypes[typeId]
     if not sq or not definition then return false, "unknown gate type" end
     orientation = orientation or "N"
     direction = direction or "forward"
     if orientation ~= "N" and orientation ~= "W" then return false, "unsupported orientation" end
     if direction ~= "forward" and direction ~= "reverse" then return false, "unsupported direction" end
+    if side ~= nil and side ~= "inner" and side ~= "outer" then return false, "unsupported side" end
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
     if SGGate.registry()[x .. "," .. y .. "," .. z] then return false, "gate already exists" end
     for k = 0, 2 * definition.width do

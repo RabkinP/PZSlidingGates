@@ -54,6 +54,12 @@ Keep file number, tileset number and existing indices stable:
 | 280..303 | Six-cell wooden medium |
 | 304..327 | Six-cell wooden high |
 
+Outer-side carriers live in a second tileset, `sg_gates_preview_02` (tileset number 2,
+same file 6842, second `.pack` page): index *i* is carrier *i* of `sg_gates_preview_01`
+with its model mirrored across the fence line (`tools/outer_variant.py`). The installed
+tdef loader rejects a tileset above 512 tiles, so never append outer carriers to tileset 1.
+The cursor encodes outer faces as nSprite 5..8 and remaps the footprint carriers to `_02`.
+
 Blank indices use the existing tiny hidden rail model. Atlas entries have explicit
 untrimmed 128×256 bounds, even though every pixel is transparent. Do not run an atlas
 optimizer that drops empty entries.

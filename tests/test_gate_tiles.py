@@ -18,27 +18,33 @@ def string(stream):
 
 
 pack = BytesIO((MEDIA/'texturepacks/SG_GatesPreview.pack').read_bytes())
-assert pack.read(4) == b'PZPK' and integer(pack) == 1 and integer(pack) == 1
-assert string(pack) == 'SG_GatesPreview_0'
-assert integer(pack) == 328 and integer(pack) == 1
-for index in range(328):
-    assert string(pack) == f'sg_gates_preview_01_{index}'
-    assert [integer(pack) for _ in range(8)] == [index%8*128,index//8*256,128,256,0,0,128,256]
-image = Image.open(BytesIO(pack.read(integer(pack))))
-assert image.size == (1024,10496) and image.mode == 'RGBA'
-assert image.getchannel('A').getextrema() == (0,0)
+assert pack.read(4) == b'PZPK' and integer(pack) == 1 and integer(pack) == 2
+# Page 0: inner tileset _01 (unchanged layout); page 1: outer tileset _02 with the same indices.
+for page, tileset in enumerate(('sg_gates_preview_01', 'sg_gates_preview_02')):
+    assert string(pack) == f'SG_GatesPreview_{page}'
+    assert integer(pack) == 328 and integer(pack) == 1
+    for index in range(328):
+        assert string(pack) == f'{tileset}_{index}'
+        assert [integer(pack) for _ in range(8)] == [index%8*128,index//8*256,128,256,0,0,128,256]
+    image = Image.open(BytesIO(pack.read(integer(pack))))
+    assert image.size == (1024,10496) and image.mode == 'RGBA'
+    assert image.getchannel('A').getextrema() == (0,0)
 assert not pack.read()
 
 tiles = BytesIO((MEDIA/'SG_GatesPreview.tiles').read_bytes())
-assert tiles.read(4) == b'tdef' and integer(tiles) == 1 and integer(tiles) == 1
-assert tiles.readline() == b'sg_gates_preview_01\n'
-assert tiles.readline() == b'sg_gates_preview_01.png\n'
-assert [integer(tiles) for _ in range(4)] == [8,41,1,328]
-assert all(integer(tiles)==0 for _ in range(328))  # no inadvertent collision flags
+# Installed loader rejects a whole tileset above 512 tiles: outer carriers are tileset 2.
+assert tiles.read(4) == b'tdef' and integer(tiles) == 1 and integer(tiles) == 2
+for tileset in ('sg_gates_preview_01', 'sg_gates_preview_02'):
+    assert tiles.readline() == tileset.encode()+b'\n'
+    assert tiles.readline() == tileset.encode()+b'.png\n'
+    assert [integer(tiles) for _ in range(4)] == [8,41,1,328]
+    assert all(integer(tiles)==0 for _ in range(328))  # no inadvertent collision flags
 assert not tiles.read()
 
-bindings=(ROOT/'mod/SlidingGates/common/media/spriteModels.txt').read_text()
-assert len(re.findall(r'\bxy\s*=',bindings)) == 328
+all_bindings=(ROOT/'mod/SlidingGates/common/media/spriteModels.txt').read_text()
+assert len(re.findall(r'\bxy\s*=',all_bindings)) == 656
+bindings, outer_bindings = all_bindings.split('name = sg_gates_preview_02,')
+assert 'name = sg_gates_preview_01,' in bindings
 assert 'xy = 1 0,' in bindings and 'xy = 5 0,' in bindings
 assert 'Base.SG_ChainLink_N_Right,' in bindings and 'Base.SG_ChainLink_4_N_Right,' in bindings
 model_scripts = (MEDIA/'scripts/SG_models.txt').read_text()
@@ -122,4 +128,23 @@ for (material,quality),start in ((('ChainLink','_Low'),184),(('ChainLink','_Medi
         assert actual['modelScript'].strip()==expected['modelScript'].strip(),(start+offset)
         for key in ('translate','rotate','scale','animationTime'):
             assert list(map(float,actual[key].split()))==list(map(float,expected[key].split())),(start+offset,key)
+# Outer tileset: each carrier is the inner one mirrored across the fence line; leaf carriers
+# match the registered outer resting poses (tests/test_gate_outer.py checks the geometry).
+outer_scripts=(MEDIA/'scripts/SG_models_outer.txt').read_text(encoding='utf-8')
+outer_by_index={}
+for block in re.findall(r'\btile\s*\{([^}]+)\}', outer_bindings):
+    props=properties(block); x,y=map(int,props.pop('xy').split()); outer_by_index[x+y*8]=props
+assert sorted(outer_by_index)==list(range(328))
+for index,name in ((1,'SG_ChainLink_N_Right_G_Out_Closed'),(6,'SG_ChainLink_W_G_Out_Closed'),
+                   (24,'SG_ChainLink_N_Reverse_G_Out_Closed'),(35,'SG_ChainLink_4_W_Reverse_G_Out_Closed'),
+                   (11,'SG_Drive_Out_Static'),(43,'SG_Drive_Reverse_W_Out_Static')):
+    source=model_scripts+outer_scripts
+    expected=properties(re.search(r'\bspriteModel\s+'+name+r'\s*\{([^}]+)\}',source)[1])
+    actual=outer_by_index[index]
+    assert actual['modelScript'].strip()==expected['modelScript'].strip(),index
+    for key in ('translate','rotate','scale'):
+        assert list(map(float,actual[key].split()))==list(map(float,expected[key].split())),(index,key)
+for index in range(328):
+    hidden=tiles_by_index[index]['scale'].strip()=='0.001'
+    assert hidden==(outer_by_index[index]['scale'].strip()=='0.001')
 print('PASS pack v1, tdef v1, alpha, properties, entity carriers, registration and calibrated model poses')

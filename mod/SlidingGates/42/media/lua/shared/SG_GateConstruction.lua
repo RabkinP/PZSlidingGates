@@ -6,6 +6,8 @@
 -- slides towards -x into the pocket (x-1..x-W, checked in isValid).
 -- W uses a column y..y+W-1, catcher y-1 and pocket y+W..y+2W-1.
 -- Reversed N/W reflect travel along the edge, keeping the visible face unchanged.
+-- Outer variants (nSprite 5..8 = outer 1..4) use the same cells/collision and mirror the assembly across the fence
+-- line, facing the other way. nSprite is the only cursor state B42 serializes to the authority.
 
 require "SG_GateCommon"
 
@@ -52,9 +54,14 @@ local function gateTypeOf(builder)
 end
 
 -- the catcher cell for a placement origin x (opening starts at x)
-local function isNorth(nSprite) return nSprite == 2 or nSprite == 4 end
-local function direction(nSprite) return nSprite >= 3 and "reverse" or "forward" end
-local nextFace = { [2] = 1, [1] = 4, [4] = 3, [3] = 2 }
+-- Outer preview carriers: sg_gates_preview_02_<i> mirrors sg_gates_preview_01_<i> (tdef limit 512 per tileset).
+local function previewSprite(index, outer) return (outer and "sg_gates_preview_02_" or "sg_gates_preview_01_") .. index end
+local function baseFace(nSprite) return (nSprite - 1) % 4 + 1 end
+local function isNorth(nSprite) return baseFace(nSprite) == 2 or baseFace(nSprite) == 4 end
+local function direction(nSprite) return baseFace(nSprite) >= 3 and "reverse" or "forward" end
+local function side(nSprite) return nSprite > 4 and "outer" or "inner" end
+-- N, W, N outer, W outer, reverse N, reverse W, reverse N outer, reverse W outer
+local nextFace = { [2] = 1, [1] = 6, [6] = 5, [5] = 4, [4] = 3, [3] = 8, [8] = 7, [7] = 2 }
 
 local function catcherSquare(square, typeId, north, reversed)
     if reversed then
@@ -81,7 +88,8 @@ local function install()
     function ISBuildIsoEntity:new(character, objectInfo, nSprite, containers, logic)
         local o = originalNew(self, character, objectInfo, nSprite, containers, logic)
         if o and gateTypeOf(o) then
-            o.nSprite = nextFace[nSprite] and nSprite or 2 -- 1=W, 2=N, 3=reverse W, 4=reverse N
+            o.nSprite = nextFace[nSprite] and nSprite or 2 -- 1=W, 2=N, 3=reverse W, 4=reverse N, +4 outer
+            o.sgFace = o.nSprite
             o.nSpriteCache = -1
             o.north = isNorth(o.nSprite)
         end
@@ -92,16 +100,52 @@ local function install()
     function ISBuildIsoEntity:rotateKey(key)
         if not gateTypeOf(self) then return originalRotateKey(self, key) end
         if getCore():isKey(KeybindId.ROTATE_BUILDING, key) then
-            self.nSprite = nextFace[self.nSprite] or 2
+            self.nSprite = nextFace[self.sgFace or self.nSprite] or 2
+            self.sgFace = self.nSprite
             self.nSpriteCache = -1
             self.north = isNorth(self.nSprite)
         end
+    end
+
+    -- Vanilla getFace only knows nSprite 1..4 and would wrap an outer value back to an inner face.
+    local originalGetFace = ISBuildIsoEntity.getFace
+    function ISBuildIsoEntity:getFace()
+        if not originalGetFace then return end
+        if not gateTypeOf(self) or not self.nSprite or self.nSprite <= 4 then
+            if self.sgOuterCache and self.face then self.sgOuterCache = false; self:cacheSprites(self.face) end
+            return originalGetFace(self)
+        end
+        self.nSprite = self.nSprite - 4
+        local face = originalGetFace(self)
+        self.nSprite = self.nSprite + 4
+        if not self.sgOuterCache and face then self.sgOuterCache = true; self:cacheSprites(face) end
+        return face
+    end
+
+    -- ISBuildingObject.getSprite derives north/west from nSprite 1..4 (server create calls it).
+    local originalGetSprite = ISBuildIsoEntity.getSprite
+    function ISBuildIsoEntity:getSprite()
+        if not originalGetSprite then return end
+        if not gateTypeOf(self) or not self.nSprite or self.nSprite <= 4 then return originalGetSprite(self) end
+        self.nSprite = self.nSprite - 4
+        local ok, sprite = pcall(originalGetSprite, self)
+        self.nSprite = self.nSprite + 4
+        if not ok then error(sprite) end
+        return sprite
     end
 
     local originalIsValid = ISBuildIsoEntity.isValid
     function ISBuildIsoEntity:isValid(square)
         local typeId = gateTypeOf(self)
         if not typeId then return originalIsValid(self, square) end
+        -- Vanilla auto-rotate (ISBuildingObject drag loop) probes nSprite 1..4 when a spot is invalid and keeps the
+        -- first valid one, collapsing outer/reverse faces. Only rotateKey chooses our face: undo and reject probes.
+        if self.sgFace and self.nSprite ~= self.sgFace then
+            self.nSprite = self.sgFace
+            self.nSpriteCache = -1
+            self.north = isNorth(self.nSprite)
+            return false
+        end
         local level = not buildCheat(self) and SGGate.buildLevel(self.character, typeId)
         -- like vanilla, the minimum level is the recipe's SkillRequired; only the exact quality tier is ours
         if level and SGGate.qualityForLevel(level, typeId) ~= recipeQuality(self) then return false end
@@ -111,7 +155,7 @@ local function install()
         local reversed = direction(self.nSprite) == "reverse"
         local catcher = catcherSquare(square, typeId, self.north, reversed)
         if not catcher then return false end
-        return (SGGate.canBuild(catcher, typeId, self.north and "N" or "W", direction(self.nSprite)))
+        return (SGGate.canBuild(catcher, typeId, self.north and "N" or "W", direction(self.nSprite), side(self.nSprite)))
     end
 
     -- never place the placeholder tiles of our entities; remember that the base class got as far as placing them
@@ -135,7 +179,10 @@ local function install()
                 for y = 0, face:getHeight() - 1 do
                     local info = face:getTileInfo(x, y, z)
                     local name = info and info:getSpriteName()
-                    if name then self.spriteCache[name] = getSprite(name) end
+                    if name then
+                        local index = self.sgOuterCache and tonumber(name:match("^sg_gates_preview_01_(%d+)$"))
+                        self.spriteCache[name] = getSprite(index and previewSprite(index, true) or name)
+                    end
                 end
             end
         end
@@ -159,7 +206,7 @@ local function install()
         local catcherY = west and (reversed and y+width or y-1) or y
         local sign = reversed and -1 or 1
         local function draw(index, k)
-            local sprite = getSprite("sg_gates_preview_01_" .. index)
+            local sprite = getSprite(previewSprite(index, side(self.nSprite) == "outer"))
             if sprite then sprite:RenderGhostTileColor(catcherX - (west and 0 or sign*k),
                 catcherY + (west and sign*k or 0), z, r, g, b, 0.6) end
         end
@@ -188,7 +235,7 @@ local function install()
         if not catcher then print("[SGBuild] no catcher square"); return end
         local level = SGGate.buildLevel(self.character, typeId)
         local quality = (not buildCheat(self) and level) and SGGate.qualityForLevel(level, typeId) or recipeQuality(self)
-        local id = SGGate.build(catcher, typeId, level, north and "N" or "W", direction(self.nSprite), quality)
+        local id = SGGate.build(catcher, typeId, level, north and "N" or "W", direction(self.nSprite), quality, side(self.nSprite))
         print("[SGBuild] SGGate.build -> " .. tostring(id))
     end
     print("[SGBuild] ISBuildIsoEntity hooks installed")

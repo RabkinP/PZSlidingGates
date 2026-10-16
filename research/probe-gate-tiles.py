@@ -12,6 +12,7 @@ REPO = Path(__file__).resolve().parents[1]
 GAME = Path(r'E:/SteamLibrary/steamapps/common/ProjectZomboid')
 OUT = REPO/'research/render-audit/probe'
 OUT.mkdir(parents=True, exist_ok=True)
+NAMES = [f'sg_gates_preview_0{t}_{i}' for t in (1, 2) for i in range(328)]  # inner _01 page 0, outer _02 page 1
 source = ast.parse((REPO/'research/probe-assimp.py').read_text())
 definitions = [node for node in source.body if isinstance(node, (ast.FunctionDef, ast.ClassDef))]
 namespace = dict(struct=struct, ROOT=OUT)
@@ -70,42 +71,44 @@ c+=b'\x2b'+text('filename')+text(str(REPO/'mod/SlidingGates/42/media/texturepack
 c+=call('PZGateTilesProbe','setField','(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V',0xb8)
 c+=new('zombie/fileSystem/FileSystem$TexturePackTextures')+b'\x4d\x2b\x2c'
 c+=call('zombie/fileSystem/TexturePackDevice','getSubTextureInfo','(Lzombie/fileSystem/FileSystem$TexturePackTextures;)V')
-for i in range(328):
-    c+=b'\x2c'+text(f'sg_gates_preview_01_{i}')+call('java/util/HashMap','get','(Ljava/lang/Object;)Ljava/lang/Object;')
+for name in NAMES:
+    c+=b'\x2c'+text(name)+call('java/util/HashMap','get','(Ljava/lang/Object;)Ljava/lang/Object;')
     c+=call('java/util/Objects','requireNonNull','(Ljava/lang/Object;)Ljava/lang/Object;',0xb8)+b'\x57'
 c+=field('java/lang/System','out','Ljava/io/PrintStream;')+b'\x2c'+call('java/util/HashMap','size','()I')
 c+=call('java/io/PrintStream','println','(I)V')
-c+=b'\x2b'+text('SG_GatesPreview_0')+b'\x01'+call('zombie/fileSystem/TexturePackDevice','createStream','(Ljava/lang/String;Ljava/io/InputStream;)Ljava/io/InputStream;')
-c+=call('javax/imageio/ImageIO','read','(Ljava/io/InputStream;)Ljava/awt/image/BufferedImage;',0xb8)+b'\x4e'
-for getter in ['getWidth','getHeight']:
-    c+=field('java/lang/System','out','Ljava/io/PrintStream;')+b'\x2d'+call('java/awt/image/BufferedImage',getter,'()I')
-    c+=call('java/io/PrintStream','println','(I)V')
+for page in range(2):
+    c+=b'\x2b'+text(f'SG_GatesPreview_{page}')+b'\x01'+call('zombie/fileSystem/TexturePackDevice','createStream','(Ljava/lang/String;Ljava/io/InputStream;)Ljava/io/InputStream;')
+    c+=call('javax/imageio/ImageIO','read','(Ljava/io/InputStream;)Ljava/awt/image/BufferedImage;',0xb8)+b'\x4e'
+    for getter in ['getWidth','getHeight']:
+        c+=field('java/lang/System','out','Ljava/io/PrintStream;')+b'\x2d'+call('java/awt/image/BufferedImage',getter,'()I')
+        c+=call('java/io/PrintStream','println','(I)V')
 c+=b'\x04'+field('zombie/network/GameServer','server','Z',0xb3)
 c+=field('zombie/iso/IsoWorld','instance','Lzombie/iso/IsoWorld;')
 c+=field('zombie/iso/sprite/IsoSpriteManager','instance','Lzombie/iso/sprite/IsoSpriteManager;')
 c+=text(str(REPO/'mod/SlidingGates/42/media/SG_GatesPreview.tiles'))+b'\x11'+struct.pack('>h',6842)
 c+=call('zombie/iso/IsoWorld','LoadTileDefinitions','(Lzombie/iso/sprite/IsoSpriteManager;Ljava/lang/String;I)V')
-for i in range(328):
+for name in NAMES:
     c+=field('zombie/iso/sprite/IsoSpriteManager','instance','Lzombie/iso/sprite/IsoSpriteManager;')
     c+=field('zombie/iso/sprite/IsoSpriteManager','namedMap','Ljava/util/HashMap;',0xb4)
-    c+=text(f'sg_gates_preview_01_{i}')+call('java/util/HashMap','get','(Ljava/lang/Object;)Ljava/lang/Object;')
+    c+=text(name)+call('java/util/HashMap','get','(Ljava/lang/Object;)Ljava/lang/Object;')
     c+=call('java/util/Objects','requireNonNull','(Ljava/lang/Object;)Ljava/lang/Object;',0xb8)+b'\x57'
 c+=new('zombie/iso/SpriteModelsFile')+b'\x4c\x2b'+text('parseFile')
 # Read the file in Java: its text exceeds the 65535-byte class constant limit.
 c+=new('java/lang/String','([B)V',new('java/io/File','(Ljava/lang/String;)V',text(str(REPO/'mod/SlidingGates/common/media/spriteModels.txt')))
     +call('java/io/File','toPath','()Ljava/nio/file/Path;')+call('java/nio/file/Files','readAllBytes','(Ljava/nio/file/Path;)[B',0xb8))
 c+=call('PZGateTilesProbe','invokeString','(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V',0xb8)
-c+=b'\x2b'+text('tilesets')+call('PZGateTilesProbe','getField','(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;',0xb8)
-c+=b'\xc0'+u2(p.cls('java/util/ArrayList'))+b'\x03'+call('java/util/ArrayList','get','(I)Ljava/lang/Object;')
-c+=text('initSprites')+call('PZGateTilesProbe','invokeNoArg','(Ljava/lang/Object;Ljava/lang/String;)V',0xb8)
-for i in range(328):
+for tileset in (b'\x03', b'\x04'):  # inner and outer spriteModel tilesets
+    c+=b'\x2b'+text('tilesets')+call('PZGateTilesProbe','getField','(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;',0xb8)
+    c+=b'\xc0'+u2(p.cls('java/util/ArrayList'))+tileset+call('java/util/ArrayList','get','(I)Ljava/lang/Object;')
+    c+=text('initSprites')+call('PZGateTilesProbe','invokeNoArg','(Ljava/lang/Object;Ljava/lang/String;)V',0xb8)
+for name in NAMES:
     c+=field('zombie/iso/sprite/IsoSpriteManager','instance','Lzombie/iso/sprite/IsoSpriteManager;')
     c+=field('zombie/iso/sprite/IsoSpriteManager','namedMap','Ljava/util/HashMap;',0xb4)
-    c+=text(f'sg_gates_preview_01_{i}')+call('java/util/HashMap','get','(Ljava/lang/Object;)Ljava/lang/Object;')
+    c+=text(name)+call('java/util/HashMap','get','(Ljava/lang/Object;)Ljava/lang/Object;')
     c+=b'\xc0'+u2(p.cls('zombie/iso/sprite/IsoSprite'))
     c+=field('zombie/iso/sprite/IsoSprite','spriteModel','Lzombie/iso/SpriteModel;',0xb4)
     c+=call('java/util/Objects','requireNonNull','(Ljava/lang/Object;)Ljava/lang/Object;',0xb8)+b'\x57'
-c+=field('java/lang/System','out','Ljava/io/PrintStream;')+text('PASS installed pack metadata, PNG decoder, tile definitions and all 328 spriteModel bindings')
+c+=field('java/lang/System','out','Ljava/io/PrintStream;')+text('PASS installed pack metadata, PNG decoder, tile definitions and all 656 spriteModel bindings')
 c+=call('java/io/PrintStream','println','(Ljava/lang/String;)V')+b'\xb1'
 p.method('main','([Ljava/lang/String;)V',c,9)
 p.save('PZGateTilesProbe')
@@ -116,6 +119,6 @@ print(run.stdout, end='')
 print(run.stderr, end='')
 if run.returncode:
     raise SystemExit(run.returncode)
-assert '\n328\n1024\n10496\n' in '\n'+run.stdout.replace('\r','')
+assert '\n656\n1024\n10496\n1024\n10496\n' in '\n'+run.stdout.replace('\r','')
 report=REPO/'research/render-audit/gate-tiles-native.txt'
 report.write_text(run.stdout+run.stderr)

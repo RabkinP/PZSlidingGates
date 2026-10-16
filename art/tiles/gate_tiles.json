@@ -2120,5 +2120,2121 @@
       "animation": "Open",
       "animationTime": "0"
     }
+  },
+  "outer_tileset": "sg_gates_preview_02",
+  "outer_tileset_number": 2,
+  "outer_indices": {
+    "0": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "1": {
+      "modelScript": "Base.SG_ChainLink_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "2": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "3": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "4": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "5": {
+      "modelScript": "Base.SG_ChainLink_4_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "6": {
+      "modelScript": "Base.SG_ChainLink_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "7": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "8": {
+      "modelScript": "Base.SG_CatcherPost_Reverse",
+      "translate": "-0.46 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "9": {
+      "modelScript": "Base.SG_GuidePost_Reverse",
+      "translate": "-0.54 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "10": {
+      "modelScript": "Base.SG_Rail_Reverse",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "11": {
+      "modelScript": "Base.SG_Drive_Reverse",
+      "translate": "-0.5 0 -0.16",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "12": {
+      "modelScript": "Base.SG_ChainLink_4_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "13": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "14": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "15": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "16": {
+      "modelScript": "Base.SG_CatcherPost_Reverse",
+      "translate": "-0.38 0 0.46",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "17": {
+      "modelScript": "Base.SG_GuidePost_Reverse",
+      "translate": "-0.38 0 0.54",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "18": {
+      "modelScript": "Base.SG_Rail_Reverse",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "19": {
+      "modelScript": "Base.SG_Drive_Reverse",
+      "translate": "-0.16 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "20": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "21": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "22": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "23": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "24": {
+      "modelScript": "Base.SG_ChainLink_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "25": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "26": {
+      "modelScript": "Base.SG_ChainLink_4_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "27": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "28": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "29": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "30": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "31": {
+      "modelScript": "Base.SG_ChainLink_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "32": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "33": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "34": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "35": {
+      "modelScript": "Base.SG_ChainLink_4_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "36": {
+      "modelScript": "Base.SG_CatcherPost",
+      "translate": "0.46 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "37": {
+      "modelScript": "Base.SG_GuidePost",
+      "translate": "0.54 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "38": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "39": {
+      "modelScript": "Base.SG_Drive",
+      "translate": "0.5 0 -0.16",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "40": {
+      "modelScript": "Base.SG_CatcherPost",
+      "translate": "-0.38 0 -0.46",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "41": {
+      "modelScript": "Base.SG_GuidePost",
+      "translate": "-0.38 0 -0.54",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "42": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "43": {
+      "modelScript": "Base.SG_Drive",
+      "translate": "-0.16 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "44": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "45": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "46": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "47": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "48": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "49": {
+      "modelScript": "Base.SG_ChainLink_Low_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "50": {
+      "modelScript": "Base.SG_ChainLink_Low_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "51": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "52": {
+      "modelScript": "Base.SG_ChainLink_Low_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "53": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "54": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "55": {
+      "modelScript": "Base.SG_ChainLink_Low_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "56": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "57": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "58": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "59": {
+      "modelScript": "Base.SG_ChainLink_4_Low_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "60": {
+      "modelScript": "Base.SG_ChainLink_4_Low_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "61": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "62": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "63": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "64": {
+      "modelScript": "Base.SG_ChainLink_4_Low_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "65": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "66": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "67": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "68": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "69": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "70": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "71": {
+      "modelScript": "Base.SG_ChainLink_4_Low_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "72": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "73": {
+      "modelScript": "Base.SG_ChainLink_Medium_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "74": {
+      "modelScript": "Base.SG_ChainLink_Medium_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "75": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "76": {
+      "modelScript": "Base.SG_ChainLink_Medium_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "77": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "78": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "79": {
+      "modelScript": "Base.SG_ChainLink_Medium_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "80": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "81": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "82": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "83": {
+      "modelScript": "Base.SG_ChainLink_4_Medium_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "84": {
+      "modelScript": "Base.SG_ChainLink_4_Medium_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "85": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "86": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "87": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "88": {
+      "modelScript": "Base.SG_ChainLink_4_Medium_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "89": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "90": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "91": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "92": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "93": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "94": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "95": {
+      "modelScript": "Base.SG_ChainLink_4_Medium_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "96": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "97": {
+      "modelScript": "Base.SG_Wood_Low_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "98": {
+      "modelScript": "Base.SG_Wood_Low_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "99": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "100": {
+      "modelScript": "Base.SG_Wood_Low_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "101": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "102": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "103": {
+      "modelScript": "Base.SG_Wood_Low_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "104": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "105": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "106": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "107": {
+      "modelScript": "Base.SG_Wood_4_Low_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "108": {
+      "modelScript": "Base.SG_Wood_4_Low_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "109": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "110": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "111": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "112": {
+      "modelScript": "Base.SG_Wood_4_Low_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "113": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "114": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "115": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "116": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "117": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "118": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "119": {
+      "modelScript": "Base.SG_Wood_4_Low_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "120": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "121": {
+      "modelScript": "Base.SG_Wood_Medium_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "122": {
+      "modelScript": "Base.SG_Wood_Medium_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "123": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "124": {
+      "modelScript": "Base.SG_Wood_Medium_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "125": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "126": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "127": {
+      "modelScript": "Base.SG_Wood_Medium_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "128": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "129": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "130": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "131": {
+      "modelScript": "Base.SG_Wood_4_Medium_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "132": {
+      "modelScript": "Base.SG_Wood_4_Medium_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "133": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "134": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "135": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "136": {
+      "modelScript": "Base.SG_Wood_4_Medium_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "137": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "138": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "139": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "140": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "141": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "142": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "143": {
+      "modelScript": "Base.SG_Wood_4_Medium_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "144": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "145": {
+      "modelScript": "Base.SG_Wood_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "146": {
+      "modelScript": "Base.SG_Wood_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "147": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "148": {
+      "modelScript": "Base.SG_Wood_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "149": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "150": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "151": {
+      "modelScript": "Base.SG_Wood_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "152": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "153": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "154": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "155": {
+      "modelScript": "Base.SG_Wood_4_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "156": {
+      "modelScript": "Base.SG_Wood_4_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "157": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "158": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "159": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "160": {
+      "modelScript": "Base.SG_Wood_4_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "161": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "162": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "163": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "164": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "165": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "166": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "167": {
+      "modelScript": "Base.SG_Wood_4_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "168": {
+      "modelScript": "Base.SG_Wood_CatcherPost_Reverse",
+      "translate": "-0.46 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "169": {
+      "modelScript": "Base.SG_Wood_GuidePost_Reverse",
+      "translate": "-0.54 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "170": {
+      "modelScript": "Base.SG_Wood_Rail_Reverse",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "171": {
+      "modelScript": "Base.SG_Wood_Drive_Reverse",
+      "translate": "-0.5 0 -0.16",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "172": {
+      "modelScript": "Base.SG_Wood_CatcherPost_Reverse",
+      "translate": "-0.38 0 0.46",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "173": {
+      "modelScript": "Base.SG_Wood_GuidePost_Reverse",
+      "translate": "-0.38 0 0.54",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "174": {
+      "modelScript": "Base.SG_Wood_Rail_Reverse",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "175": {
+      "modelScript": "Base.SG_Wood_Drive_Reverse",
+      "translate": "-0.16 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "176": {
+      "modelScript": "Base.SG_Wood_CatcherPost",
+      "translate": "0.46 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "177": {
+      "modelScript": "Base.SG_Wood_GuidePost",
+      "translate": "0.54 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "178": {
+      "modelScript": "Base.SG_Wood_Rail",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "179": {
+      "modelScript": "Base.SG_Wood_Drive",
+      "translate": "0.5 0 -0.16",
+      "rotate": "0 180 0",
+      "scale": "1"
+    },
+    "180": {
+      "modelScript": "Base.SG_Wood_CatcherPost",
+      "translate": "-0.38 0 -0.46",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "181": {
+      "modelScript": "Base.SG_Wood_GuidePost",
+      "translate": "-0.38 0 -0.54",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "182": {
+      "modelScript": "Base.SG_Wood_Rail",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "183": {
+      "modelScript": "Base.SG_Wood_Drive",
+      "translate": "-0.16 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1"
+    },
+    "184": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "185": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "186": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "187": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "188": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "189": {
+      "modelScript": "Base.SG_ChainLink_6_Low_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "190": {
+      "modelScript": "Base.SG_ChainLink_6_Low_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "191": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "192": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "193": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "194": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "195": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "196": {
+      "modelScript": "Base.SG_ChainLink_6_Low_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "197": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "198": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "199": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "200": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "201": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "202": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "203": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "204": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "205": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "206": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "207": {
+      "modelScript": "Base.SG_ChainLink_6_Low_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "208": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "209": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "210": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "211": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "212": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "213": {
+      "modelScript": "Base.SG_ChainLink_6_Medium_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "214": {
+      "modelScript": "Base.SG_ChainLink_6_Medium_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "215": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "216": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "217": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "218": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "219": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "220": {
+      "modelScript": "Base.SG_ChainLink_6_Medium_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "221": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "222": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "223": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "224": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "225": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "226": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "227": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "228": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "229": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "230": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "231": {
+      "modelScript": "Base.SG_ChainLink_6_Medium_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "232": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "233": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "234": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "235": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "236": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "237": {
+      "modelScript": "Base.SG_ChainLink_6_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "238": {
+      "modelScript": "Base.SG_ChainLink_6_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "239": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "240": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "241": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "242": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "243": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "244": {
+      "modelScript": "Base.SG_ChainLink_6_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "245": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "246": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "247": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "248": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "249": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "250": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "251": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "252": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "253": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "254": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "255": {
+      "modelScript": "Base.SG_ChainLink_6_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "256": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "257": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "258": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "259": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "260": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "261": {
+      "modelScript": "Base.SG_Wood_6_Low_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "262": {
+      "modelScript": "Base.SG_Wood_6_Low_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "263": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "264": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "265": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "266": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "267": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "268": {
+      "modelScript": "Base.SG_Wood_6_Low_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "269": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "270": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "271": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "272": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "273": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "274": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "275": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "276": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "277": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "278": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "279": {
+      "modelScript": "Base.SG_Wood_6_Low_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "280": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "281": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "282": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "283": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "284": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "285": {
+      "modelScript": "Base.SG_Wood_6_Medium_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "286": {
+      "modelScript": "Base.SG_Wood_6_Medium_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "287": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "288": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "289": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "290": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "291": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "292": {
+      "modelScript": "Base.SG_Wood_6_Medium_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "293": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "294": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "295": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "296": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "297": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "298": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "299": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "300": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "301": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "302": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "303": {
+      "modelScript": "Base.SG_Wood_6_Medium_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "304": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "305": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "306": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "307": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "308": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "309": {
+      "modelScript": "Base.SG_Wood_6_N_Reverse",
+      "translate": "0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "310": {
+      "modelScript": "Base.SG_Wood_6_N_Reverse",
+      "translate": "-0.38 0 -0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "311": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "312": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "313": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "314": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "315": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "316": {
+      "modelScript": "Base.SG_Wood_6_N_Right",
+      "translate": "-0.5 0 -0.38",
+      "rotate": "0 180 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    },
+    "317": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "318": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "319": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "320": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "321": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "322": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "323": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "324": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "325": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "326": {
+      "modelScript": "Base.SG_Rail",
+      "translate": "0 0 0",
+      "rotate": "0 0 0",
+      "scale": "0.001"
+    },
+    "327": {
+      "modelScript": "Base.SG_Wood_6_N_Right",
+      "translate": "-0.38 0 0.5",
+      "rotate": "0 270 0",
+      "scale": "1",
+      "animation": "Open",
+      "animationTime": "0"
+    }
   }
 }
